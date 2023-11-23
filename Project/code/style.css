@@ -1,0 +1,335 @@
+/* basic css */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Microsoft YaHei, SimHei;
+	font-size: 16px;
+}
+
+li {
+	list-style: none;
+}
+
+a:focus {
+	outline: none;
+	-moz-outline: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+/* tips */
+.tips {
+	position: fixed;
+	z-index: 2;
+	top: 5vh;
+	left: 40vw;
+	width: 20vw;
+	height: 5vh;
+	text-align: center;
+	line-height: 5vh;
+	background-color: rgba(128, 128, 128, 0.575);
+	overflow: hidden;
+}
+
+/* body min size */
+body {
+	min-width: 1190px;
+	position: relative;
+	background-color: #f5f1ee;
+}
+
+/* clearfix  */
+.clearfix {
+	*zoom: 1
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: "";
+	display: table;
+	visibility: hidden;
+	height: 0;
+	clear: both;
+	content: "";
+}
+
+
+
+/* nav part */
+.nav {
+	z-index: 1;
+	margin: 0px auto;
+	width: 100vw;
+	height: 40px;
+	top: 0px;
+	left: 0px;
+	position: fixed;
+	background-color: rgb(60, 186, 245);
+	cursor: pointer;
+}
+
+.nav ul {
+	float: left;
+	height: 40px;
+}
+
+.nav li {
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+	position: relative;
+}
+
+.nav li a {
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	height: 40px;
+	padding: 0px 25px;
+}
+
+.nav li a:hover {
+	color: orange;
+}
+
+/* goods page */
+.goods {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin: 0px auto;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	/* Optional: Wraps the items if they exceed the container's width */
+}
+
+
+/* divide line  */
+.line {
+	height: 36px;
+	margin-top: 30px;
+	padding: 2px 0px;
+	border-bottom: 2px solid #ee0909;
+	left: 0%;
+}
+
+.line h2 {
+	margin-left: 12px;
+}
+
+/* card */
+.card {
+	float: left;
+	width: 290px;
+	background-color: gold;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+/* card contain */
+.card_content {
+	margin: 1px 1px;
+	width: 288px;
+	background-color: #FFF;
+}
+
+/* card img part  */
+.card_content_img {
+	width: 288px;
+	height: 288px;
+	position: relative;
+
+}
+
+.card_content_img img {
+	display: inline;
+	width: 288px;
+	height: 288px;
+}
+
+/* others in card */
+.card_content_others {
+	padding: 17px 13px;
+}
+
+
+/* price */
+.card_content_others_money {
+	height: 34px;
+	line-height: 34px;
+	padding-top: 15px;
+}
+
+.card_content_others_money span {
+	font-size: 20px;
+	font-weight: bold;
+	color: #c20000;
+}
+
+.card_content_others_money strong {
+	font-size: 14px;
+	padding: 0px 7px;
+	color: gray;
+}
+
+/* buy */
+.card_content_others_buy {
+	height: 30px;
+	line-height: 30px;
+	padding-top: 8px;
+
+}
+
+.card_content_others_buy a {
+	float: right;
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: #e23f50;
+	border-radius: 1px 1px;
+	font-size: 14px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.card_content_others_buy a:active {
+	animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+.chart {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin: 0px auto;
+}
+
+.chart_main {
+	margin-top: 30px;
+	width: 800px;
+	height: 120px;
+	border: 1px solid rgb(5, 184, 255);
+	background-color: #FFF;
+	margin-left: 5px;
+}
+
+.chart_main_check input[type="checkbox"] {
+	float: left;
+	margin-top: 30px;
+	margin-left: 10px;
+	height: 50px;
+	width: 50px;
+}
+
+.chart_main_detail {
+	float: left;
+	line-height: 120px;
+	font-size: 20px;
+	margin-left: 50px;
+}
+
+.chart_main_img {
+	float: left;
+	width: 110px;
+	height: 110px;
+	margin-left: 50px;
+	margin-top: 5px;
+
+}
+
+.chart_main_img img {
+	display: inline;
+	width: 110px;
+	height: 110px;
+}
+
+.chart_main_num {
+	float: left;
+	width: 200px;
+	height: 120px;
+	margin-left: 40px;
+}
+
+.chart_main_num input {
+	float: left;
+	width: 170px;
+	margin-top: 30px;
+	height: 60px;
+	font-size: 40px;
+	text-align: center;
+}
+
+.chart_main_total {
+	display: block;
+	float: left;
+	width: 100px;
+	height: 120px;
+	line-height: 120px;
+	margin-left: 5px;
+}
+
+.chart_buy button {
+	margin: 20px;
+	float: left;
+	width: 200px;
+	height: 70px;
+	text-align: center;
+	background: #e23f50;
+	border: none;
+	display: inline;
+	font-size: 30px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.chart_buy button:active {
+	animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+/* animition  */
+@keyframes shake {
+
+	10%,
+	90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+
+	20%,
+	80% {
+		transform: translate3d(2px, 0, 0);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: translate3d(-4px, 0, 0);
+	}
+
+	40%,
+	60% {
+		transform: translate3d(4px, 0, 0);
+	}
+}
+input[type="submit"] {
+	width: 100%;
+	height: 40px;
+	border: none;
+	color: #fff;
+	background: #4284DB;
+	cursor: pointer;
+	border-radius: 5px;
+	font-size: 16px;
+	transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+	background-color: #29EAC4;
+  }
