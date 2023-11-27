@@ -13,13 +13,20 @@
             list-style: none;
             text-decoration: none;
             font-weight: 520;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            /* 'Times New Roman', Times, serif; */
+            /* * {
+  font-family: 
+  box-sizing: border-box;
+} */
         }
  
         #nav {
             width: 1470px;
             height: 72px;
-            background-color: rgb(247, 249, 250);
+            background-color:#4284DB; 
+            /* rgb(247, 249, 250); */
+
             border-radius: 20px;
             margin: 20px auto;
         }
@@ -39,7 +46,9 @@
         }
  
         #nav>ul>li>a:hover {
-            color: orange;
+            color:  #29EAC4;
+            /* orange; */
+
         }
  
         ul>span {
@@ -51,11 +60,12 @@
         }
  
         #nav>ul>li>.a1 {
-            color: #FF0036;
+            color: black;
         }
  
         #nav>ul>li>.a2 {
-            color: rgb(101, 198, 58);
+            color:black; 
+            /* rgb(101, 198, 58); */
         }
     </style>
 </head>
@@ -64,8 +74,11 @@
     <div id="nav">
         <ul>
             <li><a href="00_index.php" class="a1">Home</a></li><span>|</span>
+            <li></li><span></span>
+            <li></li><span>|</span>
             <li><a href="#" class="a2">Search package</a></li><span>|</span>
             <li><a href="#" class="a2">Package Status</a></li><span>|</span>
+
             <li><a href="#" class="a2">Package History</a></li><span>|</span>
             <!-- <li><a href="#"></a>dddd</li><span>|</span> -->
             <!-- <li><a href="#"></a>gggg</li><span>|</span> -->
