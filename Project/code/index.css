@@ -1,20 +1,21 @@
+/* Reset default margin and padding */
 * {
   margin: 0;
   padding: 0;
-  list-style: none;
-  text-decoration: none;
-  font-weight: bold;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
+/* Navigation bar */
 #nav {
-  width: 100%; /* 可根据需求调整宽度 */
+  width: 100%;
   height: 72px;
   background-color: #4284DB;
   border-radius: 20px;
   margin: 20px 0;
-  display: flex; /* 使用 Flexbox 布局 */
-  justify-content: flex-end; /* 将项目放置在右侧 */
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #nav>ul {
@@ -23,13 +24,14 @@
 }
 
 #nav>ul>li {
-  margin-right: 10px; /* 项目之间的间距，可根据需要调整 */
+  margin-right: 10px;
 }
 
 #nav>ul>li>a {
-  padding: 0 10px; /* 文字和边缘的间距，可根据需要调整 */
+  padding: 0 10px;
   font-size: 20px;
   color: black;
+  text-decoration: none; /* 添加这行代码 */
 }
 
 #nav>ul>li>a:hover {
@@ -44,3 +46,68 @@
   color: black;
 }
 
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #0077b6;
+  color: #fff;
+  transition: width 0.3s ease;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-top-right-radius: 20px; /* 右侧顶部圆角 */
+  border-bottom-right-radius: 20px; /* 右侧底部圆角 */
+}
+
+
+/* Collapsed state of sidebar */
+.sidebar.collapsed {
+  width: 0;
+  overflow: hidden;
+}
+
+/* Hide toggle button when sidebar is collapsed */
+.collapsed #toggleBtn {
+  display: none;
+}
+
+/* Style for sidebar links */
+.sidebar ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+/* Styling for main content area */
+.content {
+  padding: 20px;
+  margin-left: 250px;
+}
+
+/* Toggle button style */
+#toggleBtn {
+  background-color: #4284DB;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#toggleBtn:hover {
+  background-color: #29EAC4;
+}
