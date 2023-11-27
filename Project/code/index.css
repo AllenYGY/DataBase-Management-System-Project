@@ -1,64 +1,3 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  font-weight: bold;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-}
-
-#nav {
-  width: 1400px;
-  height: 72px;
-  background-color:#4284DB; 
-  border-radius: 20px;
-  margin: 20px auto;
-}
-
-#nav>ul>li {
-  float: left;
-  width: 175.75px;
-  height: 72px;
-  text-align: center;
-}
-
-#nav>ul>li>a {
-  text-align: center;
-  line-height: 72px;
-  font-size: 20px;
-  color: black;
-}
-
-#nav>ul>li>a:hover {
-  color:  #29EAC4;
-}
-
-ul>span {
-  float: left;
-  line-height: 72px;
-  color: rgb(225, 224, 224);
-  font-weight: 800;
-  font-size: 24px;
-}
-
-#nav>ul>li>.a1 {
-  color: black;
-}
-
-#nav>ul>li>.a2 {
-  color:black; 
-} */
-
-
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  font-weight: bold;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -75,13 +14,12 @@ ul>span {
   border-radius: 20px;
   margin: 20px 0;
   display: flex; /* 使用 Flexbox 布局 */
-  justify-content: space-between; /* 使项目之间均匀分布 */
-  align-items: center; /* 垂直居中对齐 */
-  padding: 0 20px; /* 可根据需要调整 */
+  justify-content: flex-end; /* 将项目放置在右侧 */
 }
 
 #nav>ul {
   display: flex;
+  align-items: center;
 }
 
 #nav>ul>li {
@@ -105,3 +43,4 @@ ul>span {
 #nav>ul>li>.a2 {
   color: black;
 }
+

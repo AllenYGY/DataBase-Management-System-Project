@@ -31,6 +31,7 @@
   padding: 0 10px;
   font-size: 20px;
   color: black;
+  text-decoration: none; /* 添加这行代码 */
 }
 
 #nav>ul>li>a:hover {
@@ -45,18 +46,21 @@
   color: black;
 }
 
-/* Sidebar */
+
 .sidebar {
   width: 250px;
   height: 100vh;
-  background-color: #333;
+  background-color: #0077b6;
   color: #fff;
   transition: width 0.3s ease;
   overflow-y: auto;
   position: fixed;
   top: 0;
   left: 0;
+  border-top-right-radius: 20px; /* 右侧顶部圆角 */
+  border-bottom-right-radius: 20px; /* 右侧底部圆角 */
 }
+
 
 /* Collapsed state of sidebar */
 .sidebar.collapsed {
