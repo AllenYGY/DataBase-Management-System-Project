@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#nav {
+  width: 100%; /* 可根据需求调整宽度 */
+  height: 72px;
+  background-color: #4284DB;
+  border-radius: 20px;
+  margin: 20px 0;
+  display: flex; /* 使用 Flexbox 布局 */
+  justify-content: flex-end; /* 将项目放置在右侧 */
+}
+
+#nav>ul {
+  display: flex;
+  align-items: center;
+}
+
+#nav>ul>li {
+  margin-right: 10px; /* 项目之间的间距，可根据需要调整 */
+}
+
+#nav>ul>li>a {
+  padding: 0 10px; /* 文字和边缘的间距，可根据需要调整 */
+  font-size: 20px;
+  color: black;
+}
+
+#nav>ul>li>a:hover {
+  color: #29EAC4;
+}
+
+#nav>ul>li>.a1 {
+  color: black;
+}
+
+#nav>ul>li>.a2 {
+  color: black;
+}
+
