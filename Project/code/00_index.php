@@ -63,14 +63,15 @@
 <body>
     <div id="nav">
         <ul>
-            <li><a href="#" class="a1">aaaa</a></li><span>|</span>
-            <li><a href="#" class="a1">bbbb</a></li><span>|</span>
-            <li><a href="#" class="a2">cccc</a></li><span>|</span>
-            <li><a href="#"></a>dddd</li><span>|</span>
-            <li><a href="#"></a>gggg</li><span>|</span>
-            <li><a href="#"></a>hhhh</li>
-            <li><a href="Project/code/01_login.php" class="a2">Login</a></li><span>|</span>
-            <li><a href="Project/code/02_register.php" class="a2">Sign Up</a></li><span>|</span>
+            <li><a href="00_index.php" class="a1">Home</a></li><span>|</span>
+            <li><a href="#" class="a2">Search package</a></li><span>|</span>
+            <li><a href="#" class="a2">Package Status</a></li><span>|</span>
+            <li><a href="#" class="a2">Package History</a></li><span>|</span>
+            <!-- <li><a href="#"></a>dddd</li><span>|</span> -->
+            <!-- <li><a href="#"></a>gggg</li><span>|</span> -->
+            <!-- <li><a href="#"></a>hhhh</li> -->
+            <li><a href="01_login.php" class="a2">Login</a></li><span>|</span>
+            <li><a href="02_register.php" class="a2">Sign Up</a></li><span>|</span>
             <!-- <li><a href="01_login.php"  class="a1"></a>Login</li><span>|</span> -->
             <!-- <li><a href="02_register.php" class="a1"></a>Sign up</li><span>|</span> -->
         </ul>
