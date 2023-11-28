@@ -1,5 +1,5 @@
 const sidebar = document.getElementById('sidebar');
-const nav = document.getElementById('nav');
+const nav = document.getElementById('navbar');
 const content = document.querySelector('.content');
 const toggleBtn = document.getElementById('toggleBtn');
 

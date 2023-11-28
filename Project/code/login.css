@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: url("http://stuweb.bcrab.cn/jpair40/Project/image/Background.png");
+  /* background-image: url("http://stuweb.bcrab.cn/jpair40/Project/image/Background.png"); */
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
