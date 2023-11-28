@@ -12,15 +12,16 @@
   <main>
     <nav class="main-menu">
       <h1>Courier Station</h1>
-      <img class="logo"
-        src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb"
-        alt="" />
+      <img class="logo" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb" alt="" />
       <ul>
+
         <li class="nav-item active">
           <b></b>
           <b></b>
           <a href="#">
-            <i class="fa fa-house nav-icon"></i>
+            <i class="fa fa-house nav-icon">
+              <!-- <img src="/Project/image/home.png" alt="home" /> -->
+            </i>
             <span class="nav-text">Home</span>
           </a>
         </li>
@@ -170,15 +171,11 @@
             <div class="personal-bests-container">
               <div class="best-item box-one">
                 <p>Opening Hours:<br> 7 am. - 10 pm.</p>
-                <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/242bbd8c-aaf8-4aee-a3e4-e0df62d1ab27"
-                  alt="" />
+                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/242bbd8c-aaf8-4aee-a3e4-e0df62d1ab27" alt="" />
               </div>
               <div class="best-item box-two">
                 <p>Crowded state:<br> Free </p>
-                <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a"
-                  alt="" />
+                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a" alt="" />
               </div>
               <!-- <div class="best-item box-three">
                 <p>Longest Roller-Skating: 2 hours</p>
@@ -197,8 +194,8 @@
             <i class="fa fa-bell nav-icon"></i>
             <i class="fa fa-message nav-icon"></i>
           </div>
-          <h4>AllenYGY</h4>
-          <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
+          <h4><span></h4>
+          <img src="/Project/image/user.png" alt="user" />
         </div>
 
         <!-- <div class="active-calories">
@@ -217,20 +214,16 @@
           </div>
         </div> -->
 
-
-
         <div class="friends-activity">
           <h1>Friends' Package</h1>
           <div class="card-container">
             <div class="card">
               <div class="card-user-info">
-                <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DJY.png" alt="SJY"/>
+                <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DJY.png" alt="SJY" />
                 <h2>SJY</h2>
               </div>
-              <img class="card-img"
-                src="/Project/image/pick.jpg"
-                alt="pickup" />
-                <p>I just recive a new package today. Please help me pick up the package.</p>
+              <img class="card-img" src="/Project/image/pick-2.jpg" alt="pickup" />
+              <p>I just recive a new package today. Please help me pick up the package.</p>
             </div>
 
             <div class="card card-two">
@@ -239,9 +232,7 @@
                 <h2>DSX</h2>
 
               </div>
-              <img class="card-img"
-              src="/Project/image/pick.jpg"
-              alt="pickup" />
+              <img class="card-img" src="/Project/image/pick-2.jpg" alt="pickup" />
               <p>I just recive a new package today. Please help me pick up the package.</p>
             </div>
           </div>
