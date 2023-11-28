@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Administrator</title>
   <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
   <main>
     <nav class="main-menu">
-      <h1>Courier Station</h1>
+      <h1>Administrator</h1>
       <img class="logo"
         src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb"
         alt="" />
@@ -71,19 +71,49 @@
           <h1>Activities</h1>
           <div class="activity-container">
 
-            <div class="image-container img-one">
-              <img src="/Project/image/pick.jpg" alt="pick" />
+            <div class="image-container img-five">
+              <img src="/Project/image/station.png" alt="station" />
               <div class="overlay">
-                <h3>Pick package</h3>
+                <h3>Courier</h3>
               </div>
             </div>
 
-            <div class="image-container img-two">
-              <img src="/Project/image/send.jpg" alt="send" />
+            <div class="image-container img-six">
+              <img src="/Project/image/station.png" alt="station" />
               <div class="overlay">
-                <h3>Send package</h3>
+                <h3>Courier</h3>
               </div>
             </div>
+
+            <div class="image-container img-seven">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
+            <div class="image-container img-eight">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
+
+            <div class="image-container img-nine">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
+            <div class="image-container img-ten">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
           </div>
         </div>
 

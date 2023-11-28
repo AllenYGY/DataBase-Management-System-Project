@@ -31,10 +31,10 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  /* background-image: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/5baf8325-ed69-40b0-b9d2-d8c5d2bde3b0); */
+  background-image: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/5baf8325-ed69-40b0-b9d2-d8c5d2bde3b0);
   background-repeat: no-repeat;
   background-size: cover;
-	background: #212140;
+	/* background: #212140; */
 }
 
 /* MAIN MENU */
@@ -192,51 +192,30 @@ main {
 }
 
 .img-one {
-  grid-area: 1 / 1 / 3 / 4;
+  grid-area: 1 / 1 / 2 / 2;
 }
 
 .img-two {
-  grid-area: 1 / 4 / 3 / 6;
+  grid-area: 2 / 1 / 3 / 2;
 }
 
 .img-three {
   display: block;
-  grid-area: 1 / 1 / 2 / 6;
+  grid-area: 1 / 2 / 3 / 4;
 }
 
 .img-four {
-  grid-area: 2 / 1 / 3 / 6;
+  grid-area: 1 / 4 / 2 / 5;
 }
 
-
 .img-five {
-  grid-area: 1 / 1 / 2 / 2;
+  grid-area: 1 / 5 / 2 / 6;
 }
 
 .img-six {
-  grid-area: 1 / 2 / 2 / 3;
-}
-
-.img-seven {
-  grid-area: 1 / 3 / 2 / 4;
-}
-
-.img-eight {
-  grid-area: 2 / 1 / 3 / 2;
-}
-
-.img-nine {
-  grid-area: 2 / 2 / 3 / 3;
-}
-
-.img-ten {
-  grid-area: 2 / 3 / 3 / 4;
-}
-
-/* .img-six {
   display: block;
   grid-area: 2 / 4 / 3 / 6;
-} */
+}
 
 .image-container {
   position: relative;

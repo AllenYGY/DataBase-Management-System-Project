@@ -26,6 +26,8 @@ if (mysqli_num_rows($result) > 0) {
 
 	header('Location:' . $url);
 } else {
-	echo "Opps! Your username or password or usertype is wrong!";
+	$url ="error.html";
+	header('Location:' . $url);
+	// echo "Opps! Your username or password or usertype is wrong!";
 	echo "<br><hr><br> Go back to <a href='01_login.php'>Login!</a>";
 }
