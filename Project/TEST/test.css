@@ -192,11 +192,11 @@ main {
 }
 
 .img-one {
-  grid-area: 1 / 1 / 2 / 2;
+  grid-area: 1 / 1 / 3 / 3;
 }
 
 .img-two {
-  grid-area: 2 / 1 / 3 / 2;
+  grid-area: 1 / 3 / 3 / 5;
 }
 
 .img-three {
