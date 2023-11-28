@@ -219,8 +219,8 @@
           <div class="card-container">
             <div class="card">
               <div class="card-user-info">
-                <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DJY.png" alt="SJY" />
-                <h2>SJY</h2>
+                <img src="/Project/image/user-2.png" alt="user1" />
+                <h2>User1</h2>
               </div>
               <img class="card-img" src="/Project/image/pick-2.jpg" alt="pickup" />
               <p>I just recive a new package today. Please help me pick up the package.</p>
@@ -228,8 +228,8 @@
 
             <div class="card card-two">
               <div class="card-user-info">
-                <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DSX.png" alt="DSX" />
-                <h2>DSX</h2>
+                <img src="/Project/image/user-1.png" alt="user2" />
+                <h2>User2</h2>
 
               </div>
               <img class="card-img" src="/Project/image/pick-2.jpg" alt="pickup" />
@@ -240,7 +240,7 @@
       </div>
     </section>
   </main>
-  <script src="test.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
