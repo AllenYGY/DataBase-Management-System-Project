@@ -197,7 +197,7 @@
               <img class="card-img"
                 src="/Project/image/pick.jpg"
                 alt="pickup" />
-                <p>I just recive a new package today. Please help me pick up the package.</p>
+                <p>I just recive a new package today.<br> Please help me pick up the package.</p>
             </div>
 
             <div class="card card-two">
@@ -209,7 +209,7 @@
               <img class="card-img"
               src="/Project/image/pick.jpg"
               alt="pickup" />
-              <p>I just recive a new package today. Please help me pick up the package.</p>
+              <p>I just recive a new package today.<br> Please help me pick up the package.</p>
             </div>
           </div>
         </div>
