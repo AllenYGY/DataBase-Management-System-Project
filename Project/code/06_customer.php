@@ -66,16 +66,7 @@
           <b></b>
           <a href="01_login.php">
             <i class="fa fa-sliders nav-icon"></i>
-            <span class="nav-text">Login</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <b></b>
-          <b></b>
-          <a href="02_register.php">
-            <i class="fa fa-sliders nav-icon"></i>
-            <span class="nav-text">Sign up</span>
+            <span class="nav-text">Log out</span>
           </a>
         </li>
 

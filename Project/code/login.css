@@ -57,7 +57,9 @@ select {
 input[type="text"]:focus,
 input[type="password"]:focus,
 select:focus {
-  border-bottom-color: #4284DB;
+  border-bottom-color:
+    /* #463a6e; */
+  #4284DB;
 }
 
 input[type="submit"] {
@@ -65,7 +67,9 @@ input[type="submit"] {
   height: 40px;
   border: none;
   color: #fff;
-  background: #4284DB;
+  background: 
+  /* #463a6e; */
+  #4284DB;
   cursor: pointer;
   border-radius: 5px;
   font-size: 16px;
@@ -84,8 +88,9 @@ input[type="submit"]:hover {
 }
 
 .register-link a {
-  color: #4284DB;
+  color: 
+  /* #463a6e; */
+  #4284DB;
   font-weight: bold;
   text-decoration: none;
 }
-
