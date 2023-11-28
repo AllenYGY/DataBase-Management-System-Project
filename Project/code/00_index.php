@@ -12,10 +12,10 @@
 <body>
   <div class="sidebar" id="sidebar">
     <ul>
-      <li><a href="#">Link 1</a></li>
-      <li><a href="#">Link 2</a></li>
-      <li><a href="#">Link 3</a></li>
-      <li><a href="#">Link 4</a></li>
+      <li class="icon"><a href="00_index.php"><img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DBM/home.png" alt="Home"/></a></li>
+      <li><a href="#">Search</a></li>
+      <li><a href="#">Status</a></li>
+      <li><a href="#">History</a></li>
     </ul>
   </div>
   <div id="nav" class="nav">
@@ -30,6 +30,21 @@
   </div>
   <div class="content">
     <h1>Main Content</h1>
+    <p>This is the main content area.</p>
+    <p>This is the main content area.</p>
+    <p>This is the main content area.</p>
+    <p>This is the main content area.</p>
+    <p>This is the main content area.</p>
+    <p>This is the main content area.</p>
+    <p>This is the main content area.</p>
+    <p>This is the main content area.</p>
+    <p>This is the main content area.</p>
+    <p>This is the main content area.</p>
+    <p>This is the main content area.</p>
+    <p>This is the main content area.</p>
+    <p>This is the main content area.</p>
+    <p>This is the main content area.</p>
+    <p>This is the main content area.</p>
     <p>This is the main content area.</p>
     <button id="toggleBtn">Toggle</button>
   </div>

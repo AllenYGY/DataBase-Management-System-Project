@@ -61,7 +61,6 @@
   border-bottom-right-radius: 20px; /* 右侧底部圆角 */
 }
 
-
 /* Collapsed state of sidebar */
 .sidebar.collapsed {
   width: 0;
@@ -88,6 +87,23 @@
   color: #fff;
   font-size: 18px;
 }
+
+/* 图片样式 */
+.sidebar img {
+  max-width: 20%; /* 图片最大宽度为其父元素宽度 */
+  height: auto; /* 高度自动调整，保持比例 */
+  display: none; /* 初始状态下隐藏图标 */
+  position: absolute; /* 绝对定位 */
+  top: 10px; /* 调整图标位置 */
+  left: 10px; /* 调整图标位置 */
+}
+
+/* 边栏展开时显示图标 */
+.sidebar:not(.collapsed) img {
+  display: block; /* 边栏展开时显示图标 */
+}
+
+
 
 /* Styling for main content area */
 .content {
