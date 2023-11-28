@@ -25,14 +25,6 @@
           </a>
         </li>
 
-        <li class="nav-item">
-          <b></b>
-          <b></b>
-          <a href="#">
-            <i class="fa fa-user nav-icon"></i>
-            <span class="nav-text">Profile</span>
-          </a>
-        </li>
 
         <li class="nav-item">
           <b></b>

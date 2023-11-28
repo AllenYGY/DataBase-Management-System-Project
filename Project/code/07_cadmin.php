@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Courier Manager</title>
   <link rel="stylesheet" href="index.css">
 </head>
 
@@ -109,7 +109,7 @@
                   <div class="participants">
                   </div>
                 </div>
-                <button class="btn">Pick</button>
+                <button class="btn">Search</button>
               </div>
 
               <div class="day-and-activity activity-two">
@@ -123,7 +123,7 @@
 
                   </div>
                 </div>
-                <button class="btn">Pick</button>
+                <button class="btn">Search</button>
               </div>
 
               <div class="day-and-activity activity-three">
@@ -137,7 +137,7 @@
 
                   </div>
                 </div>
-                <button class="btn">Pick</button>
+                <button class="btn">Search</button>
               </div>
 
               <div class="day-and-activity activity-four">

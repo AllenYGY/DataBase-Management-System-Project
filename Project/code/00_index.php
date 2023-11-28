@@ -26,14 +26,6 @@
           </a>
         </li>
 
-        <li class="nav-item">
-          <b></b>
-          <b></b>
-          <a href="#">
-            <i class="fa fa-user nav-icon"></i>
-            <span class="nav-text">Profile</span>
-          </a>
-        </li>
 
         <li class="nav-item">
           <b></b>
@@ -195,7 +187,10 @@
             <i class="fa fa-message nav-icon"></i>
           </div>
           <h4><span></h4>
-          <img src="/Project/image/user.png" alt="user" />
+          <a href="01_login.php">
+            <img src="/Project/image/user.png" alt="user" />
+          </a>
+
         </div>
 
         <!-- <div class="active-calories">
