@@ -79,17 +79,17 @@
           <h1>Activities</h1>
           <div class="activity-container">
 
-            <div class="image-container img-one">
-              <img src="/Project/image/pick.jpg" alt="pick" />
+            <div class="image-container img-three">
+              <img src="/Project/image/pickup.jpg" alt="pick" />
               <div class="overlay">
-                <h3>Pick package</h3>
+                <h3>Check package</h3>
               </div>
             </div>
 
-            <div class="image-container img-two">
-              <img src="/Project/image/send.jpg" alt="send" />
+            <div class="image-container img-four">
+              <img src="/Project/image/delivery.jpg" alt="send" />
               <div class="overlay">
-                <h3>Send package</h3>
+                <h3>Search delivery</h3>
               </div>
             </div>
           </div>
