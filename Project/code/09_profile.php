@@ -10,6 +10,8 @@
 </head>
 
 <body>
+
+
   <main>
     <nav class="main-menu">
       <h1>Courier Station</h1>
@@ -110,7 +112,7 @@
                   <td>123 Main Street, City, Country</td>
                 </tr>
               </table>
-              <button class="btn"> Change</button>
+              <button class="btn" id="openPop">Edit</button>
             </div>
           </div>
         </div>
@@ -155,7 +157,7 @@
                 <div class="activity">
                   <div class="participants">
                     <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/c61daa1c-5881-43f8-a50f-62be3d235daf" style="--i: 1" alt="" / <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/07d4fa6f-6559-4874-b912-3968fdfe4e5e" style="--i: 3" alt="" />
-                  <h2>FriendsA</h2>
+                    <h2>FriendsA</h2>
                   </div>
                 </div>
                 <button class="btn">Check</button>
@@ -177,7 +179,22 @@
             </div>
     </section>
   </main>
+
+  <div id="popup" class="popup">
+    <div class="pop-content">
+      <span class="close">&times;</span>
+      <!-- Your form or content for editing -->
+      <h2>Edit Profile</h2>
+      <form>
+        <label for="newName">Name:</label>
+        <input type="text" id="newName" name="newName">
+        <input type="submit" value="Save">
+      </form> 
+    </div>
+   </div>
   <script src="script.js"></script>
 </body>
 
 </html>
+
+ 
