@@ -92,11 +92,11 @@
                   <td>Allen YGY</td>
                 </tr>
                 <tr>
-                  <td><strong>Password: </strong></td>
+                  <td><strong>Password:        </strong></td>
                   <td>*********</td>
                 </tr>
                 <tr>
-                  <td><strong>Phone Number: </strong></td>
+                  <td><strong>Phone:       </strong></td>
                   <td>+1234567890</td>
                 </tr>
                 <tr>
