@@ -4,15 +4,17 @@
 }
 
 body {
-  /* background-image: url("http://stuweb.bcrab.cn/jpair40/Project/image/Background.png"); */
-  background-repeat: no-repeat;
-  background-size: cover;
+  font-family: "Nunito", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  margin: 0;
+  min-height: 100vh;
+  /* background-image: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/5baf8325-ed69-40b0-b9d2-d8c5d2bde3b0); */
+  background-repeat: no-repeat;
+  background-size: cover;
+	background: #212140;
 }
+
 
 .container {
   width: 400px;
