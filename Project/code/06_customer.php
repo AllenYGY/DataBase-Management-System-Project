@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>user page</title>
-  <link rel="stylesheet" href="index.css">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> -->
+  <link rel="stylesheet" href="profile.css">
 
 </head>
 
@@ -30,7 +29,7 @@
         <li class="nav-item">
           <b></b>
           <b></b>
-          <a href="#">
+          <a href="09_profile.php">
             <i class="fa fa-user nav-icon"></i>
             <span class="nav-text">Profile</span>
           </a>
