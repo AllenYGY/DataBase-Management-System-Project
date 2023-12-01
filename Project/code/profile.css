@@ -257,7 +257,7 @@ main {
 
 .left-bottom {
   display: grid;
-  grid-template-columns: 55% 40%;
+  grid-template-columns: 50% 40%;
   gap: 40px;
 }
 

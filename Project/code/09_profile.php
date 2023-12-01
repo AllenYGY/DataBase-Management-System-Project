@@ -15,16 +15,16 @@
       <h1>Courier Station</h1>
       <img class="logo" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb" alt="" />
       <ul>
-        <li class="nav-item active">
+        <li class="nav-item">
           <b></b>
           <b></b>
-          <a href="">
+          <a href="06_customer.php">
             <i class="fa fa-house nav-icon"></i>
             <span class="nav-text">Home</span>
           </a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item active">
           <b></b>
           <b></b>
           <a href="09_profile.php">
@@ -117,85 +117,6 @@
           </div>
         </div>
       </div>
-
-      <div class="left-bottom">
-          <div class="weekly-schedule">
-            <h1>Package status</h1>
-            <div class="calendar">
-              <div class="day-and-activity activity-one">
-                <div class="day">
-                  <h1>13</h1>
-                  <p>mon</p>
-                </div>
-                <div class="activity">
-                  <h2>Package</h2>
-                  <div class="participants">
-                  </div>
-                </div>
-                <button class="btn">Pick</button>
-              </div>
-
-              <div class="day-and-activity activity-two">
-                <div class="day">
-                  <h1>15</h1>
-                  <p>wed</p>
-                </div>
-                <div class="activity">
-                  <h2>Package</h2>
-                  <div class="participants">
-
-                  </div>
-                </div>
-                <button class="btn">Pick</button>
-              </div>
-
-              <div class="day-and-activity activity-three">
-                <div class="day">
-                  <h1>17</h1>
-                  <p>fri</p>
-                </div>
-                <div class="activity">
-                  <h2>Package</h2>
-                  <div class="participants">
-
-                  </div>
-                </div>
-                <button class="btn">Pick</button>
-              </div>
-
-              <div class="day-and-activity activity-four">
-                <div class="day">
-                  <h1>18</h1>
-                  <p>sat</p>
-                </div>
-                <div class="activity">
-                  <h2>Package</h2>
-                  <div class="participants">
-
-                  </div>
-                </div>
-                <button class="btn">Pick</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="personal-bests">
-            <h1>Express station status</h1>
-            <div class="personal-bests-container">
-              <div class="best-item box-one">
-                <p>Opening Hours:<br> 7 am. - 10 pm.</p>
-                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/242bbd8c-aaf8-4aee-a3e4-e0df62d1ab27" alt="" />
-              </div>
-              <div class="best-item box-two">
-                <p>Crowded state:<br> Free </p>
-                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
     </section>
   </main>
   <script src="script.js"></script>
