@@ -163,6 +163,12 @@
                   src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a"
                   alt="" />
               </div>
+              <div class="best-item box-three">
+                <p>Longest Roller-Skating: 2 hours</p>
+                <img
+                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e0ee8ffb-faa8-462a-b44d-0a18c1d9604c"
+                  alt="" />
+              </div>
             </div>
           </div>
         </div>
