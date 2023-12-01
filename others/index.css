@@ -1,0 +1,209 @@
+/* Reset default margin and padding */
+html, body {
+  height: 100%; /* 设置 body 和 html 元素的高度为 100% */
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navigation bar */
+.navbar {
+  width: 100%;
+  height: 72px;
+  background-color: #4284DB;
+  /* border-radius: 10px; */
+  border-top-right-radius: 0px;
+  /* 右侧顶部圆角 */
+  border-top-left-radius: 0px;
+  /* 左侧顶部圆角 */
+  border-bottom-right-radius: 10px;
+  /* 右侧底部圆角 */
+  border-bottom-left-radius: 10px;
+  /* 左侧底部圆角 */
+  margin: 0 0;
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 2;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul li {
+  margin-right: 10px;
+}
+
+.navbar ul li a {
+  padding: 0 30px;
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+}
+
+.navbar ul li a:hover {
+  color: #29EAC4;
+}
+
+.navbar ul li .a1,
+.navbar ul li .a2 {
+  color: black;
+}
+
+.navbar img {
+  max-width: 20%;
+  height: auto;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #219ebc;
+  color: #fff;
+  transition: width 0.3s ease;
+  overflow-y: auto;
+  position: fixed;
+  top: 62px;
+  /* 与导航栏高度相等，使边栏位于导航栏下方 */
+  left: 0;
+  border-top-right-radius: 10px;
+  /* 右侧顶部圆角 */
+  border-bottom-right-radius: 10px;
+  /* 右侧底部圆角 */
+  border-bottom-left-radius: 0px;
+  /* 右侧底部圆角 */
+  z-index: 3;
+}
+
+/* Collapsed state of sidebar */
+.sidebar.collapsed {
+  width: 0;
+  overflow: hidden;
+}
+
+/* Hide toggle button when sidebar is collapsed */
+.collapsed #toggleBtn {
+  display: none;
+}
+
+/* Style for sidebar links */
+.sidebar ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+/* 图片样式 */
+.sidebar img {
+  max-width: 20%;
+  height: auto;
+}
+
+/* 保持收起状态下图标大小不变 */
+.sidebar.collapsed img {
+  max-width: 100%;
+}
+
+
+/* 文字样式 */
+.sidebar .text {
+  display: block;
+  /* 初始状态下显示文字 */
+}
+
+/* 收起边栏时隐藏文字 */
+.sidebar.collapsed .text {
+  display: none;
+  /* 边栏收起时隐藏文字 */
+}
+
+/* Styling for main content area */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 30%;
+  /* 其他样式 */
+}
+
+.wrapper {
+  height: 100%; /* 设置容器高度为 100% */
+}
+
+.images-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 200px; /* 图片容器之间的间距 */
+}
+
+.image-container img {
+  max-width: 100%; /* 图片宽度最大为其父容器宽度 */
+  height: auto; /* 高度自适应 */
+  border: 2px solid #000; /* 边框样式，2像素宽度，黑色 */
+  border-radius: 8px; /* 圆角 */
+  padding: 10px; /* 可选：内边距 */
+}
+
+
+/* 让按钮出现在图片下方 */
+.image-container button {
+  display: block;
+  width: 85%; /* 拉长按钮至整个容器的宽度 */
+  margin-top: 10px; /* 可以根据需要调整按钮与图片的间距 */
+}
+
+/* Toggle button style */
+
+#normalBtn {
+  background-color: #4284DB;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  justify-content: left;
+}
+
+#normalBtn:hover {
+  background-color: #29EAC4;
+}
+
+#toggleBtn {
+  background-color: #4284DB;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  justify-content: left;
+}
+
+#toggleBtn:hover {
+  background-color: #29EAC4;
+}
