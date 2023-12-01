@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 弹窗样式 */
+    .form-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fefefe;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    /* 表单内容样式 */
+    .form-container {
+      max-width: 300px;
+    }
+
+    /* 按钮样式 */
+    .btn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    /* 取消按钮样式 */
+    .cancel {
+      background-color: #ccc;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="openFormButton">填写个人信息</button>
+
+  <!-- 弹窗表单 -->
+  <div id="formPopup" class="form-popup">
+    <form id="personalInfoForm" class="form-container">
+      <!-- 表单内容 -->
+      <h2>个人信息</h2>
+      <label for="name">姓名：</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">邮箱：</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">联系电话：</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <!-- 提交按钮 -->
+      <button type="submit" class="btn">提交</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">关闭</button>
+    </form>
+  </div>
+  <script>
+    // 获取按钮和弹窗元素
+    const openFormButton = document.getElementById('openFormButton');
+    const formPopup = document.getElementById('formPopup');
+
+    // 点击按钮时显示弹窗
+    openFormButton.addEventListener('click', function () {
+      formPopup.style.display = 'block';
+    });
+
+    // 关闭弹窗函数
+    function closeForm() {
+      formPopup.style.display = 'none';
+    }
+
+  </script>
+</body>
+
+</html>
