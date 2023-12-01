@@ -32,7 +32,7 @@
           <b></b>
           <b></b>
           <a href="#">
-            <i class="fa fa-calendar-check nav-icon"></i>
+            <i class="fa fa-search nav-icon"></i>
             <span class="nav-text">Search</span>
           </a>
         </li>
@@ -41,7 +41,7 @@
           <b></b>
           <b></b>
           <a href="#">
-            <i class="fa fa-person-running nav-icon"></i>
+            <i class="fa fa-history nav-icon"></i>
             <span class="nav-text">History</span>
           </a>
         </li>
@@ -59,8 +59,8 @@
           <b></b>
           <b></b>
           <a href="01_login.php">
-            <i class="fa fa-sliders nav-icon"></i>
-            <span class="nav-text">Login</span>
+            <i class="fa fa-sign-in nav-icon"></i>
+            <span class="nav-text">Sign in</span>
           </a>
         </li>
 
@@ -68,7 +68,7 @@
           <b></b>
           <b></b>
           <a href="02_register.php">
-            <i class="fa fa-sliders nav-icon"></i>
+            <i class="fa fa-user-plus nav-icon"></i>
             <span class="nav-text">Sign up</span>
           </a>
         </li>

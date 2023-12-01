@@ -37,7 +37,7 @@
           <b></b>
           <b></b>
           <a href="#">
-            <i class="fa fa-calendar-check nav-icon"></i>
+            <i class="fa fa-search nav-icon"></i>
             <span class="nav-text">Search</span>
           </a>
         </li>
@@ -45,9 +45,8 @@
         <li class="nav-item">
           <b></b>
           <b></b>
-          <a href="#">
-            <!-- <i class="fa fa-person-running nav-icon"></i> -->
-            <i class="fa fa-calendar-check nav-icon"></i>
+          <a href="11_viewHistory.php">
+            <i class="fa fa-history nav-icon"></i>
             <span class="nav-text">History</span>
           </a>
         </li>
@@ -65,7 +64,7 @@
           <b></b>
           <b></b>
           <a href="01_login.php">
-            <i class="fa fa-sliders nav-icon"></i>
+            <i class="fa fa-sign-out nav-icon"></i>
             <span class="nav-text">Log out</span>
           </a>
         </li>
@@ -78,7 +77,6 @@
         <div class="activities">
           <h1>User Information</h1>
           <div class="activity-container">
-
             <div class="image-container img-one">
               <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
               <div class="overlay">
@@ -92,11 +90,11 @@
                   <td>Allen YGY</td>
                 </tr>
                 <tr>
-                  <td><strong>Password:        </strong></td>
+                  <td><strong>Password: </strong></td>
                   <td>*********</td>
                 </tr>
                 <tr>
-                  <td><strong>Phone:       </strong></td>
+                  <td><strong>Phone: </strong></td>
                   <td>+1234567890</td>
                 </tr>
                 <tr>
@@ -116,7 +114,66 @@
             </div>
           </div>
         </div>
-      </div>
+        <div class="left-bottom">
+          <div class="weekly-schedule">
+            <h1>Your Frinds</h1>
+            <div class="calendar">
+              <div class="day-and-activity activity-one">
+                <div class="day">
+                  <h1>13</h1>
+                  <p>mon</p>
+                </div>
+                <div class="activity">
+                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                  <div class="participants">
+                  </div>
+                </div>
+                <button class="btn">Check</button>
+              </div>
+
+              <div class="day-and-activity activity-two">
+                <div class="day">
+                  <h1>15</h1>
+                  <p>wed</p>
+                </div>
+                <div class="activity">
+                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                  <div class="participants">
+                  </div>
+                </div>
+                <button class="btn">Check</button>
+              </div>
+
+              <div class="day-and-activity activity-three">
+                <div class="day">
+                  <h1>17</h1>
+                  <p>fri</p>
+                </div>
+                <div class="activity">
+                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                  <div class="participants">
+                  </div>
+                </div>
+                <button class="btn">Check</button>
+              </div>
+
+              <div class="day-and-activity activity-four">
+                <div class="day">
+                  <h1>18</h1>
+                  <p>sat</p>
+                </div>
+                <div class="activity">
+                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                  <div class="participants">
+                  </div>
+                </div>
+                <button class="btn">Check</button>
+              </div>
+            </div>
     </section>
   </main>
   <script src="script.js"></script>

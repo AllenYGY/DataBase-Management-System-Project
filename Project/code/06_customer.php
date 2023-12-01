@@ -20,7 +20,7 @@
         <li class="nav-item active">
           <b></b>
           <b></b>
-          <a href="#">
+          <a href="00_index.php">
             <i class="fa fa-house nav-icon"></i>
             <span class="nav-text">Home</span>
           </a>
@@ -39,7 +39,7 @@
           <b></b>
           <b></b>
           <a href="#">
-            <i class="fa fa-calendar-check nav-icon"></i>
+            <i class="fa fa-search nav-icon"></i>
             <span class="nav-text">Search</span>
           </a>
         </li>
@@ -47,8 +47,8 @@
         <li class="nav-item">
           <b></b>
           <b></b>
-          <a href="#">
-            <i class="fa fa-calendar-check nav-icon"></i>
+          <a href="11_viewHistory.php">
+            <i class="fa fa-history nav-icon"></i>
             <span class="nav-text">History</span>
           </a>
         </li>
@@ -66,7 +66,7 @@
           <b></b>
           <b></b>
           <a href="01_login.php">
-            <i class="fa fa-sliders nav-icon"></i>
+            <i class="fa fa-sign-out nav-icon"></i>
             <span class="nav-text">Log out</span>
           </a>
         </li>
