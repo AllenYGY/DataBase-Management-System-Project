@@ -475,38 +475,89 @@ main {
   align-self: flex-end;
 }
 
+/* css for popup */
 
-/* CSS for the modal */
-.popup {
-  display: none; /* Hide the modal by default */
-  position: fixed;
-  z-index: 1000000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+.container {
+  display: none;
+  z-index: 100;
+  width: 400px;
+  padding: 30px;
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-.pop-content {
-  background-color: #fefefe;
-  margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-.close {
-  color: #aaa;
-  float: right;
+#popup h1 {
+  text-align: center;
+  color: #4284DB;
   font-size: 28px;
-  font-weight: bold;
+  margin-bottom: 30px;
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 16px;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 16px;
+  color: #555;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+  border-bottom-color:
+    /* #463a6e; */
+  #4284DB;
+}
+
+input[type="submit"] {
+  width: 100%;
+  height: 40px;
+  border: none;
+  color: #fff;
+  background: 
+  /* #463a6e; */
+  #4284DB;
   cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #29EAC4;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+.register-link a {
+  color: 
+  /* #463a6e; */
+  #4284DB;
+  font-weight: bold;
+  text-decoration: none;
 }

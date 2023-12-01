@@ -49,15 +49,6 @@
         <li class="nav-item">
           <b></b>
           <b></b>
-          <a href="#">
-            <i class="fa fa-sliders nav-icon"></i>
-            <span class="nav-text">Settings</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <b></b>
-          <b></b>
           <a href="01_login.php">
             <i class="fa fa-sign-in nav-icon"></i>
             <span class="nav-text">Sign in</span>

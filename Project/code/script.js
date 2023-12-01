@@ -11,14 +11,30 @@ navItems.forEach((navItem, i) => {
 
 const openPop = document.getElementById("openPop");
 const popup = document.getElementById("popup");
+const mainElement = document.querySelector("main");
+const editElement =document.getElementById("editButton");
 
-// 点击按钮时显示弹窗
+let clickCount = 0;
+
 openPop.addEventListener("click", function () {
-  popup.style.display = "block";
-  console.log(popup);
+  clickCount++; // 每次点击增加点击次数
+
+  if (clickCount % 2 === 1) {
+    // 奇数次点击，打开弹出窗口
+    popup.style.display = "block";
+    // 修改 main 元素的 margin
+    mainElement.style.margin = "20px";
+    console.log("Popup opened");
+  } else {
+    // 偶数次点击，关闭弹出窗口
+    popup.style.display = "none";
+    // 恢复 main 元素的默认 margin
+    mainElement.style.margin = "40px";
+    console.log("Popup closed");
+  }
 });
 
-// 关闭弹窗函数
-function closeForm() {
-  popup.style.display = "none";
-}
+editElement.addEventListener("click",function () {
+    popup.style.display = "none";
+    mainElement.style.margin = "40px";
+});

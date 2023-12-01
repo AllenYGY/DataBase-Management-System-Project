@@ -47,18 +47,9 @@
         <li class="nav-item">
           <b></b>
           <b></b>
-          <a href="11_viewHistory.php">
+          <a href="10_viewHistory.php">
             <i class="fa fa-history nav-icon"></i>
             <span class="nav-text">History</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <b></b>
-          <b></b>
-          <a href="#">
-            <i class="fa fa-sliders nav-icon"></i>
-            <span class="nav-text">Settings</span>
           </a>
         </li>
 
@@ -86,7 +77,7 @@
               </div>
             </div>
             <div class="image-container info-one">
-              <table style="font-size: 28px; color: #333;">
+              <table style="font-size: 28px; color: #333;font-family:'Helvetica', Tahoma, Geneva, Verdana, sans-serif;">
                 <tr>
                   <td><strong>Name: </strong></td>
                   <td>Allen YGY</td>
@@ -114,6 +105,8 @@
               </table>
               <button class="btn" id="openPop">Edit</button>
             </div>
+
+
           </div>
         </div>
         <div class="left-bottom">
@@ -177,24 +170,63 @@
                 <button class="btn">Check</button>
               </div>
             </div>
+          </div>
+          <div class="personal-bests">
+            <h1>Trends</h1>
+            <div class="personal-bests-container">
+              <div class="best-item box-one">
+                <p>Opening Hours:<br> 7 am. - 10 pm.</p>
+                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/242bbd8c-aaf8-4aee-a3e4-e0df62d1ab27" alt="" />
+              </div>
+              <div class="best-item box-two">
+                <p>Crowded state:Free </p>
+                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a" alt="" />
+              </div>
+              <div class="best-item box-three">
+                <p>Longest Roller-Skating: 2 hours</p>
+                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e0ee8ffb-faa8-462a-b44d-0a18c1d9604c" alt="" />
+              </div>
+            </div>
+          </div>
     </section>
+
   </main>
 
-  <div id="popup" class="popup">
-    <div class="pop-content">
-      <span class="close">&times;</span>
-      <!-- Your form or content for editing -->
-      <h2>Edit Profile</h2>
-      <form>
-        <label for="newName">Name:</label>
-        <input type="text" id="newName" name="newName">
-        <input type="submit" value="Save">
-      </form> 
-    </div>
-   </div>
+  <!-- popup -->
+  <div id="popup" class="container">
+
+    <h1>Edit Profile</h1>
+    <form action="#" method="POST">
+      <div class="form-group">
+        <label for="usr">Username:</label>
+        <input type="text" id="usr" name="usr" placeholder="Edit your user name">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" id="pwd" name="pwd" placeholder="Edit your password">
+      </div>
+      <div class="form-group">
+        <label for="newPhone">Phone:</label>
+        <input type="text" id="newPhone" name="newPhone" placeholder="Edit your phone number">
+      </div>
+      <div class="form-group">
+        <label for="newMail">Mail:</label>
+        <input type="text" id="newMail" name="newMail" placeholder="Edit your mail">
+      </div>
+      <div class="form-group">
+        <label for="newGender">Gender:</label>
+        <input type="text" id="newGender" name="newGender" placeholder="Edit your Gender">
+      </div>
+      <div class="form-group">
+        <label for="newAdr">Address:</label>
+        <input type="text" id="newAdr" name="newAdr" placeholder="Edit your Address">
+      </div>
+
+      <input type="submit" value="Edit" id="editButton">
+    </form>
+  </div>
+
   <script src="script.js"></script>
 </body>
 
 </html>
-
- 

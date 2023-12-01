@@ -45,20 +45,12 @@
         <li class="nav-item active">
           <b></b>
           <b></b>
-          <a href="11_viewHistory.php">
+          <a href="10_viewHistory.php">
             <i class="fa fa-history nav-icon"></i>
             <span class="nav-text">History</span>
           </a>
         </li>
 
-        <li class="nav-item">
-          <b></b>
-          <b></b>
-          <a href="#">
-            <i class="fa fa-sliders nav-icon"></i>
-            <span class="nav-text">Settings</span>
-          </a>
-        </li>
 
         <li class="nav-item">
           <b></b>
