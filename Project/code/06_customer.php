@@ -48,7 +48,7 @@
           <b></b>
           <b></b>
           <a href="#">
-            <i class="fa fa-person-running nav-icon"></i>
+            <i class="fa fa-calendar-check nav-icon"></i>
             <span class="nav-text">History</span>
           </a>
         </li>
