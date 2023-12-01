@@ -38,7 +38,7 @@
         <li class="nav-item">
           <b></b>
           <b></b>
-          <a href="#">
+          <a href="14_search.php">
             <i class="fa fa-search nav-icon"></i>
             <span class="nav-text">Search</span>
           </a>
@@ -56,7 +56,7 @@
         <li class="nav-item">
           <b></b>
           <b></b>
-          <a href="#">
+          <a href="15_editProfile.php">
             <i class="fa fa-sliders nav-icon"></i>
             <span class="nav-text">Settings</span>
           </a>
