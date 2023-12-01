@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
@@ -166,15 +167,15 @@
                 <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/242bbd8c-aaf8-4aee-a3e4-e0df62d1ab27" alt="" />
               </div>
               <div class="best-item box-two">
-                <p>Crowded state:<br> Free </p>
+                <p>Crowded state:Free </p>
                 <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a" alt="" />
               </div>
-              <!-- <div class="best-item box-three">
+              <div class="best-item box-three">
                 <p>Longest Roller-Skating: 2 hours</p>
                 <img
                   src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e0ee8ffb-faa8-462a-b44d-0a18c1d9604c"
                   alt="" />
-              </div> -->
+              </div>
             </div>
           </div>
         </div>
