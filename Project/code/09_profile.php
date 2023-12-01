@@ -124,9 +124,9 @@
                   <p>mon</p>
                 </div>
                 <div class="activity">
-                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
-                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
                   <div class="participants">
+                    <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DSX.png" />
+                    <h2>大师兄</h2>
                   </div>
                 </div>
                 <button class="btn">Check</button>
@@ -138,10 +138,11 @@
                   <p>wed</p>
                 </div>
                 <div class="activity">
-                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
-                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
                   <div class="participants">
+                    <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DJY.png" />
+                    <h2>DJY</h2>
                   </div>
+
                 </div>
                 <button class="btn">Check</button>
               </div>
@@ -152,9 +153,9 @@
                   <p>fri</p>
                 </div>
                 <div class="activity">
-                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
-                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
                   <div class="participants">
+                    <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/c61daa1c-5881-43f8-a50f-62be3d235daf" style="--i: 1" alt="" / <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/07d4fa6f-6559-4874-b912-3968fdfe4e5e" style="--i: 3" alt="" />
+                  <h2>FriendsA</h2>
                   </div>
                 </div>
                 <button class="btn">Check</button>
@@ -166,9 +167,9 @@
                   <p>sat</p>
                 </div>
                 <div class="activity">
-                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
-                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
                   <div class="participants">
+                    <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/90affa88-8da0-40c8-abe7-f77ea355a9de" style="--i: 2" alt="" />
+                    <h2>FriendsB</h2>
                   </div>
                 </div>
                 <button class="btn">Check</button>
