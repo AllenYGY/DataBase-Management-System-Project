@@ -69,6 +69,41 @@
 
         <div class="left-bottom">
           <div class="weekly-schedule">
+            <h1>Search History</h1>
+            <div id="searchHistory" class="container">
+              <form action="#" method="get">
+                <div class="form-group">
+                  <!-- <label for="start_date">Start Date:</label> -->
+                  <!-- <h2>Start date</h2> -->
+                  Start date:
+                  &nbsp;
+                  &nbsp;
+                  &nbsp;
+                  <input type="date" id="start_date" name="start_date">
+                  <!-- <label for="end_date">End date:</label> -->
+                  <!-- <h2>End date</h2> -->
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  End date:
+                  &nbsp;
+                  &nbsp;
+                  &nbsp;
+                  <input type="date" id="end_date" name="end_date">
+                </div>
+                <!-- <div class="form-group">
+                  
+                </div> -->
+                <input type="submit" value="Search" id="Search">
+              </form>
+            </div>
+          </div>
+
+
+
+
+
+
+          <div class="weekly-schedule">
             <h1>Package History</h1>
             <div class="calendar">
               <div class="day-and-activity activity-one">
@@ -225,7 +260,7 @@
                 </div>
                 <button class="btn">Check</button>
               </div>
-              
+
             </div>
           </div>
         </div>

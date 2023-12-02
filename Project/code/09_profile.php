@@ -193,7 +193,6 @@
 
   <!-- popup -->
   <div id="popup" class="container">
-
     <h1>Edit Profile</h1>
     <form action="#" method="POST">
       <div class="form-group">
@@ -220,7 +219,6 @@
         <label for="newAdr">Address:</label>
         <input type="text" id="newAdr" name="newAdr" placeholder="Edit your Address">
       </div>
-
       <input type="submit" value="Edit" id="editButton">
     </form>
   </div>
