@@ -77,29 +77,28 @@
               </div>
             </div>
             <div class="image-container info-one">
-              <table style="font-size: 28px; color: #333;font-family:'Helvetica', Tahoma, Geneva, Verdana, sans-serif;">
+
+                  
+              <table style="font-size: 35px; color: #333;font-family:'Times New Roman', Times, serif">
                 <tr>
-                  <td><strong>Name: </strong></td>
+                  <td>Name:</td>
                   <td>Allen YGY</td>
                 </tr>
+
                 <tr>
-                  <td><strong>Password: </strong></td>
-                  <td>*********</td>
-                </tr>
-                <tr>
-                  <td><strong>Phone: </strong></td>
+                  <td>Phone:</td>
                   <td>+1234567890</td>
                 </tr>
                 <tr>
-                  <td><strong>Mail: </strong></td>
+                  <td>Mail: </td>
                   <td>s230026188@mail.uic.edu.cn</td>
                 </tr>
                 <tr>
-                  <td><strong>Gender: </strong></td>
+                  <td>Gender:</td>
                   <td>Male</td>
                 </tr>
                 <tr>
-                  <td><strong>Address: </strong></td>
+                  <td>Address:</td>
                   <td>123 Main Street, City, Country</td>
                 </tr>
               </table>
