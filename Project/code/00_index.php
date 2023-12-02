@@ -19,19 +19,34 @@
         <li class="nav-item active">
           <b></b>
           <b></b>
-          <a href="#">
-            <i class="fa fa-house nav-icon">
-              <!-- <img src="/Project/image/home.png" alt="home" /> -->
-            </i>
+          <a href="00_index.php">
+            <i class="fa fa-house nav-icon"></i>
             <span class="nav-text">Home</span>
           </a>
         </li>
 
+        <li class="nav-item">
+          <b></b>
+          <b></b>
+          <a href="01_login.php">
+            <i class="fa fa-get-pocket nav-icon"></i>
+            <span class="nav-text">Pick package</span>
+          </a>
+        </li>
 
         <li class="nav-item">
           <b></b>
           <b></b>
-          <a href="#">
+          <a href="01_login.php">
+            <i class="fa fa-gift nav-icon"></i>
+            <span class="nav-text">Send package</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <b></b>
+          <b></b>
+          <a href="01_login.php">
             <i class="fa fa-search nav-icon"></i>
             <span class="nav-text">Search</span>
           </a>
@@ -40,7 +55,7 @@
         <li class="nav-item">
           <b></b>
           <b></b>
-          <a href="#">
+          <a href="01_login.php">
             <i class="fa fa-history nav-icon"></i>
             <span class="nav-text">History</span>
           </a>
@@ -72,7 +87,6 @@
         <div class="activities">
           <h1>Activities</h1>
           <div class="activity-container">
-
             <div class="image-container img-one">
               <img src="/Project/image/pick.jpg" alt="pick" />
               <div class="overlay">
@@ -163,9 +177,7 @@
               </div>
               <div class="best-item box-three">
                 <p>Longest Roller-Skating: 2 hours</p>
-                <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e0ee8ffb-faa8-462a-b44d-0a18c1d9604c"
-                  alt="" />
+                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e0ee8ffb-faa8-462a-b44d-0a18c1d9604c" alt="" />
               </div>
             </div>
           </div>

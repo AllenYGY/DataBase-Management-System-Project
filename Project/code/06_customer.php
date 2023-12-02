@@ -20,7 +20,7 @@
         <li class="nav-item active">
           <b></b>
           <b></b>
-          <a href="00_index.php">
+          <a href="06_customer.php">
             <i class="fa fa-house nav-icon"></i>
             <span class="nav-text">Home</span>
           </a>
@@ -35,10 +35,29 @@
           </a>
         </li>
 
+
         <li class="nav-item">
           <b></b>
           <b></b>
-          <a href="14_search.php">
+          <a href="#">
+            <i class="fa fa-get-pocket nav-icon"></i>
+            <span class="nav-text">Pick package</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <b></b>
+          <b></b>
+          <a href="#">
+            <i class="fa fa-gift nav-icon"></i>
+            <span class="nav-text">Send package</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <b></b>
+          <b></b>
+          <a href="11_search.php">
             <i class="fa fa-search nav-icon"></i>
             <span class="nav-text">Search</span>
           </a>

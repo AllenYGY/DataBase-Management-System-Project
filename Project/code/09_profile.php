@@ -39,6 +39,24 @@
           <b></b>
           <b></b>
           <a href="#">
+            <i class="fa fa-get-pocket nav-icon"></i>
+            <span class="nav-text">Pick package</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <b></b>
+          <b></b>
+          <a href="#">
+            <i class="fa fa-gift nav-icon"></i>
+            <span class="nav-text">Send package</span>
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <b></b>
+          <b></b>
+          <a href="11_search.php">
             <i class="fa fa-search nav-icon"></i>
             <span class="nav-text">Search</span>
           </a>

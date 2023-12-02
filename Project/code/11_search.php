@@ -51,7 +51,8 @@
           </a>
         </li>
 
-        <li class="nav-item">
+
+        <li class="nav-item active">
           <b></b>
           <b></b>
           <a href="11_search.php">
@@ -60,7 +61,7 @@
           </a>
         </li>
 
-        <li class="nav-item active">
+        <li class="nav-item">
           <b></b>
           <b></b>
           <a href="10_viewHistory.php">
