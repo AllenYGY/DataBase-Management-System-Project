@@ -30,7 +30,7 @@
         </select>
       </div>
       <input type="submit" value="Login" id="button">
-      <p class="register-link">Haven't registered? <a href="02_register.php">Register here</a></p>
+      <p class="register-link">Haven't registered? <a href="02_register.php">Register here</a><br><a href="00_index.php">Home</a></p>
     </form>
   </div>
 </body>

@@ -33,7 +33,7 @@
         </select>
       </div>
       <input type="submit" value="Register" id="button">
-      <p class="login-link">Already have an account? <a href="01_login.php">Go to Login!</a></p>
+      <p class="register-link">Already have an account? <a href="01_login.php">Go to Login!</a><br><a href="00_index.php">Home</a></p>
     </form>
   </div>
 </body>
