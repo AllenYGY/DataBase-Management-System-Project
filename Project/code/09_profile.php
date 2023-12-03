@@ -10,8 +10,6 @@
 </head>
 
 <body>
-
-
   <main>
     <nav class="main-menu">
       <h1>Courier Station</h1>
@@ -25,7 +23,6 @@
             <span class="nav-text">Home</span>
           </a>
         </li>
-
         <li class="nav-item active">
           <b></b>
           <b></b>
@@ -206,9 +203,7 @@
             </div>
           </div>
     </section>
-
   </main>
-
   <!-- popup -->
   <div id="popup" class="container">
     <h1>Edit Profile</h1>
@@ -240,7 +235,6 @@
       <input type="submit" value="Edit" id="editButton">
     </form>
   </div>
-
   <script src="script.js"></script>
 </body>
 
