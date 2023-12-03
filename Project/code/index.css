@@ -39,7 +39,6 @@ body {
 }
 
 /* MAIN MENU */
-
 main {
   display: grid;
   grid-template-columns: 13% 87%;
@@ -696,11 +695,12 @@ main {
 /* Hide sections */
 
 .pickpart{
-  display:block;
-  z-index:100;
-  width:400px;
-  height: 800px;
-  background-color: tan;
+
+  display: grid;
+  background: #f6f7fb;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 .sendpart{
@@ -710,9 +710,6 @@ main {
   background-color: thistle;
 
 }
-
-
-
 
 
 
