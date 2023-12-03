@@ -85,6 +85,7 @@
     </nav>
 
     <section class="content">
+
       <div class="left-content">
         <div class="activities">
           <h1>Activities</h1>
@@ -231,6 +232,13 @@
           </div>
         </div>
       </div>
+
+      <div class="pickpart">box1</div>
+
+
+      <div class="sendpart">box2</div>
+
+
     </section>
   </main>
   <script src="script.js"></script>

@@ -693,6 +693,45 @@ main {
   padding: 0 5px 5px;
 }
 
+/* Hide sections */
+
+.pickpart{
+  display:block;
+  z-index:100;
+  width:400px;
+  height: 800px;
+  background-color: tan;
+}
+
+.sendpart{
+  display:none;
+  width:400px;
+  height:800px;
+  background-color: thistle;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1500px) {
   main {
     grid-template-columns: 6% 94%;
