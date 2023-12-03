@@ -53,19 +53,19 @@
           </a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" id="searchNavItem">
           <b></b>
           <b></b>
-          <a href="11_search.php">
+          <a href="#">
             <i class="fa fa-search nav-icon"></i>
             <span class="nav-text">Search</span>
           </a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" id="historyNavItem">
           <b></b>
           <b></b>
-          <a href="10_viewHistory.php">
+          <a href="#">
             <i class="fa fa-history nav-icon"></i>
             <span class="nav-text">History</span>
           </a>
@@ -186,7 +186,7 @@
         </div>
       </div>
 
-
+      <!-- Profile section -->
       <div class="profile">
         <div class="activities">
           <h1>Profile</h1>
@@ -284,6 +284,7 @@
         </div>
       </div>
 
+      <!-- pick section -->
       <div class="pickpart">
         <form action="#" method="POST">
           <div class="form-group">
@@ -356,6 +357,8 @@
         </div>
       </div>
 
+      <!-- send section -->
+
       <div class="sendpart">
         <form action="#" method="POST">
           <h1>Send package</h1><br>
@@ -390,8 +393,190 @@
           </div>
           <input type="submit" value="Send" id="sendButton">
         </form>
-
       </div>
+
+
+      <!-- Search & History section -->
+      <div class="search-hitorypart">
+        <div class="weekly-schedule">
+          <h1>Search History</h1>
+          <div id="searchHistory" class="container">
+            <form action="#" method="get">
+              <div class="form-group">
+                Start date:&nbsp;&nbsp;&nbsp;
+                <input type="date" id="start_date" name="start_date">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                End date:&nbsp;&nbsp;&nbsp;
+                <input type="date" id="end_date" name="end_date">
+              </div>
+              <input type="submit" value="Search" id="Search">
+            </form>
+          </div>
+        </div>
+        <div class="weekly-schedule">
+          <h1>Package History</h1>
+          <div class="calendar">
+            <div class="day-and-activity activity-one">
+              <div class="day">
+                <h1>13</h1>
+                <p>mon</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-two">
+              <div class="day">
+                <h1>15</h1>
+                <p>wed</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-three">
+              <div class="day">
+                <h1>17</h1>
+                <p>fri</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-four">
+              <div class="day">
+                <h1>18</h1>
+                <p>sat</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-two">
+              <div class="day">
+                <h1>15</h1>
+                <p>wed</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-three">
+              <div class="day">
+                <h1>17</h1>
+                <p>fri</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-three">
+              <div class="day">
+                <h1>17</h1>
+                <p>fri</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-three">
+              <div class="day">
+                <h1>17</h1>
+                <p>fri</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-three">
+              <div class="day">
+                <h1>17</h1>
+                <p>fri</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-three">
+              <div class="day">
+                <h1>17</h1>
+                <p>fri</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-three">
+              <div class="day">
+                <h1>17</h1>
+                <p>fri</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- left-content end  -->
 
       <!-- right-content -->
       <div class="right-content">

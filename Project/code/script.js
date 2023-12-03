@@ -39,6 +39,8 @@ const homeNavItem = document.getElementById("homeNavItem");
 const profileNavItem = document.getElementById("profileNavItem");
 const pickPackageNavItem = document.getElementById("pickPackageNavItem");
 const sendPackageNavItem = document.getElementById("sendPackageNavItem");
+const searchNavItem = document.getElementById("searchNavItem");
+const historyNavItem = document.getElementById("historyNavItem");
 
 const pickimg = document.getElementById('pickimg');
 const sendimg = document.getElementById('sendimg');
@@ -48,6 +50,7 @@ const profileElement = document.querySelector(".profile");
 const friendslistElement = document.querySelector(".friends-list");
 const pickPartElement = document.querySelector(".pickpart");
 const sendPartElement = document.querySelector(".sendpart");
+const searchhistoryElement = document.querySelector(".search-hitorypart");
 
 profileNavItem.addEventListener("click", () => {
   console.log("Profile Successfully!");
@@ -55,6 +58,7 @@ profileNavItem.addEventListener("click", () => {
   sendPartElement.style.display = "none";
   pickPartElement.style.display = "none";
   popup.style.display = "none";
+  searchhistoryElement.style.display="none";
 
   rightcontentElement.style.display = "grid";
   profileElement.style.display = "grid";
@@ -67,6 +71,7 @@ function handlePickClick() {
   sendPartElement.style.display = "none";
   profileElement.style.display = "none";
   popup.style.display = "none";
+  searchhistoryElement.style.display="none";
   homeNavItem.className = "nav-item";
 
   rightcontentElement.style.display = "grid";
@@ -87,6 +92,7 @@ function handleSendClick() {
   pickPartElement.style.display = "none";
   profileElement.style.display = "none";
   popup.style.display = "none";
+  searchhistoryElement.style.display="none";
   homeNavItem.className = "nav-item";
   
   rightcontentElement.style.display = "grid";
@@ -96,17 +102,23 @@ function handleSendClick() {
 }
 
 sendimg.addEventListener("click", handleSendClick);
-
 sendPackageNavItem.addEventListener("click", handleSendClick);
 
-
-// sendimg,sendPackageNavItem.addEventListener("click", () => {
-//   console.log("Send Successfully!");
-//   leftcontentElement.style.display = "none";
-//   pickPartElement.style.display = "none";
-//   profileElement.style.display = "none";
-//   popup.style.display = "none";
+// 发送操作的处理函数
+function handleSearchHistoryClick() {
+  console.log("SearchHistory Successfully!");
+  leftcontentElement.style.display = "none";
+  pickPartElement.style.display = "none";
+  profileElement.style.display = "none";
+  popup.style.display = "none";
+  sendPartElement.style.display = "none";
+  // homeNavItem.className = "nav-item";
   
-//   rightcontentElement.style.display = "grid";
-//   sendPartElement.style.display = "grid";
-// });
+  rightcontentElement.style.display = "grid";
+  searchhistoryElement.style.display="grid";
+  // searchNavItem.className = "nav-item active";
+
+}
+
+searchNavItem.addEventListener("click", handleSearchHistoryClick);
+historyNavItem.addEventListener("click", handleSearchHistoryClick);
