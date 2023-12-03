@@ -15,7 +15,7 @@
       <h1>Courier Station</h1>
       <img class="logo" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb" alt="" />
       <ul>
-        <li class="nav-item active">
+        <li class="nav-item active" id="homeNavItem">
           <b></b>
           <b></b>
           <a href="06_customer.php">
@@ -90,15 +90,15 @@
           <h1>Activities</h1>
           <div class="activity-container">
 
-            <div class="image-container img-one">
-              <img src="/Project/image/pick.jpg" alt="pick" />
+            <div class="image-container img-one" id="pickimg">
+              <img src="/Project/image/pick.jpg" alt="pick">
               <div class="overlay">
                 <h3>Pick package</h3>
               </div>
             </div>
 
-            <div class="image-container img-two">
-              <img src="/Project/image/send.jpg" alt="send" />
+            <div class="image-container img-two" id="sendimg">
+              <img src="/Project/image/send.jpg" alt="send">
               <div class="overlay">
                 <h3>Send package</h3>
               </div>
@@ -178,7 +178,7 @@
                 <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a" alt="" />
               </div>
               <div class="best-item box-three">
-                <p>Longest Roller-Skating: 2 hours</p>
+                <p></p>
                 <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e0ee8ffb-faa8-462a-b44d-0a18c1d9604c" alt="" />
               </div>
             </div>
@@ -282,24 +282,20 @@
             </div>
           </div>
         </div>
-
       </div>
-
-
-
 
       <div class="pickpart">
         <form action="#" method="POST">
           <div class="form-group">
             <h1>Pick package</h1><br>
-            <label for="usr">Package ID:</label>
-            <input type="text" id="pid" name="pid" placeholder="Enter your package ID">
+            <label for="packageid">Package ID:</label>
+            <input type="text" id="packageid" name="packageid" placeholder="Enter your package ID" autocomplete="username">
           </div>
           <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" id="pwd" name="pwd" placeholder="Edit your password">
+            <label for="pickpwd">Password:</label>
+            <input type="password" id="pickpwd" name="pickpwd" placeholder="Enter your password" autocomplete="current-password">
           </div>
-          <input type="submit" value="Pick" id="editButton">
+          <input type="submit" value="Pick" id="pickButton">
         </form>
         <div class="weekly-schedule">
           <h1>Package status</h1>
@@ -352,7 +348,6 @@
               <div class="activity">
                 <h2>Package</h2>
                 <div class="participants">
-
                 </div>
               </div>
               <button class="btn">Pick</button>
@@ -362,7 +357,40 @@
       </div>
 
       <div class="sendpart">
-        <h1>Send Package</h1>
+        <form action="#" method="POST">
+          <h1>Send package</h1><br>
+          <div class="form-group">
+            <label for="startadr">Mailing Address:</label>
+            <input type="text" id="startadr" name="startadr" placeholder="Enter Mailing Address">
+          </div>
+          <div class="form-group">
+            <label for="startadr">Reciving Address:</label>
+            <input type="text" id="endadr" name="endadr" placeholder="Enter Reciving Address">
+          </div>
+          <div class="form-group">
+            <label for="packagetype">Package Type:</label>
+            <select id="packagetype" name="packagetype">
+              <option value="fooditem">Food</option>
+              <option value="drugitem">Drug</option>
+              <option value="fileitem">File</option>
+              <option value="clothitem">cloth</option>
+              <option value="digitalitem">Digital Device</option>
+              <option value="fragileitem">Fragile</option>
+              <option value="freshitem">Fresh food</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="volumetype">Volume Type:</label>
+            <select id="volumetype" name="volumetype">
+              <option value="large">Large</option>
+              <option value="medium">Medium</option>
+              <option value="small">Small</option>
+            </select>
+          </div>
+          <input type="submit" value="Send" id="sendButton">
+        </form>
+
       </div>
 
       <!-- right-content -->
@@ -408,13 +436,12 @@
             <div class="image-icon-1">
               <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
             </div>
-
             <label for="usr">Username:</label>
-            <input type="text" id="usr" name="usr" placeholder="AllenYGY">
+            <input type="text" id="usr" name="usr" placeholder="AllenYGY" autocomplete="username">
           </div>
           <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" id="pwd" name="pwd" placeholder="Edit your password">
+            <label for="editpwd">Password:</label>
+            <input type="password" id="editpwd" name="editpwd" placeholder="Edit your password" autocomplete="current-password">
           </div>
           <div class="form-group">
             <label for="newPhone">Phone:</label>
@@ -433,7 +460,7 @@
             <input type="text" id="newAdr" name="newAdr" placeholder="Edit your Address">
           </div>
           <div class="form-group">
-            <label for="conPwd">Old Password:</label>
+            <label for="oldpwd">Old Password:</label>
             <input type="text" id="oldpwd" name="oldpwd" placeholder="Enter you password">
           </div>
           <input type="submit" value="Edit" id="editButton">
