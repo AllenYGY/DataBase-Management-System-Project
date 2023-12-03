@@ -49,7 +49,7 @@
             <span class="nav-text">Send package</span>
           </a>
         </li>
-        
+
         <li class="nav-item">
           <b></b>
           <b></b>
@@ -92,14 +92,11 @@
               </div>
             </div>
             <div class="image-container info-one">
-
-                  
               <table style="font-size: 35px; color: #333;font-family:'Times New Roman', Times, serif">
                 <tr>
                   <td>Name:</td>
                   <td>Allen YGY</td>
                 </tr>
-
                 <tr>
                   <td>Phone:</td>
                   <td>+1234567890</td>
@@ -119,8 +116,6 @@
               </table>
               <button class="btn" id="openPop">Edit</button>
             </div>
-
-
           </div>
         </div>
         <div class="left-bottom">
