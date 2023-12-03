@@ -145,7 +145,6 @@
                 <div class="activity">
                   <h2>Package</h2>
                   <div class="participants">
-
                   </div>
                 </div>
                 <button class="btn">Pick</button>
@@ -290,7 +289,76 @@
 
 
       <div class="pickpart">
-        <h1>Pick Package</h1>
+        <form action="#" method="POST">
+          <div class="form-group">
+            <h1>Pick package</h1><br>
+            <label for="usr">Package ID:</label>
+            <input type="text" id="pid" name="pid" placeholder="Enter your package ID">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" id="pwd" name="pwd" placeholder="Edit your password">
+          </div>
+          <input type="submit" value="Pick" id="editButton">
+        </form>
+        <div class="weekly-schedule">
+          <h1>Package status</h1>
+          <div class="calendar">
+            <div class="day-and-activity activity-one">
+              <div class="day">
+                <h1>13</h1>
+                <p>mon</p>
+              </div>
+              <div class="activity">
+                <h2>Package</h2>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Pick</button>
+            </div>
+
+            <div class="day-and-activity activity-two">
+              <div class="day">
+                <h1>15</h1>
+                <p>wed</p>
+              </div>
+              <div class="activity">
+                <h2>Package</h2>
+                <div class="participants">
+
+                </div>
+              </div>
+              <button class="btn">Pick</button>
+            </div>
+
+            <div class="day-and-activity activity-three">
+              <div class="day">
+                <h1>17</h1>
+                <p>fri</p>
+              </div>
+              <div class="activity">
+                <h2>Package</h2>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Pick</button>
+            </div>
+
+            <div class="day-and-activity activity-four">
+              <div class="day">
+                <h1>18</h1>
+                <p>sat</p>
+              </div>
+              <div class="activity">
+                <h2>Package</h2>
+                <div class="participants">
+
+                </div>
+              </div>
+              <button class="btn">Pick</button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="sendpart">
