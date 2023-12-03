@@ -10,36 +10,62 @@
 
 <body>
   <main>
-    <nav class="main-menu">
-      <h1>Administrator</h1>
-      <img class="logo"
-        src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb"
-        alt="" />
+  <nav class="main-menu">
+      <h1>Courier Administrator</h1>
+      <img class="logo" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb" alt="" />
       <ul>
-        <li class="nav-item active">
+        <li class="nav-item active" id="homeNavItem">
           <b></b>
           <b></b>
-          <a href="#">
+          <a href="06_customer.php">
             <i class="fa fa-house nav-icon"></i>
             <span class="nav-text">Home</span>
           </a>
         </li>
 
-
-        <li class="nav-item">
+        <li class="nav-item" id="profileNavItem">
           <b></b>
           <b></b>
           <a href="#">
-            <i class="fa fa-calendar-check nav-icon"></i>
+            <i class="fa fa-user nav-icon"></i>
+            <span class="nav-text">Profile</span>
+          </a>
+        </li>
+
+
+        <li class="nav-item" id="pickPackageNavItem">
+          <b></b>
+          <b></b>
+          <a href="#">
+            <i class="fa fa-get-pocket nav-icon"></i>
+            <span class="nav-text">Pick package</span>
+          </a>
+
+        </li>
+
+        <li class="nav-item" id="sendPackageNavItem">
+          <b></b>
+          <b></b>
+          <a href="#">
+            <i class="fa fa-gift nav-icon"></i>
+            <span class="nav-text">Send package</span>
+          </a>
+        </li>
+
+        <li class="nav-item" id="searchNavItem">
+          <b></b>
+          <b></b>
+          <a href="#">
+            <i class="fa fa-search nav-icon"></i>
             <span class="nav-text">Search</span>
           </a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" id="historyNavItem">
           <b></b>
           <b></b>
           <a href="#">
-            <i class="fa fa-person-running nav-icon"></i>
+            <i class="fa fa-history nav-icon"></i>
             <span class="nav-text">History</span>
           </a>
         </li>
@@ -47,17 +73,8 @@
         <li class="nav-item">
           <b></b>
           <b></b>
-          <a href="#">
-            <i class="fa fa-sliders nav-icon"></i>
-            <span class="nav-text">Settings</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <b></b>
-          <b></b>
           <a href="01_login.php">
-            <i class="fa fa-sliders nav-icon"></i>
+            <i class="fa fa-sign-out nav-icon"></i>
             <span class="nav-text">Log out</span>
           </a>
         </li>
