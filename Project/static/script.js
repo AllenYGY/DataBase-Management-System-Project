@@ -112,11 +112,9 @@ function handleSearchHistoryClick() {
   profileElement.style.display = "none";
   popup.style.display = "none";
   sendPartElement.style.display = "none";
-  // homeNavItem.className = "nav-item";
   
   rightcontentElement.style.display = "grid";
   searchhistoryElement.style.display="grid";
-  // searchNavItem.className = "nav-item active";
 
 }
 
