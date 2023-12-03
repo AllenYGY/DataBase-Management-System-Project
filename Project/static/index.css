@@ -346,7 +346,6 @@ main {
 
 
 /* Friends-list */
-
 .friends-list{
   display: grid;
   flex-direction: column;
@@ -598,6 +597,16 @@ main {
   padding: 20px;
   border-radius: 15px;
 }
+
+.search-hitorypart {
+  display: none;
+  background: #f6f7fb;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+
 
 /* RIGHT CONTENT */
 

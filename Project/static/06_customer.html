@@ -5,8 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>user page</title>
-  <link rel="icon"
-    href="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb">
   <link rel="stylesheet" href="index.css">
 
 </head>
@@ -15,14 +13,12 @@
   <main>
     <nav class="main-menu">
       <h1>Courier Station</h1>
-      <img class="logo"
-        src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb"
-        alt="" />
+      <img class="logo" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb" alt="" />
       <ul>
-        <li class="nav-item active">
+        <li class="nav-item active" id="homeNavItem">
           <b></b>
           <b></b>
-          <a href="06_customer.html">
+          <a href="06_customer.php">
             <i class="fa fa-house nav-icon"></i>
             <span class="nav-text">Home</span>
           </a>
@@ -57,19 +53,19 @@
           </a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" id="searchNavItem">
           <b></b>
           <b></b>
-          <a href="11_search.html">
+          <a href="#">
             <i class="fa fa-search nav-icon"></i>
             <span class="nav-text">Search</span>
           </a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" id="historyNavItem">
           <b></b>
           <b></b>
-          <a href="10_viewHistory.html">
+          <a href="#">
             <i class="fa fa-history nav-icon"></i>
             <span class="nav-text">History</span>
           </a>
@@ -78,7 +74,7 @@
         <li class="nav-item">
           <b></b>
           <b></b>
-          <a href="01_login.html">
+          <a href="01_login.php">
             <i class="fa fa-sign-out nav-icon"></i>
             <span class="nav-text">Log out</span>
           </a>
@@ -94,15 +90,15 @@
           <h1>Activities</h1>
           <div class="activity-container">
 
-            <div class="image-container img-one">
-              <img src="/Project/image/pick.jpg" alt="pick" />
+            <div class="image-container img-one" id="pickimg">
+              <img src="/Project/image/pick.jpg" alt="pick">
               <div class="overlay">
                 <h3>Pick package</h3>
               </div>
             </div>
 
-            <div class="image-container img-two">
-              <img src="/Project/image/send.jpg" alt="send" />
+            <div class="image-container img-two" id="sendimg">
+              <img src="/Project/image/send.jpg" alt="send">
               <div class="overlay">
                 <h3>Send package</h3>
               </div>
@@ -149,7 +145,6 @@
                 <div class="activity">
                   <h2>Package</h2>
                   <div class="participants">
-
                   </div>
                 </div>
                 <button class="btn">Pick</button>
@@ -176,33 +171,27 @@
             <div class="personal-bests-container">
               <div class="best-item box-one">
                 <p>Opening Hours:<br> 7 am. - 10 pm.</p>
-                <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/242bbd8c-aaf8-4aee-a3e4-e0df62d1ab27"
-                  alt="" />
+                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/242bbd8c-aaf8-4aee-a3e4-e0df62d1ab27" alt="" />
               </div>
               <div class="best-item box-two">
                 <p>Crowded state:<br> Free </p>
-                <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a"
-                  alt="" />
+                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a" alt="" />
               </div>
               <div class="best-item box-three">
-                <p>Longest Roller-Skating: 2 hours</p>
-                <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e0ee8ffb-faa8-462a-b44d-0a18c1d9604c"
-                  alt="" />
+                <p></p>
+                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e0ee8ffb-faa8-462a-b44d-0a18c1d9604c" alt="" />
               </div>
             </div>
           </div>
         </div>
       </div>
 
-
+      <!-- Profile section -->
       <div class="profile">
         <div class="activities">
           <h1>Profile</h1>
           <div class="activity-container">
-            <div class="image-icon" id="profileNavItem">
+            <div class="image-icon">
               <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
             </div>
             <div class="info-container info-one">
@@ -271,11 +260,7 @@
               </div>
               <div class="activity">
                 <div class="participants">
-                  <img
-                    src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/c61daa1c-5881-43f8-a50f-62be3d235daf"
-                    style="--i: 1" alt="" / <img
-                    src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/07d4fa6f-6559-4874-b912-3968fdfe4e5e"
-                    style="--i: 3" alt="" />
+                  <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/c61daa1c-5881-43f8-a50f-62be3d235daf" style="--i: 1" alt="" / <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/07d4fa6f-6559-4874-b912-3968fdfe4e5e" style="--i: 3" alt="" />
                   <h2>FriendsA</h2>
                 </div>
               </div>
@@ -289,9 +274,7 @@
               </div>
               <div class="activity">
                 <div class="participants">
-                  <img
-                    src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/90affa88-8da0-40c8-abe7-f77ea355a9de"
-                    style="--i: 2" alt="" />
+                  <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/90affa88-8da0-40c8-abe7-f77ea355a9de" style="--i: 2" alt="" />
                   <h2>FriendsB</h2>
                 </div>
               </div>
@@ -299,19 +282,301 @@
             </div>
           </div>
         </div>
-
       </div>
 
-
-
-
+      <!-- pick section -->
       <div class="pickpart">
-        <h1>Pick Package</h1>
+        <form action="#" method="POST">
+          <div class="form-group">
+            <h1>Pick package</h1><br>
+            <label for="packageid">Package ID:</label>
+            <input type="text" id="packageid" name="packageid" placeholder="Enter your package ID" autocomplete="username">
+          </div>
+          <div class="form-group">
+            <label for="pickpwd">Password:</label>
+            <input type="password" id="pickpwd" name="pickpwd" placeholder="Enter your password" autocomplete="current-password">
+          </div>
+          <input type="submit" value="Pick" id="pickButton">
+        </form>
+        <div class="weekly-schedule">
+          <h1>Package status</h1>
+          <div class="calendar">
+            <div class="day-and-activity activity-one">
+              <div class="day">
+                <h1>13</h1>
+                <p>mon</p>
+              </div>
+              <div class="activity">
+                <h2>Package</h2>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Pick</button>
+            </div>
+
+            <div class="day-and-activity activity-two">
+              <div class="day">
+                <h1>15</h1>
+                <p>wed</p>
+              </div>
+              <div class="activity">
+                <h2>Package</h2>
+                <div class="participants">
+
+                </div>
+              </div>
+              <button class="btn">Pick</button>
+            </div>
+
+            <div class="day-and-activity activity-three">
+              <div class="day">
+                <h1>17</h1>
+                <p>fri</p>
+              </div>
+              <div class="activity">
+                <h2>Package</h2>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Pick</button>
+            </div>
+
+            <div class="day-and-activity activity-four">
+              <div class="day">
+                <h1>18</h1>
+                <p>sat</p>
+              </div>
+              <div class="activity">
+                <h2>Package</h2>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Pick</button>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- send section -->
 
       <div class="sendpart">
-        <h1>Send Package</h1>
+        <form action="#" method="POST">
+          <h1>Send package</h1><br>
+          <div class="form-group">
+            <label for="startadr">Mailing Address:</label>
+            <input type="text" id="startadr" name="startadr" placeholder="Enter Mailing Address">
+          </div>
+          <div class="form-group">
+            <label for="startadr">Reciving Address:</label>
+            <input type="text" id="endadr" name="endadr" placeholder="Enter Reciving Address">
+          </div>
+          <div class="form-group">
+            <label for="packagetype">Package Type:</label>
+            <select id="packagetype" name="packagetype">
+              <option value="fooditem">Food</option>
+              <option value="drugitem">Drug</option>
+              <option value="fileitem">File</option>
+              <option value="clothitem">cloth</option>
+              <option value="digitalitem">Digital Device</option>
+              <option value="fragileitem">Fragile</option>
+              <option value="freshitem">Fresh food</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="volumetype">Volume Type:</label>
+            <select id="volumetype" name="volumetype">
+              <option value="large">Large</option>
+              <option value="medium">Medium</option>
+              <option value="small">Small</option>
+            </select>
+          </div>
+          <input type="submit" value="Send" id="sendButton">
+        </form>
       </div>
+
+
+      <!-- Search & History section -->
+      <div class="search-hitorypart">
+        <div class="weekly-schedule">
+          <h1>Search History</h1>
+          <div id="searchHistory" class="container">
+            <form action="#" method="get">
+              <div class="form-group">
+                Start date:&nbsp;&nbsp;&nbsp;
+                <input type="date" id="start_date" name="start_date">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                End date:&nbsp;&nbsp;&nbsp;
+                <input type="date" id="end_date" name="end_date">
+              </div>
+              <input type="submit" value="Search" id="Search">
+            </form>
+          </div>
+        </div>
+        <div class="weekly-schedule">
+          <h1>Package History</h1>
+          <div class="calendar">
+            <div class="day-and-activity activity-one">
+              <div class="day">
+                <h1>13</h1>
+                <p>mon</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-two">
+              <div class="day">
+                <h1>15</h1>
+                <p>wed</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-three">
+              <div class="day">
+                <h1>17</h1>
+                <p>fri</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-four">
+              <div class="day">
+                <h1>18</h1>
+                <p>sat</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-two">
+              <div class="day">
+                <h1>15</h1>
+                <p>wed</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-three">
+              <div class="day">
+                <h1>17</h1>
+                <p>fri</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-three">
+              <div class="day">
+                <h1>17</h1>
+                <p>fri</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-three">
+              <div class="day">
+                <h1>17</h1>
+                <p>fri</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-three">
+              <div class="day">
+                <h1>17</h1>
+                <p>fri</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-three">
+              <div class="day">
+                <h1>17</h1>
+                <p>fri</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+            <div class="day-and-activity activity-three">
+              <div class="day">
+                <h1>17</h1>
+                <p>fri</p>
+              </div>
+              <div class="activity">
+                <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
+                <div class="participants">
+                </div>
+              </div>
+              <button class="btn">Check</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- left-content end  -->
 
       <!-- right-content -->
       <div class="right-content">
@@ -357,11 +622,11 @@
               <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
             </div>
             <label for="usr">Username:</label>
-            <input type="text" id="usr" name="usr" placeholder="AllenYGY">
+            <input type="text" id="usr" name="usr" placeholder="AllenYGY" autocomplete="username">
           </div>
           <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" id="pwd" name="pwd" placeholder="Edit your password">
+            <label for="editpwd">Password:</label>
+            <input type="password" id="editpwd" name="editpwd" placeholder="Edit your password" autocomplete="current-password">
           </div>
           <div class="form-group">
             <label for="newPhone">Phone:</label>
@@ -380,7 +645,7 @@
             <input type="text" id="newAdr" name="newAdr" placeholder="Edit your Address">
           </div>
           <div class="form-group">
-            <label for="conPwd">Old Password:</label>
+            <label for="oldpwd">Old Password:</label>
             <input type="text" id="oldpwd" name="oldpwd" placeholder="Enter you password">
           </div>
           <input type="submit" value="Edit" id="editButton">
