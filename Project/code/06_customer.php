@@ -389,7 +389,7 @@ if (mysqli_num_rows($result) > 0) {
       <!-- send section -->
 
       <div class="sendpart">
-        <form action="10_send_profile.php" method="POST">
+        <form action="10_send_parcel.php" method="POST">
           <h1>Send package</h1><br>
           <div class="form-group">
             <label for="startadr">Mailing Address:</label>
@@ -424,6 +424,15 @@ if (mysqli_num_rows($result) > 0) {
               <option value="others">Others</option>
             </select>
           </div>
+          <div class="form-group">
+            <label for="weight">Weight: (Kg)</label>
+            <input type="number" step="0.01" id="weight" name="weight" placeholder="Enter weight in kilograms" required min="0" max="300">
+          </div>
+          <div class="form-group">
+            <label for="volume">Volume: (Litre)</label>
+            <input type="number" step="0.01" id="volume" name="volume" placeholder="Enter volume in litres" required min="0" max="300">
+          </div>
+
           <div class="form-group">
             <label for="volumetype">Volume Type:</label>
             <select id="volumetype" name="volumetype">

@@ -607,7 +607,6 @@ main {
 }
 
 
-
 /* RIGHT CONTENT */
 
 .right-content {
@@ -815,6 +814,7 @@ label {
 }
 
 input[type="text"],
+input[type="number"],
 input[type="password"],
 select {
   width: 100%;
@@ -828,6 +828,7 @@ select {
 }
 
 input[type="text"]:focus,
+input[type="number"]:focus,
 input[type="password"]:focus,
 select:focus {
   border-bottom-color:
