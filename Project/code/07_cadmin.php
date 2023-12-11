@@ -200,7 +200,7 @@ if (mysqli_num_rows($result1) > 0) {
                     <p>$day</p>
                   </div>
                   <div class='activity'>
-                    <h3> No packages need to be accept</h3>
+                    <h3> No packages need to be send</h3>
                   </div>
               </div>";
             }
@@ -370,60 +370,7 @@ if (mysqli_num_rows($result1) > 0) {
         </form>
         <div class="weekly-schedule">
           <h1>Package status</h1>
-          <?php
-          if (isset($deliveredData)) {
-            echo "<div class='calendar'>";
-            foreach ($deliveredData as $deliveredRow) {
-              $send_time = date('Y-m-d', strtotime($deliveredRow['send_time']));
-              $dayOfWeek = date('l', strtotime($send_time)); // 获取星期几
-              $send_time = date('d', strtotime($deliveredRow['send_time']));
-              switch ($dayOfWeek) {
-                case 'Monday':
-                  $cssClass = 'activity-one';
-                  $day = 'MON';
-                  break;
-                case 'Tuesday':
-                  $cssClass = 'activity-two';
-                  $day = 'TUE';
-                  break;
-                case 'Wednesday':
-                  $cssClass = 'activity-three';
-                  $day = 'WED';
-                  break;
-                case 'Thursday':
-                  $cssClass = 'activity-four';
-                  $day = 'THU';
-                  break;
-                case 'Friday':
-                  $cssClass = 'activity-five';
-                  $day = 'FRI';
-                  break;
-                case 'Saturday':
-                  $cssClass = 'activity-six';
-                  $day = 'SAT';
-                  break;
-                default:
-                  $cssClass = 'activity-seven';
-                  $day = 'SUN';
-                  break;
-              }
-              echo "              
-                <div class='day-and-activity $cssClass'>
-                    <div class='day'>
-                      <h1>$send_time</h1>
-                      <p>$day</p>
-                    </div>
-                    <div class='activity'>
-                      <h2>Package</h2>
-                      <div class='participants'> </div>
-                    </div>
-                  <button class='btn'>Send packages</button>
-                </div>
-              ";
-            }
-            echo "</div>";
-          }
-          ?>
+          
         </div>
       </div>
 
