@@ -17,7 +17,7 @@
         <li class="nav-item active" id="homeNavItem">
           <b></b>
           <b></b>
-          <a href="06_customer.php">
+          <a href="07_cadmin.php">
             <i class="fa fa-house nav-icon"></i>
             <span class="nav-text">Home</span>
           </a>

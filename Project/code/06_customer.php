@@ -51,20 +51,6 @@ if (mysqli_num_rows($result1) > 0) {
     }
   }
 }
-//   // 输出每种状态对应的多行数据
-//   if (isset($pendingData)) {
-//       // 处理 pending 状态的数据
-//       foreach ($pendingData as $pendingRow) {
-//           // 处理每行数据的逻辑
-//           // ...
-//       }
-//   }
-//   // 类似地处理其他状态的数据...
-
-// } else {
-//   // 如果没有找到符合条件的数据的处理逻辑
-//   // ...
-// }
 ?>
 
 
@@ -167,7 +153,65 @@ if (mysqli_num_rows($result1) > 0) {
         </div>
 
         <div class="left-bottom">
-          <div class="weekly-schedule">
+        <div class="weekly-schedule">
+          <h1>Package status</h1>
+          <?php
+          if (isset($deliveredData)) {
+            echo"<div class='calendar'>";
+            foreach ($deliveredData as $deliveredRow) {
+              $send_time = date('Y-m-d', strtotime($deliveredRow['send_time']));
+              $dayOfWeek = date('l', strtotime($send_time)); // 获取星期几
+              $send_time = date('d', strtotime($deliveredRow['send_time']));
+              $pID = $deliveredRow['parcelID'];
+              switch ($dayOfWeek) {
+                case 'Monday':
+                  $cssClass = 'activity-one';
+                  $day='MON';
+                  break;
+                case 'Tuesday':
+                  $cssClass = 'activity-two';
+                  $day='TUE';
+                  break;
+                case 'Wednesday':
+                  $cssClass = 'activity-three';
+                  $day='WED';
+                  break;
+                case 'Thursday':
+                  $cssClass = 'activity-four';
+                  $day='THU';
+                  break;
+                case 'Friday':
+                  $cssClass = 'activity-five';
+                  $day='FRI';
+                  break;
+                case 'Saturday':
+                  $cssClass = 'activity-six';
+                  $day='SAT';
+                  break;
+                default:
+                  $cssClass = 'activity-seven';
+                  $day='SUN';
+                  break;
+              }
+              echo "              
+                <div class='day-and-activity $cssClass'>
+                    <div class='day'>
+                      <h1>$send_time</h1>
+                      <p>$day</p>
+                    </div>
+                    <div class='activity'>
+                      <h2>Package ID:  $pID </h2>
+                      <div class='participants'> </div>
+                    </div>
+                  <button class='btn'>Pick</button>
+                </div>
+              ";
+            }
+            echo"</div>";
+          }
+          ?>
+        </div>
+          <!-- <div class="weekly-schedule">
             <h1>Package status</h1>
             <div class="calendar">
               <div class="day-and-activity activity-one">
@@ -224,7 +268,7 @@ if (mysqli_num_rows($result1) > 0) {
                 <button class="btn">Pick</button>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <div class="personal-bests">
             <h1>Express station status</h1>
@@ -360,41 +404,48 @@ if (mysqli_num_rows($result1) > 0) {
         </form>
         <div class="weekly-schedule">
           <h1>Package status</h1>
-
           <?php
-
           if (isset($deliveredData)) {
             echo"<div class='calendar'>";
             foreach ($deliveredData as $deliveredRow) {
               $send_time = date('Y-m-d', strtotime($deliveredRow['send_time']));
               $dayOfWeek = date('l', strtotime($send_time)); // 获取星期几
-
-              // 根据星期几应用不同的 CSS 类
+              $send_time = date('d', strtotime($deliveredRow['send_time']));
               switch ($dayOfWeek) {
                 case 'Monday':
                   $cssClass = 'activity-one';
+                  $day='MON';
                   break;
                 case 'Tuesday':
                   $cssClass = 'activity-two';
+                  $day='TUE';
                   break;
                 case 'Wednesday':
                   $cssClass = 'activity-three';
+                  $day='WED';
+                  break;
                 case 'Thursday':
                   $cssClass = 'activity-four';
+                  $day='THU';
+                  break;
                 case 'Friday':
                   $cssClass = 'activity-five';
+                  $day='FRI';
+                  break;
                 case 'Saturday':
                   $cssClass = 'activity-six';
+                  $day='SAT';
+                  break;
                 default:
                   $cssClass = 'activity-seven';
+                  $day='SUN';
                   break;
               }
-
               echo "              
                 <div class='day-and-activity $cssClass'>
                     <div class='day'>
                       <h1>$send_time</h1>
-                      <p>$dayOfWeek</p>
+                      <p>$day</p>
                     </div>
                     <div class='activity'>
                       <h2>Package</h2>
@@ -407,64 +458,8 @@ if (mysqli_num_rows($result1) > 0) {
             echo"</div>";
           }
           ?>
-
-          <!-- <div class="calendar">
-            <div class="day-and-activity activity-one">
-              <div class="day">
-                <h1>13</h1>
-                <p>mon</p>
-              </div>
-              <div class="activity">
-                <h2>Package</h2>
-                <div class="participants">
-                </div>
-              </div>
-              <button class="btn">Delivered</button>
-            </div>
-
-            <div class="day-and-activity activity-two">
-              <div class="day">
-                <h1>15</h1>
-                <p>wed</p>
-              </div>
-              <div class="activity">
-                <h2>Package</h2>
-                <div class="participants">
-
-                </div>
-              </div>
-              <button class="btn">Pick</button>
-            </div>
-
-            <div class="day-and-activity activity-three">
-              <div class="day">
-                <h1>17</h1>
-                <p>fri</p>
-              </div>
-              <div class="activity">
-                <h2>Package</h2>
-                <div class="participants">
-                </div>
-              </div>
-              <button class="btn">Pick</button>
-            </div>
-
-            <div class="day-and-activity activity-four">
-              <div class="day">
-                <h1>18</h1>
-                <p>sat</p>
-              </div>
-              <div class="activity">
-                <h2>Package</h2>
-                <div class="participants">
-                </div>
-              </div>
-              <button class="btn">Pick</button>
-            </div>
-          </div> -->
         </div>
       </div>
-
 
       <!-- send section -->
 
