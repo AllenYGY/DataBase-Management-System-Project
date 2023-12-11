@@ -23,35 +23,6 @@ if (mysqli_num_rows($result) > 0) {
   $mail = $row["umail"];
   $gender = $row["ugender"];
 }
-$sql_parcel = "SELECT * FROM parcel JOIN user  on parcel.cust_pick_uID=user.uID WHERE uname='$user' AND user.uID=parcel.cust_pick_uID";
-
-$result1 = mysqli_query($conn, $sql_parcel);
-
-if (mysqli_num_rows($result1) > 0) {
-  while ($row = mysqli_fetch_assoc($result1)) {
-    $status = $row["status"];
-
-    // 获取每一种状态对应的多行数据
-    switch ($status) {
-      case 'pending':
-        // 处理 pending 状态的多行数据
-        $pendingData[] = $row;
-        break;
-      case 'in_transit':
-        // 处理 in_transit 状态的多行数据
-        $inTransitData[] = $row;
-        break;
-      case 'delivered':
-        // 处理 delivered 状态的多行数据
-        $deliveredData[] = $row;
-        break;
-      default:
-        // 处理其他未知状态的多行数据
-        $otherData[] = $row;
-        break;
-    }
-  }
-}
 ?>
 
 
@@ -132,21 +103,21 @@ if (mysqli_num_rows($result1) > 0) {
     <section class="content">
 
       <div class="left-content">
-        <div class="activities">
+      <div class="activities">
           <h1>Activities</h1>
           <div class="activity-container">
 
-            <div class="image-container img-three" id="pickimg">
-              <img src="/Project/image/pickup.jpg" alt="pick">
+            <div class="image-container img-three">
+              <img src="/Project/image/pickup.jpg" alt="pick" />
               <div class="overlay">
-                <h3>Pick package</h3>
+                <h3>Check package</h3>
               </div>
             </div>
 
-            <div class="image-container img-four" id="sendimg">
-              <img src="/Project/image/delivery.jpg" alt="send">
+            <div class="image-container img-four">
+              <img src="/Project/image/delivery.jpg" alt="send" />
               <div class="overlay">
-                <h3>Send package</h3>
+                <h3>Search delivery</h3>
               </div>
             </div>
           </div>

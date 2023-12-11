@@ -23,7 +23,9 @@ if (mysqli_num_rows($result) > 0) {
   $mail = $row["umail"];
   $gender = $row["ugender"];
 }
-$sql_parcel = "SELECT * FROM parcel JOIN user WHERE uname='$user'";
+// $sql_parcel = "SELECT * FROM parcel JOIN user WHERE uname='$user'";
+$sql_parcel = "SELECT * FROM parcel JOIN user  on parcel.cust_pick_uID=user.uID WHERE uname='$user' AND user.uID=parcel.cust_pick_uID";
+
 $result1 = mysqli_query($conn, $sql_parcel);
 
 if (mysqli_num_rows($result1) > 0) {
