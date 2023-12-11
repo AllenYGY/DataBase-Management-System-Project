@@ -6,10 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>user page</title>
   <link rel="stylesheet" href="index.css">
-
 </head>
 
+<?php
+include "03_connectDB.php";
+session_start();
+$user = $_SESSION["user"];
+$usertype= $_SESSION["usertype"];
+
+$sql = "SELECT * from user WHERE uname='$user'";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+  $row = mysqli_fetch_assoc($result);
+  $name = $row["uname"];
+  $phone = $row["uphone"];
+  $mail = $row["umail"];
+  $gender = $row["ugender"];
+}
+
+?>
+
+
 <body>
+
   <main>
     <nav class="main-menu">
       <h1>Courier Station</h1>
@@ -198,19 +217,19 @@
               <table>
                 <tr>
                   <td>Name:</td>
-                  <td>Allen YGY</td>
+                  <td><?php echo $name; ?></td>
                 </tr>
                 <tr>
                   <td>Phone:</td>
-                  <td>1234567890</td>
+                  <td><?php echo $phone; ?></td>
                 </tr>
                 <tr>
                   <td>Mail: </td>
-                  <td>s230026188@mail.uic.edu.cn</td>
+                  <td><?php echo $mail; ?></td>
                 </tr>
                 <tr>
                   <td>Gender:</td>
-                  <td>Male</td>
+                  <td><?php echo $gender; ?></td>
                 </tr>
                 <tr>
                   <td>Address:</td>
@@ -356,6 +375,7 @@
           </div>
         </div>
       </div>
+
 
       <!-- send section -->
 
@@ -615,14 +635,14 @@
       </div>
 
       <div id="popup" class="edit-profile">
-        <form action="#" method="POST">
+        <form action="09_edit_profile.php" method="POST">
           <div class="form-group">
             <h1>Edit Profile</h1><br>
             <div class="image-icon-1">
               <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
             </div>
             <label for="usr">Username:</label>
-            <input type="text" id="usr" name="usr" placeholder="AllenYGY" autocomplete="username">
+            <input type="text" id="newusr" name="newusr" placeholder="<?php echo $name; ?>" autocomplete="username">
           </div>
           <div class="form-group">
             <label for="editpwd">Password:</label>
@@ -630,15 +650,15 @@
           </div>
           <div class="form-group">
             <label for="newPhone">Phone:</label>
-            <input type="text" id="newPhone" name="newPhone" placeholder="15377951778">
+            <input type="text" id="newPhone" name="newPhone" placeholder="<?php echo $phone; ?>">
           </div>
           <div class="form-group">
             <label for="newMail">Mail:</label>
-            <input type="text" id="newMail" name="newMail" placeholder="s230026188@mail.uic.edu.cn">
+            <input type="text" id="newMail" name="newMail" placeholder="<?php echo $mail; ?>">
           </div>
           <div class="form-group">
             <label for="newGender">Gender:</label>
-            <input type="text" id="newGender" name="newGender" placeholder="Male">
+            <input type="text" id="newGender" name="newGender" placeholder="<?php echo $gender; ?>">
           </div>
           <div class="form-group">
             <label for="newAdr">Address:</label>
@@ -651,8 +671,8 @@
           <input type="submit" value="Edit" id="editButton">
         </form>
       </div>
-
     </section>
+
   </main>
   <script src="script.js"></script>
 </body>

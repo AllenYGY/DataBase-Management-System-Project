@@ -6,7 +6,7 @@ $user	= $_POST["usr"];
 $pwd	= $_POST["pwd"];
 $usertype = $_POST["usrtype"];
 
-$sql = "SELECT username, password FROM user WHERE username = '$user' AND password = '$pwd' AND usertype='$usertype'";
+$sql = "SELECT uname, upassword FROM user WHERE uname = '$user' AND upassword = '$pwd' AND utype='$usertype'";
 
 $result = mysqli_query($conn, $sql);
 
