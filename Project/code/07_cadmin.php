@@ -13,6 +13,8 @@ include "03_connectDB.php";
 session_start();
 $user = $_SESSION["user"];
 $usertype = $_SESSION["usertype"];
+$url='01_login.php';
+if($usertype!='cadmin') header('Location:' . $url);
 
 $sql_user = "SELECT * from user WHERE uname='$user'";
 $result = mysqli_query($conn, $sql_user);
@@ -23,7 +25,8 @@ if (mysqli_num_rows($result) > 0) {
   $mail = $row["umail"];
   $gender = $row["ugender"];
 }
-$sql_parcel = "SELECT * FROM parcel JOIN user  on parcel.cust_pick_uID=user.uID WHERE uname='$user' AND user.uID=parcel.cust_pick_uID";
+
+$sql_parcel = "SELECT * FROM parcel JOIN user  on parcel.delivery_manageruID=user.uID WHERE uname='$user' AND user.uID=parcel.delivery_manageruID";
 
 $result1 = mysqli_query($conn, $sql_parcel);
 
@@ -163,6 +166,58 @@ if (mysqli_num_rows($result1) > 0) {
                 $dayOfWeek = date('l', strtotime($send_time)); // 获取星期几
                 $send_time = date('d', strtotime($deliveredRow['send_time']));
                 $pID = $deliveredRow['parcelID'];
+                switch ($dayOfWeek) {
+                  case 'Monday':
+                    $cssClass = 'activity-one';
+                    $day = 'MON';
+                    break;
+                  case 'Tuesday':
+                    $cssClass = 'activity-two';
+                    $day = 'TUE';
+                    break;
+                  case 'Wednesday':
+                    $cssClass = 'activity-three';
+                    $day = 'WED';
+                    break;
+                  case 'Thursday':
+                    $cssClass = 'activity-four';
+                    $day = 'THU';
+                    break;
+                  case 'Friday':
+                    $cssClass = 'activity-five';
+                    $day = 'FRI';
+                    break;
+                  case 'Saturday':
+                    $cssClass = 'activity-six';
+                    $day = 'SAT';
+                    break;
+                  default:
+                    $cssClass = 'activity-seven';
+                    $day = 'SUN';
+                    break;
+                }
+                echo "              
+                <div class='day-and-activity $cssClass'>
+                    <div class='day'>
+                      <h1>$send_time</h1>
+                      <p>$day</p>
+                    </div>
+                    <div class='activity'>
+                      <h2>Package ID:  $pID </h2>
+                      <div class='participants'> </div>
+                    </div>
+                  <button class='btn'>Pick</button>
+                </div>
+              ";
+              }
+              echo "</div>";
+            } if (isset($pendingData)) {
+              echo "<div class='calendar'>";
+              foreach ($pendingData as $pendingRow) {
+                $send_time = date('Y-m-d', strtotime($pendingRow['send_time']));
+                $dayOfWeek = date('l', strtotime($send_time)); // 获取星期几
+                $send_time = date('d', strtotime($pendingRow['send_time']));
+                $pID = $pendingRow['parcelID'];
                 switch ($dayOfWeek) {
                   case 'Monday':
                     $cssClass = 'activity-one';
