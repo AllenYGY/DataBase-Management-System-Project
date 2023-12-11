@@ -23,15 +23,47 @@ if (mysqli_num_rows($result) > 0) {
   $mail = $row["umail"];
   $gender = $row["ugender"];
 }
-// $sql_parcel = "SELECT * parcel user JOIN user 
-// WHERE uname='$user'";
+$sql_parcel = "SELECT * FROM parcel JOIN user WHERE uname='$user'";
+$result1 = mysqli_query($conn, $sql_parcel);
 
-// if (mysqli_num_rows($result) > 0) {
-//   $row = mysqli_fetch_assoc($result);
-//   $name = $row["uname"];
-//   $phone = $row["uphone"];
-//   $mail = $row["umail"];
-//   $gender = $row["ugender"];
+if (mysqli_num_rows($result1) > 0) {
+  while ($row = mysqli_fetch_assoc($result1)) {
+    $status = $row["status"];
+
+    // 获取每一种状态对应的多行数据
+    switch ($status) {
+      case 'pending':
+        // 处理 pending 状态的多行数据
+        $pendingData[] = $row;
+        break;
+      case 'in_transit':
+        // 处理 in_transit 状态的多行数据
+        $inTransitData[] = $row;
+        break;
+      case 'delivered':
+        // 处理 delivered 状态的多行数据
+        $deliveredData[] = $row;
+        break;
+      default:
+        // 处理其他未知状态的多行数据
+        $otherData[] = $row;
+        break;
+    }
+  }
+}
+//   // 输出每种状态对应的多行数据
+//   if (isset($pendingData)) {
+//       // 处理 pending 状态的数据
+//       foreach ($pendingData as $pendingRow) {
+//           // 处理每行数据的逻辑
+//           // ...
+//       }
+//   }
+//   // 类似地处理其他状态的数据...
+
+// } else {
+//   // 如果没有找到符合条件的数据的处理逻辑
+//   // ...
 // }
 ?>
 
@@ -328,6 +360,61 @@ if (mysqli_num_rows($result) > 0) {
         </form>
         <div class="weekly-schedule">
           <h1>Package status</h1>
+
+          <?php
+
+          if (isset($deliveredData)) {
+            foreach ($deliveredData as $deliveredRow) {
+              $send_time = date('Y-m-d', strtotime($deliveredRow['send_time']));
+              $dayOfWeek = date('l', strtotime($send_time)); // 获取星期几
+
+              // 根据星期几应用不同的 CSS 类
+              switch ($dayOfWeek) {
+                case 'Monday':
+                  $cssClass = 'activity-one';
+                  break;
+                case 'Tuesday':
+                  $cssClass = 'activity-two';
+                  break;
+                case 'Wednesday':
+                  $cssClass = 'activity-three';
+                case 'Thursday':
+                  $cssClass = 'activity-four';
+                case 'Friday':
+                  $cssClass = 'activity-five';
+                case 'Saturday':
+                  $cssClass = 'activity-six';
+                default:
+                  $cssClass = 'activity-seven';
+                  break;
+              }
+
+              // 输出带有不同 CSS 类的 HTML 结构
+              echo "
+      <div class='day-and-activity $cssClass'>
+        <div class='day'>
+          <h1>$send_time</h1>
+          <p>$dayOfWeek</p>
+        </div>
+        <div class='activity'>
+          <h2>Package</h2>
+          <div class='participants'>
+          </div>
+        </div>
+        <button class='btn'>Delivered</button>
+      </div>";
+            }
+          }
+
+
+
+
+
+
+
+
+          ?>
+
           <div class="calendar">
             <div class="day-and-activity activity-one">
               <div class="day">
@@ -339,7 +426,7 @@ if (mysqli_num_rows($result) > 0) {
                 <div class="participants">
                 </div>
               </div>
-              <button class="btn">Pick</button>
+              <button class="btn">Delivered</button>
             </div>
 
             <div class="day-and-activity activity-two">
@@ -525,7 +612,7 @@ if (mysqli_num_rows($result) > 0) {
               <button class="btn">Check</button>
             </div>
 
-            <div class="day-and-activity activity-two">
+            <div class="day-and-activity activity-five">
               <div class="day">
                 <h1>15</h1>
                 <p>wed</p>
@@ -539,7 +626,7 @@ if (mysqli_num_rows($result) > 0) {
               <button class="btn">Check</button>
             </div>
 
-            <div class="day-and-activity activity-three">
+            <div class="day-and-activity activity-six">
               <div class="day">
                 <h1>17</h1>
                 <p>fri</p>
@@ -553,7 +640,7 @@ if (mysqli_num_rows($result) > 0) {
               <button class="btn">Check</button>
             </div>
 
-            <div class="day-and-activity activity-three">
+            <div class="day-and-activity activity-seven">
               <div class="day">
                 <h1>17</h1>
                 <p>fri</p>
@@ -635,7 +722,7 @@ if (mysqli_num_rows($result) > 0) {
             <i class="fa fa-bell nav-icon"></i>
             <i class="fa fa-message nav-icon"></i>
           </div>
-          <h4>AllenYGY</h4>
+          <h4><?php echo $name; ?></h4>
           <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
         </div>
 

@@ -405,6 +405,21 @@ main {
   background-image: linear-gradient(240deg, #fc8ebe 0%, #fce5c3 100%);
 }
 
+.activity-five {
+  background-color: rgba(255, 183, 94, 0.7);
+  background-image: linear-gradient(240deg, #ffdde1 0%, #ffeead 100%);
+}
+
+.activity-six {
+  background-color: #b2ebf2;
+  background-image: linear-gradient(240deg, #64b5f6 0%, #b2ebf2 100%);
+}
+
+.activity-seven {
+  background-color: #c9c9ff;
+  background-image: linear-gradient(240deg, #b3ccff 0%, #e6ccff 100%);
+}
+
 .day {
   display: flex;
   flex-direction: column;
