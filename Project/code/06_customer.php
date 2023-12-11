@@ -14,8 +14,8 @@ session_start();
 $user = $_SESSION["user"];
 $usertype= $_SESSION["usertype"];
 
-$sql = "SELECT * from user WHERE uname='$user'";
-$result = mysqli_query($conn, $sql);
+$sql_user = "SELECT * from user WHERE uname='$user'";
+$result = mysqli_query($conn, $sql_user);
 if (mysqli_num_rows($result) > 0) {
   $row = mysqli_fetch_assoc($result);
   $name = $row["uname"];
@@ -23,7 +23,16 @@ if (mysqli_num_rows($result) > 0) {
   $mail = $row["umail"];
   $gender = $row["ugender"];
 }
+// $sql_parcel = "SELECT * parcel user JOIN user 
+// WHERE uname='$user'";
 
+// if (mysqli_num_rows($result) > 0) {
+//   $row = mysqli_fetch_assoc($result);
+//   $name = $row["uname"];
+//   $phone = $row["uphone"];
+//   $mail = $row["umail"];
+//   $gender = $row["ugender"];
+// }
 ?>
 
 
@@ -251,7 +260,7 @@ if (mysqli_num_rows($result) > 0) {
               <div class="activity">
                 <div class="participants">
                   <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DSX.png" />
-                  <h2>大师兄</h2>
+                  <h2>DSX</h2>
                 </div>
               </div>
               <button class="btn">Check</button>
