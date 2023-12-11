@@ -189,7 +189,8 @@ if (mysqli_num_rows($result1) > 0) {
                   <div class='activity'>
                     <h3>$pendingCount packages need to be send</h3>
                   </div>
-                <button class='btn'>Send</button>
+                  <a href='12_send_package.php?action=send' class='btn'>Send</a>
+
                 </div>";
             } else {
               echo 
