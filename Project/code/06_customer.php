@@ -364,6 +364,7 @@ if (mysqli_num_rows($result1) > 0) {
           <?php
 
           if (isset($deliveredData)) {
+            echo"<div class='calendar'>";
             foreach ($deliveredData as $deliveredRow) {
               $send_time = date('Y-m-d', strtotime($deliveredRow['send_time']));
               $dayOfWeek = date('l', strtotime($send_time)); // 获取星期几
@@ -389,33 +390,25 @@ if (mysqli_num_rows($result1) > 0) {
                   break;
               }
 
-              // 输出带有不同 CSS 类的 HTML 结构
-              echo "
-      <div class='day-and-activity $cssClass'>
-        <div class='day'>
-          <h1>$send_time</h1>
-          <p>$dayOfWeek</p>
-        </div>
-        <div class='activity'>
-          <h2>Package</h2>
-          <div class='participants'>
-          </div>
-        </div>
-        <button class='btn'>Delivered</button>
-      </div>";
+              echo "              
+                <div class='day-and-activity $cssClass'>
+                    <div class='day'>
+                      <h1>$send_time</h1>
+                      <p>$dayOfWeek</p>
+                    </div>
+                    <div class='activity'>
+                      <h2>Package</h2>
+                      <div class='participants'> </div>
+                    </div>
+                  <button class='btn'>Go to pick</button>
+                </div>
+              ";
             }
+            echo"</div>";
           }
-
-
-
-
-
-
-
-
           ?>
 
-          <div class="calendar">
+          <!-- <div class="calendar">
             <div class="day-and-activity activity-one">
               <div class="day">
                 <h1>13</h1>
@@ -468,7 +461,7 @@ if (mysqli_num_rows($result1) > 0) {
               </div>
               <button class="btn">Pick</button>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
 
