@@ -83,26 +83,6 @@ if (mysqli_num_rows($result1) > 0) {
           </a>
         </li>
 
-
-        <li class="nav-item" id="pickPackageNavItem">
-          <b></b>
-          <b></b>
-          <a href="#">
-            <i class="fa fa-get-pocket nav-icon"></i>
-            <span class="nav-text">Pick package</span>
-          </a>
-
-        </li>
-
-        <li class="nav-item" id="sendPackageNavItem">
-          <b></b>
-          <b></b>
-          <a href="#">
-            <i class="fa fa-gift nav-icon"></i>
-            <span class="nav-text">Send package</span>
-          </a>
-        </li>
-
         <li class="nav-item" id="searchNavItem">
           <b></b>
           <b></b>
@@ -140,14 +120,16 @@ if (mysqli_num_rows($result1) > 0) {
           <h1>Activities</h1>
           <div class="activity-container">
 
-            <div class="image-container img-three" id="pickimg">
+            <div class="image-container img-three"> 
+              <!-- id="pickimg"> -->
               <img src="/Project/image/pickup.jpg" alt="pick">
               <div class="overlay">
                 <h3>Pick package</h3>
               </div>
             </div>
 
-            <div class="image-container img-four" id="sendimg">
+            <div class="image-container img-four" > 
+              <!-- id="sendimg"> -->
               <img src="/Project/image/delivery.jpg" alt="send">
               <div class="overlay">
                 <h3>Send package</h3>
@@ -766,6 +748,6 @@ if (mysqli_num_rows($result1) > 0) {
     </section>
 
   </main>
-  <script src="script.js"></script>
+  <script src="script_cadmin.js"></script>
 </body>
 </html>
