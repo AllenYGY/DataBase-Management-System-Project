@@ -13,8 +13,8 @@ include "03_connectDB.php";
 session_start();
 $user = $_SESSION["user"];
 $usertype = $_SESSION["usertype"];
-$url='01_login.php';
-if($usertype!='cadmin') header('Location:' . $url);
+$url = '01_login.php';
+if ($usertype != 'cadmin') header('Location:' . $url);
 
 $sql_user = "SELECT * from user WHERE uname='$user'";
 $result = mysqli_query($conn, $sql_user);
@@ -29,28 +29,29 @@ if (mysqli_num_rows($result) > 0) {
 $sql_parcel = "SELECT * FROM parcel JOIN user  on parcel.delivery_manageruID=user.uID WHERE uname='$user' AND user.uID=parcel.delivery_manageruID";
 
 $result1 = mysqli_query($conn, $sql_parcel);
-
+$pendingCount = 0;
+$inTransitCount = 0;
+$deliveredCount = 0;
+$otherCount = 0;
 if (mysqli_num_rows($result1) > 0) {
   while ($row = mysqli_fetch_assoc($result1)) {
     $status = $row["status"];
-
-    // 获取每一种状态对应的多行数据
     switch ($status) {
       case 'pending':
-        // 处理 pending 状态的多行数据
         $pendingData[] = $row;
+        $pendingCount++;
         break;
       case 'in_transit':
-        // 处理 in_transit 状态的多行数据
         $inTransitData[] = $row;
+        $inTransitCount++;
         break;
       case 'delivered':
-        // 处理 delivered 状态的多行数据
         $deliveredData[] = $row;
+        $deliveredCount++;
         break;
       default:
-        // 处理其他未知状态的多行数据
         $otherData[] = $row;
+        $otherCount++;
         break;
     }
   }
@@ -157,113 +158,100 @@ if (mysqli_num_rows($result1) > 0) {
 
         <div class="left-bottom">
           <div class="weekly-schedule">
-            <h1>Package status</h1>
+          <!-- <h1>Package Status</h1> -->
             <?php
+              echo "<div class='calendar'>";
+              echo "<h3>Wating for accept</h3>";
+              $date = date('d');
+              $day = date('D');
             if (isset($deliveredData)) {
-              echo "<div class='calendar'>";
-              foreach ($deliveredData as $deliveredRow) {
-                $send_time = date('Y-m-d', strtotime($deliveredRow['send_time']));
-                $dayOfWeek = date('l', strtotime($send_time)); // 获取星期几
-                $send_time = date('d', strtotime($deliveredRow['send_time']));
-                $pID = $deliveredRow['parcelID'];
-                switch ($dayOfWeek) {
-                  case 'Monday':
-                    $cssClass = 'activity-one';
-                    $day = 'MON';
-                    break;
-                  case 'Tuesday':
-                    $cssClass = 'activity-two';
-                    $day = 'TUE';
-                    break;
-                  case 'Wednesday':
-                    $cssClass = 'activity-three';
-                    $day = 'WED';
-                    break;
-                  case 'Thursday':
-                    $cssClass = 'activity-four';
-                    $day = 'THU';
-                    break;
-                  case 'Friday':
-                    $cssClass = 'activity-five';
-                    $day = 'FRI';
-                    break;
-                  case 'Saturday':
-                    $cssClass = 'activity-six';
-                    $day = 'SAT';
-                    break;
-                  default:
-                    $cssClass = 'activity-seven';
-                    $day = 'SUN';
-                    break;
-                }
                 echo "              
-                <div class='day-and-activity $cssClass'>
+                <div class='day-and-activity activity-one'>
                     <div class='day'>
-                      <h1>$send_time</h1>
+                      <h1>$date</h1>
                       <p>$day</p>
                     </div>
                     <div class='activity'>
-                      <h2>Package ID:  $pID </h2>
-                      <div class='participants'> </div>
+                          <h3>$deliveredCount  packages need to be accept</h3>
                     </div>
-                  <button class='btn'>Pick</button>
+                  <button class='btn'>Accept</button>
+                </div>
+              ";
+              }else{
+                echo "              
+                <div class='day-and-activity activity-one'>
+                    <div class='day'>
+                      <h1>$date</h1>
+                      <p>$day</p>
+                    </div>
+                    <div class='activity'>
+                          <h3>NO packages need to be accept</h3>
+                    </div>
                 </div>
               ";
               }
               echo "</div>";
-            } if (isset($pendingData)) {
-              echo "<div class='calendar'>";
-              foreach ($pendingData as $pendingRow) {
-                $send_time = date('Y-m-d', strtotime($pendingRow['send_time']));
-                $dayOfWeek = date('l', strtotime($send_time)); // 获取星期几
-                $send_time = date('d', strtotime($pendingRow['send_time']));
-                $pID = $pendingRow['parcelID'];
-                switch ($dayOfWeek) {
-                  case 'Monday':
-                    $cssClass = 'activity-one';
-                    $day = 'MON';
-                    break;
-                  case 'Tuesday':
-                    $cssClass = 'activity-two';
-                    $day = 'TUE';
-                    break;
-                  case 'Wednesday':
-                    $cssClass = 'activity-three';
-                    $day = 'WED';
-                    break;
-                  case 'Thursday':
-                    $cssClass = 'activity-four';
-                    $day = 'THU';
-                    break;
-                  case 'Friday':
-                    $cssClass = 'activity-five';
-                    $day = 'FRI';
-                    break;
-                  case 'Saturday':
-                    $cssClass = 'activity-six';
-                    $day = 'SAT';
-                    break;
-                  default:
-                    $cssClass = 'activity-seven';
-                    $day = 'SUN';
-                    break;
-                }
-                echo "              
-                <div class='day-and-activity $cssClass'>
-                    <div class='day'>
-                      <h1>$send_time</h1>
-                      <p>$day</p>
-                    </div>
-                    <div class='activity'>
-                      <h2>Package ID:  $pID </h2>
-                      <div class='participants'> </div>
-                    </div>
-                  <button class='btn'>Pick</button>
-                </div>
-              ";
-              }
-              echo "</div>";
+
+          // confirm send
+            echo "<div class='calendar'>";
+            echo "<h3>Wating for send</h3>";
+            $date = date('d');
+            $day = date('D');
+            if (isset($pendingData)) {
+              echo
+              "<div class='day-and-activity activity-two'>
+                  <div class='day'>
+                    <h1>$date</h1>
+                    <p>$day</p>
+                  </div>
+                  <div class='activity'>
+                    <h3>$pendingCount packages need to be send</h3>
+                  </div>
+                <button class='btn'>Send</button>
+                </div>";
+            } else {
+              echo 
+              "<div class='day-and-activity activity-two'>
+                  <div class='day'>
+                    <h1>$date</h1>
+                    <p>$day</p>
+                  </div>
+                  <div class='activity'>
+                    <h3> No packages need to be accept</h3>
+                  </div>
+              </div>";
             }
+            echo  "</div>";
+            // Delivery
+            echo "<div class='calendar'>";
+            echo "<h3>Deliverying</h3>";
+            $date = date('d');
+            $day = date('D');
+            if (isset($deliveredData)) {
+              echo
+              "<div class='day-and-activity activity-three'>
+                  <div class='day'>
+                    <h1>$date</h1>
+                    <p>$day</p>
+                  </div>
+                  <div class='activity'>
+                    <h3>$$deliveredCount packages is deliverying</h3>
+                  </div>
+                <button class='btn'>Check</button>
+                </div>";
+            } else {
+              echo 
+              "<div class='day-and-activity activity-three'>
+                  <div class='day'>
+                    <h1>$date</h1>
+                    <p>$day</p>
+                  </div>
+                  <div class='activity'>
+                    <h3> No packages is deliverying</h3>
+                  </div>
+              </div>";
+            }
+            echo  "</div>";
             ?>
           </div>
           <div class="personal-bests">
@@ -285,7 +273,6 @@ if (mysqli_num_rows($result1) > 0) {
           </div>
         </div>
       </div>
-
       <!-- Profile section -->
       <div class="profile">
         <div class="activities">
@@ -447,7 +434,7 @@ if (mysqli_num_rows($result1) > 0) {
                       <h2>Package</h2>
                       <div class='participants'> </div>
                     </div>
-                  <button class='btn'>Go to pick</button>
+                  <button class='btn'>Send packages</button>
                 </div>
               ";
             }
@@ -515,6 +502,10 @@ if (mysqli_num_rows($result1) > 0) {
           <input type="submit" value="Send" id="sendButton">
         </form>
       </div>
+
+
+
+
 
 
       <!-- Search & History section -->
@@ -777,5 +768,4 @@ if (mysqli_num_rows($result1) > 0) {
   </main>
   <script src="script.js"></script>
 </body>
-
 </html>
