@@ -12,7 +12,7 @@
 include "03_connectDB.php";
 session_start();
 $user = $_SESSION["user"];
-$usertype= $_SESSION["usertype"];
+$usertype = $_SESSION["usertype"];
 
 $sql_user = "SELECT * from user WHERE uname='$user'";
 $result = mysqli_query($conn, $sql_user);
@@ -389,15 +389,27 @@ if (mysqli_num_rows($result) > 0) {
       <!-- send section -->
 
       <div class="sendpart">
-        <form action="#" method="POST">
+        <form action="10_send_profile.php" method="POST">
           <h1>Send package</h1><br>
           <div class="form-group">
             <label for="startadr">Mailing Address:</label>
-            <input type="text" id="startadr" name="startadr" placeholder="Enter Mailing Address">
+            <select id="startadr" name="startadr">
+              <option value="UIC">UIC</option>
+              <option value="JNU">JNU</option>
+              <option value="SYSU">SYSU</option>
+              <option value="BNU">BNU</option>
+              <option value="BIT">BIT</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="startadr">Reciving Address:</label>
-            <input type="text" id="endadr" name="endadr" placeholder="Enter Reciving Address">
+            <select id="endadr" name="endadr">
+              <option value="UIC">UIC</option>
+              <option value="JNU">JNU</option>
+              <option value="SYSU">SYSU</option>
+              <option value="BNU">BNU</option>
+              <option value="BIT">BIT</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="packagetype">Package Type:</label>
