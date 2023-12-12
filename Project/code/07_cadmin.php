@@ -142,6 +142,7 @@ if (mysqli_num_rows($result1) > 0) {
           <div class="weekly-schedule">
           <!-- <h1>Package Status</h1> -->
             <?php
+              date_default_timezone_set('Asia/Shanghai');
               echo "<div class='calendar'>";
               echo "<h3>Wating for accept</h3>";
               $date = date('d');
