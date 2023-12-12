@@ -23,7 +23,7 @@ if (mysqli_num_rows($result) > 0) {
   $mail = $row["umail"];
   $gender = $row["ugender"];
 }
-// $sql_parcel = "SELECT * FROM parcel JOIN user WHERE uname='$user'";
+
 $sql_parcel = "SELECT * FROM parcel JOIN user  on parcel.cust_pick_uID=user.uID WHERE uname='$user' AND user.uID=parcel.cust_pick_uID";
 
 $result1 = mysqli_query($conn, $sql_parcel);
@@ -36,8 +36,6 @@ $otherCount = 0;
 if (mysqli_num_rows($result1) > 0) {
   while ($row = mysqli_fetch_assoc($result1)) {
     $status = $row["status"];
-
-    // 获取每一种状态对应的多行数据
     switch ($status) {
       case 'pending':
         $pendingData[] = $row;
