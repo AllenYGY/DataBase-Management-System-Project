@@ -27,6 +27,8 @@ if (mysqli_num_rows($result) > 0) {
   $userID = $row["uID"];
 }
 
+$_SESSION["userID"]=$userID;
+
 $sql_parcel = "SELECT * FROM parcel 
                JOIN user on parcel.delivery_manageruID=user.uID 
                WHERE uname='$user' AND user.uID=parcel.delivery_manageruID";
@@ -66,10 +68,7 @@ if (mysqli_num_rows($result5) > 0) {
     }
   }
 }
-
-
 ?>
-
 
 <body>
   <main>
@@ -169,7 +168,7 @@ if (mysqli_num_rows($result5) > 0) {
                     <div class='activity'>
                           <h3>$inTransitCount packages need to be accept</h3>
                     </div>
-                  <button class='btn'>Accept</button>
+                    <a href='13_accept_package.php?action=send' class='btn'>Accept</a>
                 </div>
               ";
             } else {
@@ -203,7 +202,6 @@ if (mysqli_num_rows($result5) > 0) {
                     <h3>$pendingCount packages need to be send</h3>
                   </div>
                   <a href='12_send_package.php?action=send' class='btn'>Send</a>
-
                 </div>";
             } else {
               echo
