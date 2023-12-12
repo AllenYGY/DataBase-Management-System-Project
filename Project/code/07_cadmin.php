@@ -24,6 +24,7 @@ if (mysqli_num_rows($result) > 0) {
   $phone = $row["uphone"];
   $mail = $row["umail"];
   $gender = $row["ugender"];
+  $userID = $row["uID"];
 }
 
 $sql_parcel = "SELECT * FROM parcel JOIN user  on parcel.delivery_manageruID=user.uID WHERE uname='$user' AND user.uID=parcel.delivery_manageruID";
@@ -43,25 +44,29 @@ if (mysqli_num_rows($result1) > 0) {
         $pendingData[] = $row;
         $pendingCount++;
         break;
+    }
+  }
+}
+
+$sql_parcel = "SELECT * FROM parcel 
+                      JOIN courier_station ON send_address=csaddress 
+                      JOIN delivery_manager USING(csID) 
+              WHERE delivery_manager.uID='$userID'";
+$result5 = mysqli_query($conn, $sql_parcel);
+
+if (mysqli_num_rows($result1) > 0) {
+  while ($row = mysqli_fetch_assoc($result5)) {
+    $status = $row["status"];
+    switch ($status) {
       case 'in_transit':
         $inTransitData[] = $row;
         $inTransitCount++;
         break;
-      case 'arrived':
-        $arrivedData[] = $row;
-        $arrivedCount++;
-        break;
-      case 'delivered':
-        $deliveredData[] = $row;
-        $deliveredCount++;
-        break;
-      default:
-        $otherData[] = $row;
-        $otherCount++;
-        break;
     }
   }
 }
+
+
 ?>
 
 
@@ -153,7 +158,7 @@ if (mysqli_num_rows($result1) > 0) {
             echo "<h1>Wating for accept</h1>";
             $date = date('d');
             $day = date('D');
-            if (isset($deliveredData)) {
+            if (isset($inTransitCount)) {
               echo "              
                 <div class='day-and-activity activity-one'>
                     <div class='day'>
@@ -161,7 +166,7 @@ if (mysqli_num_rows($result1) > 0) {
                       <p>$day</p>
                     </div>
                     <div class='activity'>
-                          <h3>$deliveredCount  packages need to be accept</h3>
+                          <h3>$inTransitCount packages need to be accept</h3>
                     </div>
                   <button class='btn'>Accept</button>
                 </div>
@@ -174,7 +179,7 @@ if (mysqli_num_rows($result1) > 0) {
                       <p>$day</p>
                     </div>
                     <div class='activity'>
-                          <h3>NO packages need to be accept</h3>
+                          <h3>No packages need to be accept</h3>
                     </div>
                 </div>
               ";
@@ -212,36 +217,7 @@ if (mysqli_num_rows($result1) > 0) {
               </div>";
             }
             echo  "</div>";
-            // Delivery
-            // echo "<div class='calendar'>";
-            // echo "<h3>Deliverying</h3>";
-            // $date = date('d');
-            // $day = date('D');
-            // if (isset($deliveredData)) {
-            //   echo
-            //   "<div class='day-and-activity activity-three'>
-            //       <div class='day'>
-            //         <h1>$date</h1>
-            //         <p>$day</p>
-            //       </div>
-            //       <div class='activity'>
-            //         <h3>$$deliveredCount packages is deliverying</h3>
-            //       </div>
-            //     <button class='btn'>Check</button>
-            //     </div>";
-            // } else {
-            //   echo
-            //   "<div class='day-and-activity activity-three'>
-            //       <div class='day'>
-            //         <h1>$date</h1>
-            //         <p>$day</p>
-            //       </div>
-            //       <div class='activity'>
-            //         <h3> No packages is deliverying</h3>
-            //       </div>
-            //   </div>";
-            // }
-            // echo  "</div>";
+
             ?>
           </div>
           <div class="personal-bests">
