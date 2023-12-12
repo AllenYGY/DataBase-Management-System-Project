@@ -9,6 +9,7 @@
 </head>
 
 <?php
+date_default_timezone_set('Asia/Shanghai');
 include "03_connectDB.php";
 session_start();
 $user = $_SESSION["user"];
@@ -28,7 +29,7 @@ if (mysqli_num_rows($result) > 0) {
   $userID = $row["uID"];
 }
 
-$_SESSION["userID"]=$userID;
+$_SESSION["userID"] = $userID;
 
 $sql_parcel = "SELECT * FROM parcel JOIN user  on parcel.cust_send_uID=user.uID WHERE uname='$user' AND user.uID=parcel.cust_send_uID";
 
@@ -37,7 +38,8 @@ $result1 = mysqli_query($conn, $sql_parcel);
 $pendingCount = 0;
 $inTransitCount = 0;
 $deliveredCount = 0;
-$otherCount = 0;
+
+$allData = array();
 
 if (mysqli_num_rows($result1) > 0) {
   while ($row = mysqli_fetch_assoc($result1)) {
@@ -51,11 +53,8 @@ if (mysqli_num_rows($result1) > 0) {
         $inTransitData[] = $row;
         $inTransitCount += 1;
         break;
-      default:
-        $otherData[] = $row;
-        $otherCount += 1;
-        break;
     }
+    $allData[] = $row;
   }
 }
 
@@ -72,10 +71,12 @@ if (mysqli_num_rows($result1) > 0) {
         $deliveredCount += 1;
         break;
     }
+    $allData[] = $row;
   }
 }
 
 ?>
+
 <body>
   <main>
     <nav class="main-menu">
@@ -405,7 +406,7 @@ if (mysqli_num_rows($result1) > 0) {
             <input type="submit" value="Pick" id="pickButton">
           </form>
 
-          
+
           <div class="weekly-schedule">
             <h1>Package need to be pick</h1>
             <?php
@@ -556,163 +557,86 @@ if (mysqli_num_rows($result1) > 0) {
           </div>
           <div class="weekly-schedule">
             <h1>Package History</h1>
-            <div class="calendar">
-              <div class="day-and-activity activity-one">
-                <div class="day">
-                  <h1>13</h1>
-                  <p>mon</p>
-                </div>
-                <div class="activity">
-                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
-                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
-                  <div class="participants">
+            <?php
+            echo "<div class='calendar'>";
+            if (isset($allData)) {
+                foreach ($allData as $allDataRow) {
+                  $send_time = isset($allDataRow['send_time']) ? date('Y-m-d', strtotime($allDataRow['send_time'])) : 'unknown';
+                  $pick_time = isset($allDataRow['pick_time']) ? date('Y-m-d', strtotime($allDataRow['pick_time'])) : 'unknown';
+                  $send_storage_time = isset($allDataRow['send_storage_time']) ? date('Y-m-d', strtotime($allDataRow['send_storage_time'])) : 'unknown';
+                  $pick_storage_time = isset($allDataRow['pick_storage_time']) ? date('Y-m-d', strtotime($allDataRow['pick_storage_time'])) : 'unknown';
+                  $dayOfWeek = isset($send_time) ? date('l', strtotime($send_time)) : 'unknown';
+                  $date = isset($allDataRow['send_storage_time']) ? date('d', strtotime($allDataRow['send_storage_time'])) : 'unknown';
+                  $pID = isset($allDataRow['parcelID']) ? $allDataRow['parcelID'] : 'unknown';
+                  $startadr = isset($allDataRow['location']) ? $allDataRow['location'] : 'unknown';
+                  $pstatus = isset($allDataRow['status']) ? $allDataRow['status'] : 'unknown';
+                  $endadr = isset($allDataRow['send_address']) ? $allDataRow['send_address'] : 'unknown';
+                  
+                  switch ($dayOfWeek) {
+                    case 'Monday':
+                      $cssClass = 'activity-one';
+                      $day = 'MON';
+                      break;
+                    case 'Tuesday':
+                      $cssClass = 'activity-two';
+                      $day = 'TUE';
+                      break;
+                    case 'Wednesday':
+                      $cssClass = 'activity-three';
+                      $day = 'WED';
+                      break;
+                    case 'Thursday':
+                      $cssClass = 'activity-four';
+                      $day = 'THU';
+                      break;
+                    case 'Friday':
+                      $cssClass = 'activity-five';
+                      $day = 'FRI';
+                      break;
+                    case 'Saturday':
+                      $cssClass = 'activity-six';
+                      $day = 'SAT';
+                      break;
+                    default:
+                      $cssClass = 'activity-seven';
+                      $day = 'SUN';
+                      break;
+                  }
+                  echo "
+                  <div class='day-and-activity $cssClass'>
+                      <div class='day'>
+                          <h1>$date</h1>
+                          <p>$day</p>
+                      </div>
+                      <div class='activity'>
+                          <h2>Package ID: $pID</h2>
+                          <h2>Package Status: $pstatus</h2>
+                          <h3>&nbsp;&nbsp;Send time: $send_time</h3>
+                          <h3>&nbsp;&nbsp;Send storage time: $send_storage_time</h3>
+                          <h3>&nbsp;&nbsp;Pick storage time: $pick_storage_time</h3>
+                          <h3>&nbsp;&nbsp;Pick time: $pick_time</h3>
+                          <h3>&nbsp;&nbsp;Package send courier Station: $startadr</h3>
+                          <h3>&nbsp;&nbsp;Package pick courier Station: $endadr</h3>
+                      </div>
                   </div>
+              ";
+                }
+            } else {
+              echo "              
+                <div class='day-and-activity activity-four'>
+                    <div class='day'>
+                      <h1>$date</h1>
+                      <p>$day</p>
+                    </div>
+                    <div class='activity'>
+                      <h2>No current Packages history</h2>
+                    </div>
                 </div>
-                <button class="btn">Check</button>
-              </div>
+              ";
+            }
+            echo "</div>";
+            ?>
 
-              <div class="day-and-activity activity-two">
-                <div class="day">
-                  <h1>15</h1>
-                  <p>wed</p>
-                </div>
-                <div class="activity">
-                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
-                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
-                  <div class="participants">
-                  </div>
-                </div>
-                <button class="btn">Check</button>
-              </div>
-
-              <div class="day-and-activity activity-three">
-                <div class="day">
-                  <h1>17</h1>
-                  <p>fri</p>
-                </div>
-                <div class="activity">
-                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
-                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
-                  <div class="participants">
-                  </div>
-                </div>
-                <button class="btn">Check</button>
-              </div>
-
-              <div class="day-and-activity activity-four">
-                <div class="day">
-                  <h1>18</h1>
-                  <p>sat</p>
-                </div>
-                <div class="activity">
-                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
-                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
-                  <div class="participants">
-
-                  </div>
-                </div>
-                <button class="btn">Check</button>
-              </div>
-
-              <div class="day-and-activity activity-five">
-                <div class="day">
-                  <h1>15</h1>
-                  <p>wed</p>
-                </div>
-                <div class="activity">
-                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
-                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
-                  <div class="participants">
-                  </div>
-                </div>
-                <button class="btn">Check</button>
-              </div>
-
-              <div class="day-and-activity activity-six">
-                <div class="day">
-                  <h1>17</h1>
-                  <p>fri</p>
-                </div>
-                <div class="activity">
-                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
-                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
-                  <div class="participants">
-                  </div>
-                </div>
-                <button class="btn">Check</button>
-              </div>
-
-              <div class="day-and-activity activity-seven">
-                <div class="day">
-                  <h1>17</h1>
-                  <p>fri</p>
-                </div>
-                <div class="activity">
-                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
-                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
-                  <div class="participants">
-                  </div>
-                </div>
-                <button class="btn">Check</button>
-              </div>
-
-              <div class="day-and-activity activity-three">
-                <div class="day">
-                  <h1>17</h1>
-                  <p>fri</p>
-                </div>
-                <div class="activity">
-                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
-                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
-                  <div class="participants">
-                  </div>
-                </div>
-                <button class="btn">Check</button>
-              </div>
-
-              <div class="day-and-activity activity-three">
-                <div class="day">
-                  <h1>17</h1>
-                  <p>fri</p>
-                </div>
-                <div class="activity">
-                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
-                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
-                  <div class="participants">
-                  </div>
-                </div>
-                <button class="btn">Check</button>
-              </div>
-
-              <div class="day-and-activity activity-three">
-                <div class="day">
-                  <h1>17</h1>
-                  <p>fri</p>
-                </div>
-                <div class="activity">
-                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
-                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
-                  <div class="participants">
-                  </div>
-                </div>
-                <button class="btn">Check</button>
-              </div>
-
-              <div class="day-and-activity activity-three">
-                <div class="day">
-                  <h1>17</h1>
-                  <p>fri</p>
-                </div>
-                <div class="activity">
-                  <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
-                  <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
-                  <div class="participants">
-                  </div>
-                </div>
-                <button class="btn">Check</button>
-              </div>
-
-            </div>
           </div>
         </div>
         <!-- left-content end  -->

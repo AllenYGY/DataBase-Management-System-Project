@@ -454,6 +454,9 @@ $_SESSION["csadr"]=$csadr;
               </div>
               <div class="activity">
                 <h3>&nbsp;&nbsp;Courier number: 111111111</h3>
+                <h3>&nbsp;&nbsp;Send time: 2023-01-01 12:34 PM</h3>
+                <h3>&nbsp;&nbsp;Send storage time: 2023-01-01 12:34 PM</h3>
+                <h3>&nbsp;&nbsp;Pick storage time: 2023-01-01 12:34 PM</h3>
                 <h3>&nbsp;&nbsp;Pick time: 2023-01-01 12:34 PM</h3>
                 <div class="participants">
                 </div>
