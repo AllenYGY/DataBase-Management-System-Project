@@ -458,7 +458,6 @@ if (mysqli_num_rows($result1) > 0) {
                     <button class='btn' onclick=\"fillForm('$pID')\">Go to pick</button>
                 </div>
             ";
-            
               }
             } else {
               echo "              
