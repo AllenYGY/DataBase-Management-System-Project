@@ -68,14 +68,6 @@ if (mysqli_num_rows($result1) > 0) {
         $deliveredData[] = $row;
         $deliveredCount += 1;
         break;
-        // case 'in_transit':
-        //   $inTransitData[] = $row;
-        //   $inTransitCount += 1;
-        //   break;
-        // default:
-        //   $otherData[] = $row;
-        //   $otherCount += 1;
-        //   break;
     }
   }
 }
@@ -196,10 +188,10 @@ if (mysqli_num_rows($result1) > 0) {
                         <p>$day</p>
                       </div>
                       <div class='activity'>
-                        <h2>$deliveredCount Packages is delivered.</h2>
+                        <h3>$deliveredCount Packages is delivered.</h3>
                         <div class='participants'> </div>
                       </div>
-                    <button class='btn' id='pickimg'>Accept</button>
+                    <button class='btn' id='acceptbtn'>Accept</button>
                   </div>
                 ";
             } else {
@@ -211,7 +203,6 @@ if (mysqli_num_rows($result1) > 0) {
                   </div>
                   <div class='activity'>
                     <h3>No packages need to be accept</h3>
-                    <div class='participants'> </div>
                   </div>
               </div>
             ";
@@ -228,8 +219,7 @@ if (mysqli_num_rows($result1) > 0) {
                         <p>$day</p>
                       </div>
                       <div class='activity'>
-                        <h2>$pendingCount Packages is waiting for send.</h2>
-                        <div class='participants'> </div>
+                        <h3>$pendingCount Packages is waiting for send.</h3>
                       </div>
                     <button class='btn'>Check</button>
                   </div>
@@ -258,7 +248,7 @@ if (mysqli_num_rows($result1) > 0) {
                         <p>$day</p>
                       </div>
                       <div class='activity'>
-                        <h2>$inTransitCount Packages is transporting.</h2>
+                        <h3>$inTransitCount Packages is transporting.</h3>
                         <div class='participants'> </div>
                       </div>
                     <button class='btn'>Check</button>
@@ -273,7 +263,6 @@ if (mysqli_num_rows($result1) > 0) {
                   </div>
                   <div class='activity'>
                     <h3>No packages are transported.</h3>
-                    <div class='participants'> </div>
                   </div>
               </div>
             ";
@@ -400,7 +389,7 @@ if (mysqli_num_rows($result1) > 0) {
 
         <!-- pick section -->
         <div class="pickpart">
-          <form action="11_pick_parcel.php" method="POST">
+          <form id="pickForm" action="11_pick_parcel.php" method="POST">
             <div class="form-group">
               <h1>Pick package</h1><br>
               <label for="packageid">Package ID:</label>
@@ -454,19 +443,19 @@ if (mysqli_num_rows($result1) > 0) {
                     $day = 'SUN';
                     break;
                 }
-                echo "              
+                echo "
                 <div class='day-and-activity $cssClass'>
                     <div class='day'>
-                      <h1>$send_time</h1>
-                      <p>$day</p>
+                        <h1>$send_time</h1>
+                        <p>$day</p>
                     </div>
                     <div class='activity'>
-                      <h2>Package ID: $pID</h2>
-
+                        <h2>Package ID: $pID</h2>
                     </div>
-                  <button class='btn'>Go to pick</button>
+                    <button class='btn' onclick=\"fillForm('$pID')\">Go to pick</button>
                 </div>
-              ";
+            ";
+            
               }
             } else {
               echo "              

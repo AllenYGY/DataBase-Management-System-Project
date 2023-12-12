@@ -44,6 +44,7 @@ const historyNavItem = document.getElementById("historyNavItem");
 
 const pickimg = document.getElementById('pickimg');
 const sendimg = document.getElementById('sendimg');
+const acceptbtn=document.getElementById('acceptbtn');
 
 const leftcontentElement = document.querySelector(".left-content");
 const profileElement = document.querySelector(".profile");
@@ -84,6 +85,7 @@ function handlePickClick() {
 pickimg.addEventListener("click", handlePickClick);
 // 在 pickPackageNavItem 上添加点击事件监听器
 pickPackageNavItem.addEventListener("click", handlePickClick);
+acceptbtn.addEventListener("click", handlePickClick);
 
 // 发送操作的处理函数
 function handleSendClick() {
@@ -94,7 +96,6 @@ function handleSendClick() {
   popup.style.display = "none";
   searchhistoryElement.style.display="none";
   homeNavItem.className = "nav-item";
-  
   rightcontentElement.style.display = "grid";
   sendPartElement.style.display = "grid";
   sendPackageNavItem.className = "nav-item active";
@@ -103,6 +104,7 @@ function handleSendClick() {
 
 sendimg.addEventListener("click", handleSendClick);
 sendPackageNavItem.addEventListener("click", handleSendClick);
+
 
 // 发送操作的处理函数
 function handleSearchHistoryClick() {
@@ -120,3 +122,8 @@ function handleSearchHistoryClick() {
 
 searchNavItem.addEventListener("click", handleSearchHistoryClick);
 historyNavItem.addEventListener("click", handleSearchHistoryClick);
+
+function fillForm(pID) {
+  document.getElementById('packageid').value = pID;
+  console.log(pID);
+}
