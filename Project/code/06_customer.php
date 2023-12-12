@@ -205,6 +205,7 @@ if (mysqli_num_rows($result1) > 0) {
                   <div class='activity'>
                     <h3>No packages need to be accept</h3>
                   </div>
+                  <button class='btn' id='acceptbtn'>Check</button>
               </div>
             ";
             }
@@ -305,6 +306,14 @@ if (mysqli_num_rows($result1) > 0) {
                     <td><?php echo $name; ?></td>
                   </tr>
                   <tr>
+                    <td>User ID:</td>
+                    <td><?php echo $userID; ?></td>
+                  </tr>
+                  <tr>
+                    <td>Gender:</td>
+                    <td><?php echo $gender; ?></td>
+                  </tr>
+                  <tr>
                     <td>Phone:</td>
                     <td><?php echo $phone; ?></td>
                   </tr>
@@ -312,14 +321,7 @@ if (mysqli_num_rows($result1) > 0) {
                     <td>Mail: </td>
                     <td><?php echo $mail; ?></td>
                   </tr>
-                  <tr>
-                    <td>Gender:</td>
-                    <td><?php echo $gender; ?></td>
-                  </tr>
-                  <tr>
-                    <td>Address:</td>
-                    <td></td>
-                  </tr><br>
+                  <br>
                 </table>
               </div>
               <button class="info-container editbtn" id="openPop">Edit</button>
