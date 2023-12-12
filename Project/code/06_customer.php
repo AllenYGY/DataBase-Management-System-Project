@@ -456,7 +456,7 @@ if (mysqli_num_rows($result1) > 0) {
                     </div>
                     <div class='activity'>
                       <h2>Package</h2>
-                      <div class='participants'> </div>
+                      
                     </div>
                   <button class='btn'>Go to pick</button>
                 </div>
@@ -470,8 +470,7 @@ if (mysqli_num_rows($result1) > 0) {
                       <p>$day</p>
                     </div>
                     <div class='activity'>
-                      <h2>No current Packages need to be pick</h2>
-                      <div class='participants'> </div>
+                      <h2>No current Packages need to be accept</h2>
                     </div>
                 </div>
               ";
