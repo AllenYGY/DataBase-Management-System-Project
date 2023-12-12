@@ -31,8 +31,10 @@ $sql_parcel = "SELECT * FROM parcel JOIN user  on parcel.delivery_manageruID=use
 $result1 = mysqli_query($conn, $sql_parcel);
 $pendingCount = 0;
 $inTransitCount = 0;
+$arrivedCount = 0;
 $deliveredCount = 0;
 $otherCount = 0;
+
 if (mysqli_num_rows($result1) > 0) {
   while ($row = mysqli_fetch_assoc($result1)) {
     $status = $row["status"];
@@ -44,6 +46,10 @@ if (mysqli_num_rows($result1) > 0) {
       case 'in_transit':
         $inTransitData[] = $row;
         $inTransitCount++;
+        break;
+      case 'arrived':
+        $arrivedData[] = $row;
+        $arrivedCount++;
         break;
       case 'delivered':
         $deliveredData[] = $row;
@@ -120,7 +126,7 @@ if (mysqli_num_rows($result1) > 0) {
           <h1>Activities</h1>
           <div class="activity-container">
 
-            <div class="image-container img-three"> 
+            <div class="image-container img-three">
               <!-- id="pickimg"> -->
               <img src="/Project/image/pickup.jpg" alt="pick">
               <div class="overlay">
@@ -128,7 +134,7 @@ if (mysqli_num_rows($result1) > 0) {
               </div>
             </div>
 
-            <div class="image-container img-four" > 
+            <div class="image-container img-four">
               <!-- id="sendimg"> -->
               <img src="/Project/image/delivery.jpg" alt="send">
               <div class="overlay">
@@ -140,15 +146,15 @@ if (mysqli_num_rows($result1) > 0) {
 
         <div class="left-bottom">
           <div class="weekly-schedule">
-          <!-- <h1>Package Status</h1> -->
+            <!-- <h1>Package Status</h1> -->
             <?php
-              date_default_timezone_set('Asia/Shanghai');
-              echo "<div class='calendar'>";
-              echo "<h3>Wating for accept</h3>";
-              $date = date('d');
-              $day = date('D');
+            date_default_timezone_set('Asia/Shanghai');
+            echo "<div class='calendar'>";
+            echo "<h1>Wating for accept</h1>";
+            $date = date('d');
+            $day = date('D');
             if (isset($deliveredData)) {
-                echo "              
+              echo "              
                 <div class='day-and-activity activity-one'>
                     <div class='day'>
                       <h1>$date</h1>
@@ -160,8 +166,8 @@ if (mysqli_num_rows($result1) > 0) {
                   <button class='btn'>Accept</button>
                 </div>
               ";
-              }else{
-                echo "              
+            } else {
+              echo "              
                 <div class='day-and-activity activity-one'>
                     <div class='day'>
                       <h1>$date</h1>
@@ -172,12 +178,12 @@ if (mysqli_num_rows($result1) > 0) {
                     </div>
                 </div>
               ";
-              }
-              echo "</div>";
+            }
+            echo "</div>";
 
-          // confirm send
+            // confirm send
             echo "<div class='calendar'>";
-            echo "<h3>Wating for send</h3>";
+            echo "<h1>Wating for send</h1>";
             $date = date('d');
             $day = date('D');
             if (isset($pendingData)) {
@@ -194,7 +200,7 @@ if (mysqli_num_rows($result1) > 0) {
 
                 </div>";
             } else {
-              echo 
+              echo
               "<div class='day-and-activity activity-two'>
                   <div class='day'>
                     <h1>$date</h1>
@@ -207,35 +213,35 @@ if (mysqli_num_rows($result1) > 0) {
             }
             echo  "</div>";
             // Delivery
-            echo "<div class='calendar'>";
-            echo "<h3>Deliverying</h3>";
-            $date = date('d');
-            $day = date('D');
-            if (isset($deliveredData)) {
-              echo
-              "<div class='day-and-activity activity-three'>
-                  <div class='day'>
-                    <h1>$date</h1>
-                    <p>$day</p>
-                  </div>
-                  <div class='activity'>
-                    <h3>$$deliveredCount packages is deliverying</h3>
-                  </div>
-                <button class='btn'>Check</button>
-                </div>";
-            } else {
-              echo 
-              "<div class='day-and-activity activity-three'>
-                  <div class='day'>
-                    <h1>$date</h1>
-                    <p>$day</p>
-                  </div>
-                  <div class='activity'>
-                    <h3> No packages is deliverying</h3>
-                  </div>
-              </div>";
-            }
-            echo  "</div>";
+            // echo "<div class='calendar'>";
+            // echo "<h3>Deliverying</h3>";
+            // $date = date('d');
+            // $day = date('D');
+            // if (isset($deliveredData)) {
+            //   echo
+            //   "<div class='day-and-activity activity-three'>
+            //       <div class='day'>
+            //         <h1>$date</h1>
+            //         <p>$day</p>
+            //       </div>
+            //       <div class='activity'>
+            //         <h3>$$deliveredCount packages is deliverying</h3>
+            //       </div>
+            //     <button class='btn'>Check</button>
+            //     </div>";
+            // } else {
+            //   echo
+            //   "<div class='day-and-activity activity-three'>
+            //       <div class='day'>
+            //         <h1>$date</h1>
+            //         <p>$day</p>
+            //       </div>
+            //       <div class='activity'>
+            //         <h3> No packages is deliverying</h3>
+            //       </div>
+            //   </div>";
+            // }
+            // echo  "</div>";
             ?>
           </div>
           <div class="personal-bests">
@@ -371,7 +377,7 @@ if (mysqli_num_rows($result1) > 0) {
         </form>
         <div class="weekly-schedule">
           <h1>Package status</h1>
-          
+
         </div>
       </div>
 
@@ -699,4 +705,5 @@ if (mysqli_num_rows($result1) > 0) {
   </main>
   <script src="script_cadmin.js"></script>
 </body>
+
 </html>
