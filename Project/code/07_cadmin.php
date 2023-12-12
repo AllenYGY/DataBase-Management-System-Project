@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>user page</title>
+  <title>Courier Manager</title>
   <link rel="stylesheet" href="index.css">
 </head>
 
@@ -27,14 +27,13 @@ if (mysqli_num_rows($result) > 0) {
   $userID = $row["uID"];
 }
 
-$sql_parcel = "SELECT * FROM parcel JOIN user  on parcel.delivery_manageruID=user.uID WHERE uname='$user' AND user.uID=parcel.delivery_manageruID";
+$sql_parcel = "SELECT * FROM parcel 
+               JOIN user on parcel.delivery_manageruID=user.uID 
+               WHERE uname='$user' AND user.uID=parcel.delivery_manageruID";
 
 $result1 = mysqli_query($conn, $sql_parcel);
 $pendingCount = 0;
 $inTransitCount = 0;
-$arrivedCount = 0;
-$deliveredCount = 0;
-$otherCount = 0;
 
 if (mysqli_num_rows($result1) > 0) {
   while ($row = mysqli_fetch_assoc($result1)) {
@@ -54,9 +53,11 @@ $sql_parcel = "SELECT * FROM parcel
               WHERE delivery_manager.uID='$userID'";
 $result5 = mysqli_query($conn, $sql_parcel);
 
-if (mysqli_num_rows($result1) > 0) {
+if (mysqli_num_rows($result5) > 0) {
   while ($row = mysqli_fetch_assoc($result5)) {
     $status = $row["status"];
+    $address=$row["send_address"];
+
     switch ($status) {
       case 'in_transit':
         $inTransitData[] = $row;
@@ -267,7 +268,7 @@ if (mysqli_num_rows($result1) > 0) {
                 </tr>
                 <tr>
                   <td>Address:</td>
-                  <td>123 Main Street, City, Country</td>
+                  <td><?php echo $address; ?></td>
                 </tr><br>
               </table>
             </div>

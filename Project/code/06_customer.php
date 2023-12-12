@@ -39,7 +39,6 @@ $otherCount = 0;
 if (mysqli_num_rows($result1) > 0) {
   while ($row = mysqli_fetch_assoc($result1)) {
     $status = $row["status"];
-    $address=$row["send_address"];
     switch ($status) {
       case 'pending':
         $pendingData[] = $row;
@@ -316,7 +315,7 @@ if (mysqli_num_rows($result1) > 0) {
                   </tr>
                   <tr>
                     <td>Address:</td>
-                    <td><?php echo $address; ?></td>
+                    <td></td>
                   </tr><br>
                 </table>
               </div>
