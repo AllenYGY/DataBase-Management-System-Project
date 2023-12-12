@@ -397,7 +397,7 @@ if (mysqli_num_rows($result1) > 0) {
 
         <!-- pick section -->
         <div class="pickpart">
-          <form action="#" method="POST">
+          <form action="11_pick_parcel.php" method="POST">
             <div class="form-group">
               <h1>Pick package</h1><br>
               <label for="packageid">Package ID:</label>
@@ -418,7 +418,7 @@ if (mysqli_num_rows($result1) > 0) {
                 $send_time = date('Y-m-d', strtotime($deliveredRow['send_time']));
                 $dayOfWeek = date('l', strtotime($send_time)); // 获取星期几
                 $send_time = date('d', strtotime($deliveredRow['send_time']));
-                $pID = date('d', strtotime($deliveredRow['parcelID']));
+                $pID = $deliveredRow['parcelID'];
                 switch ($dayOfWeek) {
                   case 'Monday':
                     $cssClass = 'activity-one';
