@@ -22,7 +22,10 @@ if (mysqli_num_rows($result) > 0) {
   $phone = $row["uphone"];
   $mail = $row["umail"];
   $gender = $row["ugender"];
+  $userID = $row["uID"];
 }
+
+$_SESSION["userID"]=$userID;
 
 $sql_parcel = "SELECT * FROM parcel JOIN user  on parcel.cust_send_uID=user.uID WHERE uname='$user' AND user.uID=parcel.cust_send_uID";
 
@@ -65,14 +68,14 @@ if (mysqli_num_rows($result1) > 0) {
         $deliveredData[] = $row;
         $deliveredCount += 1;
         break;
-      // case 'in_transit':
-      //   $inTransitData[] = $row;
-      //   $inTransitCount += 1;
-      //   break;
-      // default:
-      //   $otherData[] = $row;
-      //   $otherCount += 1;
-      //   break;
+        // case 'in_transit':
+        //   $inTransitData[] = $row;
+        //   $inTransitCount += 1;
+        //   break;
+        // default:
+        //   $otherData[] = $row;
+        //   $otherCount += 1;
+        //   break;
     }
   }
 }
@@ -196,7 +199,7 @@ if (mysqli_num_rows($result1) > 0) {
                         <h2>$deliveredCount Packages is delivered.</h2>
                         <div class='participants'> </div>
                       </div>
-                    <button class='btn'>Accept</button>
+                    <button class='btn' id='pickimg'>Accept</button>
                   </div>
                 ";
             } else {
@@ -213,7 +216,7 @@ if (mysqli_num_rows($result1) > 0) {
               </div>
             ";
             }
-            echo"</div>";
+            echo "</div>";
 
             //? Wait send part
             echo "<h2>Waiting for send</h2>";
@@ -409,6 +412,8 @@ if (mysqli_num_rows($result1) > 0) {
             </div>
             <input type="submit" value="Pick" id="pickButton">
           </form>
+
+          
           <div class="weekly-schedule">
             <h1>Package need to be pick</h1>
             <?php
@@ -480,6 +485,7 @@ if (mysqli_num_rows($result1) > 0) {
             ?>
           </div>
         </div>
+
 
         <!-- send section -->
 
