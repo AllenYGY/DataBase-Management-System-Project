@@ -477,9 +477,7 @@ if (mysqli_num_rows($result1) > 0) {
           </div>
         </div>
 
-
         <!-- send section -->
-
         <div class="sendpart">
           <form action="10_send_parcel.php" method="POST">
             <h1>Send package</h1><br>
@@ -536,7 +534,6 @@ if (mysqli_num_rows($result1) > 0) {
             <input type="submit" value="Send" id="sendButton">
           </form>
         </div>
-
 
         <!-- Search & History section -->
         <div class="search-hitorypart">
