@@ -418,6 +418,7 @@ if (mysqli_num_rows($result1) > 0) {
                 $send_time = date('Y-m-d', strtotime($deliveredRow['send_time']));
                 $dayOfWeek = date('l', strtotime($send_time)); // 获取星期几
                 $send_time = date('d', strtotime($deliveredRow['send_time']));
+                $pID = date('d', strtotime($deliveredRow['parcelID']));
                 switch ($dayOfWeek) {
                   case 'Monday':
                     $cssClass = 'activity-one';
@@ -455,8 +456,8 @@ if (mysqli_num_rows($result1) > 0) {
                       <p>$day</p>
                     </div>
                     <div class='activity'>
-                      <h2>Package</h2>
-                      
+                      <h2>Package ID: $pID</h2>
+
                     </div>
                   <button class='btn'>Go to pick</button>
                 </div>
