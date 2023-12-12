@@ -45,10 +45,6 @@ if (mysqli_num_rows($result1) > 0) {
         $inTransitData[] = $row;
         $inTransitCount += 1;
         break;
-      case 'delivered':
-        $deliveredData[] = $row;
-        $deliveredCount += 1;
-        break;
       default:
         $otherData[] = $row;
         $otherCount += 1;
@@ -56,6 +52,32 @@ if (mysqli_num_rows($result1) > 0) {
     }
   }
 }
+
+$sql_parcel = "SELECT * FROM parcel JOIN user  on parcel.cust_pick_uID=user.uID WHERE uname='$user' AND user.uID=parcel.cust_pick_uID";
+
+$result2 = mysqli_query($conn, $sql_parcel);
+
+if (mysqli_num_rows($result1) > 0) {
+  while ($row = mysqli_fetch_assoc($result2)) {
+    $status = $row["status"];
+    switch ($status) {
+      case 'delivered':
+        $deliveredData[] = $row;
+        $deliveredCount += 1;
+        break;
+      // case 'in_transit':
+      //   $inTransitData[] = $row;
+      //   $inTransitCount += 1;
+      //   break;
+      // default:
+      //   $otherData[] = $row;
+      //   $otherCount += 1;
+      //   break;
+    }
+  }
+}
+
+
 ?>
 
 <body>
@@ -174,7 +196,7 @@ if (mysqli_num_rows($result1) > 0) {
                         <h2>$deliveredCount Packages is delivered.</h2>
                         <div class='participants'> </div>
                       </div>
-                    <button class='btn'>Accept packages</button>
+                    <button class='btn'>Accept</button>
                   </div>
                 ";
             } else {
