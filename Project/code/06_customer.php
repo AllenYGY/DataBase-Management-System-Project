@@ -24,7 +24,7 @@ if (mysqli_num_rows($result) > 0) {
   $gender = $row["ugender"];
 }
 
-$sql_parcel = "SELECT * FROM parcel JOIN user  on parcel.cust_pick_uID=user.uID WHERE uname='$user' AND user.uID=parcel.cust_pick_uID";
+$sql_parcel = "SELECT * FROM parcel JOIN user  on parcel.cust_send_uID=user.uID WHERE uname='$user' AND user.uID=parcel.cust_send_uID";
 
 $result1 = mysqli_query($conn, $sql_parcel);
 
@@ -58,7 +58,6 @@ if (mysqli_num_rows($result1) > 0) {
 }
 ?>
 
-
 <body>
   <main>
     <nav class="main-menu">
@@ -82,7 +81,6 @@ if (mysqli_num_rows($result1) > 0) {
             <span class="nav-text">Profile</span>
           </a>
         </li>
-
 
         <li class="nav-item" id="pickPackageNavItem">
           <b></b>
@@ -162,9 +160,10 @@ if (mysqli_num_rows($result1) > 0) {
             <?php
             $date = date('d');
             $day = date('D');
+            //? Wait accept part
             echo "<h2>Waiting for accept</h2>";
+            echo "<div class='calendar'>";
             if ($deliveredCount) {
-              echo "<div class='calendar'>";
               echo "              
                   <div class='day-and-activity activity-one'>
                       <div class='day'>
@@ -192,9 +191,11 @@ if (mysqli_num_rows($result1) > 0) {
               </div>
             ";
             }
+            echo"</div>";
+
+            //? Wait send part
             echo "<h2>Waiting for send</h2>";
             if ($pendingCount) {
-              echo "<div class='calendar'>";
               echo "              
                   <div class='day-and-activity activity-two'>
                       <div class='day'>
@@ -223,9 +224,8 @@ if (mysqli_num_rows($result1) > 0) {
             ";
             }
             echo "<h2>Deliverying packages</h2>";
-
-            if ($deliveredCount) {
-              echo "<div class='calendar'>";
+            // ? Transporting
+            if ($inTransitCount) {
               echo "              
                   <div class='day-and-activity activity-three'>
                       <div class='day'>
@@ -233,7 +233,7 @@ if (mysqli_num_rows($result1) > 0) {
                         <p>$day</p>
                       </div>
                       <div class='activity'>
-                        <h2>$deliveredCount Packages is transporting.</h2>
+                        <h2>$inTransitCount Packages is transporting.</h2>
                         <div class='participants'> </div>
                       </div>
                     <button class='btn'>Go to accept</button>
