@@ -174,7 +174,7 @@ if (mysqli_num_rows($result1) > 0) {
                         <h2>$deliveredCount Packages is delivered.</h2>
                         <div class='participants'> </div>
                       </div>
-                    <button class='btn'>Go to accept</button>
+                    <button class='btn'>Accept packages</button>
                   </div>
                 ";
             } else {
@@ -206,7 +206,7 @@ if (mysqli_num_rows($result1) > 0) {
                         <h2>$pendingCount Packages is waiting for send.</h2>
                         <div class='participants'> </div>
                       </div>
-                    <button class='btn'>Go to accept</button>
+                    <button class='btn'>Check</button>
                   </div>
                 ";
             } else {
@@ -236,7 +236,7 @@ if (mysqli_num_rows($result1) > 0) {
                         <h2>$inTransitCount Packages is transporting.</h2>
                         <div class='participants'> </div>
                       </div>
-                    <button class='btn'>Go to accept</button>
+                    <button class='btn'>Check</button>
                   </div>
                 ";
             } else {
@@ -255,7 +255,6 @@ if (mysqli_num_rows($result1) > 0) {
             }
             echo "</div>";
             ?>
-            <!-- </div> -->
             <div class="personal-bests">
               <h1>Express station status</h1>
               <div class="personal-bests-container">
