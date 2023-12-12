@@ -14,6 +14,9 @@ session_start();
 $user = $_SESSION["user"];
 $usertype = $_SESSION["usertype"];
 
+$url = '01_login.php';
+if ($usertype != 'customer') header('Location:' . $url);
+
 $sql_user = "SELECT * from user WHERE uname='$user'";
 $result = mysqli_query($conn, $sql_user);
 if (mysqli_num_rows($result) > 0) {

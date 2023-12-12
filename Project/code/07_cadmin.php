@@ -59,7 +59,8 @@ if (mysqli_num_rows($result5) > 0) {
   while ($row = mysqli_fetch_assoc($result5)) {
     $status = $row["status"];
     $address=$row["send_address"];
-
+    $csID=$row["csID"];
+    $csadr=$row['csaddress'];
     switch ($status) {
       case 'in_transit':
         $inTransitData[] = $row;
@@ -68,6 +69,10 @@ if (mysqli_num_rows($result5) > 0) {
     }
   }
 }
+
+$_SESSION["csID"]=$csID;
+$_SESSION["csadr"]=$csadr;
+
 ?>
 
 <body>
@@ -158,7 +163,7 @@ if (mysqli_num_rows($result5) > 0) {
             echo "<h1>Wating for accept</h1>";
             $date = date('d');
             $day = date('D');
-            if (isset($inTransitCount)) {
+            if ($inTransitCount) {
               echo "              
                 <div class='day-and-activity activity-one'>
                     <div class='day'>
@@ -191,7 +196,7 @@ if (mysqli_num_rows($result5) > 0) {
             echo "<h1>Wating for send</h1>";
             $date = date('d');
             $day = date('D');
-            if (isset($pendingData)) {
+            if ($pendingCount) {
               echo
               "<div class='day-and-activity activity-two'>
                   <div class='day'>
