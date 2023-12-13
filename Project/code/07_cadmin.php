@@ -29,9 +29,19 @@ if (mysqli_num_rows($result) > 0) {
 
 $_SESSION["userID"]=$userID;
 
+$sql_getcsID="SELECT * FROM delivery_manager WHERE delivery_manager.uID='$userID'";
+
+$result1 = mysqli_query($conn, $sql_getcsID);
+
+if (mysqli_num_rows($result1) > 0) {
+  $row = mysqli_fetch_assoc($result1);
+  $csID=$row['csID'];
+}
+
 $sql_parcel = "SELECT * FROM parcel 
-               JOIN user on parcel.delivery_manageruID=user.uID 
-               WHERE uname='$user' AND user.uID=parcel.delivery_manageruID";
+                      JOIN courier_station ON location=csaddress 
+                      JOIN delivery_manager USING(csID) 
+              WHERE delivery_manager.uID='$userID'";
 
 $result1 = mysqli_query($conn, $sql_parcel);
 $pendingCount = 0;
