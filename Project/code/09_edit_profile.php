@@ -3,11 +3,11 @@ include "03_connectDB.php";
 
 session_start();
 $user = $_SESSION["user"]; // 从会话中获取用户名
-
+$utype = $_SESSION["usertype"];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // 获取表单数据
-  $newusr = mysqli_real_escape_string($conn, $_POST["newusr"]);
+  // $newusr = mysqli_real_escape_string($conn, $_POST["newusr"]);
   $newPhone = mysqli_real_escape_string($conn, $_POST["newPhone"]);
   $newMail = mysqli_real_escape_string($conn, $_POST["newMail"]);
   $newGender = mysqli_real_escape_string($conn, $_POST["newGender"]);
@@ -15,51 +15,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $editpwd = mysqli_real_escape_string($conn, $_POST["editpwd"]);
 
   // 查询旧密码是否匹配
-  $sql = "SELECT utype,upassword FROM user WHERE uname='$user'";
+  $sql = "SELECT * FROM customer WHERE uname='$user'";
   $result = mysqli_query($conn, $sql);
   if ($result) {
     $row = mysqli_fetch_assoc($result);
     $storedPassword = $row['upassword'];
-    $usertype=$row['utype'];
+    $storedmail = $row['umail'];
+    $storedgender = $row['ugender'];
 
-    // 检查旧密码是否匹配
+
     if ($oldpwd === $storedPassword) {
-      // 构建更新用户信息的 SQL 语句
-      $updateQuery = "UPDATE user SET uphone='$newPhone', umail='$newMail', ugender='$newGender'";
+
+      if ($utype == 'customer')
+        $updateQuery = "UPDATE customer SET ";
+      if ($utype == 'cadmin')
+        $updateQuery = "UPDATE cadmin SET ";
+      if ($utype == 'admin')
+        $updateQuery = "UPDATE admin SET ";
 
       // 只有在有新用户名时才更新用户名字段
-      if (!empty($newusr)) {
-        $updateQuery .= ", uname='$newusr'";
+      // if (!empty($newusr)) {
+      //   $updateQuery .= ", uname='$newusr'";
+      // }
+      $check = 0;
+
+      if (!empty($newPhone)) {
+        $updateQuery .= " uphone='$newPhone'";
+        $check = 1;
       }
 
-      // 只有在有新密码时才更新密码字段
+      if (!empty($newMail)) {
+        $updateQuery .= " umail='$newMail'";
+        $check = 1;
+      }
+
+      if (!empty($newGender)) {
+        $updateQuery .= " umail='$newGender'";
+        $check = 1;
+      }
+
       if (!empty($editpwd)) {
-        $updateQuery .= ", upassword='$editpwd'";
+        $updateQuery .= " upassword='$editpwd'";
+        $check = 1;
       }
-      // 添加 WHERE 子句以指定更新哪个用户
-      $updateQuery .= " WHERE uname='$user'";
-      // 执行更新操作
-      $updateResult = mysqli_query($conn, $updateQuery);
 
-      if ($updateResult) {
-        echo "User information updated successfully!";
-        // echo $usertype;
-        if ($usertype == "customer") {
-          $url = "06_customer.php";
-        }
-        if ($usertype == "cadmin")
-          $url = "07_cadmin.php";
-        if ($usertype == "admin") {
-          $url = "08_admin.php";
-        }
-        header('Location:' . $url);
+      if ($check == 1) {
+        $updateQuery .= " WHERE uname='$user'";
+        echo $updateQuery;
+        $updateResult = mysqli_query($conn, $updateQuery);
 
-        // 这里可以重定向用户到其他页面或者显示成功消息
-      } else {
-        echo "Error updating user information: " . mysqli_error($conn);
+        if ($updateResult) {
+          echo "User information updated successfully!";
+          // echo $usertype;
+          if ($utype == "customer") {
+            $url = "06_customer.php";
+          }
+          if ($utype == "cadmin")
+            $url = "07_cadmin.php";
+          if ($utype == "admin") {
+            $url = "08_admin.php";
+          }
+        } else {
+          echo "Error updating user information: " . mysqli_error($conn);
+        }
       }
     } else {
       echo "Old password doesn't match!";
     }
   }
 }
+header('Location:' . $url);

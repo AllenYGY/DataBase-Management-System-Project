@@ -560,49 +560,49 @@ if (mysqli_num_rows($result1) > 0) {
             <?php
             echo "<div class='calendar'>";
             if (isset($allData)) {
-                foreach ($allData as $allDataRow) {
-                  $send_time = isset($allDataRow['send_time']) ? date('Y-m-d', strtotime($allDataRow['send_time'])) : 'unknown';
-                  $pick_time = isset($allDataRow['pick_time']) ? date('Y-m-d', strtotime($allDataRow['pick_time'])) : 'unknown';
-                  $send_storage_time = isset($allDataRow['send_storage_time']) ? date('Y-m-d', strtotime($allDataRow['send_storage_time'])) : 'unknown';
-                  $pick_storage_time = isset($allDataRow['pick_storage_time']) ? date('Y-m-d', strtotime($allDataRow['pick_storage_time'])) : 'unknown';
-                  $dayOfWeek = isset($send_time) ? date('l', strtotime($send_time)) : 'unknown';
-                  $date = isset($allDataRow['send_storage_time']) ? date('d', strtotime($allDataRow['send_storage_time'])) : 'unknown';
-                  $pID = isset($allDataRow['parcelID']) ? $allDataRow['parcelID'] : 'unknown';
-                  $startadr = isset($allDataRow['location']) ? $allDataRow['location'] : 'unknown';
-                  $pstatus = isset($allDataRow['status']) ? $allDataRow['status'] : 'unknown';
-                  $endadr = isset($allDataRow['send_address']) ? $allDataRow['send_address'] : 'unknown';
-                  
-                  switch ($dayOfWeek) {
-                    case 'Monday':
-                      $cssClass = 'activity-one';
-                      $day = 'MON';
-                      break;
-                    case 'Tuesday':
-                      $cssClass = 'activity-two';
-                      $day = 'TUE';
-                      break;
-                    case 'Wednesday':
-                      $cssClass = 'activity-three';
-                      $day = 'WED';
-                      break;
-                    case 'Thursday':
-                      $cssClass = 'activity-four';
-                      $day = 'THU';
-                      break;
-                    case 'Friday':
-                      $cssClass = 'activity-five';
-                      $day = 'FRI';
-                      break;
-                    case 'Saturday':
-                      $cssClass = 'activity-six';
-                      $day = 'SAT';
-                      break;
-                    default:
-                      $cssClass = 'activity-seven';
-                      $day = 'SUN';
-                      break;
-                  }
-                  echo "
+              foreach ($allData as $allDataRow) {
+                $send_time = isset($allDataRow['send_time']) ? date('Y-m-d', strtotime($allDataRow['send_time'])) : 'unknown';
+                $pick_time = isset($allDataRow['pick_time']) ? date('Y-m-d', strtotime($allDataRow['pick_time'])) : 'unknown';
+                $send_storage_time = isset($allDataRow['send_storage_time']) ? date('Y-m-d', strtotime($allDataRow['send_storage_time'])) : 'unknown';
+                $pick_storage_time = isset($allDataRow['pick_storage_time']) ? date('Y-m-d', strtotime($allDataRow['pick_storage_time'])) : 'unknown';
+                $dayOfWeek = isset($send_time) ? date('l', strtotime($send_time)) : 'unknown';
+                $date = isset($allDataRow['send_storage_time']) ? date('d', strtotime($allDataRow['send_storage_time'])) : 'unknown';
+                $pID = isset($allDataRow['parcelID']) ? $allDataRow['parcelID'] : 'unknown';
+                $startadr = isset($allDataRow['location']) ? $allDataRow['location'] : 'unknown';
+                $pstatus = isset($allDataRow['status']) ? $allDataRow['status'] : 'unknown';
+                $endadr = isset($allDataRow['send_address']) ? $allDataRow['send_address'] : 'unknown';
+
+                switch ($dayOfWeek) {
+                  case 'Monday':
+                    $cssClass = 'activity-one';
+                    $day = 'MON';
+                    break;
+                  case 'Tuesday':
+                    $cssClass = 'activity-two';
+                    $day = 'TUE';
+                    break;
+                  case 'Wednesday':
+                    $cssClass = 'activity-three';
+                    $day = 'WED';
+                    break;
+                  case 'Thursday':
+                    $cssClass = 'activity-four';
+                    $day = 'THU';
+                    break;
+                  case 'Friday':
+                    $cssClass = 'activity-five';
+                    $day = 'FRI';
+                    break;
+                  case 'Saturday':
+                    $cssClass = 'activity-six';
+                    $day = 'SAT';
+                    break;
+                  default:
+                    $cssClass = 'activity-seven';
+                    $day = 'SUN';
+                    break;
+                }
+                echo "
                   <div class='day-and-activity $cssClass'>
                       <div class='day'>
                           <h1>$date</h1>
@@ -620,7 +620,7 @@ if (mysqli_num_rows($result1) > 0) {
                       </div>
                   </div>
               ";
-                }
+              }
             } else {
               echo "              
                 <div class='day-and-activity activity-four'>
@@ -681,11 +681,11 @@ if (mysqli_num_rows($result1) > 0) {
           <form action="09_edit_profile.php" method="POST">
             <div class="form-group">
               <h1>Edit Profile</h1><br>
+              <!-- <label for="usr">Username: <?php echo $name; ?></label> -->
               <div class="image-icon-1">
                 <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
               </div>
-              <label for="usr">Username:</label>
-              <input type="text" id="newusr" name="newusr" placeholder="<?php echo $name; ?>" autocomplete="username">
+              <!-- <input type="text" id="newusr" name="newusr" placeholder="<?php echo $name; ?>" autocomplete="username"> -->
             </div>
             <div class="form-group">
               <label for="editpwd">Password:</label>
@@ -703,10 +703,10 @@ if (mysqli_num_rows($result1) > 0) {
               <label for="newGender">Gender:</label>
               <input type="text" id="newGender" name="newGender" placeholder="<?php echo $gender; ?>">
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="newAdr">Address:</label>
               <input type="text" id="newAdr" name="newAdr" placeholder="Edit your Address">
-            </div>
+            </div> -->
             <div class="form-group">
               <label for="oldpwd">Old Password:</label>
               <input type="text" id="oldpwd" name="oldpwd" placeholder="Enter you password">
