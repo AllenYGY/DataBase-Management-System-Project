@@ -4,30 +4,37 @@ include "03_connectDB.php";
 
 $user	= $_POST["usr"];
 $pwd	= $_POST["pwd"];
-$usertype = $_POST["usrtype"];
+$utype = $_POST["usrtype"];
 
-$sql = "SELECT uname, upassword FROM user WHERE uname = '$user' AND upassword = '$pwd' AND utype='$usertype'";
+if ($utype == "customer") {
+	$sql = "SELECT * FROM customer WHERE uname = '$user' AND upassword = '$pwd';";
+}
+if ($utype == "cadmin")
+	$sql = "SELECT * FROM cadmin WHERE uname = '$user' AND upassword = '$pwd';";
+if ($utype == "admin") {
+	$sql = "SELECT * FROM admin WHERE uname = '$user' AND upassword = '$pwd';";
+}
+
 
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
-	if ($usertype == "customer") {
+	if ($utype == "customer") {
 		$url = "06_customer.php";
 	}
-	if ($usertype == "cadmin")
+	if ($utype == "cadmin")
 		$url = "07_cadmin.php";
-	if ($usertype == "admin") {
+	if ($utype == "admin") {
 		$url = "08_admin.php";
 	}
 	session_start();
-	// 在登录时将 $user 存储在 $_SESSION 中
 	$_SESSION["user"] = $user;
-	$_SESSION["usertype"] = $usertype;
-
+	$_SESSION["usertype"] = $utype;
 	header('Location:' . $url);
 } else {
-	$url ="error.html";
+	$url = "error.html";
 	header('Location:' . $url);
-	// echo "Opps! Your username or password or usertype is wrong!";
 	echo "<br><hr><br> Go back to <a href='01_login.php'>Login!</a>";
+	$url = "01_login.php";
+	header('Location:' . $url);
 }
