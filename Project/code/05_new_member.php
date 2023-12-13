@@ -11,14 +11,14 @@ if ($pwd1 != $pwd2) {
 	echo "Passwords do not match. Please retype identical passwords in both boxes.<br>";
 	echo "<br>Go to <a href='02_register.php'>Regisration Page </a>";
 } else {
-	$sql = "SELECT uname FROM user WHERE uname = '$user'";
+	$sql = "SELECT uname FROM customer WHERE uname = '$user'";
 	$result = mysqli_query($conn, $sql);
 	if ($result->num_rows > 0) {
 		$row = mysqli_fetch_assoc($result);
 		echo  $user . " has been registered!";
 		echo "<br><hr><br> Go back to <a href='02_register.php'>Regisration</a>";
 	} else {
-		$sql2 = "INSERT INTO `user` (`uname`, `upassword`,`utype`) VALUES ('$user', '$pwd1','$usertype')";
+		$sql2 = "INSERT INTO `customer` (`uname`, `upassword`) VALUES ('$user', '$pwd1')";
 		$result2 = mysqli_query($conn, $sql2);
 		echo "You have been registered successfully! <br> Welcome " . $user . "!<br>";
 		echo "<br><a href='01_login.php'>Go to Login!</a>";
