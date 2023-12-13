@@ -18,8 +18,8 @@ if ($pwd1 != $pwd2) {
 		echo  $user . " has been registered!";
 		echo "<br><hr><br> Go back to <a href='02_register.php'>Regisration</a>";
 	} else {
-		$sql2 = "INSERT INTO `customer` (`uname`, `upassword`) VALUES ('$user', '$pwd1')";
-		$result2 = mysqli_query($conn, $sql2);
+		$sql = "INSERT INTO `customer` (`uname`, `upassword`) VALUES ('$user', '$pwd1')";
+		$result = mysqli_query($conn, $sql);
 		echo "You have been registered successfully! <br> Welcome " . $user . "!<br>";
 		echo "<br><a href='01_login.php'>Go to Login!</a>";
 		$url = "01_login.php";
