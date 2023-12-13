@@ -18,7 +18,7 @@ $usertype = $_SESSION["usertype"];
 $url = '01_login.php';
 if ($usertype != 'customer') header('Location:' . $url);
 
-$sql_user = "SELECT * from user WHERE uname='$user'";
+$sql_user = "SELECT * from customer WHERE uname='$user'";
 $result = mysqli_query($conn, $sql_user);
 if (mysqli_num_rows($result) > 0) {
   $row = mysqli_fetch_assoc($result);
@@ -31,7 +31,7 @@ if (mysqli_num_rows($result) > 0) {
 
 $_SESSION["userID"] = $userID;
 
-$sql_parcel = "SELECT * FROM parcel JOIN user  on parcel.cust_send_uID=user.uID WHERE uname='$user' AND user.uID=parcel.cust_send_uID";
+$sql_parcel = "SELECT * FROM parcel JOIN customer on parcel.cust_send_uID=customer.uID WHERE uname='$user' AND customer.uID=parcel.cust_send_uID";
 
 $result1 = mysqli_query($conn, $sql_parcel);
 
