@@ -45,7 +45,8 @@ const historyNavItem = document.getElementById("historyNavItem");
 const pickimg = document.getElementById('pickimg');
 const sendimg = document.getElementById('sendimg');
 const acceptbtn=document.getElementById('acceptbtn');
-const checkbtn=document.getElementById('checkbtn');
+const checkbtn1=document.getElementById('checkbtn1');
+const checkbtn2=document.getElementById('checkbtn2');
 
 
 const leftcontentElement = document.querySelector(".left-content");
@@ -109,21 +110,37 @@ sendPackageNavItem.addEventListener("click", handleSendClick);
 
 
 // 发送操作的处理函数
-function handleSearchHistoryClick() {
+function handleHistoryClick() {
   console.log("SearchHistory Successfully!");
   leftcontentElement.style.display = "none";
   pickPartElement.style.display = "none";
   profileElement.style.display = "none";
   popup.style.display = "none";
   sendPartElement.style.display = "none";
-  
+  homeNavItem.className = "nav-item";
   rightcontentElement.style.display = "grid";
   searchhistoryElement.style.display="grid";
-
+  historyNavItem.className = "nav-item active";
 }
 
-searchNavItem.addEventListener("click", handleSearchHistoryClick);
-historyNavItem.addEventListener("click", handleSearchHistoryClick);
+function handleSearchClick() {
+  console.log("SearchHistory Successfully!");
+  leftcontentElement.style.display = "none";
+  pickPartElement.style.display = "none";
+  profileElement.style.display = "none";
+  popup.style.display = "none";
+  sendPartElement.style.display = "none";
+  homeNavItem.className = "nav-item";
+  rightcontentElement.style.display = "grid";
+  searchhistoryElement.style.display="grid";
+  searchNavItem.className = "nav-item active";
+}
+
+
+searchNavItem.addEventListener("click", handleSearchClick);
+historyNavItem.addEventListener("click", handleHistoryClick);
+checkbtn1.addEventListener("click",handleHistoryClick);
+checkbtn2.addEventListener("click",handleHistoryClick);
 
 function fillForm(pID) {
   document.getElementById('packageid').value = pID;

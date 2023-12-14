@@ -224,7 +224,7 @@ if (mysqli_num_rows($result1) > 0) {
                       <div class='activity'>
                         <h3>$pendingCount Packages is waiting for send.</h3>
                       </div>
-                    <button class='btn' id='acceptbtn'>Check</button>
+                    <button class='btn' id='checkbtn1'>Check</button>
                   </div>
                 ";
             } else {
@@ -237,7 +237,7 @@ if (mysqli_num_rows($result1) > 0) {
                   <div class='activity'>
                     <h3>No packages need to be send</h3>
                   </div>
-                  <button class='btn' id='checkbtn'>Check</button>
+                  <button class='btn' id='checkbtn1'>Check</button>
 
               </div>
             ";
@@ -255,7 +255,7 @@ if (mysqli_num_rows($result1) > 0) {
                         <h3>$inTransitCount Packages is transporting.</h3>
                         <div class='participants'> </div>
                       </div>
-                    <button class='btn' id='checkbtn'>Check</button>
+                    <button class='btn' id='checkbtn2'>Check</button>
                   </div>
                 ";
             } else {
@@ -267,7 +267,7 @@ if (mysqli_num_rows($result1) > 0) {
                   </div>
                   <div class='activity'>
                     <h3>No packages are transported.</h3>
-                    <button class='btn' id='checkbtn'>Check</button>
+                    <button class='btn' id='checkbtn2'>Check</button>
                   </div>
               </div>
             ";
