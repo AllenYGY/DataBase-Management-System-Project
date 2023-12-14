@@ -14,10 +14,12 @@ session_start();
 $user = $_SESSION["user"];
 $usertype = $_SESSION["usertype"];
 
+
+
 $url = '01_login.php';
 if ($usertype != 'cadmin') header('Location:' . $url);
 
-$sql_user = "SELECT * from user WHERE uname='$user'";
+$sql_user = "SELECT * FROM cadmin WHERE uname='$user'";
 $result = mysqli_query($conn, $sql_user);
 if (mysqli_num_rows($result) > 0) {
   $row = mysqli_fetch_assoc($result);
