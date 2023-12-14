@@ -32,7 +32,7 @@ if (mysqli_num_rows($result) > 0) {
 
 $_SESSION["userID"]=$userID;
 
-$sql_getcsID="SELECT * FROM delivery_manager WHERE delivery_manager.uID='$userID'";
+$sql_getcsID="SELECT * FROM cadmin WHERE cadmin.uID='$userID'";
 
 $result1 = mysqli_query($conn, $sql_getcsID);
 
@@ -43,8 +43,8 @@ if (mysqli_num_rows($result1) > 0) {
 
 $sql_parcel = "SELECT * FROM parcel 
                       JOIN courier_station ON location=csaddress 
-                      JOIN delivery_manager USING(csID) 
-              WHERE delivery_manager.uID='$userID'";
+                      JOIN cadmin USING(csID) 
+              WHERE cadmin.uID='$userID'";
 
 $result1 = mysqli_query($conn, $sql_parcel);
 $pendingCount = 0;
@@ -64,8 +64,8 @@ if (mysqli_num_rows($result1) > 0) {
 
 $sql_parcel = "SELECT * FROM parcel 
                       JOIN courier_station ON send_address=csaddress 
-                      JOIN delivery_manager USING(csID) 
-              WHERE delivery_manager.uID='$userID'";
+                      JOIN cadmin USING(csID) 
+              WHERE cadmin.uID='$userID'";
 $result5 = mysqli_query($conn, $sql_parcel);
 
 if (mysqli_num_rows($result5) > 0) {
