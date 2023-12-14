@@ -7,13 +7,12 @@ $endAddress = $_POST['endadr'];
 $packageType = $_POST['packagetype'];
 $weight = $_POST['weight'];
 $volume = $_POST['volume'];
-$volumeType = $_POST['volumetype'];
-
+// $volumeType = $_POST['volumetype'];
 
 session_start();
 $user = $_SESSION['user'];
 $userID = $_SESSION['userID'];
-$usertype=$_SESSION['$usertype'];
+$usertype=$_SESSION['usertype'];
 
 $sql = "INSERT INTO parcel (volume, weight, location, parceltype, status, cust_send_uID, send_address, send_storage_time)
         VALUES ('$volume', '$weight', '$startAddress', 'others', 'pending', '$userID','$endAddress', NOW())";

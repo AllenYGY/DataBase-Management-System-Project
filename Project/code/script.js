@@ -42,12 +42,11 @@ const sendPackageNavItem = document.getElementById("sendPackageNavItem");
 const searchNavItem = document.getElementById("searchNavItem");
 const historyNavItem = document.getElementById("historyNavItem");
 
-const pickimg = document.getElementById('pickimg');
-const sendimg = document.getElementById('sendimg');
-const acceptbtn=document.getElementById('acceptbtn');
-const checkbtn1=document.getElementById('checkbtn1');
-const checkbtn2=document.getElementById('checkbtn2');
-
+const pickimg = document.getElementById("pickimg");
+const sendimg = document.getElementById("sendimg");
+const acceptbtn = document.getElementById("acceptbtn");
+const checkbtn1 = document.getElementById("checkbtn1");
+const checkbtn2 = document.getElementById("checkbtn2");
 
 const leftcontentElement = document.querySelector(".left-content");
 const profileElement = document.querySelector(".profile");
@@ -62,7 +61,7 @@ profileNavItem.addEventListener("click", () => {
   sendPartElement.style.display = "none";
   pickPartElement.style.display = "none";
   popup.style.display = "none";
-  searchhistoryElement.style.display="none";
+  searchhistoryElement.style.display = "none";
 
   rightcontentElement.style.display = "grid";
   profileElement.style.display = "grid";
@@ -75,14 +74,13 @@ function handlePickClick() {
   sendPartElement.style.display = "none";
   profileElement.style.display = "none";
   popup.style.display = "none";
-  searchhistoryElement.style.display="none";
+  searchhistoryElement.style.display = "none";
   homeNavItem.className = "nav-item";
 
   rightcontentElement.style.display = "grid";
   pickPartElement.style.display = "grid";
-  
-  pickPackageNavItem.className = "nav-item active";
 
+  pickPackageNavItem.className = "nav-item active";
 }
 // 在 pickimg 上添加点击事件监听器
 pickimg.addEventListener("click", handlePickClick);
@@ -97,17 +95,15 @@ function handleSendClick() {
   pickPartElement.style.display = "none";
   profileElement.style.display = "none";
   popup.style.display = "none";
-  searchhistoryElement.style.display="none";
+  searchhistoryElement.style.display = "none";
   homeNavItem.className = "nav-item";
   rightcontentElement.style.display = "grid";
   sendPartElement.style.display = "grid";
   sendPackageNavItem.className = "nav-item active";
-
 }
 
 sendimg.addEventListener("click", handleSendClick);
 sendPackageNavItem.addEventListener("click", handleSendClick);
-
 
 // 发送操作的处理函数
 function handleHistoryClick() {
@@ -119,7 +115,7 @@ function handleHistoryClick() {
   sendPartElement.style.display = "none";
   homeNavItem.className = "nav-item";
   rightcontentElement.style.display = "grid";
-  searchhistoryElement.style.display="grid";
+  searchhistoryElement.style.display = "grid";
   historyNavItem.className = "nav-item active";
 }
 
@@ -132,17 +128,28 @@ function handleSearchClick() {
   sendPartElement.style.display = "none";
   homeNavItem.className = "nav-item";
   rightcontentElement.style.display = "grid";
-  searchhistoryElement.style.display="grid";
+  searchhistoryElement.style.display = "grid";
   searchNavItem.className = "nav-item active";
 }
 
-
 searchNavItem.addEventListener("click", handleSearchClick);
 historyNavItem.addEventListener("click", handleHistoryClick);
-checkbtn1.addEventListener("click",handleHistoryClick);
-checkbtn2.addEventListener("click",handleHistoryClick);
+checkbtn1.addEventListener("click", handleHistoryClick);
+checkbtn2.addEventListener("click", handleHistoryClick);
 
 function fillForm(pID) {
-  document.getElementById('packageid').value = pID;
+  document.getElementById("packageid").value = pID;
   console.log(pID);
 }
+
+document
+  .getElementById("send_parcel_form")
+  .addEventListener("submit", function (event) {
+    let startadr = document.getElementById("startadr").value;
+    let endadr = document.getElementById("endadr").value;
+
+    if (startadr === endadr) {
+      alert("Mailing address and Receiving address cannot be the same.");
+      event.preventDefault();
+    }
+  });

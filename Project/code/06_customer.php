@@ -482,7 +482,7 @@ if (mysqli_num_rows($result1) > 0) {
 
         <!-- send section -->
         <div class="sendpart">
-          <form action="10_send_parcel.php" method="POST">
+          <form action="10_send_parcel.php" method="POST" id='send_parcel_form'>
             <h1>Send package</h1><br>
             <div class="form-group">
               <label for="startadr">Mailing Address:</label>
@@ -495,7 +495,7 @@ if (mysqli_num_rows($result1) > 0) {
               </select>
             </div>
             <div class="form-group">
-              <label for="startadr">Reciving Address:</label>
+              <label for="endadr">Reciving Address:</label>
               <select id="endadr" name="endadr">
                 <option value="UIC">UIC</option>
                 <option value="JNU">JNU</option>
