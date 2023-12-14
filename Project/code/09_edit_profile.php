@@ -6,7 +6,6 @@ $user = $_SESSION["user"]; // 从会话中获取用户名
 $utype = $_SESSION["usertype"];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // 获取表单数据
   // $newusr = mysqli_real_escape_string($conn, $_POST["newusr"]);
   $newPhone = mysqli_real_escape_string($conn, $_POST["newPhone"]);
   $newMail = mysqli_real_escape_string($conn, $_POST["newMail"]);
