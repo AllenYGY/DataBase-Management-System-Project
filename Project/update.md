@@ -15,3 +15,6 @@
 - In_transit
 - Pending
 
+## Delivery process
+
+user $send$  courier station A   $send\ off$       courier station B $pick$  userB
