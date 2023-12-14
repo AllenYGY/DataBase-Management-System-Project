@@ -236,8 +236,9 @@ if (mysqli_num_rows($result1) > 0) {
                   </div>
                   <div class='activity'>
                     <h3>No packages need to be send</h3>
-                    <div class='participants'> </div>
                   </div>
+                  <button class='btn' id='checkbtn'>Check</button>
+
               </div>
             ";
             }
@@ -254,7 +255,7 @@ if (mysqli_num_rows($result1) > 0) {
                         <h3>$inTransitCount Packages is transporting.</h3>
                         <div class='participants'> </div>
                       </div>
-                    <button class='btn'>Check</button>
+                    <button class='btn' id='checkbtn'>Check</button>
                   </div>
                 ";
             } else {
@@ -266,6 +267,7 @@ if (mysqli_num_rows($result1) > 0) {
                   </div>
                   <div class='activity'>
                     <h3>No packages are transported.</h3>
+                    <button class='btn' id='checkbtn'>Check</button>
                   </div>
               </div>
             ";
@@ -393,22 +395,22 @@ if (mysqli_num_rows($result1) > 0) {
 
         <!-- pick section -->
         <div class="pickpart">
-          <form id="pickForm" action="11_pick_parcel.php" method="POST">
-            <div class="form-group">
-              <h1>Pick package</h1><br>
-              <label for="packageid">Package ID:</label>
-              <input type="text" id="packageid" name="packageid" placeholder="Enter your package ID" autocomplete="username">
-            </div>
-            <div class="form-group">
-              <label for="pickpwd">Password:</label>
-              <input type="password" id="pickpwd" name="pickpwd" placeholder="Enter your password" autocomplete="current-password">
-            </div>
-            <input type="submit" value="Pick" id="pickButton">
-          </form>
-
 
           <div class="weekly-schedule">
-            <h1>Package need to be pick</h1>
+
+            <form id="pickForm" action="11_pick_parcel.php" method="POST">
+              <div class="form-group">
+                <h1>Pick package</h1><br>
+                <label for="packageid">Package ID:</label>
+                <input type="text" id="packageid" name="packageid" placeholder="Enter your package ID" autocomplete="username">
+              </div>
+              <div class="form-group">
+                <label for="pickpwd">Password:</label>
+                <input type="password" id="pickpwd" name="pickpwd" placeholder="Enter your password" autocomplete="current-password">
+              </div>
+              <input type="submit" value="Pick" id="pickButton">
+            </form>
+            <h1>Packages need to be pick</h1>
             <?php
             echo "<div class='calendar'>";
             if (isset($deliveredData)) {
@@ -523,17 +525,9 @@ if (mysqli_num_rows($result1) > 0) {
               <label for="volume">Volume: (Litre)</label>
               <input type="number" step="0.01" id="volume" name="volume" placeholder="Enter volume in litres" required min="0" max="300">
             </div>
-            <!-- <div class="form-group">
-              <label for="volumetype">Volume Type:</label>
-              <select id="volumetype" name="volumetype">
-                <option value="large">Large</option>
-                <option value="medium">Medium</option>
-                <option value="small">Small</option>
-              </select>
-            </div> -->
             <div class="form-group">
-              <label for="volume">Receiver's phone number: </label>
-              <input type="number" id="phone" name="phone" placeholder="Enter receiver's phone number">
+              <label for="volume">Receiver's ID: </label>
+              <input type="number" id="cust_pick_id" name="cust_pick_id" placeholder="Enter receiver's ID">
             </div>
 
             <input type="submit" value="Send" id="sendButton">
