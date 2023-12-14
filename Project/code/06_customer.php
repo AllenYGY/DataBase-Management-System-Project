@@ -58,7 +58,7 @@ if (mysqli_num_rows($result1) > 0) {
   }
 }
 
-$sql_parcel = "SELECT * FROM parcel JOIN user  on parcel.cust_pick_uID=user.uID WHERE uname='$user' AND user.uID=parcel.cust_pick_uID";
+$sql_parcel = "SELECT * FROM parcel JOIN customer on parcel.cust_pick_uID=customer.uID WHERE uname='$user' AND customer.uID=parcel.cust_pick_uID";
 
 $result2 = mysqli_query($conn, $sql_parcel);
 
