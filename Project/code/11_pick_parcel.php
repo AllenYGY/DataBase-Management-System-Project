@@ -21,7 +21,6 @@ if ($result3 && mysqli_num_rows($result3) > 0) {
               WHERE `parcelID` = '$packageid' AND `cust_pick_uID` = '$userID'";
   $result4 = mysqli_query($conn, $sql_pick);
   if ($result4 > 0) {
-    // echo"1111";
     header('Location:' . $url);
   }
 } else {
