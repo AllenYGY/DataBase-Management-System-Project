@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .day-and-activity {
+      /* 初始状态下折叠栏的样式 */
+      overflow: hidden;
+      max-height: 40px; /* 初始高度 */
+      transition: max-height 0.3s ease;
+    }
+  
+    .day-and-activity.expand {
+      /* 展开状态下的样式 */
+      max-height: 200px; /* 你想要展开的高度 */
+    }
+  
+    .toggle-btn {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <!-- HTML 结构 -->
+  <div class='day-and-activity activity-four'>
+      <div class='day'>
+          <h1>$date</h1>
+          <p>$day</p>
+      </div>
+      <div class='activity'>
+          <h2>No current Packages history</h2>
+          
+      </div>
+  </div>
+  
+  <script>
+    function toggleActivity(btn) {
+      var activityDiv = btn.parentElement.parentElement;
+      activityDiv.classList.toggle('expand');
+      btn.innerText = activityDiv.classList.contains('expand') ? 'Hide Details' : 'Show Details';
+    }
+  </script>
+  
+</body>
+</html>
