@@ -1,8 +1,8 @@
 
 <?php
 include "03_connectDB.php";
-session_start();
 
+session_start();
 $user = $_SESSION["user"];
 $usertype = $_SESSION["usertype"];
 $userID = $_SESSION["userID"];
