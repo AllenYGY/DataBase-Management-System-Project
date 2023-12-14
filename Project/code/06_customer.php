@@ -489,9 +489,6 @@ if (mysqli_num_rows($result1) > 0) {
               ";
             }
             echo "</div>";
-            
-
-            
             ?>
           </div>
         </div>
@@ -591,7 +588,6 @@ if (mysqli_num_rows($result1) > 0) {
                 $startadr = isset($deliveredDataRow['location']) ? $deliveredDataRow['location'] : 'unknown';
                 $pstatus = isset($deliveredDataRow['status']) ? $deliveredDataRow['status'] : 'unknown';
                 $endadr = isset($deliveredDataRow['send_address']) ? $deliveredDataRow['send_address'] : 'unknown';
-
                 switch ($dayOfWeek) {
                   case 'Monday':
                     $cssClass = 'activity-one';
