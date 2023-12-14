@@ -523,15 +523,19 @@ if (mysqli_num_rows($result1) > 0) {
               <label for="volume">Volume: (Litre)</label>
               <input type="number" step="0.01" id="volume" name="volume" placeholder="Enter volume in litres" required min="0" max="300">
             </div>
-
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="volumetype">Volume Type:</label>
               <select id="volumetype" name="volumetype">
                 <option value="large">Large</option>
                 <option value="medium">Medium</option>
                 <option value="small">Small</option>
               </select>
+            </div> -->
+            <div class="form-group">
+              <label for="volume">Receiver's phone number: </label>
+              <input type="number" id="phone" name="phone" placeholder="Enter receiver's phone number">
             </div>
+
             <input type="submit" value="Send" id="sendButton">
           </form>
         </div>
@@ -685,7 +689,6 @@ if (mysqli_num_rows($result1) > 0) {
               <div class="image-icon-1">
                 <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
               </div>
-              <!-- <input type="text" id="newusr" name="newusr" placeholder="<?php echo $name; ?>" autocomplete="username"> -->
             </div>
             <div class="form-group">
               <label for="editpwd">Password:</label>
