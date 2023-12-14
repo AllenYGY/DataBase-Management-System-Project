@@ -38,6 +38,7 @@ $result1 = mysqli_query($conn, $sql_parcel);
 $pendingCount = 0;
 $inTransitCount = 0;
 $deliveredCount = 0;
+$acceptCount = 0;
 
 $allData = array();
 
@@ -70,10 +71,15 @@ if (mysqli_num_rows($result1) > 0) {
         $deliveredData[] = $row;
         $deliveredCount += 1;
         break;
+      case 'accept':
+        $acceptData[] = $row;
+        $acceptCount += 1;
+        break;
     }
     $allData[] = $row;
   }
 }
+
 
 ?>
 
@@ -108,7 +114,6 @@ if (mysqli_num_rows($result1) > 0) {
             <i class="fa fa-get-pocket nav-icon"></i>
             <span class="nav-text">Pick package</span>
           </a>
-
         </li>
 
         <li class="nav-item" id="sendPackageNavItem">
@@ -484,6 +489,9 @@ if (mysqli_num_rows($result1) > 0) {
               ";
             }
             echo "</div>";
+            
+
+            
             ?>
           </div>
         </div>
@@ -545,7 +553,7 @@ if (mysqli_num_rows($result1) > 0) {
         <!-- Search & History section -->
         <div class="search-hitorypart">
           <div class="weekly-schedule">
-            <h1>Search History</h1>
+            <h2>Search History</h2>
             <div id="searchHistory" class="container">
               <form action="#" method="get">
                 <div class="form-group">
@@ -567,21 +575,97 @@ if (mysqli_num_rows($result1) > 0) {
             </div>
           </div>
           <div class="weekly-schedule">
-            <h1>Package History</h1>
+
             <?php
             echo "<div class='calendar'>";
-            if (isset($allData)) {
-              foreach ($allData as $allDataRow) {
-                $send_time = isset($allDataRow['send_time']) ? date('Y-m-d', strtotime($allDataRow['send_time'])) : 'unknown';
-                $pick_time = isset($allDataRow['pick_time']) ? date('Y-m-d', strtotime($allDataRow['pick_time'])) : 'unknown';
-                $send_storage_time = isset($allDataRow['send_storage_time']) ? date('Y-m-d', strtotime($allDataRow['send_storage_time'])) : 'unknown';
-                $pick_storage_time = isset($allDataRow['pick_storage_time']) ? date('Y-m-d', strtotime($allDataRow['pick_storage_time'])) : 'unknown';
+            echo "<h2>Package History</h2>";
+            echo "<h1>Packages waiting to be accepted</h1>";
+            if (isset($deliveredData)) {
+              foreach ($deliveredData as $deliveredDataRow) {
+                $send_time = isset($deliveredDataRow['send_time']) ? date('Y-m-d', strtotime($deliveredDataRow['send_time'])) : 'unknown';
+                $send_storage_time = isset($deliveredDataRow['send_storage_time']) ? date('Y-m-d', strtotime($deliveredDataRow['send_storage_time'])) : 'unknown';
+                $pick_storage_time = isset($deliveredDataRow['pick_storage_time']) ? date('Y-m-d', strtotime($deliveredDataRow['pick_storage_time'])) : 'unknown';
                 $dayOfWeek = isset($send_time) ? date('l', strtotime($send_time)) : 'unknown';
-                $date = isset($allDataRow['send_storage_time']) ? date('d', strtotime($allDataRow['send_storage_time'])) : 'unknown';
-                $pID = isset($allDataRow['parcelID']) ? $allDataRow['parcelID'] : 'unknown';
-                $startadr = isset($allDataRow['location']) ? $allDataRow['location'] : 'unknown';
-                $pstatus = isset($allDataRow['status']) ? $allDataRow['status'] : 'unknown';
-                $endadr = isset($allDataRow['send_address']) ? $allDataRow['send_address'] : 'unknown';
+                $date = isset($deliveredDataRow['send_storage_time']) ? date('d', strtotime($deliveredDataRow['send_storage_time'])) : 'unknown';
+                $pID = isset($deliveredDataRow['parcelID']) ? $deliveredDataRow['parcelID'] : 'unknown';
+                $startadr = isset($deliveredDataRow['location']) ? $deliveredDataRow['location'] : 'unknown';
+                $pstatus = isset($deliveredDataRow['status']) ? $deliveredDataRow['status'] : 'unknown';
+                $endadr = isset($deliveredDataRow['send_address']) ? $deliveredDataRow['send_address'] : 'unknown';
+
+                switch ($dayOfWeek) {
+                  case 'Monday':
+                    $cssClass = 'activity-one';
+                    $day = 'MON';
+                    break;
+                  case 'Tuesday':
+                    $cssClass = 'activity-two';
+                    $day = 'TUE';
+                    break;
+                  case 'Wednesday':
+                    $cssClass = 'activity-three';
+                    $day = 'WED';
+                    break;
+                  case 'Thursday':
+                    $cssClass = 'activity-four';
+                    $day = 'THU';
+                    break;
+                  case 'Friday':
+                    $cssClass = 'activity-five';
+                    $day = 'FRI';
+                    break;
+                  case 'Saturday':
+                    $cssClass = 'activity-six';
+                    $day = 'SAT';
+                    break;
+                  default:
+                    $cssClass = 'activity-seven';
+                    $day = 'SUN';
+                    break;
+                }
+                echo "
+                  <div class='day-and-activity $cssClass'>
+                      <div class='day'>
+                          <h1>$date</h1>
+                          <p>$day</p>
+                      </div>
+                      <div class='activity'>
+                          <h2>Package ID: $pID</h2>
+                          <h2>Package Status: $pstatus</h2>
+                          <h3>&nbsp;&nbsp;Send time: $send_time</h3>
+                          <h3>&nbsp;&nbsp;Send storage time: $send_storage_time</h3>
+                          <h3>&nbsp;&nbsp;Pick storage time: $pick_storage_time</h3>
+                          <h3>&nbsp;&nbsp;Package send courier Station: $startadr</h3>
+                          <h3>&nbsp;&nbsp;Package pick courier Station: $endadr</h3>
+                      </div>
+                  </div>
+              ";
+              }
+            } else {
+              echo "              
+                <div class='day-and-activity activity-four'>
+                    <div class='day'>
+                      <h1>$date</h1>
+                      <p>$day</p>
+                    </div>
+                    <div class='activity'>
+                      <h2>No current Packages history</h2>
+                    </div>
+                </div>
+              ";
+            }
+            echo "<h1>Packages already received</h1>";
+            if (isset($acceptData)) {
+              foreach ($acceptData as $acceptDataRow) {
+                $send_time = isset($acceptDataRow['send_time']) ? date('Y-m-d', strtotime($acceptDataRow['send_time'])) : 'unknown';
+                $pick_time = isset($acceptDataRow['pick_time']) ? date('Y-m-d', strtotime($acceptDataRow['pick_time'])) : 'unknown';
+                $send_storage_time = isset($acceptDataRow['send_storage_time']) ? date('Y-m-d', strtotime($acceptDataRow['send_storage_time'])) : 'unknown';
+                $pick_storage_time = isset($acceptDataRow['pick_storage_time']) ? date('Y-m-d', strtotime($acceptDataRow['pick_storage_time'])) : 'unknown';
+                $dayOfWeek = isset($send_time) ? date('l', strtotime($send_time)) : 'unknown';
+                $date = isset($acceptDataRow['send_storage_time']) ? date('d', strtotime($acceptDataRow['send_storage_time'])) : 'unknown';
+                $pID = isset($acceptDataRow['parcelID']) ? $acceptDataRow['parcelID'] : 'unknown';
+                $startadr = isset($acceptDataRow['location']) ? $acceptDataRow['location'] : 'unknown';
+                $pstatus = isset($acceptDataRow['status']) ? $acceptDataRow['status'] : 'unknown';
+                $endadr = isset($acceptDataRow['send_address']) ? $acceptDataRow['send_address'] : 'unknown';
 
                 switch ($dayOfWeek) {
                   case 'Monday':
@@ -645,82 +729,232 @@ if (mysqli_num_rows($result1) > 0) {
                 </div>
               ";
             }
-            echo "</div>";
+            echo "<h1>Packages in transit</h1>";
+            if (isset($inTransitData)) {
+              foreach ($inTransitData as $inTransitDataRow) {
+                $send_time = isset($inTransitDataRow['send_time']) ? date('Y-m-d', strtotime($inTransitDataRow['send_time'])) : 'unknown';
+                $send_storage_time = isset($inTransitDataRow['send_storage_time']) ? date('Y-m-d', strtotime($inTransitDataRow['send_storage_time'])) : 'unknown';
+                $dayOfWeek = isset($send_time) ? date('l', strtotime($send_time)) : 'unknown';
+                $date = isset($inTransitDataRow['send_storage_time']) ? date('d', strtotime($inTransitDataRow['send_storage_time'])) : 'unknown';
+                $pID = isset($inTransitDataRow['parcelID']) ? $inTransitDataRow['parcelID'] : 'unknown';
+                $startadr = isset($inTransitDataRow['location']) ? $inTransitDataRow['location'] : 'unknown';
+                $pstatus = isset($inTransitDataRow['status']) ? $inTransitDataRow['status'] : 'unknown';
+                $endadr = isset($inTransitDataRow['send_address']) ? $inTransitDataRow['send_address'] : 'unknown';
+
+                switch ($dayOfWeek) {
+                  case 'Monday':
+                    $cssClass = 'activity-one';
+                    $day = 'MON';
+                    break;
+                  case 'Tuesday':
+                    $cssClass = 'activity-two';
+                    $day = 'TUE';
+                    break;
+                  case 'Wednesday':
+                    $cssClass = 'activity-three';
+                    $day = 'WED';
+                    break;
+                  case 'Thursday':
+                    $cssClass = 'activity-four';
+                    $day = 'THU';
+                    break;
+                  case 'Friday':
+                    $cssClass = 'activity-five';
+                    $day = 'FRI';
+                    break;
+                  case 'Saturday':
+                    $cssClass = 'activity-six';
+                    $day = 'SAT';
+                    break;
+                  default:
+                    $cssClass = 'activity-seven';
+                    $day = 'SUN';
+                    break;
+                }
+                echo "
+                  <div class='day-and-activity $cssClass'>
+                      <div class='day'>
+                          <h1>$date</h1>
+                          <p>$day</p>
+                      </div>
+                      <div class='activity'>
+                          <h2>Package ID: $pID</h2>
+                          <h2>Package Status: $pstatus</h2>
+                          <h3>&nbsp;&nbsp;Send time: $send_time</h3>
+                          <h3>&nbsp;&nbsp;Send storage time: $send_storage_time</h3>
+                          <h3>&nbsp;&nbsp;Pick storage time: $pick_storage_time</h3>
+                          <h3>&nbsp;&nbsp;Pick time: $pick_time</h3>
+                          <h3>&nbsp;&nbsp;Package send courier Station: $startadr</h3>
+                          <h3>&nbsp;&nbsp;Package pick courier Station: $endadr</h3>
+                      </div>
+                  </div>
+              ";
+              }
+            } else {
+              echo "              
+                <div class='day-and-activity activity-four'>
+                    <div class='day'>
+                      <h1>$date</h1>
+                      <p>$day</p>
+                    </div>
+                    <div class='activity'>
+                      <h2>No current Packages history</h2>
+                    </div>
+                </div>
+              ";
+            }
+            echo "<h1>Packages waiting to be shipped</h1>";
+            if (isset($pendingData)) {
+              foreach ($pendingData as $pendingDataRow) {
+                $send_time = isset($pendingDataRow['send_time']) ? date('Y-m-d', strtotime($pendingDataRow['send_time'])) : 'unknown';
+                $pick_time = isset($pendingDataRow['pick_time']) ? date('Y-m-d', strtotime($pendingDataRow['pick_time'])) : 'unknown';
+                $send_storage_time = isset($pendingDataRow['send_storage_time']) ? date('Y-m-d', strtotime($pendingDataRow['send_storage_time'])) : 'unknown';
+                $pick_storage_time = isset($pendingDataRow['pick_storage_time']) ? date('Y-m-d', strtotime($pendingDataRow['pick_storage_time'])) : 'unknown';
+                $dayOfWeek = isset($send_time) ? date('l', strtotime($send_time)) : 'unknown';
+                $date = isset($pendingDataRow['send_storage_time']) ? date('d', strtotime($pendingDataRow['send_storage_time'])) : 'unknown';
+                $pID = isset($pendingDataRow['parcelID']) ? $pendingDataRow['parcelID'] : 'unknown';
+                $startadr = isset($pendingDataRow['location']) ? $pendingDataRow['location'] : 'unknown';
+                $pstatus = isset($pendingDataRow['status']) ? $pendingDataRow['status'] : 'unknown';
+                $endadr = isset($pendingDataRow['send_address']) ? $pendingDataRow['send_address'] : 'unknown';
+
+                switch ($dayOfWeek) {
+                  case 'Monday':
+                    $cssClass = 'activity-one';
+                    $day = 'MON';
+                    break;
+                  case 'Tuesday':
+                    $cssClass = 'activity-two';
+                    $day = 'TUE';
+                    break;
+                  case 'Wednesday':
+                    $cssClass = 'activity-three';
+                    $day = 'WED';
+                    break;
+                  case 'Thursday':
+                    $cssClass = 'activity-four';
+                    $day = 'THU';
+                    break;
+                  case 'Friday':
+                    $cssClass = 'activity-five';
+                    $day = 'FRI';
+                    break;
+                  case 'Saturday':
+                    $cssClass = 'activity-six';
+                    $day = 'SAT';
+                    break;
+                  default:
+                    $cssClass = 'activity-seven';
+                    $day = 'SUN';
+                    break;
+                }
+                echo "
+                  <div class='day-and-activity $cssClass'>
+                      <div class='day'>
+                          <h1>$date</h1>
+                          <p>$day</p>
+                      </div>
+                      <div class='activity'>
+                          <h2>Package ID: $pID</h2>
+                          <h2>Package Status: $pstatus</h2>
+                          <h3>&nbsp;&nbsp;Send time: $send_time</h3>
+                          <h3>&nbsp;&nbsp;Send storage time: $send_storage_time</h3>
+                          <h3>&nbsp;&nbsp;Pick storage time: $pick_storage_time</h3>
+                          <h3>&nbsp;&nbsp;Pick time: $pick_time</h3>
+                          <h3>&nbsp;&nbsp;Package send courier Station: $startadr</h3>
+                          <h3>&nbsp;&nbsp;Package pick courier Station: $endadr</h3>
+                      </div>
+                  </div>
+              ";
+              }
+            } else {
+              echo "              
+                <div class='day-and-activity activity-four'>
+                    <div class='day'>
+                      <h1>$date</h1>
+                      <p>$day</p>
+                    </div>
+                    <div class='activity'>
+                      <h2>No current Packages history</h2>
+                    </div>
+                </div>
+              ";
+            }
+
             ?>
-
           </div>
         </div>
-        <!-- left-content end  -->
+      </div>
+      <!-- left-content end  -->
 
-        <!-- right-content -->
-        <div class="right-content">
-          <div class="user-info">
-            <div class="icon-container">
-              <i class="fa fa-bell nav-icon"></i>
-              <i class="fa fa-message nav-icon"></i>
-            </div>
-            <h4><?php echo $name; ?></h4>
-            <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
+      <!-- right-content -->
+      <div class="right-content">
+        <div class="user-info">
+          <div class="icon-container">
+            <i class="fa fa-bell nav-icon"></i>
+            <i class="fa fa-message nav-icon"></i>
           </div>
+          <h4><?php echo $name; ?></h4>
+          <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
+        </div>
 
-          <div class="friends-activity">
-            <h1>Friends' Package</h1>
-            <div class="card-container">
-              <div class="card">
-                <div class="card-user-info">
-                  <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DJY.png" alt="SJY" />
-                  <h2>SJY</h2>
-                </div>
-                <img class="card-img" src="/Project/image/pick.jpg" alt="pickup" />
-                <p>I just recive a new package today. Please help me pick up the package.</p>
+        <div class="friends-activity">
+          <h1>Friends' Package</h1>
+          <div class="card-container">
+            <div class="card">
+              <div class="card-user-info">
+                <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DJY.png" alt="SJY" />
+                <h2>SJY</h2>
               </div>
+              <img class="card-img" src="/Project/image/pick.jpg" alt="pickup" />
+              <p>I just recive a new package today. Please help me pick up the package.</p>
+            </div>
 
-              <div class="card card-two">
-                <div class="card-user-info">
-                  <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DSX.png" alt="DSX" />
-                  <h2>DSX</h2>
+            <div class="card card-two">
+              <div class="card-user-info">
+                <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DSX.png" alt="DSX" />
+                <h2>DSX</h2>
 
-                </div>
-                <img class="card-img" src="/Project/image/pick.jpg" alt="pickup" />
-                <p>I just recive a new package today. Please help me pick up the package.</p>
               </div>
+              <img class="card-img" src="/Project/image/pick.jpg" alt="pickup" />
+              <p>I just recive a new package today. Please help me pick up the package.</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <div id="popup" class="edit-profile">
-          <form action="09_edit_profile.php" method="POST">
-            <div class="form-group">
-              <h1>Edit Profile</h1><br>
-              <!-- <label for="usr">Username: <?php echo $name; ?></label> -->
-              <div class="image-icon-1">
-                <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
-              </div>
+      <div id="popup" class="edit-profile">
+        <form action="09_edit_profile.php" method="POST">
+          <div class="form-group">
+            <h1>Edit Profile</h1><br>
+            <!-- <label for="usr">Username: <?php echo $name; ?></label> -->
+            <div class="image-icon-1">
+              <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
             </div>
-            <div class="form-group">
-              <label for="editpwd">Password:</label>
-              <input type="password" id="editpwd" name="editpwd" placeholder="Edit your password" autocomplete="current-password">
-            </div>
-            <div class="form-group">
-              <label for="newPhone">Phone:</label>
-              <input type="text" id="newPhone" name="newPhone" placeholder="<?php echo $phone; ?>">
-            </div>
-            <div class="form-group">
-              <label for="newMail">Mail:</label>
-              <input type="text" id="newMail" name="newMail" placeholder="<?php echo $mail; ?>">
-            </div>
-            <div class="form-group">
-              <label for="newGender">Gender:</label>
-              <input type="text" id="newGender" name="newGender" placeholder="<?php echo $gender; ?>">
-            </div>
+          </div>
+          <div class="form-group">
+            <label for="editpwd">Password:</label>
+            <input type="password" id="editpwd" name="editpwd" placeholder="Edit your password" autocomplete="current-password">
+          </div>
+          <div class="form-group">
+            <label for="newPhone">Phone:</label>
+            <input type="text" id="newPhone" name="newPhone" placeholder="<?php echo $phone; ?>">
+          </div>
+          <div class="form-group">
+            <label for="newMail">Mail:</label>
+            <input type="text" id="newMail" name="newMail" placeholder="<?php echo $mail; ?>">
+          </div>
+          <div class="form-group">
+            <label for="newGender">Gender:</label>
+            <input type="text" id="newGender" name="newGender" placeholder="<?php echo $gender; ?>">
+          </div>
 
-            <div class="form-group">
-              <label for="oldpwd">Old Password:</label>
-              <input type="text" id="oldpwd" name="oldpwd" placeholder="Enter you password">
-            </div>
-            <input type="submit" value="Edit" id="editButton">
-          </form>
-        </div>
+          <div class="form-group">
+            <label for="oldpwd">Old Password:</label>
+            <input type="text" id="oldpwd" name="oldpwd" placeholder="Enter you password">
+          </div>
+          <input type="submit" value="Edit" id="editButton">
+        </form>
+      </div>
     </section>
 
   </main>
