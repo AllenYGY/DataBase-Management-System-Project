@@ -224,7 +224,7 @@ if (mysqli_num_rows($result1) > 0) {
                       <div class='activity'>
                         <h3>$pendingCount Packages is waiting for send.</h3>
                       </div>
-                    <button class='btn'>Check</button>
+                    <button class='btn' id='acceptbtn'>Check</button>
                   </div>
                 ";
             } else {

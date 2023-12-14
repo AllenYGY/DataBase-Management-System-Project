@@ -45,6 +45,8 @@ const historyNavItem = document.getElementById("historyNavItem");
 const pickimg = document.getElementById('pickimg');
 const sendimg = document.getElementById('sendimg');
 const acceptbtn=document.getElementById('acceptbtn');
+const checkbtn=document.getElementById('checkbtn');
+
 
 const leftcontentElement = document.querySelector(".left-content");
 const profileElement = document.querySelector(".profile");
