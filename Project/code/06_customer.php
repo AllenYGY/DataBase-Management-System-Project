@@ -535,7 +535,7 @@ if (mysqli_num_rows($result1) > 0) {
             </div>
             <div class="form-group">
               <label for="volume">Receiver's ID: </label>
-              <input type="number" id="cust_pick_id" name="cust_pick_id" placeholder="Enter receiver's ID">
+              <input type="number" id="cust_pick_uID" name="cust_pick_uID" placeholder="Enter Receiver's ID">
             </div>
 
             <input type="submit" value="Send" id="sendButton">
