@@ -534,7 +534,7 @@ if (mysqli_num_rows($result1) > 0) {
               <input type="number" step="0.01" id="volume" name="volume" placeholder="Enter volume in litres" required min="0" max="300">
             </div>
             <div class="form-group">
-              <label for="volume">Receiver's ID: </label>
+              <label for="cust_pick_uID">Receiver's ID: </label>
               <input type="number" id="cust_pick_uID" name="cust_pick_uID" placeholder="Enter Receiver's ID">
             </div>
 
@@ -548,6 +548,11 @@ if (mysqli_num_rows($result1) > 0) {
             <h1>Search History</h1>
             <div id="searchHistory" class="container">
               <form action="#" method="get">
+                <div class="form-group">
+                  <label for="parcelID">Parcel's ID: </label>
+                  <input type="number" id="parcelID" name="parcelID" placeholder="Enter parcel's ID">
+                </div>
+
                 <div class="form-group">
                   Start date:&nbsp;&nbsp;&nbsp;
                   <input type="date" id="start_date" name="start_date">
