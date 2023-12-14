@@ -26,5 +26,4 @@ if ($result3 && mysqli_num_rows($result3) > 0) {
 } else {
   echo "<script>alert('Package ID not found or does not belong to you.')</script>";
   header('Location:' . $url);
-
 }
