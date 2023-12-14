@@ -147,6 +147,15 @@ if (mysqli_num_rows($result1) > 0) {
           </a>
         </li>
 
+        <li class="nav-item">
+          <b></b>
+          <b></b>
+          <a href="01_login.php">
+            <i class="fa fa-minus nav-icon"></i>
+            <span class="nav-text">Log off</span>
+          </a>
+        </li>
+
       </ul>
     </nav>
 
@@ -253,7 +262,6 @@ if (mysqli_num_rows($result1) > 0) {
                       </div>
                       <div class='activity'>
                         <h3>$inTransitCount Packages is transporting.</h3>
-                        <div class='participants'> </div>
                       </div>
                     <button class='btn' id='checkbtn2'>Check</button>
                   </div>
@@ -266,9 +274,9 @@ if (mysqli_num_rows($result1) > 0) {
                     <p>$day</p>
                   </div>
                   <div class='activity'>
-                    <h3>No packages are transported.</h3>
-                    <button class='btn' id='checkbtn2'>Check</button>
+                    <h3>No packages are transporting.</h3>
                   </div>
+                  <button class='btn' id='checkbtn2'>Check</button>
               </div>
             ";
             }

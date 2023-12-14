@@ -7,3 +7,10 @@
 - admin
 
 - user 拆分作为优化
+
+## History
+
+- Delivery
+- Accept
+- In_transit
+- Pending
