@@ -708,10 +708,7 @@ if (mysqli_num_rows($result1) > 0) {
               <label for="newGender">Gender:</label>
               <input type="text" id="newGender" name="newGender" placeholder="<?php echo $gender; ?>">
             </div>
-            <!-- <div class="form-group">
-              <label for="newAdr">Address:</label>
-              <input type="text" id="newAdr" name="newAdr" placeholder="Edit your Address">
-            </div> -->
+
             <div class="form-group">
               <label for="oldpwd">Old Password:</label>
               <input type="text" id="oldpwd" name="oldpwd" placeholder="Enter you password">
