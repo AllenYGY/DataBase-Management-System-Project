@@ -2,10 +2,10 @@
 include "03_connectDB.php";
 
 session_start();
-$user = $_SESSION["user"]; // 从会话中获取用户名
+$user = $_SESSION["user"]; 
 $utype = $_SESSION["usertype"];
 
-echo$utype;
+echo $utype;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $sql = "SELECT * FROM customer WHERE uname='$user'";
   $result = mysqli_query($conn, $sql);
   if ($result) {
-    
+
     $row = mysqli_fetch_assoc($result);
     $storedPassword = $row['upassword'];
     $storedmail = $row['umail'];
@@ -50,14 +50,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $check = 1;
       }
 
+      
+
       if ($check == 1) {
         $updateQuery .= " WHERE uname='$user'";
         echo $updateQuery;
+
+
         $updateResult = mysqli_query($conn, $updateQuery);
 
         if ($updateResult) {
           echo "User information updated successfully!";
-          // echo $usertype;
           if ($utype == "customer") {
             $url = "06_customer.php";
           }
