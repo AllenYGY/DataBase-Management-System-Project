@@ -14,8 +14,6 @@ session_start();
 $user = $_SESSION["user"];
 $usertype = $_SESSION["usertype"];
 
-
-
 $url = '01_login.php';
 if ($usertype != 'cadmin') header('Location:' . $url);
 
@@ -432,11 +430,6 @@ $_SESSION["csadr"]=$csadr;
           <input type="submit" value="Send" id="sendButton">
         </form>
       </div>
-
-
-
-
-
 
       <!-- Search & History section -->
       <div class="search-hitorypart">
