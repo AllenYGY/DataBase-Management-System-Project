@@ -508,13 +508,13 @@ if (mysqli_num_rows($result1) > 0) {
               <select id="districtSelect" name="districtSelect">
                 <option value="">SELECT DISTRICT</option>
               </select>
-              <select id="startadr" name="startadr">
+              <!-- <select id="startadr" name="startadr">
                 <option value="UIC">UIC</option>
                 <option value="JNU">JNU</option>
                 <option value="SYSU">SYSU</option>
                 <option value="BNU">BNU</option>
                 <option value="BIT">BIT</option>
-              </select>
+              </select> -->
             </div>
             <div class="form-group">
               <label for="endadr">Reciving Address:</label>
