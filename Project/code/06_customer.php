@@ -189,12 +189,12 @@ if (mysqli_num_rows($result1) > 0) {
 
         <div class="left-bottom">
           <div class="weekly-schedule">
-            <h4>Package status</h4>
+            <h2>Package status</h2>
             <?php
             $date = date('d');
             $day = date('D');
             //? Wait accept part
-            echo "<h2>Waiting for accept</h2>";
+            echo "<h3>Waiting for accept</h3>";
             echo "<div class='calendar'>";
             if ($deliveredCount) {
               echo "              
@@ -227,7 +227,7 @@ if (mysqli_num_rows($result1) > 0) {
             echo "</div>";
 
             //? Wait send part
-            echo "<h2>Waiting for send</h2>";
+            echo "<h3>Waiting for send</h3>";
             if ($pendingCount) {
               echo "              
                   <div class='day-and-activity activity-two'>
@@ -256,7 +256,7 @@ if (mysqli_num_rows($result1) > 0) {
               </div>
             ";
             }
-            echo "<h2>Deliverying packages</h2>";
+            echo "<h3>Deliverying packages</h3>";
             // ? Transporting
             if ($inTransitCount) {
               echo "              
@@ -551,13 +551,23 @@ if (mysqli_num_rows($result1) > 0) {
         <div class="search-hitorypart">
           <div class="weekly-schedule">
             <h2>Search History</h2>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div id="searchHistory" class="container">
               <form action="#" method="get">
                 <div class="form-group">
-                  <label for="parcelID">Parcel's ID: </label>
-                  <input type="number" id="parcelID" name="parcelID" placeholder="Enter parcel's ID">
+                  <label for="parcelID">Package's ID: </label>
+                  <input type="number" id="parcelID" name="parcelID" placeholder="Enter package's ID">
                 </div>
-
+                <div class="form-group">
+                  <select id="pstatus" name="pstatus">
+                    <option value="accept">Accept</option>
+                    <option value="in_transit">Transporting</option>
+                    <option value="delivered">Waiting for accept</option>
+                    <option value="pending">Waiting for send</option>
+                  </select>
+                </div>
                 <div class="form-group">
                   Start date:&nbsp;&nbsp;&nbsp;
                   <input type="date" id="start_date" name="start_date">
@@ -570,12 +580,15 @@ if (mysqli_num_rows($result1) > 0) {
                 <input type="submit" value="Search" id="Search">
               </form>
             </div>
-          </div>
-          <div class="weekly-schedule">
-            <div class='calendar'></div>
-            <ul class="collapse-container">
-              <h2>Package History</h2>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <h2>Package History</h2>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
+            <ul class="collapse-container">
               <li class='item'>
                 <h2 class='item-title'>
                   Packages waiting to be accepted
@@ -660,11 +673,10 @@ if (mysqli_num_rows($result1) > 0) {
               </li>
               <li class='item'>
                 <h2 class='item-title'>
-                  Packages already received
+                  Packages already accepted
                   <i class='fa fa-chevron-down' aria-hidden='true'></i>
                 </h2>
                 <div class='item-content'>
-
                   <?php
                   if (isset($acceptData)) {
                     foreach ($acceptData as $acceptDataRow) {
@@ -830,7 +842,7 @@ if (mysqli_num_rows($result1) > 0) {
               </li>
               <li class='item'>
                 <h2 class='item-title'>
-                  Packages already received
+                  Packages waiting to be send
                   <i class='fa fa-chevron-down' aria-hidden='true'></i>
                 </h2>
                 <div class='item-content'>
@@ -919,7 +931,15 @@ if (mysqli_num_rows($result1) > 0) {
         </div>
       </div>
       <!-- left-content end  -->
-
+      <script>
+        var collapseContainer = document.querySelector(".collapse-container");
+        collapseContainer.onclick = function(e) {
+          if (e.target.tagName.toLowerCase() == 'i') {
+            let itemContent = e.target.parentNode.parentNode.querySelector(".item-content");
+            itemContent.classList.toggle('item-content-on');
+          }
+        }
+      </script>
       <!-- right-content -->
       <div class="right-content">
         <div class="user-info">

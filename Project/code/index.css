@@ -907,9 +907,9 @@ ul{
 
 .collapse-container .item .item-title{
   /* font-weight: normal; */
-  /* padding: 0 10px; */
+  padding: 0 10px;
   /* background-color: #f2f2f2; */
-  height: 40px;
+  /* height: 40px; */
   line-height: 40px;
 }
 
@@ -918,7 +918,13 @@ ul{
   cursor: pointer;
 }
 
-
+.collapse-container .item .item-content{
+  padding: 20px;
+  display: none;
+}
+.item-content-on{
+  display: block!important;
+}
 
 
 @media (max-width: 1500px) {
