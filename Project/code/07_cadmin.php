@@ -680,7 +680,7 @@ $_SESSION["csadr"] = $csadr;
           </div>
           <div class="form-group">
             <label for="oldpwd">Old Password:</label>
-            <input type="text" id="oldpwd" name="oldpwd" placeholder="Enter you password">
+            <input type="text" id="oldpwd" name="oldpwd" placeholder="Enter you password"required>
           </div>
           <input type="submit" value="Edit" id="editButton">
         </form>
