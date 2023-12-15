@@ -1,4 +1,5 @@
-export const provice = [
+
+ export const province = [
   {
     name: "北京市",
     children: [
@@ -34,7 +35,7 @@ export const provice = [
       {
         name: "天津市",
         children: [
-          { name: { name: "和平区" } },
+          { name: "和平区" },
           { name: "河东区" },
           { name: "河西区" },
           { name: "南开区" },
@@ -6299,5 +6300,59 @@ export const provice = [
     ],
   },
 ];
+// 省市区数据
+const provinceSelect = document.getElementById('provinceSelect');
+const citySelect = document.getElementById('citySelect');
+const districtSelect = document.getElementById('districtSelect');
+
+// 填充省份选项
+province.forEach(province => {
+  const option = document.createElement('option');
+  option.text = province.name;
+  option.value = province.name;
+  provinceSelect.add(option);
+});
+
+// 根据选择的省份填充城市选项
+ export function populateCities() {
+  const selectedProvince = provinceSelect.value;
+  const provinceData = province.find(province => province.name === selectedProvince);
+
+  citySelect.innerHTML = '<option value="">选择城市</option>';
+  districtSelect.innerHTML = '<option value="">选择区县</option>';
+
+  if (provinceData) {
+    provinceData.children.forEach(city => {
+      const option = document.createElement('option');
+      option.text = city.name;
+      option.value = city.name;
+      citySelect.add(option);
+    });
+  }
+}
+
+// 根据选择的城市填充区县选项
+export function populateDistricts() {
+  const selectedProvince = provinceSelect.value;
+  const provinceData = province.find(province => province.name === selectedProvince);
+
+  const selectedCity = citySelect.value;
+  const cityData = provinceData.children.find(city => city.name === selectedCity);
+
+  districtSelect.innerHTML = '<option value="">选择区县</option>';
+
+  if (cityData) {
+    cityData.children.forEach(district => {
+      const option = document.createElement('option');
+      option.text = district.name;
+      option.value = district.name;
+      districtSelect.add(option);
+    });
+  }
+}
+
+// 监听省份和城市选择变化
+provinceSelect.addEventListener('change', populateCities);
+citySelect.addEventListener('change', populateDistricts);
 
 
