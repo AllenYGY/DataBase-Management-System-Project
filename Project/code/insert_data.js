@@ -1,5 +1,6 @@
-const mysql = require('mysql');
-const data = require('city.js'); // 替换为包含你的区县数据的文件路径
+const mysql = require('mysql2');
+
+const data = require('./city.js');
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -7,6 +8,7 @@ const connection = mysql.createConnection({
   password: '040301Yjy',
   database: 'project'
 });
+
 
 connection.connect((err) => {
   if (err) {
@@ -18,23 +20,61 @@ connection.connect((err) => {
   data.province.forEach(province => {
     province.children.forEach(city => {
       city.children.forEach(district => {
-        const insertQuery = `INSERT INTO courier_station (csaddress) VALUES ('${district.name}')`;
+        console.log(`Inserted district: ${district.name}, ${city.name}, ${province.name}`);
+        const insertQuery = `INSERT INTO courier_station (csaddress) VALUES ('${district.name}, ${city.name}, ${province.name}')`;
         connection.query(insertQuery, (err, results, fields) => {
           if (err) {
             console.error('Error inserting district:', err);
             return;
           }
-          console.log(`Inserted district: ${district.name}`);
+          console.log(`Inserted district: ${district.name}, ${city.name}, ${province.name}`);
         });
       });
     });
   });
+
+  connection.end((err) => {
+    if (err) {
+      console.error('Error closing connection:', err);
+      return;
+    }
+    console.log('Connection closed');
+  });
 });
 
-connection.end((err) => {
-  if (err) {
-    console.error('Error closing connection:', err);
-    return;
-  }
-  console.log('Connection closed');
-});
+
+
+
+// connection.connect((err) => {
+//   if (err) {
+//     console.error('Error connecting to database:', err);
+//     return;
+//   }
+
+//   console.log('Connected to database');
+
+//   // console.log(data.province);
+//   data.province.forEach(province => {
+//     province.children.forEach(city => {
+//       city.children.forEach(district => {
+//         const insertQuery = `INSERT INTO courier_station (csaddress) VALUES ('${district.name}, ${city.name}, ${province.name}')`;
+//         connection.query(insertQuery, (err, results, fields) => {
+//           if (err) {
+//             console.error('Error inserting district:', err);
+//             return;
+//           }
+//           console.log(`Inserted district: ${district.name}, ${city.name}, ${province.name}`);
+//         });
+//       });
+//     });
+//   });
+  
+// });
+
+// connection.end((err) => {
+//   if (err) {
+//     console.error('Error closing connection:', err);
+//     return;
+//   }
+//   console.log('Connection closed');
+// });
