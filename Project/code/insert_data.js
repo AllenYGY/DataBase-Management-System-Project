@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const data = require('./city.js'); // 替换为包含你的区县数据的文件路径
+const data = require('city.js'); // 替换为包含你的区县数据的文件路径
 
 const connection = mysql.createConnection({
   host: 'localhost',
