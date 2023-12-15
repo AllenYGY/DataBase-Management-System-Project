@@ -5,49 +5,41 @@ session_start();
 $user = $_SESSION["user"]; // 从会话中获取用户名
 $utype = $_SESSION["usertype"];
 
+echo$utype;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // $newusr = mysqli_real_escape_string($conn, $_POST["newusr"]);
+
   $newPhone = mysqli_real_escape_string($conn, $_POST["newPhone"]);
   $newMail = mysqli_real_escape_string($conn, $_POST["newMail"]);
   $newGender = mysqli_real_escape_string($conn, $_POST["newGender"]);
   $oldpwd = mysqli_real_escape_string($conn, $_POST["oldpwd"]);
   $editpwd = mysqli_real_escape_string($conn, $_POST["editpwd"]);
 
-  // 查询旧密码是否匹配
   $sql = "SELECT * FROM customer WHERE uname='$user'";
   $result = mysqli_query($conn, $sql);
   if ($result) {
+    
     $row = mysqli_fetch_assoc($result);
     $storedPassword = $row['upassword'];
     $storedmail = $row['umail'];
     $storedgender = $row['ugender'];
 
-
     if ($oldpwd === $storedPassword) {
-
       if ($utype == 'customer')
         $updateQuery = "UPDATE customer SET ";
       if ($utype == 'cadmin')
         $updateQuery = "UPDATE cadmin SET ";
       if ($utype == 'admin')
         $updateQuery = "UPDATE admin SET ";
-
-      // 只有在有新用户名时才更新用户名字段
-      // if (!empty($newusr)) {
-      //   $updateQuery .= ", uname='$newusr'";
-      // }
       $check = 0;
-
       if (!empty($newPhone)) {
         $updateQuery .= " uphone='$newPhone'";
         $check = 1;
       }
-
       if (!empty($newMail)) {
         $updateQuery .= " umail='$newMail'";
         $check = 1;
       }
-
       if (!empty($newGender)) {
         $updateQuery .= " umail='$newGender'";
         $check = 1;

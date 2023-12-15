@@ -28,15 +28,15 @@ if (mysqli_num_rows($result) > 0) {
   $userID = $row["uID"];
 }
 
-$_SESSION["userID"]=$userID;
+$_SESSION["userID"] = $userID;
 
-$sql_getcsID="SELECT * FROM cadmin WHERE cadmin.uID='$userID'";
+$sql_getcsID = "SELECT * FROM cadmin WHERE cadmin.uID='$userID'";
 
 $result1 = mysqli_query($conn, $sql_getcsID);
 
 if (mysqli_num_rows($result1) > 0) {
   $row = mysqli_fetch_assoc($result1);
-  $csID=$row['csID'];
+  $csID = $row['csID'];
 }
 
 $sql_parcel = "SELECT * FROM parcel 
@@ -69,9 +69,9 @@ $result5 = mysqli_query($conn, $sql_parcel);
 if (mysqli_num_rows($result5) > 0) {
   while ($row = mysqli_fetch_assoc($result5)) {
     $status = $row["status"];
-    $address=$row["send_address"];
-    $csID=$row["csID"];
-    $csadr=$row['csaddress'];
+    $address = $row["send_address"];
+    $csID = $row["csID"];
+    $csadr = $row['csaddress'];
     switch ($status) {
       case 'in_transit':
         $inTransitData[] = $row;
@@ -81,8 +81,8 @@ if (mysqli_num_rows($result5) > 0) {
   }
 }
 
-$_SESSION["csID"]=$csID;
-$_SESSION["csadr"]=$csadr;
+$_SESSION["csID"] = $csID;
+$_SESSION["csadr"] = $csadr;
 
 ?>
 
@@ -658,9 +658,9 @@ $_SESSION["csadr"]=$csadr;
             <h1>Edit Profile</h1><br>
             <div class="image-icon-1">
               <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
+              <?php echo $name; ?>
             </div>
-            <label for="usr">Username:</label>
-            <input type="text" id="newusr" name="newusr" placeholder="<?php echo $name; ?>" autocomplete="username">
+            
           </div>
           <div class="form-group">
             <label for="editpwd">Password:</label>
@@ -677,10 +677,6 @@ $_SESSION["csadr"]=$csadr;
           <div class="form-group">
             <label for="newGender">Gender:</label>
             <input type="text" id="newGender" name="newGender" placeholder="<?php echo $gender; ?>">
-          </div>
-          <div class="form-group">
-            <label for="newAdr">Address:</label>
-            <input type="text" id="newAdr" name="newAdr" placeholder="Edit your Address">
           </div>
           <div class="form-group">
             <label for="oldpwd">Old Password:</label>
