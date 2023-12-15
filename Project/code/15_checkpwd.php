@@ -16,13 +16,13 @@ $sql = "SELECT * FROM customer WHERE uname = '$user' AND upassword = '$pwd';";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
-  $sql = "DELETE FROM customer WHERE id = '$userID'";
+  $sql = "DELETE FROM customer WHERE uID = '$userID'";
   $result = mysqli_query($conn, $sql);
-  if (mysqli_num_rows($result) > 0) {
+  if ($result) {
     echo "Delete Successfully!";
   }
-  // $url = "00_index.php";
-  // header('Location:' . $url);
+  $url = "00_index.php";
+  header('Location:' . $url);
 } else {
   $url = "error.html";
   header('Location:' . $url);

@@ -21,7 +21,7 @@
         <label for="pwd">Password:</label>
         <input type="password" id="pwd" name="pwd" placeholder="Enter your password" required>
       </div>
-      <input type="submit" value="Login" id="button">
+      <input type="submit" value="Delete Account" id="button">
       <p class="register-link">Regretted it? <a href="02_register.php">Come back to your homepage</a><br><a href="06_customer.php">Home</a></p>
     </form>
   </div>
