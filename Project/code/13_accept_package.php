@@ -16,7 +16,7 @@ if ($usertype != 'cadmin') header('Location:' . $url);
 
 $sql_update = "UPDATE parcel
 SET status = 'delivered', pick_storage_time = NOW()
-WHERE status = 'in_transit' AND send_address='$csadr' ";
+WHERE status = 'in_transit' AND pick_csID='$csID' ";
 
 $result = mysqli_query($conn, $sql_update);
 if ($result) {

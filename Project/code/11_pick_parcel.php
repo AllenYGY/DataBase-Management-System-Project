@@ -9,10 +9,10 @@ $userID = $_SESSION["userID"];
 
 $packageid = $_POST["packageid"];
 $pickpwd = $_POST["pickpwd"];
+$url = '06_customer.php';
 
 $sql = "SELECT * FROM parcel WHERE parcelID='$packageid' AND parcel.cust_pick_uID='$userID'";
 $result3 = mysqli_query($conn, $sql);
-$url = '06_customer.php';
 
 
 if ($result3 && mysqli_num_rows($result3) > 0) {

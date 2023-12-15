@@ -50,7 +50,7 @@ $_SESSION["csadr"] = $csadr;
 
 
 $sql_parcel = "SELECT * FROM parcel 
-                      JOIN courier_station ON location=csaddress 
+                      JOIN courier_station ON send_csID=csID
                       JOIN cadmin USING(csID) 
               WHERE cadmin.uID='$userID'";
 
@@ -71,16 +71,14 @@ if (mysqli_num_rows($result1) > 0) {
 }
 
 $sql_parcel = "SELECT * FROM parcel 
-                      JOIN courier_station ON send_address=csaddress 
+                      JOIN courier_station ON pick_csID=csID
                       JOIN cadmin USING(csID) 
               WHERE cadmin.uID='$userID'";
-$result5 = mysqli_query($conn, $sql_parcel);
+$result2 = mysqli_query($conn, $sql_parcel);
 
-if (mysqli_num_rows($result5) > 0) {
-  while ($row = mysqli_fetch_assoc($result5)) {
+if (mysqli_num_rows($result2) > 0) {
+  while ($row = mysqli_fetch_assoc($result2)) {
     $status = $row["status"];
-    // $address = $row["send_address"];
-    // $csID = $row["csID"];
     switch ($status) {
       case 'in_transit':
         $inTransitData[] = $row;
@@ -273,6 +271,10 @@ if (mysqli_num_rows($result5) > 0) {
                 <tr>
                   <td>Name:</td>
                   <td><?php echo $name; ?></td>
+                </tr>
+                <tr>
+                  <td>ManagerID:</td>
+                  <td><?php echo $userID; ?></td>
                 </tr>
                 <tr>
                   <td>Phone:</td>
