@@ -8,6 +8,31 @@
   <link rel="stylesheet" href="index.css">
 </head>
 
+
+
+<?php
+include "03_connectDB.php";
+session_start();
+$user = $_SESSION["user"];
+$usertype = $_SESSION["usertype"];
+
+$url = '01_login.php';
+if ($usertype != 'cadmin') header('Location:' . $url);
+
+//Get user information
+$sql_user = "SELECT * FROM admin WHERE uname='$user'";
+$result = mysqli_query($conn, $sql_user);
+if (mysqli_num_rows($result) > 0) {
+  $row = mysqli_fetch_assoc($result);
+  $name = $row["uname"];
+  $phone = $row["uphone"];
+  $mail = $row["umail"];
+  $gender = $row["ugender"];
+  $userID = $row["uID"];
+  $csID=$row["csID"];
+}
+?>
+
 <body>
   <main>
     <nav class="main-menu">
@@ -110,6 +135,106 @@
                 <h3>Courier</h3>
               </div>
             </div>
+
+            <div class="image-container img-11">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
+            <div class="image-container img-12">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
+            <div class="image-container img-13">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
+            <div class="image-container img-14">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
+            
+            <div class="image-container img-15">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
+            <div class="image-container img-16">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
+
+            <div class="image-container img-17">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
+            <div class="image-container img-18">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
+            <div class="image-container img-19">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
+            <div class="image-container img-20">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
+            <div class="image-container img-21">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
+            <div class="image-container img-22">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+            <div class="image-container img-23">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
+            <div class="image-container img-24">
+              <img src="/Project/image/station.png" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
