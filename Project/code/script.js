@@ -153,3 +153,11 @@ document
       event.preventDefault();
     }
   });
+
+function showAlert() {
+  var confirmLogout = confirm('Are you sure you want to log off?');
+  if (confirmLogout) {
+    window.location.href = '14_logoff.php'; // 替换成你想要跳转的页面
+  }
+}
+

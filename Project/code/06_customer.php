@@ -155,11 +155,19 @@ if (mysqli_num_rows($result1) > 0) {
         <li class="nav-item">
           <b></b>
           <b></b>
-          <a href="01_login.php">
+          <a href="#" onclick="showAlert()">
             <i class="fa fa-minus nav-icon"></i>
             <span class="nav-text">Log off</span>
           </a>
         </li>
+
+        <div id="confirmPassword" style="display: none;">
+          <form id="passwordForm" onsubmit="submitPassword(event)">
+            <label for="password">Enter your password to confirm:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password:">
+            <button type="submit">Confirm</button>
+          </form>
+        </div>
 
       </ul>
     </nav>
