@@ -511,7 +511,7 @@ if (mysqli_num_rows($result1) > 0) {
 
             </div>
             <div class="form-group">
-              <label for="endadr">Reciving Address:</label>
+              <label for="spadr">Reciving Address:</label>
               <select id="endprovinceSelect" name="endprovinceSelect">
                 <option value="">SELECT PROVINCE</option>
               </select>
@@ -521,7 +521,6 @@ if (mysqli_num_rows($result1) > 0) {
               <select id="enddistrictSelect" name="enddistrictSelect">
                 <option value="">SELECT DISTRICT</option>
               </select>
-              <!-- <label for="usr">Specific address</label> -->
               <input type="text" id="spadr" name="spadr" placeholder="Enter specific address" required>
             </div>
             <div class="form-group">
@@ -549,7 +548,6 @@ if (mysqli_num_rows($result1) > 0) {
               <label for="cust_pick_uID">Receiver's ID: </label>
               <input type="number" id="cust_pick_uID" name="cust_pick_uID" placeholder="Enter Receiver's ID" required min="0">
             </div>
-
             <input type="submit" value="Send" id="sendButton">
           </form>
         </div>
