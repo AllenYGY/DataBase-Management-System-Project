@@ -500,17 +500,14 @@ if (mysqli_num_rows($result1) > 0) {
             <div class="form-group">
               <label for="startadr">Mailing Address:</label>
               <select id="provinceSelect" name="provinceSelect">
-                <option value="">Select Province</option>
+                <option value="">SELECT PROVINCE</option>
               </select>
-
               <select id="citySelect" name="citySelect">
-                <option value="">Select City</option>
+                <option value="">SELECT CITY</option>
               </select>
-
               <select id="districtSelect" name="districtSelect">
-                <option value="">Select District</option>
+                <option value="">SELECT DISTRICT</option>
               </select>
-
               <select id="startadr" name="startadr">
                 <option value="UIC">UIC</option>
                 <option value="JNU">JNU</option>
@@ -521,6 +518,15 @@ if (mysqli_num_rows($result1) > 0) {
             </div>
             <div class="form-group">
               <label for="endadr">Reciving Address:</label>
+              <select id="provinceSelect" name="provinceSelect">
+                <option value="">SELECT PROVINCE</option>
+              </select>
+              <select id="citySelect" name="citySelect">
+                <option value="">SELECT CITY</option>
+              </select>
+              <select id="districtSelect" name="districtSelect">
+                <option value="">SELECT DISTRICT</option>
+              </select>
               <select id="endadr" name="endadr">
                 <option value="UIC">UIC</option>
                 <option value="JNU">JNU</option>

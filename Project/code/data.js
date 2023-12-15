@@ -6318,8 +6318,8 @@ province.forEach(province => {
   const selectedProvince = provinceSelect.value;
   const provinceData = province.find(province => province.name === selectedProvince);
 
-  citySelect.innerHTML = '<option value="">选择城市</option>';
-  districtSelect.innerHTML = '<option value="">选择区县</option>';
+  citySelect.innerHTML = '<option value="">SELECT CITY</option>';
+  districtSelect.innerHTML = '<option value="">SELECT DISTRICT</option>';
 
   if (provinceData) {
     provinceData.children.forEach(city => {
@@ -6339,7 +6339,7 @@ export function populateDistricts() {
   const selectedCity = citySelect.value;
   const cityData = provinceData.children.find(city => city.name === selectedCity);
 
-  districtSelect.innerHTML = '<option value="">选择区县</option>';
+  districtSelect.innerHTML = '<option value="">SELECT DISTRICT</option>';
 
   if (cityData) {
     cityData.children.forEach(district => {
