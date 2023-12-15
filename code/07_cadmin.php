@@ -373,8 +373,8 @@ $_SESSION["csadr"]=$csadr;
 
       <!-- send section -->
 
-      <div class="sendpart">
-        <form action="10_send_parcel.php" method="POST">
+      <!-- <div class="sendpart"> -->
+        <!-- <form action="10_send_parcel.php" method="POST">
           <h1>Send package</h1><br>
           <div class="form-group">
             <label for="startadr">Mailing Address:</label>
@@ -427,8 +427,8 @@ $_SESSION["csadr"]=$csadr;
             </select>
           </div>
           <input type="submit" value="Send" id="sendButton">
-        </form>
-      </div>
+        </form> -->
+      <!-- </div> -->
 
 
 

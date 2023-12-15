@@ -197,22 +197,6 @@
 
         </div>
 
-        <!-- <div class="active-calories">
-          <h1 style="align-self: flex-start">Active Calories</h1>
-          <div class="active-calories-container">
-            <div class="box" style="--i: 85%">
-              <div class="circle">
-                <h2>85<small>%</small></h2>
-              </div>
-            </div>
-            <div class="calories-content">
-              <p><span>Today:</span> 400</p>
-              <p><span>This Week:</span> 3500</p>
-              <p><span>This Month:</span> 14000</p>
-            </div>
-          </div>
-        </div> -->
-
         <div class="friends-activity">
           <h1>Friends' Package</h1>
           <div class="card-container">
