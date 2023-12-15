@@ -2,12 +2,12 @@
 include "03_connectDB.php";
 
 session_start();
-$user = $_SESSION["user"]; // 从会话中获取用户名
+$user = $_SESSION["user"]; 
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // 获取表单数据
-  $newusr = mysqli_real_escape_string($conn, $_POST["newusr"]);
+  // $newusr = mysqli_real_escape_string($conn, $_POST["newusr"]);
   $newPhone = mysqli_real_escape_string($conn, $_POST["newPhone"]);
   $newMail = mysqli_real_escape_string($conn, $_POST["newMail"]);
   $newGender = mysqli_real_escape_string($conn, $_POST["newGender"]);
@@ -27,18 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // 构建更新用户信息的 SQL 语句
       $updateQuery = "UPDATE user SET uphone='$newPhone', umail='$newMail', ugender='$newGender'";
 
-      // 只有在有新用户名时才更新用户名字段
-      if (!empty($newusr)) {
-        $updateQuery .= ", uname='$newusr'";
-      }
-
-      // 只有在有新密码时才更新密码字段
       if (!empty($editpwd)) {
         $updateQuery .= ", upassword='$editpwd'";
       }
-      // 添加 WHERE 子句以指定更新哪个用户
       $updateQuery .= " WHERE uname='$user'";
-      // 执行更新操作
+
       $updateResult = mysqli_query($conn, $updateQuery);
 
       if ($updateResult) {
