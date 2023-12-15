@@ -10,14 +10,14 @@
 
 <body>
   <main>
-  <nav class="main-menu">
+    <nav class="main-menu">
       <h1>Courier Administrator</h1>
       <img class="logo" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb" alt="" />
       <ul>
         <li class="nav-item active" id="homeNavItem">
           <b></b>
           <b></b>
-          <a href="06_customer.php">
+          <a href="08_admin.php">
             <i class="fa fa-house nav-icon"></i>
             <span class="nav-text">Home</span>
           </a>
@@ -29,26 +29,6 @@
           <a href="#">
             <i class="fa fa-user nav-icon"></i>
             <span class="nav-text">Profile</span>
-          </a>
-        </li>
-
-
-        <li class="nav-item" id="pickPackageNavItem">
-          <b></b>
-          <b></b>
-          <a href="#">
-            <i class="fa fa-get-pocket nav-icon"></i>
-            <span class="nav-text">Pick package</span>
-          </a>
-
-        </li>
-
-        <li class="nav-item" id="sendPackageNavItem">
-          <b></b>
-          <b></b>
-          <a href="#">
-            <i class="fa fa-gift nav-icon"></i>
-            <span class="nav-text">Send package</span>
           </a>
         </li>
 
@@ -130,90 +110,10 @@
                 <h3>Courier</h3>
               </div>
             </div>
-
-          </div>
-        </div>
-
-        <div class="left-bottom">
-          <div class="weekly-schedule">
-            <h1>Package status</h1>
-            <div class="calendar">
-              <div class="day-and-activity activity-one">
-                <div class="day">
-                  <h1>13</h1>
-                  <p>mon</p>
-                </div>
-                <div class="activity">
-                  <h2>Package</h2>
-                  <div class="participants">
-                  </div>
-                </div>
-                <button class="btn">Pick</button>
-              </div>
-
-              <div class="day-and-activity activity-two">
-                <div class="day">
-                  <h1>15</h1>
-                  <p>wed</p>
-                </div>
-                <div class="activity">
-                  <h2>Package</h2>
-                  <div class="participants">
-
-                  </div>
-                </div>
-                <button class="btn">Pick</button>
-              </div>
-
-              <div class="day-and-activity activity-three">
-                <div class="day">
-                  <h1>17</h1>
-                  <p>fri</p>
-                </div>
-                <div class="activity">
-                  <h2>Package</h2>
-                  <div class="participants">
-
-                  </div>
-                </div>
-                <button class="btn">Pick</button>
-              </div>
-
-              <div class="day-and-activity activity-four">
-                <div class="day">
-                  <h1>18</h1>
-                  <p>sat</p>
-                </div>
-                <div class="activity">
-                  <h2>Package</h2>
-                  <div class="participants">
-
-                  </div>
-                </div>
-                <button class="btn">Pick</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="personal-bests">
-            <h1>Express station status</h1>
-            <div class="personal-bests-container">
-              <div class="best-item box-one">
-                <p>Opening Hours:<br> 7 am. - 10 pm.</p>
-                <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/242bbd8c-aaf8-4aee-a3e4-e0df62d1ab27"
-                  alt="" />
-              </div>
-              <div class="best-item box-two">
-                <p>Crowded state:<br> Free </p>
-                <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a"
-                  alt="" />
-              </div>
-            </div>
           </div>
         </div>
       </div>
+
 
       <div class="right-content">
         <div class="user-info">
@@ -230,13 +130,11 @@
           <div class="card-container">
             <div class="card">
               <div class="card-user-info">
-                <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DJY.png" alt="SJY"/>
+                <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DJY.png" alt="SJY" />
                 <h2>SJY</h2>
               </div>
-              <img class="card-img"
-                src="/Project/image/pick.jpg"
-                alt="pickup" />
-                <p>I just recive a new package today.<br> Please help me pick up the package.</p>
+              <img class="card-img" src="/Project/image/pick.jpg" alt="pickup" />
+              <p>I just recive a new package today.<br> Please help me pick up the package.</p>
             </div>
 
             <div class="card card-two">
@@ -245,9 +143,7 @@
                 <h2>DSX</h2>
 
               </div>
-              <img class="card-img"
-              src="/Project/image/pick.jpg"
-              alt="pickup" />
+              <img class="card-img" src="/Project/image/pick.jpg" alt="pickup" />
               <p>I just recive a new package today.<br> Please help me pick up the package.</p>
             </div>
           </div>
