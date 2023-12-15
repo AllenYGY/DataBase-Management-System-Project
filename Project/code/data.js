@@ -1,5 +1,4 @@
-
- export const province = [
+export const province = [
   {
     name: "北京市",
     children: [
@@ -6301,29 +6300,41 @@
   },
 ];
 // 省市区数据
-const provinceSelect = document.getElementById('provinceSelect');
-const citySelect = document.getElementById('citySelect');
-const districtSelect = document.getElementById('districtSelect');
+const provinceSelect = document.getElementById("provinceSelect");
+const citySelect = document.getElementById("citySelect");
+const districtSelect = document.getElementById("districtSelect");
+const endprovinceSelect = document.getElementById("endprovinceSelect");
+const endcitySelect = document.getElementById("endcitySelect");
+const enddistrictSelect = document.getElementById("enddistrictSelect");
 
 // 填充省份选项
-province.forEach(province => {
-  const option = document.createElement('option');
+province.forEach((province) => {
+  const option = document.createElement("option");
   option.text = province.name;
   option.value = province.name;
   provinceSelect.add(option);
 });
 
+province.forEach((province) => {
+  const option = document.createElement("option");
+  option.text = province.name;
+  option.value = province.name;
+  endprovinceSelect.add(option);
+});
+
 // 根据选择的省份填充城市选项
- export function populateCities() {
+export function populateCities() {
   const selectedProvince = provinceSelect.value;
-  const provinceData = province.find(province => province.name === selectedProvince);
+  const provinceData = province.find(
+    (province) => province.name === selectedProvince
+  );
 
   citySelect.innerHTML = '<option value="">SELECT CITY</option>';
   districtSelect.innerHTML = '<option value="">SELECT DISTRICT</option>';
 
   if (provinceData) {
-    provinceData.children.forEach(city => {
-      const option = document.createElement('option');
+    provinceData.children.forEach((city) => {
+      const option = document.createElement("option");
       option.text = city.name;
       option.value = city.name;
       citySelect.add(option);
@@ -6331,19 +6342,41 @@ province.forEach(province => {
   }
 }
 
+export function endpopulateCities() {
+  const selectedProvince = endprovinceSelect.value;
+  const provinceData = province.find(
+    (province) => province.name === selectedProvince
+  );
+
+  endcitySelect.innerHTML = '<option value="">SELECT CITY</option>';
+  enddistrictSelect.innerHTML = '<option value="">SELECT DISTRICT</option>';
+
+  if (provinceData) {
+    provinceData.children.forEach((city) => {
+      const option = document.createElement("option");
+      option.text = city.name;
+      option.value = city.name;
+      endcitySelect.add(option);
+    });
+  }
+}
 // 根据选择的城市填充区县选项
 export function populateDistricts() {
   const selectedProvince = provinceSelect.value;
-  const provinceData = province.find(province => province.name === selectedProvince);
+  const provinceData = province.find(
+    (province) => province.name === selectedProvince
+  );
 
   const selectedCity = citySelect.value;
-  const cityData = provinceData.children.find(city => city.name === selectedCity);
+  const cityData = provinceData.children.find(
+    (city) => city.name === selectedCity
+  );
 
   districtSelect.innerHTML = '<option value="">SELECT DISTRICT</option>';
 
   if (cityData) {
-    cityData.children.forEach(district => {
-      const option = document.createElement('option');
+    cityData.children.forEach((district) => {
+      const option = document.createElement("option");
       option.text = district.name;
       option.value = district.name;
       districtSelect.add(option);
@@ -6351,8 +6384,33 @@ export function populateDistricts() {
   }
 }
 
+export function endpopulateDistricts() {
+  const selectedProvince = endprovinceSelect.value;
+  const provinceData = province.find(
+    (province) => province.name === selectedProvince
+  );
+
+  const selectedCity = endcitySelect.value;
+  const cityData = provinceData.children.find(
+    (city) => city.name === selectedCity
+  );
+
+  enddistrictSelect.innerHTML = '<option value="">SELECT DISTRICT</option>';
+
+  if (cityData) {
+    cityData.children.forEach((district) => {
+      const option = document.createElement("option");
+      option.text = district.name;
+      option.value = district.name;
+      enddistrictSelect.add(option);
+    });
+  }
+}
+
+
 // 监听省份和城市选择变化
-provinceSelect.addEventListener('change', populateCities);
-citySelect.addEventListener('change', populateDistricts);
+provinceSelect.addEventListener("change", populateCities);
+citySelect.addEventListener("change", populateDistricts);
 
-
+endprovinceSelect.addEventListener("change", endpopulateCities);
+endcitySelect.addEventListener("change", endpopulateDistricts);

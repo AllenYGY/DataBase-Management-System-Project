@@ -508,32 +508,21 @@ if (mysqli_num_rows($result1) > 0) {
               <select id="districtSelect" name="districtSelect">
                 <option value="">SELECT DISTRICT</option>
               </select>
-              <!-- <select id="startadr" name="startadr">
-                <option value="UIC">UIC</option>
-                <option value="JNU">JNU</option>
-                <option value="SYSU">SYSU</option>
-                <option value="BNU">BNU</option>
-                <option value="BIT">BIT</option>
-              </select> -->
+
             </div>
             <div class="form-group">
               <label for="endadr">Reciving Address:</label>
-              <select id="provinceSelect" name="provinceSelect">
+              <select id="endprovinceSelect" name="endprovinceSelect">
                 <option value="">SELECT PROVINCE</option>
               </select>
-              <select id="citySelect" name="citySelect">
+              <select id="endcitySelect" name="endcitySelect">
                 <option value="">SELECT CITY</option>
               </select>
-              <select id="districtSelect" name="districtSelect">
+              <select id="enddistrictSelect" name="enddistrictSelect">
                 <option value="">SELECT DISTRICT</option>
               </select>
-              <select id="endadr" name="endadr">
-                <option value="UIC">UIC</option>
-                <option value="JNU">JNU</option>
-                <option value="SYSU">SYSU</option>
-                <option value="BNU">BNU</option>
-                <option value="BIT">BIT</option>
-              </select>
+              <!-- <label for="usr">Specific address</label> -->
+              <input type="text" id="spadr" name="spadr" placeholder="Enter specific address" required>
             </div>
             <div class="form-group">
               <label for="packagetype">Package Type:</label>
@@ -558,7 +547,7 @@ if (mysqli_num_rows($result1) > 0) {
             </div>
             <div class="form-group">
               <label for="cust_pick_uID">Receiver's ID: </label>
-              <input type="number" id="cust_pick_uID" name="cust_pick_uID" placeholder="Enter Receiver's ID">
+              <input type="number" id="cust_pick_uID" name="cust_pick_uID" placeholder="Enter Receiver's ID" required min="0">
             </div>
 
             <input type="submit" value="Send" id="sendButton">
