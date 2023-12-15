@@ -499,6 +499,18 @@ if (mysqli_num_rows($result1) > 0) {
             <h1>Send package</h1><br>
             <div class="form-group">
               <label for="startadr">Mailing Address:</label>
+              <select id="provinceSelect" name="provinceSelect">
+                <option value="">Select Province</option>
+              </select>
+
+              <select id="citySelect" name="citySelect">
+                <option value="">Select City</option>
+              </select>
+
+              <select id="districtSelect" name="districtSelect">
+                <option value="">Select District</option>
+              </select>
+
               <select id="startadr" name="startadr">
                 <option value="UIC">UIC</option>
                 <option value="JNU">JNU</option>
@@ -1012,6 +1024,8 @@ if (mysqli_num_rows($result1) > 0) {
     </section>
 
   </main>
+  <script src="data.js" type="module"></script>
   <script src="script.js"></script>
 </body>
+
 </html>
