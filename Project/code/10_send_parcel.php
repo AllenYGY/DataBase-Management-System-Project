@@ -6,9 +6,9 @@ $province = $_POST['provinceSelect'];
 $city = $_POST['citySelect'];
 $district = $_POST['districtSelect'];
 
-$endProvince = $_POST['endprovinceSelect'];
-$endCity = $_POST['endcitySelect'];
-$endDistrict = $_POST['enddistrictSelect'];
+$endprovince = $_POST['endprovinceSelect'];
+$endcity = $_POST['endcitySelect'];
+$enddistrict = $_POST['enddistrictSelect'];
 
 $packageType = $_POST['packagetype'];
 $weight = $_POST['weight'];
@@ -51,12 +51,13 @@ $user = $_SESSION['user'];
 $userID = $_SESSION['userID'];
 
 
-$sql = "INSERT INTO parcel (volume, weight, location, parceltype, status, cust_send_uID, send_address, send_storage_time,cust_pick_uID)
-        VALUES ('$volume', '$weight', '$startAddress', 'others', 'pending', '$userID','$endAddress', NOW(),'$cust_pick_uID')";
+$sql = "INSERT INTO parcel 
+        (volume, weight, parceltype, status, cust_send_uID, send_address, send_storage_time,cust_pick_uID,send_csID,pick_csID)
+        VALUES 
+        ('$volume', '$weight',  'others', 'pending', '$userID','$spAddress', NOW(),'$cust_pick_uID','$startcsID','$endcsID')";
 
 if (mysqli_query($conn, $sql)) {
   echo "Data inserted successfully.";
-  
   header('Location:' . $url);
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
