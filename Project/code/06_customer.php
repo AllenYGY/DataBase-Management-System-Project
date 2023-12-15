@@ -1014,5 +1014,4 @@ if (mysqli_num_rows($result1) > 0) {
   </main>
   <script src="script.js"></script>
 </body>
-
 </html>
