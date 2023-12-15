@@ -17,7 +17,8 @@ $usertype = $_SESSION["usertype"];
 $url = '01_login.php';
 if ($usertype != 'cadmin') header('Location:' . $url);
 
-$sql_user = "SELECT * FROM cadmin WHERE uname='$user'";
+//Get user information
+$sql_user = "SELECT * FROM cadmin  WHERE uname='$user'";
 $result = mysqli_query($conn, $sql_user);
 if (mysqli_num_rows($result) > 0) {
   $row = mysqli_fetch_assoc($result);
@@ -26,18 +27,27 @@ if (mysqli_num_rows($result) > 0) {
   $mail = $row["umail"];
   $gender = $row["ugender"];
   $userID = $row["uID"];
+  $csID=$row["csID"];
 }
 
-$_SESSION["userID"] = $userID;
+$sql_getcsadr = "SELECT * FROM courier_station WHERE csID='$csID'";
 
-$sql_getcsID = "SELECT * FROM cadmin WHERE cadmin.uID='$userID'";
-
-$result1 = mysqli_query($conn, $sql_getcsID);
+$result1 = mysqli_query($conn, $sql_getcsadr);
 
 if (mysqli_num_rows($result1) > 0) {
   $row = mysqli_fetch_assoc($result1);
-  $csID = $row['csID'];
+  $csadr = $row['csaddress'];
+  $csstartTime=$row['start_time'];
+  $csendTime=$row['end_time'];
 }
+
+$_SESSION["userID"] = $userID;
+$_SESSION["uphone"] = $phone;
+$_SESSION["umail"] = $mail;
+$_SESSION["ugender"] = $gender;
+$_SESSION["csID"] = $csID;
+$_SESSION["csadr"] = $csadr;
+
 
 $sql_parcel = "SELECT * FROM parcel 
                       JOIN courier_station ON location=csaddress 
@@ -69,9 +79,8 @@ $result5 = mysqli_query($conn, $sql_parcel);
 if (mysqli_num_rows($result5) > 0) {
   while ($row = mysqli_fetch_assoc($result5)) {
     $status = $row["status"];
-    $address = $row["send_address"];
-    $csID = $row["csID"];
-    $csadr = $row['csaddress'];
+    // $address = $row["send_address"];
+    // $csID = $row["csID"];
     switch ($status) {
       case 'in_transit':
         $inTransitData[] = $row;
@@ -80,9 +89,6 @@ if (mysqli_num_rows($result5) > 0) {
     }
   }
 }
-
-$_SESSION["csID"] = $csID;
-$_SESSION["csadr"] = $csadr;
 
 ?>
 
@@ -282,7 +288,7 @@ $_SESSION["csadr"] = $csadr;
                 </tr>
                 <tr>
                   <td>Address:</td>
-                  <td><?php echo $address; ?></td>
+                  <td><?php echo $csadr; ?></td>
                 </tr><br>
               </table>
             </div>

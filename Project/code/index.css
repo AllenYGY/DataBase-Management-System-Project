@@ -260,8 +260,8 @@ main {
   justify-content: center;
   font-family: 'Times New Roman', Times, serif;
   padding: 20px;
-  font-size: 40px;
-  font-weight: 300;
+  font-size: 35px;
+  font-weight: 400;
   background: -webkit-linear-gradient(90deg, #339ec1, #94a4e2);
   background: linear-gradient(90deg, #339ec1, #94a4e2);
 }
