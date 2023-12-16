@@ -872,7 +872,7 @@ if (mysqli_num_rows($result1) > 0) {
                       $dayOfWeek = isset($send_storage_time) ? date('l', strtotime($send_storage_time)) : 'unknown';
                       $date = isset($pendingDataRow['send_storage_time']) ? date('d', strtotime($pendingDataRow['send_storage_time'])) : 'unknown';
                       $pID = isset($pendingDataRow['parcelID']) ? $pendingDataRow['parcelID'] : 'unknown';
-                      $startadr = isset($pendingDataRow['csaddress']) ? $pendingDataRow['cssaddress'] : 'unknown';
+                      $startadr = isset($pendingDataRow['csaddress']) ? $pendingDataRow['csaddress'] : 'unknown';
                       $pstatus = isset($pendingDataRow['status']) ? $pendingDataRow['status'] : 'unknown';
                       $endadr = isset($pendingDataRow['send_address']) ? $pendingDataRow['send_address'] : 'unknown';
 
