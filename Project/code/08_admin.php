@@ -17,7 +17,7 @@ $user = $_SESSION["user"];
 $usertype = $_SESSION["usertype"];
 
 $url = '01_login.php';
-if ($usertype != 'cadmin') header('Location:' . $url);
+if ($usertype != 'admin') header('Location:' . $url);
 
 //Get user information
 $sql_user = "SELECT * FROM admin WHERE uname='$user'";
@@ -29,7 +29,7 @@ if (mysqli_num_rows($result) > 0) {
   $mail = $row["umail"];
   $gender = $row["ugender"];
   $userID = $row["uID"];
-  $csID=$row["csID"];
+  // $csID=$row["csID"];
 }
 ?>
 
