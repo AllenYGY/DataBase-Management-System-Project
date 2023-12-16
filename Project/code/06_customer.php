@@ -575,10 +575,7 @@ if (mysqli_num_rows($result1) > 0) {
         <!-- Search & History section -->
         <div class="search-hitorypart">
           <div class="weekly-schedule">
-            <h2>Search History</h2>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <h2>Search History</h2><br>
             <div id="searchHistory" class="container">
               <form action="#" method="get">
                 <div class="form-group">
@@ -594,24 +591,15 @@ if (mysqli_num_rows($result1) > 0) {
                   </select>
                 </div>
                 <div class="form-group">
-                  Start date:&nbsp;&nbsp;&nbsp;
-                  <input type="date" id="start_date" name="start_date">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  End date:&nbsp;&nbsp;&nbsp;
-                  <input type="date" id="end_date" name="end_date">
+                  <pre>Start date:  <input type="date" id="start_date" name="start_date">                    End date:   <input type="date" id="end_date" name="end_date"></pre>
                 </div>
                 <input type="submit" value="Search" id="Search">
               </form>
             </div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <br>
             <h2>Package History</h2>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
 
             <ul class="collapse-container">
               <li class='item'>
