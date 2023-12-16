@@ -164,7 +164,7 @@ if (mysqli_num_rows($result1) > 0) {
         <div id="confirmPassword" style="display: none;">
           <form id="passwordForm" onsubmit="submitPassword(event)">
             <label for="password">Enter your password to confirm:</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password:">
+            <input type="password" id="password" name="password" placeholder="Enter your password to confirm:">
             <button type="submit">Confirm</button>
           </form>
         </div>
