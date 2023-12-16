@@ -31,9 +31,11 @@ if (mysqli_num_rows($result) > 0) {
 
 $_SESSION["userID"] = $userID;
 
-$sql_parcel = "SELECT * FROM parcel 
+$sql_parcel = "SELECT * ,send_station.csaddress AS send_adr, pick_station.csaddress AS pick_adr
+              FROM parcel
               JOIN customer ON parcel.cust_send_uID=customer.uID 
-              JOIN courier_station ON courier_station.csID=parcel.send_csID
+              JOIN courier_station AS send_station ON send_station.csID=parcel.send_csID
+              JOIN courier_station AS pick_station ON pick_station.csID=parcel.pick_csID
               WHERE uname='$user' AND customer.uID=parcel.cust_send_uID";
 
 $result1 = mysqli_query($conn, $sql_parcel);
@@ -62,9 +64,11 @@ if (mysqli_num_rows($result1) > 0) {
   }
 }
 
-$sql_parcel = "SELECT * FROM parcel 
-               JOIN customer on parcel.cust_pick_uID=customer.uID 
-               JOIN courier_station ON courier_station.csID=parcel.pick_csID
+$sql_parcel = "SELECT * ,send_station.csaddress AS send_adr, pick_station.csaddress AS pick_adr
+               FROM parcel 
+                JOIN customer ON parcel.cust_pick_uID=customer.uID 
+                JOIN courier_station AS send_station ON send_station.csID=parcel.send_csID
+                JOIN courier_station AS pick_station ON pick_station.csID=parcel.pick_csID
                WHERE uname='$user' AND customer.uID=parcel.cust_pick_uID";
 
 $result2 = mysqli_query($conn, $sql_parcel);
@@ -310,8 +314,8 @@ if (mysqli_num_rows($result1) > 0) {
                 </div>
                 <div class="best-item box-two">
                   <p><br>Crowded state: Free <br>
-                 <br> <br>
-                  <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a" alt="" />
+                    <br> <br>
+                    <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a" alt="" />
                   </p>
                 </div>
                 <!-- <div class="best-item box-three">
@@ -625,9 +629,9 @@ if (mysqli_num_rows($result1) > 0) {
                       $dayOfWeek = isset($send_time) ? date('l', strtotime($send_time)) : 'unknown';
                       $date = isset($deliveredDataRow['send_storage_time']) ? date('d', strtotime($deliveredDataRow['send_storage_time'])) : 'unknown';
                       $pID = isset($deliveredDataRow['parcelID']) ? $deliveredDataRow['parcelID'] : 'unknown';
-                      $startadr = isset($deliveredDataRow['csaddress']) ? $deliveredDataRow['csaddress'] : 'unknown';
+                      $startadr = isset($deliveredDataRow['send_adr']) ? $deliveredDataRow['send_adr'] : 'unknown';
                       $pstatus = isset($deliveredDataRow['status']) ? $deliveredDataRow['status'] : 'unknown';
-                      $endadr = isset($deliveredDataRow['send_address']) ? $deliveredDataRow['send_address'] : 'unknown';
+                      $endadr = isset($deliveredDataRow['pick_adr']) ? $deliveredDataRow['pick_adr'] : 'unknown';
                       switch ($dayOfWeek) {
                         case 'Monday':
                           $cssClass = 'activity-one';
@@ -701,16 +705,16 @@ if (mysqli_num_rows($result1) > 0) {
                   <?php
                   if (isset($acceptData)) {
                     foreach ($acceptData as $acceptDataRow) {
-                      $send_time = isset($acceptDataRow['send_time']) ? $acceptDataRow['send_time']: 'unknown';
+                      $send_time = isset($acceptDataRow['send_time']) ? $acceptDataRow['send_time'] : 'unknown';
                       $pick_time = isset($acceptDataRow['pick_time']) ? $acceptDataRow['pick_time'] : 'unknown';
                       $send_storage_time = isset($acceptDataRow['send_storage_time']) ? $acceptDataRow['send_storage_time'] : 'unknown';
                       $pick_storage_time = isset($acceptDataRow['pick_storage_time']) ? $acceptDataRow['pick_storage_time'] : 'unknown';
                       $dayOfWeek = isset($send_time) ? date('l', strtotime($send_time)) : 'unknown';
                       $date = isset($acceptDataRow['send_storage_time']) ? date('d', strtotime($acceptDataRow['send_storage_time'])) : 'unknown';
                       $pID = isset($acceptDataRow['parcelID']) ? $acceptDataRow['parcelID'] : 'unknown';
-                      $startadr = isset($acceptDataRow['csaddress']) ? $acceptDataRow['csaddress'] : 'unknown';
+                      $startadr = isset($acceptDataRow['send_adr']) ? $acceptDataRow['send_adr'] : 'unknown';
                       $pstatus = isset($acceptDataRow['status']) ? $acceptDataRow['status'] : 'unknown';
-                      $endadr = isset($acceptDataRow['send_address']) ? $acceptDataRow['send_address'] : 'unknown';
+                      $endadr = isset($acceptDataRow['pick_adr']) ? $acceptDataRow['pick_adr'] : 'unknown';
 
                       switch ($dayOfWeek) {
                         case 'Monday':
@@ -792,9 +796,9 @@ if (mysqli_num_rows($result1) > 0) {
                       $dayOfWeek = isset($send_time) ? date('l', strtotime($send_time)) : 'unknown';
                       $date = isset($inTransitDataRow['send_storage_time']) ? date('d', strtotime($inTransitDataRow['send_storage_time'])) : 'unknown';
                       $pID = isset($inTransitDataRow['parcelID']) ? $inTransitDataRow['parcelID'] : 'unknown';
-                      $startadr = isset($inTransitDataRow['csaddress']) ? $inTransitDataRow['csaddress'] : 'unknown';
+                      $startadr = isset($inTransitDataRow['send_adr']) ? $inTransitDataRow['send_adr'] : 'unknown';
                       $pstatus = isset($inTransitDataRow['status']) ? $inTransitDataRow['status'] : 'unknown';
-                      $endadr = isset($inTransitDataRow['send_address']) ? $inTransitDataRow['send_address'] : 'unknown';
+                      $endadr = isset($inTransitDataRow['pick_adr']) ? $inTransitDataRow['pick_adr'] : 'unknown';
 
                       switch ($dayOfWeek) {
                         case 'Monday':
@@ -868,13 +872,13 @@ if (mysqli_num_rows($result1) > 0) {
                   <?php
                   if (isset($pendingData)) {
                     foreach ($pendingData as $pendingDataRow) {
-                      $send_storage_time = isset($pendingDataRow['send_storage_time']) ? $pendingDataRow['send_storage_time']: 'unknown';
+                      $send_storage_time = isset($pendingDataRow['send_storage_time']) ? $pendingDataRow['send_storage_time'] : 'unknown';
                       $dayOfWeek = isset($send_storage_time) ? date('l', strtotime($send_storage_time)) : 'unknown';
                       $date = isset($pendingDataRow['send_storage_time']) ? date('d', strtotime($pendingDataRow['send_storage_time'])) : 'unknown';
                       $pID = isset($pendingDataRow['parcelID']) ? $pendingDataRow['parcelID'] : 'unknown';
-                      $startadr = isset($pendingDataRow['csaddress']) ? $pendingDataRow['csaddress'] : 'unknown';
+                      $startadr = isset($pendingDataRow['send_adr']) ? $pendingDataRow['send_adr'] : 'unknown';
                       $pstatus = isset($pendingDataRow['status']) ? $pendingDataRow['status'] : 'unknown';
-                      $endadr = isset($pendingDataRow['send_address']) ? $pendingDataRow['send_address'] : 'unknown';
+                      $endadr = isset($pendingDataRow['pick_adr']) ? $pendingDataRow['pick_adr'] : 'unknown';
 
                       switch ($dayOfWeek) {
                         case 'Monday':

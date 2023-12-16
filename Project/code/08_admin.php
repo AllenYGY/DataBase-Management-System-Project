@@ -94,14 +94,14 @@ if (mysqli_num_rows($result) > 0) {
           <div class="activity-container">
 
             <div class="image-container img-five">
-              <img src="/Project/image/station.png" alt="station" />
+              <img src="/Project/image/map/Beijing.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
             <div class="image-container img-six">
-              <img src="/Project/image/station.png" alt="station" />
+              <img src="/Project/image/" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
