@@ -177,4 +177,6 @@ document.getElementById("Search").addEventListener("click", function () {
   }else{
     collapseContainer.style.display = "block";
   }
+  // searchNavItem.className = "nav-item active";
+
 });

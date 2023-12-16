@@ -40,11 +40,6 @@ $sql_parcel = "SELECT * ,send_station.csaddress AS send_adr, pick_station.csaddr
 
 $result1 = mysqli_query($conn, $sql_parcel);
 
-$pendingData = [];
-$inTransitData = [];
-$deliveredData = [];
-$acceptData = [];
-$allData = [];
 $pendingCount = 0;
 $inTransitCount = 0;
 $deliveredCount = 0;
@@ -92,6 +87,7 @@ if (mysqli_num_rows($result1) > 0) {
     $allData[] = $row;
   }
 }
+$_SESSION["allData"]=$allData;
 
 
 ?>
@@ -580,7 +576,7 @@ if (mysqli_num_rows($result1) > 0) {
           <div class="weekly-schedule">
             <h2>Search History</h2><br>
             <div id="searchHistory" class="container">
-              <form action="#" method="get">
+              <form action="16_search_result.php" method="get" target="hidden_iframe">
                 <div class="form-group">
                   <label for="parcelID">Package's ID: </label>
                   <input type="number" id="parcelID" name="parcelID" placeholder="Enter package's ID">
@@ -598,52 +594,8 @@ if (mysqli_num_rows($result1) > 0) {
                 </div>
                 <input type="submit" value="Search" id="Search">
               </form>
-
-              <?php
-              if ($_SERVER["REQUEST_METHOD"] == "GET") {
-                if(isset($_GET['parcelID'])){
-                  $targetParcelID = $_GET['parcelID'];
-                  if ($targetParcelID !== null) {
-                    foreach ($allData as $row) {
-                        if ($row['parcelID'] == $targetParcelID) {
-                            $targetParcelData = $row;
-                            break;
-                        }
-                    }
-                }
-                  
-                }
-                if(isset($_GET['pstatus']) || (isset($_GET['start_date']) && isset($_GET['end_date']))) {
-                  // 处理用户输入数据
-                  $parcelID = $_GET['parcelID'];
-                  $pstatus = $_GET['pstatus'];
-                  $startDate = $_GET['start_date'];
-                  $endDate = $_GET['end_date'];
-
-                  // 根据筛选条件过滤已提取的用户包裹信息
-                  // $filteredParcels = array_filter($userParcels, function ($parcel) use ($parcelID, $pstatus, $startDate, $endDate) {
-                  //   $matches = true;
-                  //   if (!empty($parcelID)) {
-                  //     $matches = $matches && ($parcel['parcelID'] == $parcelID);
-                  //   }
-                  //   if (!empty($pstatus)) {
-                  //     $matches = $matches && ($parcel['status'] == $pstatus);
-                  //   }
-                  //   if (!empty($startDate) && !empty($endDate)) {
-                  //     // 假设 send_time 是包裹信息中的日期时间字段
-                  //     $parcelDate = date('Y-m-d', strtotime($parcel['send_time']));
-                  //     $matches = $matches && ($parcelDate >= $startDate && $parcelDate <= $endDate);
-                  //   }
-                  //   return $matches;
-                  // });
-
-                  // 输出筛选后的包裹信息
-                  print_r($filteredParcels);
-                  // 或者根据筛选后的包裹信息进行其他操作
-                }
-              }
-              ?>
-
+              <!-- <iframe id="hidden_iframe" name="hidden_iframe" style="display: none;"> -->
+            </iframe>
 
 
             </div>
@@ -657,8 +609,11 @@ if (mysqli_num_rows($result1) > 0) {
                 </h2>
                 <div class='item-content'>
                   <?php
+
                   if (isset($deliveredData)) {
                     foreach ($deliveredData as $deliveredDataRow) {
+
+
                       $send_time = $deliveredDataRow['send_time'];
                       $send_storage_time = $deliveredDataRow['send_storage_time'];
                       $pick_storage_time = isset($deliveredDataRow['pick_storage_time']) ? $deliveredDataRow['pick_storage_time'] : 'unknown';
@@ -668,6 +623,9 @@ if (mysqli_num_rows($result1) > 0) {
                       $startadr = isset($deliveredDataRow['send_adr']) ? $deliveredDataRow['send_adr'] : 'unknown';
                       $pstatus = isset($deliveredDataRow['status']) ? $deliveredDataRow['status'] : 'unknown';
                       $endadr = isset($deliveredDataRow['pick_adr']) ? $deliveredDataRow['pick_adr'] : 'unknown';
+                      
+                      echo$send_time;
+                      
                       switch ($dayOfWeek) {
                         case 'Monday':
                           $cssClass = 'activity-one';
