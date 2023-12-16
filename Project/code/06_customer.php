@@ -40,12 +40,15 @@ $sql_parcel = "SELECT * ,send_station.csaddress AS send_adr, pick_station.csaddr
 
 $result1 = mysqli_query($conn, $sql_parcel);
 
+$pendingData = [];
+$inTransitData = [];
+$deliveredData = [];
+$acceptData = [];
+$allData = [];
 $pendingCount = 0;
 $inTransitCount = 0;
 $deliveredCount = 0;
 $acceptCount = 0;
-
-$allData = array();
 
 if (mysqli_num_rows($result1) > 0) {
   while ($row = mysqli_fetch_assoc($result1)) {
