@@ -171,9 +171,10 @@ collapseContainer.onclick = function (e) {
 };
 
 document.getElementById("Search").addEventListener("click", function () {
-
   // Check if the ul is visible, then hide it
   if (collapseContainer.style.display !== "none") {
     collapseContainer.style.display = "none";
+  }else{
+    collapseContainer.style.display = "block";
   }
 });
