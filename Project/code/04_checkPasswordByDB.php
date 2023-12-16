@@ -12,7 +12,6 @@ if ($utype == "customer") {
 if ($utype == "cadmin")
 	$sql = "SELECT * FROM cadmin WHERE uname = '$user' AND upassword = '$pwd';";
 if ($utype == "admin") {
-	
 	$sql = "SELECT * FROM admin WHERE uname = '$user' AND upassword = '$pwd';";
 }
 

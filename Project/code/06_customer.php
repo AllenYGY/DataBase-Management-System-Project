@@ -623,9 +623,6 @@ $_SESSION["allData"]=$allData;
                       $startadr = isset($deliveredDataRow['send_adr']) ? $deliveredDataRow['send_adr'] : 'unknown';
                       $pstatus = isset($deliveredDataRow['status']) ? $deliveredDataRow['status'] : 'unknown';
                       $endadr = isset($deliveredDataRow['pick_adr']) ? $deliveredDataRow['pick_adr'] : 'unknown';
-                      
-                      echo$send_time;
-                      
                       switch ($dayOfWeek) {
                         case 'Monday':
                           $cssClass = 'activity-one';
