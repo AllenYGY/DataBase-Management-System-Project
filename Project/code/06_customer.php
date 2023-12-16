@@ -602,6 +602,15 @@ if (mysqli_num_rows($result1) > 0) {
               <?php
               if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 if(isset($_GET['parcelID'])){
+                  $targetParcelID = $_GET['parcelID'];
+                  if ($targetParcelID !== null) {
+                    foreach ($allData as $row) {
+                        if ($row['parcelID'] == $targetParcelID) {
+                            $targetParcelData = $row;
+                            break;
+                        }
+                    }
+                }
                   
                 }
                 if(isset($_GET['pstatus']) || (isset($_GET['start_date']) && isset($_GET['end_date']))) {
@@ -612,21 +621,21 @@ if (mysqli_num_rows($result1) > 0) {
                   $endDate = $_GET['end_date'];
 
                   // 根据筛选条件过滤已提取的用户包裹信息
-                  $filteredParcels = array_filter($userParcels, function ($parcel) use ($parcelID, $pstatus, $startDate, $endDate) {
-                    $matches = true;
-                    if (!empty($parcelID)) {
-                      $matches = $matches && ($parcel['parcelID'] == $parcelID);
-                    }
-                    if (!empty($pstatus)) {
-                      $matches = $matches && ($parcel['status'] == $pstatus);
-                    }
-                    if (!empty($startDate) && !empty($endDate)) {
-                      // 假设 send_time 是包裹信息中的日期时间字段
-                      $parcelDate = date('Y-m-d', strtotime($parcel['send_time']));
-                      $matches = $matches && ($parcelDate >= $startDate && $parcelDate <= $endDate);
-                    }
-                    return $matches;
-                  });
+                  // $filteredParcels = array_filter($userParcels, function ($parcel) use ($parcelID, $pstatus, $startDate, $endDate) {
+                  //   $matches = true;
+                  //   if (!empty($parcelID)) {
+                  //     $matches = $matches && ($parcel['parcelID'] == $parcelID);
+                  //   }
+                  //   if (!empty($pstatus)) {
+                  //     $matches = $matches && ($parcel['status'] == $pstatus);
+                  //   }
+                  //   if (!empty($startDate) && !empty($endDate)) {
+                  //     // 假设 send_time 是包裹信息中的日期时间字段
+                  //     $parcelDate = date('Y-m-d', strtotime($parcel['send_time']));
+                  //     $matches = $matches && ($parcelDate >= $startDate && $parcelDate <= $endDate);
+                  //   }
+                  //   return $matches;
+                  // });
 
                   // 输出筛选后的包裹信息
                   print_r($filteredParcels);
