@@ -127,6 +127,7 @@ function handleSearchClick() {
   popup.style.display = "none";
   sendPartElement.style.display = "none";
   homeNavItem.className = "nav-item";
+  historyNavItem.className = "nav-item";
   rightcontentElement.style.display = "grid";
   searchhistoryElement.style.display = "grid";
   searchNavItem.className = "nav-item active";
@@ -171,7 +172,6 @@ collapseContainer.onclick = function (e) {
 };
 
 document.getElementById("Search").addEventListener("click", function () {
-  // Check if the ul is visible, then hide it
   if (collapseContainer.style.display !== "none") {
     collapseContainer.style.display = "none";
   } else {
@@ -179,5 +179,5 @@ document.getElementById("Search").addEventListener("click", function () {
   }
   searchNavItem.className = "nav-item active";
   homeNavItem.className = "nav-item";
-  addEventListener("click", handleHistoryClick);
+  handleSearchClick();
 });
