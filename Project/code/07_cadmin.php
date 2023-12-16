@@ -17,6 +17,8 @@ $usertype = $_SESSION["usertype"];
 $url = '01_login.php';
 if ($usertype != 'cadmin') header('Location:' . $url);
 
+$start = microtime(true); // 记录开始时间
+
 //Get user information
 $sql_user = "SELECT * FROM cadmin WHERE uname='$user'";
 $result = mysqli_query($conn, $sql_user);
@@ -89,6 +91,10 @@ if (mysqli_num_rows($result2) > 0) {
   }
 }
 $_SESSION["allData"] = $allData;
+
+$end = microtime(true); // 记录结束时间
+
+$timeDiff = $end - $start; // 计算时间差
 ?>
 
 <body>
@@ -150,6 +156,8 @@ $_SESSION["allData"] = $allData;
       <div class="left-content">
         <div class="activities">
           <h1>Activities</h1>
+          <?php echo "代码执行时间：" . $timeDiff . " 秒"; ?>
+
           <div class="activity-container">
 
             <div class="image-container img-three">
