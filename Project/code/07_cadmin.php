@@ -47,6 +47,7 @@ $_SESSION["umail"] = $mail;
 $_SESSION["ugender"] = $gender;
 $_SESSION["csID"] = $csID;
 $_SESSION["csadr"] = $csadr;
+$_SESSION["name"]=$name;
 
 
 $sql_parcel = "SELECT * FROM parcel 

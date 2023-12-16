@@ -188,11 +188,7 @@ $allData=$_SESSION["allData"];
           ?>
         </div>
       </div>
-      <!-- </div> -->
 
-
-
-      <!-- </div> -->
       <!-- left-content end  -->
 
       <!-- right-content -->
@@ -202,7 +198,7 @@ $allData=$_SESSION["allData"];
             <i class="fa fa-bell nav-icon"></i>
             <i class="fa fa-message nav-icon"></i>
           </div>
-          <h4><?php echo $name; ?></h4>
+          <h4><?php echo $user; ?></h4>
           <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
         </div>
 
