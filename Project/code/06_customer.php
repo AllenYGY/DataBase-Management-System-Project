@@ -601,7 +601,10 @@ if (mysqli_num_rows($result1) > 0) {
 
               <?php
               if ($_SERVER["REQUEST_METHOD"] == "GET") {
-                if (isset($_GET['parcelID']) || isset($_GET['pstatus']) || (isset($_GET['start_date']) && isset($_GET['end_date']))) {
+                if(isset($_GET['parcelID'])){
+                  
+                }
+                if(isset($_GET['pstatus']) || (isset($_GET['start_date']) && isset($_GET['end_date']))) {
                   // 处理用户输入数据
                   $parcelID = $_GET['parcelID'];
                   $pstatus = $_GET['pstatus'];
