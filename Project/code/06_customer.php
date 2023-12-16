@@ -311,16 +311,11 @@ $_SESSION["allData"]=$allData;
                   <p>Opening Hours:<br> 7 am. - 10 pm.</p>
                   <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/242bbd8c-aaf8-4aee-a3e4-e0df62d1ab27" alt="" />
                 </div>
-                <div class="best-item box-two">
-                  <p><br>Crowded state: Free <br>
-                    <br> <br>
+                <div class="best-item box-one-1">
+                  <p>Crowded state:<br> Free</p>
                     <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a" alt="" />
-                  </p>
                 </div>
-                <!-- <div class="best-item box-three">
-                  <p></p>
-                  <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e0ee8ffb-faa8-462a-b44d-0a18c1d9604c" alt="" />
-                </div> -->
+                
               </div>
             </div>
           </div>
