@@ -101,7 +101,7 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
             <div class="image-container img-six">
-              <img src="/Project/image/" alt="station" />
+              <img src="/Project/image/map/Guangdong.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>

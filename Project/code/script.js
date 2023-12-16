@@ -155,9 +155,27 @@ document
   });
 
 function showAlert() {
-  var confirmLogout = confirm('Are you sure you want to log off?');
+  var confirmLogout = confirm("Are you sure you want to log off?");
   if (confirmLogout) {
-    window.location.href = '14_logoff.php'; // 替换成你想要跳转的页面
+    window.location.href = "14_logoff.php"; // 替换成你想要跳转的页面
   }
 }
 
+var collapseContainer = document.querySelector(".collapse-container");
+collapseContainer.onclick = function (e) {
+  if (e.target.tagName.toLowerCase() == "i") {
+    let itemContent =
+      e.target.parentNode.parentNode.querySelector(".item-content");
+    itemContent.classList.toggle("item-content-on");
+  }
+};
+
+document.getElementById("Search").addEventListener("click", function () {
+  // Get the ul element
+  var collapseContainer = document.querySelector(".collapse-container");
+
+  // Check if the ul is visible, then hide it
+  if (collapseContainer.style.display !== "none") {
+    collapseContainer.style.display = "none";
+  }
+});

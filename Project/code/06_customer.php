@@ -949,15 +949,7 @@ if (mysqli_num_rows($result1) > 0) {
         </div>
       </div>
       <!-- left-content end  -->
-      <script>
-        var collapseContainer = document.querySelector(".collapse-container");
-        collapseContainer.onclick = function(e) {
-          if (e.target.tagName.toLowerCase() == 'i') {
-            let itemContent = e.target.parentNode.parentNode.querySelector(".item-content");
-            itemContent.classList.toggle('item-content-on');
-          }
-        }
-      </script>
+
       <!-- right-content -->
       <div class="right-content">
         <div class="user-info">
