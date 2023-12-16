@@ -867,7 +867,6 @@ if (mysqli_num_rows($result1) > 0) {
                       $startadr = isset($pendingDataRow['send_adr']) ? $pendingDataRow['send_adr'] : 'unknown';
                       $pstatus = isset($pendingDataRow['status']) ? $pendingDataRow['status'] : 'unknown';
                       $endadr = isset($pendingDataRow['pick_adr']) ? $pendingDataRow['pick_adr'] : 'unknown';
-
                       switch ($dayOfWeek) {
                         case 'Monday':
                           $cssClass = 'activity-one';
