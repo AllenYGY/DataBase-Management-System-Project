@@ -8,88 +8,6 @@
   <link rel="stylesheet" href="index.css">
 </head>
 
-<?php
-include "03_connectDB.php";
-session_start();
-$user = $_SESSION["user"];
-$usertype = $_SESSION["usertype"];
-
-$url = '01_login.php';
-if ($usertype != 'cadmin') header('Location:' . $url);
-
-//Get user information
-$sql_user = "SELECT * FROM cadmin  WHERE uname='$user'";
-$result = mysqli_query($conn, $sql_user);
-if (mysqli_num_rows($result) > 0) {
-  $row = mysqli_fetch_assoc($result);
-  $name = $row["uname"];
-  $phone = $row["uphone"];
-  $mail = $row["umail"];
-  $gender = $row["ugender"];
-  $userID = $row["uID"];
-  $csID = $row["csID"];
-}
-
-$sql_getcsadr = "SELECT * FROM courier_station WHERE csID='$csID'";
-
-$result1 = mysqli_query($conn, $sql_getcsadr);
-
-if (mysqli_num_rows($result1) > 0) {
-  $row = mysqli_fetch_assoc($result1);
-  $csadr = $row['csaddress'];
-  $csstartTime = $row['start_time'];
-  $csendTime = $row['end_time'];
-}
-
-$_SESSION["userID"] = $userID;
-$_SESSION["uphone"] = $phone;
-$_SESSION["umail"] = $mail;
-$_SESSION["ugender"] = $gender;
-$_SESSION["csID"] = $csID;
-$_SESSION["csadr"] = $csadr;
-
-
-$sql_parcel = "SELECT * FROM parcel 
-                      JOIN courier_station ON send_csID=csID
-                      JOIN cadmin USING(csID) 
-              WHERE cadmin.uID='$userID'";
-
-$result1 = mysqli_query($conn, $sql_parcel);
-$pendingCount = 0;
-$inTransitCount = 0;
-
-if (mysqli_num_rows($result1) > 0) {
-  while ($row = mysqli_fetch_assoc($result1)) {
-    $status = $row["status"];
-    switch ($status) {
-      case 'pending':
-        $pendingData[] = $row;
-        $pendingCount++;
-        break;
-    }
-  }
-}
-
-$sql_parcel = "SELECT * FROM parcel 
-                      JOIN courier_station ON pick_csID=csID
-                      JOIN cadmin USING(csID) 
-              WHERE cadmin.uID='$userID'";
-$result2 = mysqli_query($conn, $sql_parcel);
-
-if (mysqli_num_rows($result2) > 0) {
-  while ($row = mysqli_fetch_assoc($result2)) {
-    $status = $row["status"];
-    switch ($status) {
-      case 'in_transit':
-        $inTransitData[] = $row;
-        $inTransitCount++;
-        break;
-    }
-  }
-}
-
-?>
-
 <body>
   <main>
     <nav class="main-menu">
@@ -108,7 +26,7 @@ if (mysqli_num_rows($result2) > 0) {
         <li class="nav-item" id="profileNavItem">
           <b></b>
           <b></b>
-          <a href="#">
+          <a href="07_cadmin.php">
             <i class="fa fa-user nav-icon"></i>
             <span class="nav-text">Profile</span>
           </a>
@@ -126,7 +44,7 @@ if (mysqli_num_rows($result2) > 0) {
         <li class="nav-item" id="historyNavItem">
           <b></b>
           <b></b>
-          <a href="#">
+          <a href="07_cadmin.php">
             <i class="fa fa-history nav-icon"></i>
             <span class="nav-text">History</span>
           </a>
