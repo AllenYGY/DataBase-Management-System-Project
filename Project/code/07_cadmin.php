@@ -96,7 +96,7 @@ if (mysqli_num_rows($result2) > 0) {
       <h1>Courier Station</h1>
       <img class="logo" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb" alt="" />
       <ul>
-        <li class="nav-item active" id="homeNavItem">
+        <li class="nav-item" id="homeNavItem">
           <b></b>
           <b></b>
           <a href="07_cadmin.php">
