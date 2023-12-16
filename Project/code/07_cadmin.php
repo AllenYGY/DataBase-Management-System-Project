@@ -18,7 +18,7 @@ $url = '01_login.php';
 if ($usertype != 'cadmin') header('Location:' . $url);
 
 //Get user information
-$sql_user = "SELECT * FROM cadmin  WHERE uname='$user'";
+$sql_user = "SELECT * FROM cadmin WHERE uname='$user'";
 $result = mysqli_query($conn, $sql_user);
 if (mysqli_num_rows($result) > 0) {
   $row = mysqli_fetch_assoc($result);
@@ -47,8 +47,6 @@ $_SESSION["umail"] = $mail;
 $_SESSION["ugender"] = $gender;
 $_SESSION["csID"] = $csID;
 $_SESSION["csadr"] = $csadr;
-$_SESSION["name"]=$name;
-
 
 $sql_parcel = "SELECT * FROM parcel 
                       JOIN courier_station ON send_csID=csID
