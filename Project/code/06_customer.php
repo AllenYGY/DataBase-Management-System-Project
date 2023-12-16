@@ -303,7 +303,7 @@ $_SESSION["allData"] = $allData;
             echo "</div>";
             ?>
             <div class="personal-bests">
-              <h1>Express station status</h1>
+              <h1>Courier station status</h1>
               <div class="personal-bests-container">
                 <div class="best-item box-one">
                   <p>Opening Hours:<br> 7 am. - 10 pm.</p>

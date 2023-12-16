@@ -97,3 +97,13 @@ function handleSearchHistoryClick() {
 
 searchNavItem.addEventListener("click", handleSearchHistoryClick);
 historyNavItem.addEventListener("click", handleSearchHistoryClick);
+
+
+var collapseContainer = document.querySelector(".collapse-container");
+collapseContainer.onclick = function (e) {
+  if (e.target.tagName.toLowerCase() == "i") {
+    let itemContent =
+      e.target.parentNode.parentNode.querySelector(".item-content");
+    itemContent.classList.toggle("item-content-on");
+  }
+};
