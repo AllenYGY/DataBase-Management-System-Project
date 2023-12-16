@@ -234,7 +234,6 @@ if (mysqli_num_rows($result) > 0) {
                 <h3>Courier</h3>
               </div>
             </div>
-
           </div>
         </div>
       </div>
