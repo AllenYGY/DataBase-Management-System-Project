@@ -30,6 +30,7 @@ if (mysqli_num_rows($result) > 0) {
 	session_start();
 	$_SESSION["user"] = $user;
 	$_SESSION["usertype"] = $utype;
+	$_SESSION["flag"]=0;
 	header('Location:' . $url);
 } else {
 	$url = "error.html";

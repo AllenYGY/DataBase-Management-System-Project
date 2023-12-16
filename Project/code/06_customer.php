@@ -14,6 +14,7 @@ include "03_connectDB.php";
 session_start();
 $user = $_SESSION["user"];
 $usertype = $_SESSION["usertype"];
+$flag = $_SESSION["flag"];
 
 $url = '01_login.php';
 if ($usertype != 'customer') header('Location:' . $url);
@@ -88,8 +89,6 @@ if (mysqli_num_rows($result1) > 0) {
   }
 }
 $_SESSION["allData"] = $allData;
-
-
 ?>
 
 <body>
@@ -591,12 +590,12 @@ $_SESSION["allData"] = $allData;
               </form>
             </div>
             <br>
-            <h2>Package History</h2><br>
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "GET") {
+              echo "<h2>Search Result</h2><br>";
               if (isset($_GET['parcelID'])) {
                 $targetParcelID = $_GET['parcelID'];
-                $flag = 0;
+                $check = 0;
                 if ($targetParcelID !== null) {
                   foreach ($allData as $row) {
                     if ($row['parcelID'] == $targetParcelID) {
@@ -656,13 +655,14 @@ $_SESSION["allData"] = $allData;
                               <h3>&nbsp;&nbsp;Package pick courier Station: $endadr</h3>
                           </div>
                       </div>";
-                      $flag = 1;
+                      $check = 1;
                       break;
                     }
                   }
-                  if ($flag == 0) {
+                  if ($check == 0) {
                     echo "Package Not Found!";
                   }
+                  $_SESSION["flag"] = 1;
                 }
               }
               if (isset($_GET['pstatus']) || (isset($_GET['start_date']) && isset($_GET['end_date']))) {
@@ -674,7 +674,9 @@ $_SESSION["allData"] = $allData;
               }
             }
             ?>
+
             <ul class="collapse-container">
+              <h2>Package History</h2><br>
               <li class='item'>
                 <h2 class='item-title'>
                   Packages waiting to be accepted
@@ -1008,6 +1010,7 @@ $_SESSION["allData"] = $allData;
       </div>
       <!-- left-content end  -->
 
+
       <!-- right-content -->
       <div class="right-content">
         <div class="user-info">
@@ -1078,10 +1081,22 @@ $_SESSION["allData"] = $allData;
         </form>
       </div>
     </section>
-
   </main>
   <script src="data.js" type="module"></script>
   <script src="script.js"></script>
+  <?php
+  if ($flag == 1) {
+    echo '<script>';
+    echo 'handleSearchClick();';
+    echo 'if (collapseContainer.style.display !== "none") {
+      collapseContainer.style.display = "none";
+    } else {
+      collapseContainer.style.display = "block";
+    }';
+    echo '</script>';
+    $_SESSION["flag"] = 0;
+  }
+  ?>
 </body>
 
 </html>

@@ -178,6 +178,4 @@ document.getElementById("Search").addEventListener("click", function () {
     collapseContainer.style.display = "block";
   }
   searchNavItem.className = "nav-item active";
-  homeNavItem.className = "nav-item";
-  handleSearchClick();
 });
