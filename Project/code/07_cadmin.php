@@ -67,6 +67,7 @@ if (mysqli_num_rows($result1) > 0) {
         $pendingCount++;
         break;
     }
+    $allData[] = $row;
   }
 }
 
@@ -85,9 +86,10 @@ if (mysqli_num_rows($result2) > 0) {
         $inTransitCount++;
         break;
     }
+    $allData[] = $row;
   }
 }
-
+$_SESSION["allData"] = $allData;
 ?>
 
 <body>
