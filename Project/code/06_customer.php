@@ -571,7 +571,7 @@ $_SESSION["allData"] = $allData;
           <div class="weekly-schedule">
             <h2>Search History</h2><br>
             <div id="searchHistory" class="container">
-              <form action="#" method="get" target="hidden_iframe">
+              <form action="#" method="get">
                 <div class="form-group">
                   <label for="parcelID">Package's ID: </label>
                   <input type="number" id="parcelID" name="parcelID" placeholder="Enter package's ID">
@@ -590,9 +590,11 @@ $_SESSION["allData"] = $allData;
                 </div>
                 <input type="submit" value="Search" id="Search">
               </form>
-              </iframe>
-              <?php
+            </div>
+            <br>
+            <h2>Package History</h2><br>
 
+            <?php
               if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 if (isset($_GET['parcelID'])) {
                   $targetParcelID = $_GET['parcelID'];
@@ -610,7 +612,6 @@ $_SESSION["allData"] = $allData;
                         $startadr = isset($targetParcelData['send_adr']) ? $targetParcelData['send_adr'] : 'unknown';
                         $pstatus = isset($targetParcelData['status']) ? $targetParcelData['status'] : 'unknown';
                         $endadr = isset($targetParcelData['pick_adr']) ? $targetParcelData['pick_adr'] : 'unknown';
-
                         switch ($dayOfWeek) {
                           case 'Monday':
                             $cssClass = 'activity-one';
@@ -642,22 +643,21 @@ $_SESSION["allData"] = $allData;
                             break;
                         }
                         echo "
-      <div class='day-and-activity $cssClass'>
-          <div class='day'>
-              <h1>$date</h1>
-              <p>$day</p>
-          </div>
-          <div class='activity'>
-              <h2>Package ID: $pID</h2>
-              <h2>Package Status: $pstatus</h2>
-              <h3>&nbsp;&nbsp;Send time: $send_time</h3>
-              <h3>&nbsp;&nbsp;Send storage time: $send_storage_time</h3>
-              <h3>&nbsp;&nbsp;Pick storage time: $pick_storage_time</h3>
-              <h3>&nbsp;&nbsp;Package send courier Station: $startadr</h3>
-              <h3>&nbsp;&nbsp;Package pick courier Station: $endadr</h3>
-          </div>
-      </div>
-      ";
+                        <div class='day-and-activity $cssClass'>
+                          <div class='day'>
+                            <h1>$date</h1>
+                            <p>$day</p>
+                          </div>
+                          <div class='activity'>
+                              <h2>Package ID: $pID</h2>
+                              <h2>Package Status: $pstatus</h2>
+                              <h3>&nbsp;&nbsp;Send time: $send_time</h3>
+                              <h3>&nbsp;&nbsp;Send storage time: $send_storage_time</h3>
+                              <h3>&nbsp;&nbsp;Pick storage time: $pick_storage_time</h3>
+                              <h3>&nbsp;&nbsp;Package send courier Station: $startadr</h3>
+                              <h3>&nbsp;&nbsp;Package pick courier Station: $endadr</h3>
+                          </div>
+                      </div>";
                         $flag = 1;
                         break;
                       }
@@ -696,12 +696,7 @@ $_SESSION["allData"] = $allData;
                   // 或者根据筛选后的包裹信息进行其他操作
                 }
               }
-
-
               ?>
-            </div>
-            <br>
-            <h2>Package History</h2><br>
             <ul class="collapse-container">
               <li class='item'>
                 <h2 class='item-title'>
