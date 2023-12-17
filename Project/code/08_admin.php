@@ -101,21 +101,21 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
             <div class="image-container img-six">
-              <img src="/Project/image/map/Guangdong.jpg" alt="station" />
+              <img src="/Project/image/map/Chongqing.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
             <div class="image-container img-seven">
-              <img src="/Project/image/station.png" alt="station" />
+              <img src="/Project/image/map/Fujian.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
             <div class="image-container img-eight">
-              <img src="/Project/image/station.png" alt="station" />
+              <img src="/Project/image/map/Gansu.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>

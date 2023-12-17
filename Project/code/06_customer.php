@@ -18,7 +18,8 @@ $flag = $_SESSION["flag"];
 
 $url = '01_login.php';
 if ($usertype != 'customer') header('Location:' . $url);
-$start = microtime(true); // 记录开始时间
+
+$start=microtime(true); // 记录结束时间
 
 $sql_user = "SELECT * from customer WHERE uname='$user'";
 $result = mysqli_query($conn, $sql_user);
