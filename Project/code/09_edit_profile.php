@@ -33,22 +33,25 @@ if ($result) {
       $updateQuery = "UPDATE admin SET ";
     $check = 0;
     if (!empty($newPhone)) {
-      $updateQuery .= " uphone='$newPhone'";
+      $updateQuery .= " uphone='$newPhone', ";
       $check = 1;
     }
     if (!empty($newMail)) {
-      $updateQuery .= " umail='$newMail'";
+      $updateQuery .= " umail='$newMail', ";
       $check = 1;
     }
     if (!empty($newGender)) {
-      $updateQuery .= " ugender='$newGender'";
+      $updateQuery .= " ugender='$newGender', ";
       $check = 1;
     }
-
+    
     if (!empty($editpwd)) {
-      $updateQuery .= " upassword='$editpwd'";
+      $updateQuery .= " upassword='$editpwd', ";
       $check = 1;
     }
+    // 移除最后一个逗号和空格
+    $updateQuery = rtrim($updateQuery, ', ');
+    
 
     if ($check == 1) {
       $updateQuery .= " WHERE uname='$user'";
