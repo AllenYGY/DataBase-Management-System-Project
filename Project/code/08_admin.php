@@ -93,28 +93,28 @@ if (mysqli_num_rows($result) > 0) {
           <h1>Activities</h1>
           <div class="activity-container">
 
-            <div class="image-container img-five">
+            <div class="image-container">
               <img src="/Project/image/map/Beijing.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
-            <div class="image-container img-six">
+            <div class="image-container">
               <img src="/Project/image/map/Chongqing.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
-            <div class="image-container img-seven">
+            <div class="image-container">
               <img src="/Project/image/map/Fujian.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
-            <div class="image-container img-eight">
+            <div class="image-container">
               <img src="/Project/image/map/Gansu.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
@@ -122,118 +122,203 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
 
-            <div class="image-container img-nine">
-              <img src="/Project/image/station.png" alt="station" />
+            <div class="image-container">
+              <img src="/Project/image/map/Guangdong.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
-            <div class="image-container img-ten">
-              <img src="/Project/image/station.png" alt="station" />
+            <div class="image-container">
+              <img src="/Project/image/map/Guangxi.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
-            <div class="image-container img-11">
-              <img src="/Project/image/station.png" alt="station" />
+            <div class="image-container">
+              <img src="/Project/image/map/Guizhou.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
-            <div class="image-container img-12">
-              <img src="/Project/image/station.png" alt="station" />
+            <div class="image-container">
+              <img src="/Project/image/map/Hainan.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
-            <div class="image-container img-13">
-              <img src="/Project/image/station.png" alt="station" />
+            <div class="image-container">
+              <img src="/Project/image/map/Hebei.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
-            <div class="image-container img-14">
-              <img src="/Project/image/station.png" alt="station" />
+            <div class="image-container">
+              <img src="/Project/image/map/Heilongjiang.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
             
-            <div class="image-container img-15">
-              <img src="/Project/image/station.png" alt="station" />
+            <div class="image-container">
+              <img src="/Project/image/map/Henan.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
-            <div class="image-container img-16">
-              <img src="/Project/image/station.png" alt="station" />
+            <div class="image-container">
+              <img src="/Project/image/map/Hongkong.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
 
-            <div class="image-container img-17">
-              <img src="/Project/image/station.png" alt="station" />
+            <div class="image-container">
+              <img src="/Project/image/map/Hubei.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
-            <div class="image-container img-18">
-              <img src="/Project/image/station.png" alt="station" />
+            <div class="image-container">
+              <img src="/Project/image/map/Hunan.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
-            <div class="image-container img-19">
-              <img src="/Project/image/station.png" alt="station" />
+            <div class="image-container">
+              <img src="/Project/image/map/Jiangsu.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
-            <div class="image-container img-20">
-              <img src="/Project/image/station.png" alt="station" />
+            <div class="image-container">
+              <img src="/Project/image/map/Jiangxi.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
-            <div class="image-container img-21">
-              <img src="/Project/image/station.png" alt="station" />
+            <div class="image-container">
+              <img src="/Project/image/map/Jilin.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
-            <div class="image-container img-22">
-              <img src="/Project/image/station.png" alt="station" />
+            <div class="image-container">
+              <img src="/Project/image/map/Liaoning.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
-            <div class="image-container img-23">
-              <img src="/Project/image/station.png" alt="station" />
+            <div class="image-container">
+              <img src="/Project/image/map/Macao.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
 
-            <div class="image-container img-24">
-              <img src="/Project/image/station.png" alt="station" />
+            <div class="image-container">
+              <img src="/Project/image/map/Neimenggu.jpg" alt="station" />
               <div class="overlay">
                 <h3>Courier</h3>
               </div>
             </div>
+            <div class="image-container">
+              <img src="/Project/image/map/Ningxia.jpg" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="/Project/image/map/Qinghai.jpg" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="/Project/image/map/Shandong.jpg" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="/Project/image/map/Shanghai.jpg" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="/Project/image/map/Shanxi.jpg" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="/Project/image/map/Shanxi_1.jpg" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="/Project/image/map/Taiwan.jpg" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="/Project/image/map/Tianjin.jpg" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="/Project/image/map/Xinjiang.jpg" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="/Project/image/map/Xizang.jpg" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="/Project/image/map/Yunnan.jpg" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="/Project/image/map/Zhejiang.jpg" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="/Project/image/map/Anhui.jpg" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="/Project/image/map/Sichuan.jpg" alt="station" />
+              <div class="overlay">
+                <h3>Courier</h3>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>
