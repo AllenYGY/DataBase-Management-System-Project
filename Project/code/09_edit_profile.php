@@ -18,16 +18,12 @@ if($utype=='customer') $sql = "SELECT * FROM customer WHERE uname='$user'";
 if($utype=='cadmin') $sql = "SELECT * FROM cadmin WHERE uname='$user'";
 if($utype=='admin') $sql = "SELECT * FROM admin WHERE uname='$user'";
 
-echo $sql;
+// echo $sql;
 
 $result = mysqli_query($conn, $sql);
 if ($result) {
-
   $row = mysqli_fetch_assoc($result);
   $storedPassword = $row['upassword'];
-  $storedmail = $row['umail'];
-  $storedgender = $row['ugender'];
-
   if ($oldpwd === $storedPassword) {
     if ($utype == 'customer')
       $updateQuery = "UPDATE customer SET ";
@@ -45,7 +41,7 @@ if ($result) {
       $check = 1;
     }
     if (!empty($newGender)) {
-      $updateQuery .= " umail='$newGender'";
+      $updateQuery .= " ugender='$newGender'";
       $check = 1;
     }
 
@@ -57,8 +53,6 @@ if ($result) {
     if ($check == 1) {
       $updateQuery .= " WHERE uname='$user'";
       echo $updateQuery;
-
-
       $updateResult = mysqli_query($conn, $updateQuery);
 
       if ($updateResult) {
