@@ -189,7 +189,7 @@ $timeDiff = $end - $start; // 计算时间差
       <div class="left-content">
         <div class="activities">
           <h1>Activities</h1>
-          <?php echo "代码执行时间：" . $timeDiff . " 秒"; ?>
+          <?php echo "Code Run time:" . $timeDiff . " s"; ?>
           <div class="activity-container">
 
             <div class="image-container img-one" id="pickimg">
