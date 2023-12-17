@@ -94,231 +94,267 @@ if (mysqli_num_rows($result) > 0) {
           <div class="activity-container">
 
             <div class="image-container">
-              <img src="/Project/image/map/Beijing.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Beijing.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
+              </a>
             </div>
 
             <div class="image-container">
-              <img src="/Project/image/map/Chongqing.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Chongqing.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
 
             <div class="image-container">
-              <img src="/Project/image/map/Fujian.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Fujian.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
 
             <div class="image-container">
-              <img src="/Project/image/map/Gansu.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
-            </div>
-
-
-            <div class="image-container">
-              <img src="/Project/image/map/Guangdong.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
-            </div>
-
-            <div class="image-container">
-              <img src="/Project/image/map/Guangxi.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
-            </div>
-
-            <div class="image-container">
-              <img src="/Project/image/map/Guizhou.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
-            </div>
-
-            <div class="image-container">
-              <img src="/Project/image/map/Hainan.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
-            </div>
-
-            <div class="image-container">
-              <img src="/Project/image/map/Hebei.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
-            </div>
-
-            <div class="image-container">
-              <img src="/Project/image/map/Heilongjiang.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
-            </div>
-
-            
-            <div class="image-container">
-              <img src="/Project/image/map/Henan.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
-            </div>
-
-            <div class="image-container">
-              <img src="/Project/image/map/Hongkong.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Gansu.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
 
 
             <div class="image-container">
-              <img src="/Project/image/map/Hubei.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Guangdong.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
 
             <div class="image-container">
-              <img src="/Project/image/map/Hunan.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Guangxi.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
 
             <div class="image-container">
-              <img src="/Project/image/map/Jiangsu.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Guizhou.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
 
             <div class="image-container">
-              <img src="/Project/image/map/Jiangxi.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Hainan.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
 
             <div class="image-container">
-              <img src="/Project/image/map/Jilin.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Hebei.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
 
             <div class="image-container">
-              <img src="/Project/image/map/Liaoning.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Heilongjiang.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
+
+
             <div class="image-container">
-              <img src="/Project/image/map/Macao.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Henan.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
 
             <div class="image-container">
-              <img src="/Project/image/map/Neimenggu.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Hongkong.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
+            </div>
+
+
+            <div class="image-container">
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Hubei.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
+            </div>
+
+            <div class="image-container">
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Hunan.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
+            </div>
+
+            <div class="image-container">
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Jiangsu.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
+            </div>
+
+            <div class="image-container">
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Jiangxi.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
+            </div>
+
+            <div class="image-container">
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Jilin.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
+            </div>
+
+            <div class="image-container">
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Liaoning.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
             <div class="image-container">
-              <img src="/Project/image/map/Ningxia.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Macao.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
+            </div>
+
+            <div class="image-container">
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Neimenggu.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
             <div class="image-container">
-              <img src="/Project/image/map/Qinghai.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Ningxia.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
             <div class="image-container">
-              <img src="/Project/image/map/Shandong.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Qinghai.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
             <div class="image-container">
-              <img src="/Project/image/map/Shanghai.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Shandong.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
             <div class="image-container">
-              <img src="/Project/image/map/Shanxi.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Shanghai.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
             <div class="image-container">
-              <img src="/Project/image/map/Shanxi_1.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Shanxi.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
             <div class="image-container">
-              <img src="/Project/image/map/Taiwan.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Shanxi_1.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
             <div class="image-container">
-              <img src="/Project/image/map/Tianjin.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Taiwan.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
             <div class="image-container">
-              <img src="/Project/image/map/Xinjiang.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Tianjin.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
             <div class="image-container">
-              <img src="/Project/image/map/Xizang.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Xinjiang.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
             <div class="image-container">
-              <img src="/Project/image/map/Yunnan.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Xizang.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
             <div class="image-container">
-              <img src="/Project/image/map/Zhejiang.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Yunnan.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
             <div class="image-container">
-              <img src="/Project/image/map/Anhui.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Zhejiang.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
             <div class="image-container">
-              <img src="/Project/image/map/Sichuan.jpg" alt="station" />
-              <div class="overlay">
-                <h3>Courier</h3>
-              </div>
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Anhui.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
             </div>
-            
+            <div class="image-container">
+              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Sichuan.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
+            </div>
+
           </div>
         </div>
       </div>
