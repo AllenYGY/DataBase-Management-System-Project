@@ -273,7 +273,6 @@ $timeDiff = $end - $start; // 计算时间差
                     <h3>No packages need to be send</h3>
                   </div>
                   <button class='btn' id='checkbtn1'>Check</button>
-
               </div>
             ";
             }
