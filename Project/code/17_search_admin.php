@@ -80,7 +80,7 @@
         <div class="weekly-schedule">
           <h2>Search History</h2><br>
           <div id="searchHistory" class="container">
-            <form method="get">
+            <form method="get" action="17_search_admin.php">
               <div class="form-group">
                 <label for="parcelID">Package's ID: </label>
                 <input type="number" id="parcelID" name="parcelID" placeholder="Enter package's ID">
@@ -102,6 +102,88 @@
           </div>
 
           <br>
+          <?php
+          if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            echo "<h2>Search Result</h2><br>";
+            if (isset($_GET['parcelID'])) {
+              date_default_timezone_set('Asia/Shanghai');
+              include "03_connectDB.php";
+
+              $targetParcelID = $_GET['parcelID'];
+
+              $start = microtime(true); // 记录结束时间
+
+              $sql_user = "SELECT * from parcel WHERE parcelID='$targetParcelID'";
+              $result = mysqli_query($conn, $sql_user);
+              $check=0;
+              if (mysqli_num_rows($result) > 0) {
+                $row = mysqli_fetch_assoc($result);
+                $targetParcelData = $row;
+                $send_time = $targetParcelData['send_time'];
+                $send_storage_time = $targetParcelData['send_storage_time'];
+                $pick_storage_time = isset($targetParcelData['pick_storage_time']) ? $targetParcelData['pick_storage_time'] : 'unknown';
+                $dayOfWeek = isset($send_time) ? date('l', strtotime($send_time)) : 'unknown';
+                $date = isset($targetParcelData['send_storage_time']) ? date('d', strtotime($targetParcelData['send_storage_time'])) : 'unknown';
+                $pID = isset($targetParcelData['parcelID']) ? $targetParcelData['parcelID'] : 'unknown';
+                $startadr = isset($targetParcelData['send_adr']) ? $targetParcelData['send_adr'] : 'unknown';
+                $pstatus = isset($targetParcelData['status']) ? $targetParcelData['status'] : 'unknown';
+                $endadr = isset($targetParcelData['pick_adr']) ? $targetParcelData['pick_adr'] : 'unknown';
+                switch ($dayOfWeek) {
+                  case 'Monday':
+                    $cssClass = 'activity-one';
+                    $day = 'MON';
+                    break;
+                  case 'Tuesday':
+                    $cssClass = 'activity-two';
+                    $day = 'TUE';
+                    break;
+                  case 'Wednesday':
+                    $cssClass = 'activity-three';
+                    $day = 'WED';
+                    break;
+                  case 'Thursday':
+                    $cssClass = 'activity-four';
+                    $day = 'THU';
+                    break;
+                  case 'Friday':
+                    $cssClass = 'activity-five';
+                    $day = 'FRI';
+                    break;
+                  case 'Saturday':
+                    $cssClass = 'activity-six';
+                    $day = 'SAT';
+                    break;
+                  default:
+                    $cssClass = 'activity-seven';
+                    $day = 'SUN';
+                    break;
+                }
+                echo "
+                        <div class='day-and-activity $cssClass'>
+                          <div class='day'>
+                            <h1>$date</h1>
+                            <p>$day</p>
+                          </div>
+                          <div class='activity'>
+                              <h2>Package ID: $pID</h2>
+                              <h2>Package Status: $pstatus</h2>
+                              <h3>&nbsp;&nbsp;Send time: $send_time</h3>
+                              <h3>&nbsp;&nbsp;Send storage time: $send_storage_time</h3>
+                              <h3>&nbsp;&nbsp;Pick storage time: $pick_storage_time</h3>
+                              <h3>&nbsp;&nbsp;Package send courier Station: $startadr</h3>
+                              <h3>&nbsp;&nbsp;Package pick courier Station: $endadr</h3>
+                          </div>
+                      </div>";
+                $check = 1;
+              }
+            }
+            if ($check == 0) {
+              echo "Package Not Found!";
+            }
+          }
+
+
+          ?>
         </div>
       </div>
 
@@ -145,19 +227,7 @@
 
   </main>
   <script src="script_cadmin.js"></script>
-  <?php
-  // if ($flag == 1) {
-  //   echo '<script>';
-  //   echo 'handleSearchClick();';
-  //   echo 'if (collapseContainer.style.display !== "none") {
-  //     collapseContainer.style.display = "none";
-  //   } else {
-  //     collapseContainer.style.display = "block";
-  //   }';
-  //   echo '</script>';
-  //   $_SESSION["flag"] = 0;
-  // }
-  ?>
+
 </body>
 
 </html>
