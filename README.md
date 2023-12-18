@@ -2,12 +2,12 @@
 
 ## User Requirement
 
-![Pick-Send Process](Draw/process.png)
+![Pick-Send Process](Project/Draw/process.png)
 
 ## E-R Diagram
 
-![ER](Draw/E-R.png)
-![ER-without attribute](Draw/E-R(without_attribute).png)
+![ER](Project/Draw/E-R.png)
+![ER-without attribute](Project/Draw/E-R(without_attribute).png)
 
 ## Logical Design
 
