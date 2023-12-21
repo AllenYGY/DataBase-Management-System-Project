@@ -367,7 +367,9 @@ if (mysqli_num_rows($result) > 0) {
             <i class="fa fa-message nav-icon"></i>
           </div>
           <h4>AllenYGY</h4>
-          <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
+          <?php echo '<img src="data:image/png;base64,' . base64_encode($imageData) . '"/>'; ?>
+
+          <!-- <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" /> -->
         </div>
 
         <div class="friends-activity">

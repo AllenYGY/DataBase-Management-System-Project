@@ -30,6 +30,7 @@ if (mysqli_num_rows($result) > 0) {
   $gender = $row["ugender"];
   $userID = $row["uID"];
   $csID = $row["csID"];
+  $imageData = $row["upicture"];
 }
 
 $sql_getcsadr = "SELECT * FROM courier_station WHERE csID='$csID'";
@@ -270,7 +271,9 @@ $timeDiff = $end - $start; // 计算时间差
           <h1>Profile</h1>
           <div class="activity-container">
             <div class="image-icon">
-              <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
+              <?php echo '<img src="data:image/png;base64,' . base64_encode($imageData) . '"/>'; ?>
+
+              <!-- <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" /> -->
             </div>
             <div class="info-container info-one">
               <table>
@@ -791,7 +794,9 @@ $timeDiff = $end - $start; // 计算时间差
             <i class="fa fa-message nav-icon"></i>
           </div>
           <h4><?php echo $name; ?></h4>
-          <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
+          <?php echo '<img src="data:image/png;base64,' . base64_encode($imageData) . '"/>'; ?>
+
+          <!-- <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" /> -->
         </div>
 
         <div class="friends-activity">
@@ -824,7 +829,8 @@ $timeDiff = $end - $start; // 计算时间差
           <div class="form-group">
             <h1>Edit Profile</h1><br>
             <div class="image-icon-1">
-              <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
+              <?php echo '<img src="data:image/png;base64,' . base64_encode($imageData) . '"/>'; ?>
+              <!-- <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" /> -->
               <?php echo $name; ?>
             </div>
 
