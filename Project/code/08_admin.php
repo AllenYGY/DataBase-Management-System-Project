@@ -95,7 +95,7 @@ if (mysqli_num_rows($result) > 0) {
 
             <div class="image-container">
 
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Beijing.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Beijing.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
@@ -104,7 +104,7 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Chongqing.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Chongqing.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
@@ -112,7 +112,7 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Fujian.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Fujian.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
@@ -120,56 +120,7 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Gansu.jpg" alt="station" />
-                <div class="overlay">
-                  <h3>Courier</h3>
-                </div>
-              </a>
-            </div>
-
-
-            <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Guangdong.jpg" alt="station" />
-                <div class="overlay">
-                  <h3>Courier</h3>
-                </div>
-              </a>
-            </div>
-
-            <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Guangxi.jpg" alt="station" />
-                <div class="overlay">
-                  <h3>Courier</h3>
-                </div>
-              </a>
-            </div>
-
-            <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Guizhou.jpg" alt="station" />
-                <div class="overlay">
-                  <h3>Courier</h3>
-                </div>
-              </a>
-            </div>
-
-            <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Hainan.jpg" alt="station" />
-                <div class="overlay">
-                  <h3>Courier</h3>
-                </div>
-              </a>
-            </div>
-
-            <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Hebei.jpg" alt="station" />
-                <div class="overlay">
-                  <h3>Courier</h3>
-                </div>
-              </a>
-            </div>
-
-            <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Heilongjiang.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Gansu.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
@@ -178,7 +129,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Henan.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Guangdong.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
@@ -186,7 +137,39 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Hongkong.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Guangxi.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
+            </div>
+
+            <div class="image-container">
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Guizhou.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
+            </div>
+
+            <div class="image-container">
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Hainan.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
+            </div>
+
+            <div class="image-container">
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Hebei.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
+            </div>
+
+            <div class="image-container">
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Heilongjiang.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
@@ -195,7 +178,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Hubei.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Henan.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
@@ -203,7 +186,16 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Hunan.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Hongkong.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
+            </div>
+
+
+            <div class="image-container">
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Hubei.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
@@ -211,7 +203,7 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Jiangsu.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Hunan.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
@@ -219,7 +211,7 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Jiangxi.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Jiangsu.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
@@ -227,7 +219,7 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Jilin.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Jiangxi.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
@@ -235,14 +227,7 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Liaoning.jpg" alt="station" />
-                <div class="overlay">
-                  <h3>Courier</h3>
-                </div>
-              </a>
-            </div>
-            <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Macao.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Jilin.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
@@ -250,105 +235,120 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Neimenggu.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Liaoning.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
               </a>
             </div>
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Ningxia.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Macao.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
+            </div>
+
+            <div class="image-container">
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Neimenggu.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
               </a>
             </div>
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Qinghai.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Ningxia.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
               </a>
             </div>
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Shandong.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Qinghai.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
               </a>
             </div>
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Shanghai.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Shandong.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
               </a>
             </div>
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Shanxi.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Shanghai.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
               </a>
             </div>
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Shanxi_1.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Shanxi.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
               </a>
             </div>
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Taiwan.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Shanxi_1.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
               </a>
             </div>
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Tianjin.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Taiwan.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
               </a>
             </div>
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Xinjiang.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Tianjin.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
               </a>
             </div>
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Xizang.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Xinjiang.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
               </a>
             </div>
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Yunnan.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Xizang.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
               </a>
             </div>
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Zhejiang.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Yunnan.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
               </a>
             </div>
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Anhui.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Zhejiang.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
               </a>
             </div>
             <div class="image-container">
-              <a href="17_search_admin.php?location=Guangxi"><img src="/Project/image/map/Sichuan.jpg" alt="station" />
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Anhui.jpg" alt="station" />
+                <div class="overlay">
+                  <h3>Courier</h3>
+                </div>
+              </a>
+            </div>
+            <div class="image-container">
+              <a href="17_search_admin.php?location=Guangxi"><img src="Image/map/Sichuan.jpg" alt="station" />
                 <div class="overlay">
                   <h3>Courier</h3>
                 </div>
@@ -378,7 +378,7 @@ if (mysqli_num_rows($result) > 0) {
                 <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DJY.png" alt="SJY" />
                 <h2>SJY</h2>
               </div>
-              <img class="card-img" src="/Project/image/pick.jpg" alt="pickup" />
+              <img class="card-img" src="Image/pick.jpg" alt="pickup" />
               <p>I just recive a new package today.<br> Please help me pick up the package.</p>
             </div>
 
@@ -388,7 +388,7 @@ if (mysqli_num_rows($result) > 0) {
                 <h2>DSX</h2>
 
               </div>
-              <img class="card-img" src="/Project/image/pick.jpg" alt="pickup" />
+              <img class="card-img" src="Image/pick.jpg" alt="pickup" />
               <p>I just recive a new package today.<br> Please help me pick up the package.</p>
             </div>
           </div>

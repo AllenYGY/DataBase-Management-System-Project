@@ -210,7 +210,7 @@ $allData=$_SESSION["allData"];
                 <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DJY.png" alt="SJY" />
                 <h2>SJY</h2>
               </div>
-              <img class="card-img" src="/Project/image/pick.jpg" alt="pickup" />
+              <img class="card-img" src="Image/pick.jpg" alt="pickup" />
               <p>I just recive a new package today. Please help me pick up the package.</p>
             </div>
 
@@ -219,7 +219,7 @@ $allData=$_SESSION["allData"];
                 <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DSX.png" alt="DSX" />
                 <h2>DSX</h2>
               </div>
-              <img class="card-img" src="/Project/image/pick.jpg" alt="pickup" />
+              <img class="card-img" src="Image/pick.jpg" alt="pickup" />
               <p>I just recive a new package today. Please help me pick up the package.</p>
             </div>
           </div>

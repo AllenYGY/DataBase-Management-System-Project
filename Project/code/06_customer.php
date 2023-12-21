@@ -34,7 +34,7 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 if (!empty($imageData)) {
-  echo '<img src="data:image/png;base64,'.base64_encode($imageData).'"/>';
+  echo '<img src="data:Image/png;base64,'.base64_encode($imageData).'"/>';
 }
 
 $_SESSION["userID"] = $userID;
@@ -198,14 +198,14 @@ $timeDiff = $end - $start; // 计算时间差
           <div class="activity-container">
 
             <div class="image-container img-one" id="pickimg">
-              <img src="/Project/image/pick.jpg" alt="pick">
+              <img src="Image/pick.jpg" alt="pick">
               <div class="overlay">
                 <h3>Pick package</h3>
               </div>
             </div>
 
             <div class="image-container img-two" id="sendimg">
-              <img src="/Project/image/send.jpg" alt="send">
+              <img src="Image/send.jpg" alt="send">
               <div class="overlay">
                 <h3>Send package</h3>
               </div>
@@ -1040,7 +1040,7 @@ $timeDiff = $end - $start; // 计算时间差
                 <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DJY.png" alt="SJY" />
                 <h2>SJY</h2>
               </div>
-              <img class="card-img" src="/Project/image/pick.jpg" alt="pickup" />
+              <img class="card-img" src="Image/pick.jpg" alt="pickup" />
               <p>I just recive a new package today. Please help me pick up the package.</p>
             </div>
 
@@ -1050,7 +1050,7 @@ $timeDiff = $end - $start; // 计算时间差
                 <h2>DSX</h2>
 
               </div>
-              <img class="card-img" src="/Project/image/pick.jpg" alt="pickup" />
+              <img class="card-img" src="Image/pick.jpg" alt="pickup" />
               <p>I just recive a new package today. Please help me pick up the package.</p>
             </div>
           </div>

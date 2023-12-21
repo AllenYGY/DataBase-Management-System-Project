@@ -162,7 +162,7 @@ $timeDiff = $end - $start; // 计算时间差
 
             <div class="image-container img-three">
               <!-- id="pickimg"> -->
-              <img src="/Project/image/pickup.jpg" alt="pick">
+              <img src="Image/pickup.jpg" alt="pick">
               <div class="overlay">
                 <h3>Pick package</h3>
               </div>
@@ -170,7 +170,7 @@ $timeDiff = $end - $start; // 计算时间差
 
             <div class="image-container img-four">
               <!-- id="sendimg"> -->
-              <img src="/Project/image/delivery.jpg" alt="send">
+              <img src="Image/delivery.jpg" alt="send">
               <div class="overlay">
                 <h3>Send package</h3>
               </div>
@@ -802,7 +802,7 @@ $timeDiff = $end - $start; // 计算时间差
                 <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/DJY.png" alt="SJY" />
                 <h2>SJY</h2>
               </div>
-              <img class="card-img" src="/Project/image/pick.jpg" alt="pickup" />
+              <img class="card-img" src="Image/pick.jpg" alt="pickup" />
               <p>I just recive a new package today. Please help me pick up the package.</p>
             </div>
 
@@ -812,7 +812,7 @@ $timeDiff = $end - $start; // 计算时间差
                 <h2>DSX</h2>
 
               </div>
-              <img class="card-img" src="/Project/image/pick.jpg" alt="pickup" />
+              <img class="card-img" src="Image/pick.jpg" alt="pickup" />
               <p>I just recive a new package today. Please help me pick up the package.</p>
             </div>
           </div>
