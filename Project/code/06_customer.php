@@ -19,7 +19,7 @@ $flag = $_SESSION["flag"];
 $url = '01_login.php';
 if ($usertype != 'customer') header('Location:' . $url);
 
-$start=microtime(true); // 记录结束时间
+$start = microtime(true); // 记录结束时间
 
 $sql_user = "SELECT * from customer WHERE uname='$user'";
 $result = mysqli_query($conn, $sql_user);
@@ -30,6 +30,11 @@ if (mysqli_num_rows($result) > 0) {
   $mail = $row["umail"];
   $gender = $row["ugender"];
   $userID = $row["uID"];
+  $imageData = $row["upicture"];
+}
+
+if (!empty($imageData)) {
+  echo '<img src="data:image/png;base64,'.base64_encode($imageData).'"/>';
 }
 
 $_SESSION["userID"] = $userID;
