@@ -33,9 +33,6 @@ if (mysqli_num_rows($result) > 0) {
   $imageData = $row["upicture"];
 }
 
-if (!empty($imageData)) {
-  echo '<img src="data:Image/png;base64,'.base64_encode($imageData).'"/>';
-}
 
 $_SESSION["userID"] = $userID;
 
@@ -335,7 +332,7 @@ $timeDiff = $end - $start; // 计算时间差
             <h1>Profile</h1>
             <div class="activity-container">
               <div class="image-icon">
-                <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
+                <?php echo '<img src="data:image/png;base64,' . base64_encode($imageData) . '"/>'; ?>
               </div>
               <div class="info-container info-one">
                 <table>
@@ -1029,7 +1026,7 @@ $timeDiff = $end - $start; // 计算时间差
             <i class="fa fa-message nav-icon"></i>
           </div>
           <h4><?php echo $name; ?></h4>
-          <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
+          <?php echo '<img src="data:image/png;base64,' . base64_encode($imageData) . '"/>'; ?>
         </div>
 
         <div class="friends-activity">
@@ -1063,7 +1060,7 @@ $timeDiff = $end - $start; // 计算时间差
             <h1>Edit Profile</h1><br>
             <!-- <label for="usr">Username: <?php echo $name; ?></label> -->
             <div class="image-icon-1">
-              <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" />
+              <?php echo '<img src="data:image/png;base64,' . base64_encode($imageData) . '"/>'; ?>
             </div>
           </div>
           <div class="form-group">
