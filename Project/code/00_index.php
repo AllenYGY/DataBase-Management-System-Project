@@ -168,16 +168,8 @@
             <h1>Express station status</h1>
             <div class="personal-bests-container">
               <div class="best-item box-one">
-                <p>Opening Hours:<br> 7 am. - 10 pm.</p>
+                <p>Opening Hours:<br> 7 am. - 10 pm.<br>Crowded state: <br>Free </p>
                 <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/242bbd8c-aaf8-4aee-a3e4-e0df62d1ab27" alt="" />
-              </div>
-              <div class="best-item box-two">
-                <p>Crowded state:Free </p>
-                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a" alt="" />
-              </div>
-              <div class="best-item box-three">
-                <p>Longest Roller-Skating: 2 hours</p>
-                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e0ee8ffb-faa8-462a-b44d-0a18c1d9604c" alt="" />
               </div>
             </div>
           </div>
@@ -197,21 +189,6 @@
 
         </div>
 
-        <!-- <div class="active-calories">
-          <h1 style="align-self: flex-start">Active Calories</h1>
-          <div class="active-calories-container">
-            <div class="box" style="--i: 85%">
-              <div class="circle">
-                <h2>85<small>%</small></h2>
-              </div>
-            </div>
-            <div class="calories-content">
-              <p><span>Today:</span> 400</p>
-              <p><span>This Week:</span> 3500</p>
-              <p><span>This Month:</span> 14000</p>
-            </div>
-          </div>
-        </div> -->
 
         <div class="friends-activity">
           <h1>Friends' Package</h1>
