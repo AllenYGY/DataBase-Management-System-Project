@@ -88,14 +88,14 @@
           <h1>Activities</h1>
           <div class="activity-container">
             <div class="image-container img-one">
-              <img src="/Project/image/pick.jpg" alt="pick" />
+              <img src="Image/pick.jpg" alt="pick" />
               <div class="overlay">
                 <h3>Pick package</h3>
               </div>
             </div>
 
             <div class="image-container img-two">
-              <img src="/Project/image/send.jpg" alt="send" />
+              <img src="Image/send.jpg" alt="send" />
               <div class="overlay">
                 <h3>Send package</h3>
               </div>
@@ -192,7 +192,7 @@
           </div>
           <h4><span></h4>
           <a href="01_login.php">
-            <img src="/Project/image/user.png" alt="user" />
+            <img src="Image/user.png" alt="user" />
           </a>
 
         </div>
@@ -218,20 +218,20 @@
           <div class="card-container">
             <div class="card">
               <div class="card-user-info">
-                <img src="/Project/image/user-2.png" alt="user1" />
+                <img src="Image/user-2.png" alt="user1" />
                 <h2>User1</h2>
               </div>
-              <img class="card-img" src="/Project/image/pick-2.jpg" alt="pickup" />
+              <img class="card-img" src="Image/pick-2.jpg" alt="pickup" />
               <p>I just recive a new package today. Please help me pick up the package.</p>
             </div>
 
             <div class="card card-two">
               <div class="card-user-info">
-                <img src="/Project/image/user-1.png" alt="user2" />
+                <img src="Image/user-1.png" alt="user2" />
                 <h2>User2</h2>
 
               </div>
-              <img class="card-img" src="/Project/image/pick-2.jpg" alt="pickup" />
+              <img class="card-img" src="Image/pick-2.jpg" alt="pickup" />
               <p>I just recive a new package today. Please help me pick up the package.</p>
             </div>
           </div>
