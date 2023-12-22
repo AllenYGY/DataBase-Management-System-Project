@@ -7,7 +7,7 @@
 ## E-R Diagram
 
 ![ER](Project/Draw/E-R.png)
-![ER-without attribute](Project/Draw/E-R(without\_attribute).png)
+<!-- ![ER-without attribute](Project/Draw/E-R(without\_attribute).png) -->
 
 ## Logical Design
 
