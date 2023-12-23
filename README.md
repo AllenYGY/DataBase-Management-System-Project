@@ -31,17 +31,14 @@ Since we have different kinds of users, I will describe user requirements by use
 
 ### For the administrator
 
-1. **员工管理**：跟踪员工的工作表现，包括送货效率和客户评价。
+1. *Station status*: Ability to check the status of all of the courier station in this system.
+2. **History**: Ability to view view all package information.
 
-2. **客户服务**：查看并回应客户评价，处理投诉和建议。
-
-3. **数据分析**：生成报告，分析快递站的运营效率，比如送货时间、客户满意度等。
-
-4. **财务管理**：管理订单的财务流水，包括支付处理和收入报告。
-
-5. **系统安全**：确保系统安全，保护客户和公司数据不受未经授权的访问。
+Here is a basic feature about the pick and send parcel.
 
 ![Pick-Send Process](Project/Draw/process.png)
+
+CustomerA delivers the package to courier stationA and fills in the address that needs to be delivered, then the manager of courier stationA checks the package and transfers it to courier stationB according to the address, and the manager of courier stationB accepts the package. Finally, CustomerB can pick up the package.
 
 ## E-R Diagram
 
@@ -106,8 +103,6 @@ For these 3 user tables they have similar attributes
 $admin=\{\underline{uID,phone,mail,}name,password,gender,picture\}$
 $cadmin=\{\underline{uID,phone,mail},name,password,gender,picture,csID\}$
 $customer=\{\underline{uID,phone,mail},name,password,gender,picture\}$
-
-$\therefore$ So let's just talk about one of them.
 
 We can get the following function dependency.
 
