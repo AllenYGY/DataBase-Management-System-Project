@@ -185,3 +185,11 @@ For the rest of the schema we can find it only has 2 attributes. So it must sati
 $address=\{\underline{address},csID\}$
 $carry=\{\underline{lsID},parcelID\}$
 $transfer=\{\underline{address},lcID\}$
+
+## Bonus Part
+
+### Use foreign keys
+
+### Use BLOB to store picture
+
+### Use triggers to implement constraints
