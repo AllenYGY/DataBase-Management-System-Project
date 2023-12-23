@@ -99,7 +99,7 @@ $customer=\{\underline{uID,uphone,umail},uname,upassword,ugender,upicture\}$
 $parcel=\{\underline{parcelID},volume,weight,status,parcelType,
           send\_address,pick\_address,send\_storage\_time,send\_time,pick\_storage\_time,
           pick\_time,cust\_send\_ID,cust\_pick\_ID,cadminID,\}$
-$courier\_station=\{\underline{csID},start\_time,csphone,csemail,csaddress,end\_time,adminID\}$
+$courier\_station=\{\underline{csID,phone,email,address},start\_time,end\_time,adminID\}$
 $rating=\{\underline{ratingID},rating\_time,score,uID\}$
 $logistics\_company=\{\underline{lsID,lsname,lsemail}\}$
 $carry=\{\underline{lsID},parcelID\}$
@@ -148,19 +148,21 @@ $cadmin_mail=\{\underline{mail},uID\}$
 
 This obviously satisfies the BCNF.
 
-For the Courier station schema
+For the Courier station schema it also has email and phone attribute, and there is one more property csaddress
 
-$courier\_station=\{csID,start\_time,csphone,email,end\_time,adminID\}$
+$courier\_station=\{\underline{csID,phone,email,csaddress},start\_time,end\_time,adminID\}$
+Functional dependency:
+$csID\rightarrow \{start\_time,csaddress,phone,email,end\_time,adminID\}$
+$phone\rightarrow \{start\_time,csaddress,csID,email,end\_time,adminID\}$
+$email\rightarrow \{start\_time,csaddress,phone,csID,end\_time,adminID\}$
+$csaddress\rightarrow \{start\_time,email,phone,csID,end\_time,adminID\}$
 
-It has the follwing functional dependency
+Therefore, we do decomposite just like before
 
-$csID\rightarrow \{start\_time,csphone,csemail,end\_time,adminID\}$
-
-It can also be decomposited It can also be decomposited just like last slide.
-
-$courier\_station=\{csID,start\_time,end\_time,adminID\}$
-$csphone=\{\underline{csphone},csID\}$
-$csmail=\{\underline{csmail},csID\}$
+$courier\_station=\{\underline{csID,csaddress},start\_time,end\_time,adminID\}$
+$csphone=\{\underline{phone},csID\}$
+$csmail=\{\underline{email},csID\}$
+$address=\{\underline{address},csID\}$
 
 The next schema is about the parcel.
 
@@ -174,7 +176,7 @@ $parcelID \rightarrow \{volume,weight,status,parcelType,
           send\_address,pick\_address,send\_storage\_time,send\_time,pick\_storage\_time,
           pick\_time,cust\_send\_ID,cust\_pick\_ID,cadminID\}$
 
-We can find it has been already satisfy the BCNF.
+We can find it only has one functional dependency. And obviously, the parcelID is the condicate key in this schema. So it has been already satisfied BCNF.
 
 $logistics\_company=\{lsID,lsname,lsemail\}$
 
