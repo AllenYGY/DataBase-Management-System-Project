@@ -1,6 +1,51 @@
 # Courier Station Information Management System
 
+## Assumption
+
 ## User Requirement
+
+Since we have different kinds of users, I will describe user requirements by user.
+
+一个快递站信息管理系统应该满足以下基本用户需求，以确保其有效性和用户友好性：
+
+### For the customer
+
+1. **Pick Parcel**: Allows customers to pick a parcel from another customer.
+2. **Send Parcel**: Allows customers to send a parcel to another customer.
+3. **Parcel Tracking**: Allows customers to view the real-time location and status of their parcel during delivery.
+4. **Personal Information Management**: Allow customers to update their personal information,  contact details.
+5. **History**: Give customers the ability to view their order history.
+6. **Shipping Options**: Choose from different delivery speeds and prices, such as standard, expedited, or timed delivery.
+7. **Service Evaluation**: Provide a platform for customers to rate the express service and leave feedback.
+
+### For the courier station manager
+
+1. **Status Update**: Ability to update the delivery status of a package in the system, such as delivered or delayed.
+2. **Courier Station Information Management**: Allow courier station manager to update their personal information, including address, contact details, etc.
+
+### For the administrator
+
+1. **员工管理**：跟踪员工的工作表现，包括送货效率和客户评价。
+
+2. **客户服务**：查看并回应客户评价，处理投诉和建议。
+
+3. **数据分析**：生成报告，分析快递站的运营效率，比如送货时间、客户满意度等。
+
+4. **财务管理**：管理订单的财务流水，包括支付处理和收入报告。
+
+5. **系统安全**：确保系统安全，保护客户和公司数据不受未经授权的访问。
+
+### 技术需求：
+
+1. **多平台访问**：系统应该支持多种设备访问，如电脑、平板和手机。
+
+2. **用户界面**：直观、易于导航的用户界面，以提高用户体验。
+
+3. **系统集成**：与其他系统集成，如支付网关和物流追踪服务。
+
+4. **数据备份**：定期备份数据，以防系统崩溃或数据损失。
+
+5. **可扩展性**：系统设计应能支持业务增长和扩展功能。
 
 ![Pick-Send Process](Project/Draw/process.png)
 
