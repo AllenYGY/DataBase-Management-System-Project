@@ -16,7 +16,6 @@ And for each entity we can get one relationship set
 - $courier\_station$
 - $logistics\_company$
 - $address$
-- $contact$
 - $rating$
 
 For the relationship part, we have 8 relationship in our system.
