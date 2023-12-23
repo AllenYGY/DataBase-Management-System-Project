@@ -43,6 +43,7 @@ $parcel=\{parcelID,volume,weight,status,parcelType,
           send\_address,pick\_address,send\_storage\_time,send\_time,pick\_storage\_time,
           pick\_time,cust\_send\_ID,cust\_pick\_ID,cadminID,\}$
 $courier\_station=\{csID,start\_time,csphone,csemail,csaddress,end\_time,adminID\}$
+$rating=\{ratingID,rating\_time,score,uID\}$
 $logistics\_company=\{lsID,lsname,lsemail\}$
 $address=\{csaddress,csID\}$
 $carry=\{lsID,parcelID\}$
