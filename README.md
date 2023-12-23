@@ -92,19 +92,18 @@ For above case we could not to create table.
 - $carry$ $\ Case III$
 - $transfer$ $\ Case III$
 
-$admin=\{uID,uphone,umail,uname,upassword,ugender,upicture\}$
-$cadmin=\{uID,uphone,umail,uname,upassword,ugender,upicture,csID\}$
-$customer=\{uID,uphone,umail,uname,upassword,ugender,upicture\}$
+$admin=\{\underline{uID,uphone,umail},uname,upassword,ugender,upicture\}$
+$cadmin=\{\underline{uID,uphone,umail},uname,upassword,ugender,upicture,csID\}$
+$customer=\{\underline{uID,uphone,umail},uname,upassword,ugender,upicture\}$
 
-$parcel=\{parcelID,volume,weight,status,parcelType,
+$parcel=\{\underline{parcelID},volume,weight,status,parcelType,
           send\_address,pick\_address,send\_storage\_time,send\_time,pick\_storage\_time,
           pick\_time,cust\_send\_ID,cust\_pick\_ID,cadminID,\}$
-$courier\_station=\{csID,start\_time,csphone,csemail,csaddress,end\_time,adminID\}$
-$rating=\{ratingID,rating\_time,score,uID\}$
-$logistics\_company=\{lsID,lsname,lsemail\}$
-$address=\{csaddress,csID\}$
-$carry=\{lsID,parcelID\}$
-$transfer=\{csaddress,lcID\}$
+$courier\_station=\{\underline{csID},start\_time,csphone,csemail,csaddress,end\_time,adminID\}$
+$rating=\{\underline{ratingID},rating\_time,score,uID\}$
+$logistics\_company=\{\underline{lsID,lsname,lsemail}\}$
+$carry=\{\underline{lsID},parcelID\}$
+$transfer=\{\underline{csaddress},lcID\}$
 
 ## Normalization
 
