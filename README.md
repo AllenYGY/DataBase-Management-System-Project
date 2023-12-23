@@ -2,6 +2,11 @@
 
 ## Assumption
 
+1. There is only one courier station in each region.
+2. The address in this area is the address of the delivery station.
+   - For example, there is a courier station on *XiangZhou,ZhuHai,GuangDong* then the address of this station will be *XiangZhou,ZhuHai,GuangDong*. There will be no additional specific address
+3. One courier station may have many courier station manager.
+
 ## User Requirement
 
 Since we have different kinds of users, I will describe user requirements by user.
@@ -21,7 +26,7 @@ Since we have different kinds of users, I will describe user requirements by use
 ### For the courier station manager
 
 1. **Status Update**: Ability to update the delivery status of a package in the system, such as delivered or delayed.
-2. **Courier Station Information Management**: Allow courier station manager to update their personal information, contact details.
+2. **Courier Station Information Management**: Allow courier station manager to update their personal information, contact details, opening hours.
 3. **History**: Allow courier station manager the ability to view information on packages that pass through this Courier station
 
 ### For the administrator
