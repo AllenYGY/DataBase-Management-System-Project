@@ -19,7 +19,7 @@ And for each entity we can get one relationship set
 - $contact$
 - $rating$
 
-1. For the relationship part
+For the relationship part
 
 We have 9 relationship in our system
 
@@ -28,12 +28,11 @@ We have 9 relationship in our system
 - $manage$  $\ Case X$
 - $belong$  $\ Case X$
 - $control$ $\ Case X$
-- $locate$ $\ Case VIII$
-- $touch$ $\ Case X$
+- $locate$ $\ Case IX$
 
 For above case we could not to create table.
 
-- $Carry$ $\ Case III$
+- $carry$ $\ Case III$
 - $transfer$ $\ Case III$
 
 $admin=\{uID,uphone,umail,uname,upassword,ugender,upicture\}$
