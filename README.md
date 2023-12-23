@@ -121,31 +121,30 @@ We can get the following function dependency.
 
 $uID \rightarrow \{email,phone,name,password,gender,picture\}$
 
+$email \rightarrow \{password,gender,picture\}$
+
+$phone \rightarrow \{password,gender,picture\}$
+
 $uID$ is obviously candicate key it can hold the whole schema.
+While $email$ and $phone$ can hold the attribute $password,gender,picture$, respectively.
 
-$email \rightarrow \{password,gender,picture\}$
+but email and phone are not superkey, therefore it violates BCNF.
 
-$phone \rightarrow \{password,gender,picture\}$
-
-$email$ and $phone$ can hold the attribute $password,gender,picture$, respectively.
-
-So it is easily to find that the schema not in BCNF
-
-$\because$
-$email \rightarrow \{password,gender,picture\}$
-$phone \rightarrow \{password,gender,picture\}$
-
-but uemail and uphone are not superkey.
-
-so we do this decomposition to the schema.
+so we do this decomposition to this schema.
 
 Decomposition
 
-$phone=\{\underline{phone},uID\}$
-$mail=\{\underline{mail},uID\}$
-$admin=\{\underline{uID}name,password,gender,picture\}$
-$cadmin=\{\underline{uID},name,password,gender,picture,csID\}$
 $customer=\{\underline{uID},name,password,gender,picture\}$
+$customer_phone=\{\underline{phone},uID\}$
+$customer_mail=\{\underline{mail},uID\}$
+
+$admin=\{\underline{uID}name,password,gender,picture\}$
+$admin_phone=\{\underline{phone},uID\}$
+$admin_mail=\{\underline{mail},uID\}$
+
+$cadmin=\{\underline{uID},name,password,gender,picture,csID\}$
+$cadmin_phone=\{\underline{phone},uID\}$
+$cadmin_mail=\{\underline{mail},uID\}$
 
 This obviously satisfies the BCNF.
 
