@@ -19,9 +19,7 @@ And for each entity we can get one relationship set
 - $contact$
 - $rating$
 
-For the relationship part
-
-We have 9 relationship in our system
+For the relationship part, we have 8 relationship in our system.
 
 - $pick$  $\ Case IX$
 - $send$  $\ Case IX$
