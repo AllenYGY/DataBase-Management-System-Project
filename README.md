@@ -52,6 +52,10 @@ In the parcel section. Each parcel will be sent and picked up by one customer, e
 
 In the courier station section, we can see that each delivery manager belongs to a courier station, and the administrator of the system can control multiple courier stations. Every courier station has a specific location for the logistics company to transport the parcel to the fixed address.
 
+![ER-courier_station](Project/Draw/courier_station.png)
+
+Finall we can get the ER diagram like this.
+
 ![ER](Project/Draw/E-R.png)
 
 ## Logical Design
