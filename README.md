@@ -42,6 +42,16 @@ CustomerA delivers the package to courier stationA and fills in the address that
 
 ## E-R Diagram
 
+In the user part, the user uses uID to login, we use the ISA relationship to distinguish the user as customer, delivery manager and administrator, and this ISA relationship is not disjoint, which means that all users registered in the system can be more than one identity.
+
+![ER-user](Project/Draw/user.png)
+
+In the parcel section. Each parcel will be sent and picked up by one customer, each customer can send or pick up more than one parcel at the same time, and each parcel has its responsible delivery manager, and corresponding logistic company.
+
+![ER-parcel](Project/Draw/parcel.png)
+
+In the courier station section, we can see that each delivery manager belongs to a courier station, and the administrator of the system can control multiple courier stations. Every courier station has a specific location for the logistics company to transport the parcel to the fixed address.
+
 ![ER](Project/Draw/E-R.png)
 
 ## Logical Design
