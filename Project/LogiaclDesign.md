@@ -2,13 +2,13 @@
 
 In our user requirement the 3 different kinds of users should be disjoint and total participation.
 
-- For the Entity part
+For the Entity part
 
-$\therefore$ we can get 3 relationship sets about the user according the method in logical design.
+we can get 3 relationship sets about the user according to the method in logical design.
 
 - $customer$
-- $courier\_adminstrator$
-- $adminstrator$
+- $courier\_adminstrator$*(courier_adminstrator)*
+- $admin$*(adminstrator)*
   
 And for each entity we can get one relationship set
 
@@ -17,8 +17,9 @@ And for each entity we can get one relationship set
 - $logistics\_company$
 - $address$
 - $contact$
+- $rating$
 
-- For the relationship part
+1. For the relationship part
 
 We have 9 relationship in our system
 
