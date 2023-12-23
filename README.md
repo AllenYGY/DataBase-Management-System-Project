@@ -22,6 +22,7 @@ Since we have different kinds of users, I will describe user requirements by use
 
 1. **Status Update**: Ability to update the delivery status of a package in the system, such as delivered or delayed.
 2. **Courier Station Information Management**: Allow courier station manager to update their personal information, contact details.
+3. **History**: Allow courier station manager the ability to view information on packages that pass through this Courier station
 
 ### For the administrator
 
