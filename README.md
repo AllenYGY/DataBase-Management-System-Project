@@ -69,7 +69,7 @@ we can get 3 relationship sets about the user according to the method in logical
 - $customer$
 - $courier\_adminstrator$*(courier_adminstrator)*
 - $admin$*(adminstrator)*
-  
+
 And for each entity we can get one relationship set
 
 - $parcel$
@@ -178,10 +178,10 @@ $parcelID \rightarrow \{volume,weight,status,parcelType,
 
 We can find it only has one functional dependency. And obviously, the parcelID is the condicate key in this schema. So it has been already satisfied BCNF.
 
-$logistics\_company=\{lsID,lsname,lsemail\}$
+$logistics\_company=\{\underline{lsID,lsname,lsemail}\}$
 
 For the rest of the schema we can find it only has 2 attributes. So it must satisfy BCNF.
 
-$address=\{csaddress,csID\}$
-$carry=\{lsID,parcelID\}$
-$transfer=\{csaddress,lcID\}$
+$address=\{\underline{address},csID\}$
+$carry=\{\underline{lsID},parcelID\}$
+$transfer=\{\underline{address},lcID\}$
