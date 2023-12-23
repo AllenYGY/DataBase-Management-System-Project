@@ -21,7 +21,7 @@ Since we have different kinds of users, I will describe user requirements by use
 ### For the courier station manager
 
 1. **Status Update**: Ability to update the delivery status of a package in the system, such as delivered or delayed.
-2. **Courier Station Information Management**: Allow courier station manager to update their personal information, including address, contact details, etc.
+2. **Courier Station Information Management**: Allow courier station manager to update their personal information, contact details.
 
 ### For the administrator
 
@@ -34,18 +34,6 @@ Since we have different kinds of users, I will describe user requirements by use
 4. **财务管理**：管理订单的财务流水，包括支付处理和收入报告。
 
 5. **系统安全**：确保系统安全，保护客户和公司数据不受未经授权的访问。
-
-### 技术需求：
-
-1. **多平台访问**：系统应该支持多种设备访问，如电脑、平板和手机。
-
-2. **用户界面**：直观、易于导航的用户界面，以提高用户体验。
-
-3. **系统集成**：与其他系统集成，如支付网关和物流追踪服务。
-
-4. **数据备份**：定期备份数据，以防系统崩溃或数据损失。
-
-5. **可扩展性**：系统设计应能支持业务增长和扩展功能。
 
 ![Pick-Send Process](Project/Draw/process.png)
 
