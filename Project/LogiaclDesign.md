@@ -28,7 +28,7 @@ We have 9 relationship in our system
 - $manage$  $\ Case X$
 - $belong$  $\ Case X$
 - $control$ $\ Case X$
-- $locate$ $\ Case IX$
+- $evaluate$ $\ Case VIII$
 
 For above case we could not to create table.
 
