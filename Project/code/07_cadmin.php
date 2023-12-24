@@ -66,7 +66,7 @@ $_SESSION["csadr"] = $csadr;
 $sql_parcel = "SELECT * FROM parcel 
                       JOIN courier_station ON send_csID=csID
                       JOIN cadmin USING(csID) 
-              WHERE cadmin.uID='$uID'";
+              WHERE cadmin.uID=$uID";
 
 $result1 = mysqli_query($conn, $sql_parcel);
 $pendingCount = 0;
@@ -88,7 +88,7 @@ if (mysqli_num_rows($result1) > 0) {
 $sql_parcel = "SELECT * FROM parcel 
                       JOIN courier_station ON pick_csID=csID
                       JOIN cadmin USING(csID) 
-              WHERE cadmin.uID='$uID'";
+              WHERE cadmin.uID=$uID";
 $result2 = mysqli_query($conn, $sql_parcel);
 
 if (mysqli_num_rows($result2) > 0) {
