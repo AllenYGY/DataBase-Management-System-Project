@@ -11,7 +11,7 @@
 <?php
 include "03_connectDB.php";
 session_start();
-$user = $_SESSION["user"];
+$uID = $_SESSION["uID"];
 $usertype = $_SESSION["usertype"];
 
 $url = '01_login.php';
@@ -20,7 +20,7 @@ if ($usertype != 'cadmin') header('Location:' . $url);
 $start = microtime(true); // 记录开始时间
 
 //Get user information
-$sql_user = "SELECT * FROM cadmin WHERE uname='$user'";
+$sql_user = "SELECT * FROM cadmin WHERE uID='$uID'";
 $result = mysqli_query($conn, $sql_user);
 if (mysqli_num_rows($result) > 0) {
   $row = mysqli_fetch_assoc($result);
@@ -28,7 +28,6 @@ if (mysqli_num_rows($result) > 0) {
   $phone = $row["uphone"];
   $mail = $row["umail"];
   $gender = $row["ugender"];
-  $userID = $row["uID"];
   $csID = $row["csID"];
   $imageData = $row["upicture"];
 }
@@ -44,7 +43,7 @@ if (mysqli_num_rows($result1) > 0) {
   $csendTime = $row['end_time'];
 }
 
-$_SESSION["userID"] = $userID;
+$_SESSION["uID"] = $uID;
 $_SESSION["uphone"] = $phone;
 $_SESSION["umail"] = $mail;
 $_SESSION["ugender"] = $gender;
@@ -54,7 +53,7 @@ $_SESSION["csadr"] = $csadr;
 $sql_parcel = "SELECT * FROM parcel 
                       JOIN courier_station ON send_csID=csID
                       JOIN cadmin USING(csID) 
-              WHERE cadmin.uID='$userID'";
+              WHERE cadmin.uID='$uID'";
 
 $result1 = mysqli_query($conn, $sql_parcel);
 $pendingCount = 0;
@@ -76,7 +75,7 @@ if (mysqli_num_rows($result1) > 0) {
 $sql_parcel = "SELECT * FROM parcel 
                       JOIN courier_station ON pick_csID=csID
                       JOIN cadmin USING(csID) 
-              WHERE cadmin.uID='$userID'";
+              WHERE cadmin.uID='$uID'";
 $result2 = mysqli_query($conn, $sql_parcel);
 
 if (mysqli_num_rows($result2) > 0) {
@@ -283,7 +282,7 @@ $timeDiff = $end - $start; // 计算时间差
                 </tr>
                 <tr>
                   <td>ManagerID:</td>
-                  <td><?php echo $userID; ?></td>
+                  <td><?php echo $uID; ?></td>
                 </tr>
                 <tr>
                   <td>Phone:</td>
