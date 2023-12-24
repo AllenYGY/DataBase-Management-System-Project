@@ -190,6 +190,16 @@ $transfer=\{\underline{address},lcID\}$
 
 ### Use foreign keys
 
+In this project, foreign keys are used in almost all the tables to establish connections.
+
 ### Use BLOB to store picture
 
+In the table for each user, I used BLOB to save the profile picture。
+
+![BLOB](Project/Code/Image/BLOB.png)
+
 ### Use triggers to implement constraints
+
+When dealing with the weight and volume of the package, I checked them on the front and back ends, especially on the back end, where I used triggers to make the volume and weight range from 0-300.
+
+![triggers](Project/Code/Image/triggers.png)
