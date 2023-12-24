@@ -588,18 +588,6 @@ $timeDiff = $end - $start;
                   <label for="parcelID">Package's ID: </label>
                   <input type="number" id="parcelID" name="parcelID" placeholder="Enter package's ID">
                 </div>
-                <!-- <div class="form-group">
-                  <label for="pstatus">Package's status: </label>
-                  <select id="pstatus" name="pstatus">
-                    <option value="accept">Accept</option>
-                    <option value="in_transit">Transporting</option>
-                    <option value="delivered">Waiting for accept</option>
-                    <option value="pending">Waiting for send</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <pre>Start date:  <input type="date" id="start_date" name="start_date">                    End date:   <input type="date" id="end_date" name="end_date"></pre>
-                </div> -->
                 <input type="submit" value="Search" id="Search">
               </form>
             </div>
