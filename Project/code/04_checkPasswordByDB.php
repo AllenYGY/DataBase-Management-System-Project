@@ -7,12 +7,12 @@ $pwd	= $_POST["pwd"];
 $utype = $_POST["usrtype"];
 
 if ($utype == "customer") {
-	$sql = "SELECT * FROM customer WHERE uname = '$user' AND upassword = '$pwd';";
+	$sql = "SELECT * FROM customer WHERE uID = '$user' AND upassword = '$pwd';";
 }
 if ($utype == "cadmin")
-	$sql = "SELECT * FROM cadmin WHERE uname = '$user' AND upassword = '$pwd';";
+	$sql = "SELECT * FROM cadmin WHERE uID = '$user' AND upassword = '$pwd';";
 if ($utype == "admin") {
-	$sql = "SELECT * FROM admin WHERE uname = '$user' AND upassword = '$pwd';";
+	$sql = "SELECT * FROM admin WHERE uID = '$user' AND upassword = '$pwd';";
 }
 
 
@@ -28,7 +28,7 @@ if (mysqli_num_rows($result) > 0) {
 		$url = "08_admin.php";
 	}
 	session_start();
-	$_SESSION["user"] = $user;
+	$_SESSION["uID"] = $user;
 	$_SESSION["usertype"] = $utype;
 	$_SESSION["flag"]=0;
 	header('Location:' . $url);

@@ -14,8 +14,8 @@
     <h1>Login</h1>
     <form action="04_checkPasswordByDB.php" method="POST">
       <div class="form-group">
-        <label for="usr">Username:</label>
-        <input type="text" id="usr" name="usr" placeholder="Enter your username" required>
+        <label for="usr">UserID</label>
+        <input type="text" id="usr" name="usr" placeholder="Enter your userID" required>
       </div>
       <div class="form-group">
         <label for="pwd">Password:</label>

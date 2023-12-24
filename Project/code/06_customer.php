@@ -12,44 +12,43 @@
 date_default_timezone_set('Asia/Shanghai');
 include "03_connectDB.php";
 session_start();
-$user = $_SESSION["user"];
+$uID = $_SESSION["uID"];
 $usertype = $_SESSION["usertype"];
 $flag = $_SESSION["flag"];
 
 $url = '01_login.php';
 if ($usertype != 'customer') header('Location:' . $url);
+$start = microtime(true); 
 
-$sql_user = "SELECT * from customer WHERE uname='$user'";
+$sql_user = "SELECT * from customer WHERE uID='$uID'";
 $result = mysqli_query($conn, $sql_user);
 if (mysqli_num_rows($result) > 0) {
   $row = mysqli_fetch_assoc($result);
   $name = $row["uname"];
   $gender = $row["ugender"];
-  $userID = $row["uID"];
   $imageData = $row["upicture"];
 }
 
-$sql_user = "SELECT umail from customer_email WHERE uID='$userID'";
+$sql_user = "SELECT umail from customer_email WHERE uID='$uID'";
 $result = mysqli_query($conn, $sql_user);
 if (mysqli_num_rows($result) > 0) {
   $mail = $row["umail"];
 }
 
-$sql_user = "SELECT uphone from customer_phone WHERE uID='$userID'";
+$sql_user = "SELECT uphone from customer_phone WHERE uID='$uID'";
 $result = mysqli_query($conn, $sql_user);
 if (mysqli_num_rows($result) > 0) {
   $phone = $row["uphone"];
 }
 
-$_SESSION["uID"] = $userID;
+$_SESSION["uID"] = $uID;
 
-$start = microtime(true); 
 $sql_parcel = "SELECT * ,send_station.csaddress AS send_adr, pick_station.csaddress AS pick_adr
               FROM parcel
               JOIN customer ON parcel.cust_send_uID=customer.uID 
               JOIN courier_station AS send_station ON send_station.csID=parcel.send_csID
               JOIN courier_station AS pick_station ON pick_station.csID=parcel.pick_csID
-              WHERE uname='$user' AND customer.uID=parcel.cust_send_uID";
+              WHERE uID='$uID' AND customer.uID=parcel.cust_send_uID";
 
 $result1 = mysqli_query($conn, $sql_parcel);
 
@@ -80,7 +79,7 @@ $sql_parcel = "SELECT * ,send_station.csaddress AS send_adr, pick_station.csaddr
                 JOIN customer ON parcel.cust_pick_uID=customer.uID 
                 JOIN courier_station AS send_station ON send_station.csID=parcel.send_csID
                 JOIN courier_station AS pick_station ON pick_station.csID=parcel.pick_csID
-               WHERE uname='$user' AND customer.uID=parcel.cust_pick_uID";
+               WHERE uID='$uID' AND customer.uID=parcel.cust_pick_uID";
 
 $result2 = mysqli_query($conn, $sql_parcel);
 
@@ -350,7 +349,7 @@ $timeDiff = $end - $start;
                   </tr>
                   <tr>
                     <td>User ID:</td>
-                    <td><?php echo $userID; ?></td>
+                    <td><?php echo $uID; ?></td>
                   </tr>
                   <tr>
                     <td>Gender:</td>
