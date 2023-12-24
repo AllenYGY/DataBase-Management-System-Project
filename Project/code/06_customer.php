@@ -19,23 +19,31 @@ $flag = $_SESSION["flag"];
 $url = '01_login.php';
 if ($usertype != 'customer') header('Location:' . $url);
 
-$start = microtime(true); // 记录结束时间
-
 $sql_user = "SELECT * from customer WHERE uname='$user'";
 $result = mysqli_query($conn, $sql_user);
 if (mysqli_num_rows($result) > 0) {
   $row = mysqli_fetch_assoc($result);
   $name = $row["uname"];
-  $phone = $row["uphone"];
-  $mail = $row["umail"];
   $gender = $row["ugender"];
   $userID = $row["uID"];
   $imageData = $row["upicture"];
 }
 
+$sql_user = "SELECT * from customer_email WHERE uID='$userID'";
+$result = mysqli_query($conn, $sql_user);
+if (mysqli_num_rows($result) > 0) {
+  $mail = $row["umail"];
+}
+
+$sql_user = "SELECT * from customer_phone WHERE uID='$userID'";
+$result = mysqli_query($conn, $sql_user);
+if (mysqli_num_rows($result) > 0) {
+  $phone = $row["uphone"];
+}
 
 $_SESSION["userID"] = $userID;
 
+$start = microtime(true); 
 $sql_parcel = "SELECT * ,send_station.csaddress AS send_adr, pick_station.csaddress AS pick_adr
               FROM parcel
               JOIN customer ON parcel.cust_send_uID=customer.uID 
