@@ -598,7 +598,7 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  grid-area: 1 / 1 / 4 / 3;
+  grid-area: 1 / 1 / 2 / 3;
   background-color: rgba(185, 159, 237, 0.6);
   padding: 15px;
   font-size: 1rem;

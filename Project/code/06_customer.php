@@ -101,9 +101,9 @@ if (mysqli_num_rows($result1) > 0) {
   }
 }
 $_SESSION["allData"] = $allData;
-$end = microtime(true); // 记录结束时间
+$end = microtime(true); 
 
-$timeDiff = $end - $start; // 计算时间差
+$timeDiff = $end - $start;
 ?>
 
 <body>
