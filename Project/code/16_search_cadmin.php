@@ -85,7 +85,7 @@ $allData=$_SESSION["allData"];
                 <label for="parcelID">Package's ID: </label>
                 <input type="number" id="parcelID" name="parcelID" placeholder="Enter package's ID">
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="pstatus">Package's status: </label>
                 <select id="pstatus" name="pstatus">
                   <option value="accept">Accept</option>
@@ -96,7 +96,7 @@ $allData=$_SESSION["allData"];
               </div>
               <div class="form-group">
                 <pre>Start date:  <input type="date" id="start_date" name="start_date">                    End date:   <input type="date" id="end_date" name="end_date"></pre>
-              </div>
+              </div> -->
               <input type="submit" value="Search" id="Search">
             </form>
           </div>

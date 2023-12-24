@@ -21,8 +21,15 @@ if ($pwd1 != $pwd2) {
 		$sql = "INSERT INTO `customer` (`uname`, `upassword`) VALUES ('$user', '$pwd1')";
 		$result = mysqli_query($conn, $sql);
 		echo "You have been registered successfully! <br> Welcome " . $user . "!<br>";
+		$sql = "SELECT * FROM customer WHERE uname='$user'";
+		$result = mysqli_query($conn, $sql);
+		if (mysqli_num_rows($result) > 0) {
+			$row = mysqli_fetch_assoc($result);
+			$uID = $row["uID"];
+		}
+		echo "Your userID is $uID";
 		echo "<br><a href='01_login.php'>Go to Login!</a>";
-		$url = "01_login.php";
-		header('Location:' . $url);
+		// $url = "01_login.php";
+		// header('Location:' . $url);
 	}
 }
