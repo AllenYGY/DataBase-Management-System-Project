@@ -6,8 +6,6 @@ $user = $_SESSION["user"];
 $utype = $_SESSION["usertype"];
 $uID = $_SESSION["uID"];
 
-echo $utype;
-
 $newPhone = isset($_POST["newPhone"]) ? $_POST["newPhone"] : "";
 $newMail = isset($_POST["newMail"]) ? $_POST["newMail"] : "";
 $newGender = isset($_POST["newGender"]) ? $_POST["newGender"] : "";
@@ -15,13 +13,12 @@ $oldpwd = isset($_POST["oldpwd"]) ? $_POST["oldpwd"] : "";
 $editpwd = isset($_POST["editpwd"]) ? $_POST["editpwd"] : "";
 
 
-if ($utype == 'customer') $sql = "SELECT * FROM customer WHERE uname='$user'";
-if ($utype == 'cadmin') $sql = "SELECT * FROM cadmin WHERE uname='$user'";
-if ($utype == 'admin') $sql = "SELECT * FROM admin WHERE uname='$user'";
-
-// echo $sql;
+if ($utype == 'customer') $sql = "SELECT * FROM customer WHERE uID='$uID'";
+if ($utype == 'cadmin') $sql = "SELECT * FROM cadmin WHERE uID='$uID'";
+if ($utype == 'admin') $sql = "SELECT * FROM admin WHERE uID='$uID'";
 
 $result = mysqli_query($conn, $sql);
+
 if ($result) {
   $row = mysqli_fetch_assoc($result);
   $storedPassword = $row['upassword'];
@@ -46,22 +43,7 @@ if ($result) {
       $updateQuery .= " WHERE uID='$uID'";
       echo $updateQuery;
       $updateResult = mysqli_query($conn, $updateQuery);
-
-      // if ($updateResult) {
-      //   echo "User information updated successfully!";
-      //   if ($utype == "customer") {
-      //     $url = "06_customer.php";
-      //   }
-      //   if ($utype == "cadmin")
-      //     $url = "07_cadmin.php";
-      //   if ($utype == "admin") {
-      //     $url = "08_admin.php";
-      //   }
-      // } else {
-        // echo "Error updating user information: " . mysqli_error($conn);
-      // }
     }
-
     if ($utype == 'customer')
       $updateQuery = "UPDATE customer_email SET ";
     if ($utype == 'cadmin')
@@ -77,9 +59,7 @@ if ($result) {
       $updateQuery .= " WHERE uID='$uID'";
       echo $updateQuery;
       $updateResult = mysqli_query($conn, $updateQuery);
-      
     }
-
     if ($utype == 'customer')
       $updateQuery = "UPDATE customer_phone SET ";
     if ($utype == 'cadmin')
@@ -96,21 +76,18 @@ if ($result) {
       echo $updateQuery;
       $updateResult = mysqli_query($conn, $updateQuery);
     }
-
-    if ($updateResult) {
-      echo "User information updated successfully!";
-      if ($utype == "customer") {
-        $url = "06_customer.php";
-      }
-      if ($utype == "cadmin")
-        $url = "07_cadmin.php";
-      if ($utype == "admin") {
-        $url = "08_admin.php";
-      }
-    }
+    
   } else {
     echo "Old password doesn't match!";
   }
 }
-// }
+
+if ($utype == "customer") {
+  $url = "06_customer.php";
+}
+if ($utype == "cadmin")
+  $url = "07_cadmin.php";
+if ($utype == "admin") {
+  $url = "08_admin.php";
+}
 header('Location:' . $url);
