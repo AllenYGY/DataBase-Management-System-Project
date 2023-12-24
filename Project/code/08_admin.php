@@ -8,29 +8,25 @@
   <link rel="stylesheet" href="index.css">
 </head>
 
-
-
 <?php
 include "03_connectDB.php";
 session_start();
-$user = $_SESSION["user"];
+$uID = $_SESSION["uID"];
 $usertype = $_SESSION["usertype"];
 
 $url = '01_login.php';
 if ($usertype != 'admin') header('Location:' . $url);
 
-//Get user information
-$sql_user = "SELECT * FROM admin WHERE uname='$user'";
+$sql_user = "SELECT * FROM admin WHERE uID='$uID'";
 $result = mysqli_query($conn, $sql_user);
 if (mysqli_num_rows($result) > 0) {
   $row = mysqli_fetch_assoc($result);
   $name = $row["uname"];
-  $phone = $row["uphone"];
-  $mail = $row["umail"];
   $gender = $row["ugender"];
-  $userID = $row["uID"];
-  // $csID=$row["csID"];
+  $uID = $row["uID"];
+  $imageData=$row["upicture"];
 }
+
 ?>
 
 <body>
@@ -368,8 +364,6 @@ if (mysqli_num_rows($result) > 0) {
           </div>
           <h4>AllenYGY</h4>
           <?php echo '<img src="data:image/png;base64,' . base64_encode($imageData) . '"/>'; ?>
-
-          <!-- <img src="https://cdn.jsdelivr.net/gh/ALLENYGY/ImageSpace@master/IMAGE/test.jpg" alt="user" /> -->
         </div>
 
         <div class="friends-activity">

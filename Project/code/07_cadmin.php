@@ -25,12 +25,25 @@ $result = mysqli_query($conn, $sql_user);
 if (mysqli_num_rows($result) > 0) {
   $row = mysqli_fetch_assoc($result);
   $name = $row["uname"];
-  $phone = $row["uphone"];
-  $mail = $row["umail"];
   $gender = $row["ugender"];
   $csID = $row["csID"];
   $imageData = $row["upicture"];
 }
+
+$sql_user_email = "SELECT * FROM customer_email WHERE uID=$uID";
+$result_email = mysqli_query($conn, $sql_user_email);
+if (mysqli_num_rows($result_email) > 0) {
+  $row = mysqli_fetch_assoc($result_email);
+  $mail = $row["umail"];
+}
+
+$sql_user_phone = "SELECT * FROM customer_phone WHERE uID=$uID";
+$result_phone = mysqli_query($conn, $sql_user_phone);
+if (mysqli_num_rows($result_phone) > 0) {
+  $row = mysqli_fetch_assoc($result_phone);
+  $phone = $row["uphone"];
+}
+
 
 $sql_getcsadr = "SELECT * FROM courier_station WHERE csID='$csID'";
 

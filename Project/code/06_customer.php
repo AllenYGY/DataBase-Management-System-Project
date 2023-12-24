@@ -12,15 +12,18 @@
 date_default_timezone_set('Asia/Shanghai');
 include "03_connectDB.php";
 session_start();
+
 $uID = $_SESSION["uID"];
 $usertype = $_SESSION["usertype"];
 $flag = $_SESSION["flag"];
 
 $url = '01_login.php';
-if ($usertype != 'customer') header('Location:' . $url);
-$start = microtime(true); 
 
-$sql_user = "SELECT * from customer WHERE uID='$uID'";
+if ($usertype != 'customer') header('Location:' . $url);
+$start = microtime(true);
+
+$sql_user = "SELECT * from customer WHERE uID=$uID";
+
 $result = mysqli_query($conn, $sql_user);
 if (mysqli_num_rows($result) > 0) {
   $row = mysqli_fetch_assoc($result);
@@ -29,36 +32,37 @@ if (mysqli_num_rows($result) > 0) {
   $imageData = $row["upicture"];
 }
 
-$sql_user = "SELECT umail from customer_email WHERE uID='$uID'";
-$result = mysqli_query($conn, $sql_user);
-if (mysqli_num_rows($result) > 0) {
+$sql_user_email = "SELECT * FROM customer_email WHERE uID=$uID";
+$result_email = mysqli_query($conn, $sql_user_email);
+if (mysqli_num_rows($result_email) > 0) {
+  $row = mysqli_fetch_assoc($result_email);
   $mail = $row["umail"];
 }
 
-$sql_user = "SELECT uphone from customer_phone WHERE uID='$uID'";
-$result = mysqli_query($conn, $sql_user);
-if (mysqli_num_rows($result) > 0) {
+$sql_user_phone = "SELECT * FROM customer_phone WHERE uID=$uID";
+$result_phone = mysqli_query($conn, $sql_user_phone);
+if (mysqli_num_rows($result_phone) > 0) {
+  $row = mysqli_fetch_assoc($result_phone);
   $phone = $row["uphone"];
 }
 
-$_SESSION["uID"] = $uID;
 
 $sql_parcel = "SELECT * ,send_station.csaddress AS send_adr, pick_station.csaddress AS pick_adr
               FROM parcel
               JOIN customer ON parcel.cust_send_uID=customer.uID 
               JOIN courier_station AS send_station ON send_station.csID=parcel.send_csID
               JOIN courier_station AS pick_station ON pick_station.csID=parcel.pick_csID
-              WHERE uID='$uID' AND customer.uID=parcel.cust_send_uID";
+              WHERE uname='$name' AND customer.uID=parcel.cust_send_uID";
 
-$result1 = mysqli_query($conn, $sql_parcel);
+$result_parcel = mysqli_query($conn, $sql_parcel);
 
 $pendingCount = 0;
 $inTransitCount = 0;
 $deliveredCount = 0;
 $acceptCount = 0;
 
-if (mysqli_num_rows($result1) > 0) {
-  while ($row = mysqli_fetch_assoc($result1)) {
+if (mysqli_num_rows($result_parcel) > 0) {
+  while ($row = mysqli_fetch_assoc($result_parcel)) {
     $status = $row["status"];
     switch ($status) {
       case 'pending':
@@ -74,16 +78,16 @@ if (mysqli_num_rows($result1) > 0) {
   }
 }
 
-$sql_parcel = "SELECT * ,send_station.csaddress AS send_adr, pick_station.csaddress AS pick_adr
+$sql_parcel_1 = "SELECT * ,send_station.csaddress AS send_adr, pick_station.csaddress AS pick_adr
                FROM parcel 
                 JOIN customer ON parcel.cust_pick_uID=customer.uID 
                 JOIN courier_station AS send_station ON send_station.csID=parcel.send_csID
                 JOIN courier_station AS pick_station ON pick_station.csID=parcel.pick_csID
-               WHERE uID='$uID' AND customer.uID=parcel.cust_pick_uID";
+               WHERE uname='$name' AND customer.uID=parcel.cust_pick_uID";
 
-$result2 = mysqli_query($conn, $sql_parcel);
+$result2 = mysqli_query($conn, $sql_parcel_1);
 
-if (mysqli_num_rows($result1) > 0) {
+if (mysqli_num_rows($result2) > 0) {
   while ($row = mysqli_fetch_assoc($result2)) {
     $status = $row["status"];
     switch ($status) {
@@ -100,7 +104,7 @@ if (mysqli_num_rows($result1) > 0) {
   }
 }
 $_SESSION["allData"] = $allData;
-$end = microtime(true); 
+$end = microtime(true);
 
 $timeDiff = $end - $start;
 ?>
