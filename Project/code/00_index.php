@@ -168,8 +168,12 @@
             <h1>Express station status</h1>
             <div class="personal-bests-container">
               <div class="best-item box-one">
-                <p>Opening Hours:<br> 7 am. - 10 pm.<br>Crowded state: <br>Free </p>
+                <p>Opening Hours:<br> 7 am. - 10 pm.</p>
                 <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/242bbd8c-aaf8-4aee-a3e4-e0df62d1ab27" alt="" />
+              </div>
+              <div class="best-item box-one-1">
+                <p>Crowded state:<br> Free</p>
+                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a" alt="" />
               </div>
             </div>
           </div>
