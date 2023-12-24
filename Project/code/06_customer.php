@@ -41,7 +41,7 @@ if (mysqli_num_rows($result) > 0) {
   $phone = $row["uphone"];
 }
 
-$_SESSION["userID"] = $userID;
+$_SESSION["uID"] = $userID;
 
 $start = microtime(true); 
 $sql_parcel = "SELECT * ,send_station.csaddress AS send_adr, pick_station.csaddress AS pick_adr
