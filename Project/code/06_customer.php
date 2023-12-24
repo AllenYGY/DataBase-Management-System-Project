@@ -29,13 +29,13 @@ if (mysqli_num_rows($result) > 0) {
   $imageData = $row["upicture"];
 }
 
-$sql_user = "SELECT * from customer_email WHERE uID='$userID'";
+$sql_user = "SELECT umail from customer_email WHERE uID='$userID'";
 $result = mysqli_query($conn, $sql_user);
 if (mysqli_num_rows($result) > 0) {
   $mail = $row["umail"];
 }
 
-$sql_user = "SELECT * from customer_phone WHERE uID='$userID'";
+$sql_user = "SELECT uphone from customer_phone WHERE uID='$userID'";
 $result = mysqli_query($conn, $sql_user);
 if (mysqli_num_rows($result) > 0) {
   $phone = $row["uphone"];
