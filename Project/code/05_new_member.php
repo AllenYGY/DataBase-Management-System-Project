@@ -18,7 +18,13 @@ if ($pwd1 != $pwd2) {
 		echo  $user . " has been registered!";
 		echo "<br><hr><br> Go back to <a href='02_register.php'>Regisration</a>";
 	} else {
-		$sql = "INSERT INTO `customer` (`uname`, `upassword`) VALUES ('$user', '$pwd1')";
+		$usr_pic="SELECT upicture FROM customer WHERE uID=73";
+		$result = mysqli_query($conn, $sql);
+		if (mysqli_num_rows($result) > 0) {
+			$row = mysqli_fetch_assoc($result);
+			$upicture = $row["upicture"];
+		}
+		$sql = "INSERT INTO `customer` (`uname`, `upassword`,`upicture`) VALUES ('$user', '$pwd1','$upicture')";
 		$result = mysqli_query($conn, $sql);
 		echo "You have been registered successfully! <br> Welcome " . $user . "!<br>";
 		$sql = "SELECT * FROM customer WHERE uname='$user'";
