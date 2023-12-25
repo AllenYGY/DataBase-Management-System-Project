@@ -47,14 +47,14 @@ if ($result) {
 
 
 session_start();
-$user = $_SESSION['user'];
-$userID = $_SESSION['userID'];
+// $user = $_SESSION['user'];
+$uID = $_SESSION['uID'];
 
 
 $sql = "INSERT INTO parcel 
         (volume, weight, parceltype, status, cust_send_uID, send_address, send_storage_time,cust_pick_uID,send_csID,pick_csID)
         VALUES 
-        ('$volume', '$weight',  'others', 'pending', '$userID','$spAddress', NOW(),'$cust_pick_uID','$startcsID','$endcsID')";
+        ('$volume', '$weight',  'others', 'pending', '$uID','$spAddress', NOW(),'$cust_pick_uID','$startcsID','$endcsID')";
 
 if (mysqli_query($conn, $sql)) {
   echo "Data inserted successfully.";
