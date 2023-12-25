@@ -10,9 +10,6 @@
 ## User Requirement
 
 Since we have different kinds of users, I will describe user requirements by user.
-
-一个快递站信息管理系统应该满足以下基本用户需求，以确保其有效性和用户友好性：
-
 ### For the customer
 
 1. **Pick Parcel**: Allows customers to pick a parcel from another customer.
@@ -159,7 +156,7 @@ $csaddress\rightarrow \{start\_time,email,phone,csID,end\_time,adminID\}$
 
 Therefore, we do decomposite just like before
 
-$courier\_station=\{\underline{csID,csaddress},start\_time,end\_time,adminID\}$
+$courier\_station=\{\underline{csID},start\_time,end\_time,adminID\}$
 $csphone=\{\underline{phone},csID\}$
 $csmail=\{\underline{email},csID\}$
 $address=\{\underline{address},csID\}$
@@ -172,8 +169,7 @@ $parcel=\{parcelID,volume,weight,status,parcelType,
 
 We can get the following function dependency like this.
 
-$parcelID \rightarrow \{volume,weight,status,parcelType,
-          send\_address,pick\_address,send\_storage\_time,send\_time,pick\_storage\_time,
+$parcelID \rightarrow \{volume,weight,status,parcelType,send\_address,pick\_address,send\_storage\_time,send\_time,pick\_storage\_time,
           pick\_time,cust\_send\_ID,cust\_pick\_ID,cadminID\}$
 
 We can find it only has one functional dependency. And obviously, the parcelID is the condicate key in this schema. So it has been already satisfied BCNF.
@@ -208,5 +204,5 @@ When dealing with the weight and volume of the package, I checked them on the fr
 
 In our project, customers can effortlessly pick and send packages, track deliveries in real-time, manage personal information, view order history, and evaluate the quality of service. Our system offers a range of dynamic shipping options to suit different customer preferences. For courier station managers, features such as status updates, site information management, and access to comprehensive historical logs can effectively manage packages. The ability to transfer parcels between sites ensures a smooth flow of parcels through the logistics network. In addition, administrators benefit from a centralized view of workstation status and a complete package history, allowing them to monitor and optimize overall system performance.
 The ER diagram emphasizes the structural integrity of the system, depicting the relationship between the user, the package, and the courier station. Non-disjointed ISA relationships allow users to have multiple identities within the system, enhancing flexibility and user management.
-Through the logical design obtained by the ER diagram, the database design of the express station information management system adopts standardized technology to eliminate redundancy, ensure data integrity, and optimize efficient query.
+Through the logical design obtained by the ER diagram, the database design of the express station information management system adopts standardized technology to eliminate redundancy, ensure data integrity, and optimize efficient queries.
 In conclusion, the system is designed and functioned to enhance the overall courier service experience for both customers and warehouse managers.
