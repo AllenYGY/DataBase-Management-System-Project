@@ -343,8 +343,17 @@ $timeDiff = $end - $start;
             <h1>Profile</h1>
             <div class="activity-container">
               <div class="image-icon">
-                <?php echo '<img src="data:image/png;base64,' . base64_encode($imageData) . '"/>'; ?>
+
+                <?php
+                if ($imageData === NULL || $imageData === '') {
+                  echo '<img src="Image/user.png" alt="user" />';
+                } else {
+                  echo '<img src="data:image/png;base64,' . base64_encode($imageData) . '"/>';
+                }
+                ?>
+
               </div>
+
               <div class="info-container info-one">
                 <table>
                   <tr>
@@ -1025,9 +1034,14 @@ $timeDiff = $end - $start;
             <i class="fa fa-message nav-icon"></i>
           </div>
           <h4><?php echo $name; ?></h4>
-          <?php echo '<img src="data:image/png;base64,' . base64_encode($imageData) . '"/>'; ?>
+          <?php
+          if ($imageData === NULL || $imageData === '') {
+            echo '<img src="Image/user.png" alt="user" />';
+          } else {
+            echo '<img src="data:image/png;base64,' . base64_encode($imageData) . '"/>';
+          }
+          ?>
         </div>
-
         <div class="friends-activity">
           <h1>Friends' Package</h1>
           <div class="card-container">
@@ -1059,7 +1073,14 @@ $timeDiff = $end - $start;
             <h1>Edit Profile</h1><br>
             <!-- <label for="usr">Username: <?php echo $name; ?></label> -->
             <div class="image-icon-1">
-              <?php echo '<img src="data:image/png;base64,' . base64_encode($imageData) . '"/>'; ?>
+              <?php
+              if ($imageData === NULL || $imageData === '') {
+                echo '<img src="Image/user.png" alt="user" />';
+              } else {
+                echo '<img src="data:image/png;base64,' . base64_encode($imageData) . '"/>';
+              }
+              ?>
+
             </div>
           </div>
           <div class="form-group">

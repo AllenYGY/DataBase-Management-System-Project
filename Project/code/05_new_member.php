@@ -18,13 +18,8 @@ if ($pwd1 != $pwd2) {
 		echo  $user . " has been registered!";
 		echo "<br><hr><br> Go back to <a href='02_register.php'>Regisration</a>";
 	} else {
-		$usr_pic="SELECT upicture FROM customer WHERE uID=73";
-		$result = mysqli_query($conn, $sql);
-		if (mysqli_num_rows($result) > 0) {
-			$row = mysqli_fetch_assoc($result);
-			$upicture = $row["upicture"];
-		}
-		$sql = "INSERT INTO `customer` (`uname`, `upassword`,`upicture`) VALUES ('$user', '$pwd1','$upicture')";
+
+		$sql = "INSERT INTO `customer` (`uname`, `upassword`) VALUES ('$user', '$pwd1')";
 		$result = mysqli_query($conn, $sql);
 		echo "You have been registered successfully! <br> Welcome " . $user . "!<br>";
 		$sql = "SELECT * FROM customer WHERE uname='$user'";
@@ -32,6 +27,16 @@ if ($pwd1 != $pwd2) {
 		if (mysqli_num_rows($result) > 0) {
 			$row = mysqli_fetch_assoc($result);
 			$uID = $row["uID"];
+		}
+		$sql_phone="INSERT INTO `customer_phone` (`uID`) VALUES (`$uID`)";
+		$result_phone = mysqli_query($conn, $sql_phone);
+		if (mysqli_num_rows($result_phone) > 0) {
+			echo"1111";
+		}
+		$sql_mail="INSERT INTO `customer_email` (`uID`) VALUES (`$uID`)";
+		$result_email = mysqli_query($conn, $sql_mail);
+		if (mysqli_num_rows($result_email) > 0) {
+			echo"1111";
 		}
 		echo "Your userID is $uID";
 		echo "<br><a href='01_login.php'>Go to Login!</a>";
