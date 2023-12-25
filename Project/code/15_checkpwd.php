@@ -6,7 +6,7 @@ $user  = $_POST["usr"];
 $pwd  = $_POST["pwd"];
 
 session_start();
-$userID = $_SESSION["userID"];
+$uID = $_SESSION["uID"];
 
 
 $sql = "SELECT * FROM customer WHERE uname = '$user' AND upassword = '$pwd';";
@@ -16,7 +16,7 @@ $sql = "SELECT * FROM customer WHERE uname = '$user' AND upassword = '$pwd';";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
-  $sql = "DELETE FROM customer WHERE uID = '$userID'";
+  $sql = "DELETE FROM customer WHERE uID = '$uID'";
   $result = mysqli_query($conn, $sql);
   if ($result) {
     echo "Delete Successfully!";

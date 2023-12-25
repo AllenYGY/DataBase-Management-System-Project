@@ -4,7 +4,7 @@ include "03_connectDB.php";
 session_start();
 $user = $_SESSION["user"];
 $usertype = $_SESSION["usertype"];
-$userID = $_SESSION["userID"];
+$uID = $_SESSION["uID"];
 $csID = $_SESSION["csID"];
 $csadr = $_SESSION["csadr"];
 
