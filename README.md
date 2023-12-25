@@ -202,7 +202,17 @@ When dealing with the weight and volume of the package, I checked them on the fr
 
 ## Conclusion
 
-In our project, customers can effortlessly pick and send packages, track deliveries in real-time, manage personal information, view order history, and evaluate the quality of service. Our system offers a range of dynamic shipping options to suit different customer preferences. For courier station managers, features such as status updates, site information management, and access to comprehensive historical logs can effectively manage packages. The ability to transfer parcels between sites ensures a smooth flow of parcels through the logistics network. In addition, administrators benefit from a centralized view of workstation status and a complete package history, allowing them to monitor and optimize overall system performance.
-The ER diagram emphasizes the structural integrity of the system, depicting the relationship between the user, the package, and the courier station. Non-disjointed ISA relationships allow users to have multiple identities within the system, enhancing flexibility and user management.
-Through the logical design obtained by the ER diagram, the database design of the express station information management system adopts standardized technology to eliminate redundancy, ensure data integrity, and optimize efficient queries.
-In conclusion, the system is designed and functioned to enhance the overall courier service experience for both customers and warehouse managers.
+- Customers can effortlessly pick and send packages, track deliveries in real-time, manage personal information, view order history, and evaluate the quality of service.
+Our system offers a range of dynamic shipping options to suit different customer preferences.
+
+- For courier station managers, features such as status updates, site information management, and access to comprehensive historical logs can effectively manage packages. The ability to transfer parcels between sites ensures a smooth flow of parcels through the logistics network.
+
+- In addition, administrators benefit from a centralized view of workstation status and a complete package history, allowing them to monitor and optimize overall system performance.
+
+## Workload
+
+- 杨钧涯: 40%
+- 单佳影: 20%
+- 丁书萱: 20%
+- 郑植劲翔: 10%
+- 肖易林: 10%
