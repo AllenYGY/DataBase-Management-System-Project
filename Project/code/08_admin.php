@@ -24,7 +24,7 @@ if (mysqli_num_rows($result) > 0) {
   $name = $row["uname"];
   $gender = $row["ugender"];
   $uID = $row["uID"];
-  $imageData=$row["upicture"];
+  $imageData = $row["upicture"];
 }
 
 ?>
@@ -363,7 +363,14 @@ if (mysqli_num_rows($result) > 0) {
             <i class="fa fa-message nav-icon"></i>
           </div>
           <h4>AllenYGY</h4>
-          <?php echo '<img src="data:image/png;base64,' . base64_encode($imageData) . '"/>'; ?>
+          <?php
+          if ($imageData === NULL || $imageData === '') {
+            echo '<img src="Image/user.png" alt="user" />';
+          } else {
+            echo '<img src="data:image/png;base64,' . base64_encode($imageData) . '"/>';
+          }
+          ?>
+
         </div>
 
         <div class="friends-activity">
