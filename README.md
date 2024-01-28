@@ -134,16 +134,16 @@ so we do this decomposition to this schema.
 Decomposition
 
 $customer=\{\underline{uID},name,password,gender,picture\}$
-$customer_phone=\{\underline{phone},uID\}$
-$customer_mail=\{\underline{mail},uID\}$
+$customer\_phone=\{\underline{phone},uID\}$
+$customer\_mail=\{\underline{mail},uID\}$
 
 $admin=\{\underline{uID}name,password,gender,picture\}$
-$admin_phone=\{\underline{phone},uID\}$
-$admin_mail=\{\underline{mail},uID\}$
+$admin\_phone=\{\underline{phone},uID\}$
+$admin\_mail=\{\underline{mail},uID\}$
 
 $cadmin=\{\underline{uID},name,password,gender,picture,csID\}$
-$cadmin_phone=\{\underline{phone},uID\}$
-$cadmin_mail=\{\underline{mail},uID\}$
+$cadmin\_phone=\{\underline{phone},uID\}$
+$cadmin\_mail=\{\underline{mail},uID\}$
 
 This obviously satisfies the BCNF.
 
@@ -211,6 +211,16 @@ Our system offers a range of dynamic shipping options to suit different customer
 - For courier station managers, features such as status updates, site information management, and access to comprehensive historical logs can effectively manage packages. The ability to transfer parcels between sites ensures a smooth flow of parcels through the logistics network.
 
 - In addition, administrators benefit from a centralized view of workstation status and a complete package history, allowing them to monitor and optimize overall system performance.
+
+## Database Size
+
+- customer: 200000 records.
+- courier admin: 50000 records.
+- admin: 500   records. *(There's no need to have 10,000 administrators)*
+- parcel：15000 records.
+- courier station：5000  records. *(There are only about 5,000 in the whole country)*
+- email and phone table are the same size as its main(customer,  courier admin,  admin) table
+
 
 ## Workload
 
