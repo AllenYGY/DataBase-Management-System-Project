@@ -196,7 +196,6 @@ In the table for each user, I used BLOB to save the profile picture。
 
 ![BLOB](Project/code/image/BLOB.png)
 
-
 ### Use triggers to implement constraints
 
 When dealing with the weight and volume of the package, I checked them on the front and back ends, especially on the back end, where I used triggers to make the volume and weight range from 0-300.
@@ -220,7 +219,6 @@ Our system offers a range of dynamic shipping options to suit different customer
 - parcel：15000 records.
 - courier station：5000  records. *(There are only about 5,000 in the whole country)*
 - email and phone table are the same size as its main(customer,  courier admin,  admin) table
-
 
 ## Workload
 
